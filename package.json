@@ -105,7 +105,7 @@
     "sonner": "2.0.7",
     "superjson": "2.2.1",
     "tailwind-merge": "3.3.1",
-    "ua-parser-js": "2.0.6",
+    "ua-parser-js": "2.0.10",
     "uuid": "13.0.0",
     "vaul": "1.1.2",
     "winston": "^3.19.0",
