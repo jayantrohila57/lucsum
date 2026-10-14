@@ -56,8 +56,11 @@ function slugFile(parts) {
     .slice(0, 120);
 }
 
+/** @see docs/qa-tap-target-scanner.md */
 async function auditPage(page) {
   return page.evaluate(() => {
+    const MIN = 44;
+
     const doc = document.documentElement;
     const excess = doc.scrollWidth - doc.clientWidth;
     let userScrollableX = false;
@@ -85,25 +88,93 @@ async function auditPage(page) {
       issues.push({ code: "horizontal-overflow", detail: `scrollWidth excess ${overflowX}px`, offenders });
     }
 
-    const smallTargets = [];
-    for (const el of document.querySelectorAll("button, a[href], [role='button']")) {
+    function isProseLink(el) {
+      if (el.tagName !== "A") return false;
+      if (
+        el.closest(
+          "header, footer, nav, [data-slot='shell-header'], [data-slot='sheet-content'], [data-slot='navigation-menu']",
+        )
+      ) {
+        return false;
+      }
+      if (el.closest("p, .prose, [data-slot='prose'], article .policy, [data-policy-body]")) return true;
+      return false;
+    }
+
+    function effectiveHitBox(el) {
+      let w = 0;
+      let h = 0;
+      let node = el;
+      let depth = 0;
+      while (node && depth < 4) {
+        const r = node.getBoundingClientRect();
+        const cs = getComputedStyle(node);
+        if (cs.display === "none" || cs.visibility === "hidden") return null;
+        const minH = parseFloat(cs.minHeight) || 0;
+        const minW = parseFloat(cs.minWidth) || 0;
+        w = Math.max(w, r.width, minW);
+        h = Math.max(h, r.height, minH);
+        if (w >= MIN && h >= MIN) return { w, h };
+        const slot = node.getAttribute?.("data-slot");
+        if (
+          node.tagName === "BUTTON" ||
+          node.getAttribute("role") === "button" ||
+          slot === "button" ||
+          slot === "select-trigger"
+        ) {
+          break;
+        }
+        node = node.parentElement;
+        depth += 1;
+      }
       const r = el.getBoundingClientRect();
-      if (r.width === 0 && r.height === 0) continue;
-      if (r.width < 44 || r.height < 44) {
-        const label = el.getAttribute("aria-label") || el.textContent?.trim().slice(0, 40) || el.tagName;
-        smallTargets.push({ label, w: Math.round(r.width), h: Math.round(r.height) });
-        if (smallTargets.length >= 12) break;
+      return { w: Math.max(w, r.width), h: Math.max(h, r.height) };
+    }
+
+    function isScannedControl(el) {
+      const tag = el.tagName;
+      if (tag === "BUTTON" || el.getAttribute("role") === "button") return true;
+      if (el.getAttribute("data-slot") === "button" || el.getAttribute("data-slot") === "select-trigger") return true;
+      if (tag === "INPUT" || tag === "SELECT" || tag === "TEXTAREA") return true;
+      if (tag === "A" && el.getAttribute("href")) {
+        if (isProseLink(el)) return false;
+        if (
+          el.closest(
+            "header, footer, nav, [data-slot='shell-header'], [data-slot='sheet-content'], [data-slot='navigation-menu']",
+          )
+        ) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    const smallTargets = [];
+    const seen = new Set();
+    for (const el of document.querySelectorAll(
+      "button, a[href], [role='button'], input, select, textarea, [data-slot='select-trigger']",
+    )) {
+      if (!isScannedControl(el)) continue;
+      const id =
+        el.getAttribute("aria-label") || el.getAttribute("name") || el.textContent?.trim().slice(0, 48) || el.tagName;
+      if (seen.has(id)) continue;
+      const box = effectiveHitBox(el);
+      if (!box) continue;
+      if (box.w < MIN || box.h < MIN) {
+        seen.add(id);
+        smallTargets.push({ label: id, w: Math.round(box.w), h: Math.round(box.h) });
+        if (smallTargets.length >= 8) break;
       }
     }
     if (smallTargets.length) {
       issues.push({
         code: "small-tap-target",
-        detail: `${smallTargets.length}+ controls under 44px`,
+        detail: `${smallTargets.length} controls under ${MIN}px effective hit area`,
         samples: smallTargets.slice(0, 6),
       });
     }
 
-    const header = document.querySelector("header");
+    const header = document.querySelector("[data-slot='shell-header'], header");
     let headerInfo = null;
     if (header) {
       const cs = getComputedStyle(header);
@@ -129,7 +200,7 @@ async function afterScrollHeader(page) {
   await page.evaluate(() => window.scrollTo(0, 600));
   await page.waitForTimeout(200);
   return page.evaluate(() => {
-    const header = document.querySelector("header");
+    const header = document.querySelector("[data-slot='shell-header'], header");
     if (!header) return { ok: false, reason: "no header" };
     const r = header.getBoundingClientRect();
     const cs = getComputedStyle(header);
@@ -244,7 +315,7 @@ for (const vp of VIEWPORTS) {
     await page.evaluate(() => window.scrollTo(0, 0));
 
     const pageIssues = [...audit.issues];
-    if (scrollHeader.position && !scrollHeader.stickyOk && vp.group === "mobile") {
+    if (scrollHeader.position && !scrollHeader.stickyOk) {
       pageIssues.push({
         code: "header-not-sticky",
         detail: `position=${scrollHeader.position} top=${scrollHeader.top} after scroll`,

@@ -120,19 +120,27 @@ function MobileNavigationSheet() {
         <Separator />
         <div className="mt-6 flex flex-col gap-2">
           {/* MAIN LINKS */}
-          <nav className="flex flex-col  p-4  gap-2 text-lg font-medium">
-            <Link href={PATH.ROOT} onClick={() => setOpen(false)}>
+          <nav className="flex flex-col gap-1 p-4 text-lg font-medium">
+            <Link className="inline-flex min-h-11 items-center" href={PATH.ROOT} onClick={() => setOpen(false)}>
               Home
             </Link>
-            <Link href={simplified ? PATH.SHOP.ROOT : PATH.STORE.ROOT} onClick={() => setOpen(false)}>
+            <Link
+              className="inline-flex min-h-11 items-center"
+              href={simplified ? PATH.SHOP.ROOT : PATH.STORE.ROOT}
+              onClick={() => setOpen(false)}
+            >
               {simplified ? "Shop" : "Store"}
             </Link>
             {simplified ? (
               <>
-                <Link href={PATH.HELP} onClick={() => setOpen(false)}>
+                <Link className="inline-flex min-h-11 items-center" href={PATH.HELP} onClick={() => setOpen(false)}>
                   Help
                 </Link>
-                <Link href={PATH.SITE.LEGAL.ROOT} onClick={() => setOpen(false)}>
+                <Link
+                  className="inline-flex min-h-11 items-center"
+                  href={PATH.SITE.LEGAL.ROOT}
+                  onClick={() => setOpen(false)}
+                >
                   Policies
                 </Link>
               </>
@@ -161,7 +169,7 @@ function MobileNavigationSheet() {
                   <Link
                     key={slug}
                     href={`/shop?style=${slug}` as Route}
-                    className="text-sm text-muted-foreground hover:text-foreground"
+                    className="inline-flex min-h-11 items-center text-sm text-muted-foreground hover:text-foreground"
                     onClick={() => setOpen(false)}
                   >
                     {title}

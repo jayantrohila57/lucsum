@@ -18,7 +18,7 @@ export default function Header() {
         <div className="flex h-full shrink-0 items-stretch">
           <HeaderCommerceActions />
           <div className="flex items-center border-l md:hidden">
-            <div className="flex h-full items-center px-1 sm:px-2">
+            <div className="flex h-full min-h-11 items-center px-1 sm:px-2">
               <MobileNavButton />
             </div>
           </div>

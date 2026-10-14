@@ -30,9 +30,11 @@ const routes = [
 ];
 
 const viewports = [
-  { name: "mobile", width: 390, height: 844 },
-  { name: "tablet", width: 834, height: 1112 },
-  { name: "desktop", width: 1280, height: 900 },
+  { name: "mobile-360", width: 360, height: 800 },
+  { name: "mobile-390", width: 390, height: 844 },
+  { name: "mobile-430", width: 430, height: 932 },
+  { name: "tablet-768", width: 768, height: 1024 },
+  { name: "tablet-1024", width: 1024, height: 1366 },
 ];
 
 async function measureUi(page) {

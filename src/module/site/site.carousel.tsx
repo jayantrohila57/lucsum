@@ -51,21 +51,15 @@ export function MarketingCarousel({ items }: { items: CarouselItem[] | null | un
       setApi={setApi}
     >
       <div>
-        <CarouselContent className="">
+        <CarouselContent className="ml-0">
           {slides.map((item, i) => {
             const title = item.title ?? "Banner";
             const href = item.ctaLink ?? undefined;
             return (
-              <CarouselItem key={i} className="min-w-0 basis-full">
-                <div className="group relative w-full overflow-hidden rounded-[var(--radius)] border border-border bg-muted text-balance">
-                  <div className="relative aspect-[21/9] min-h-[220px] w-full sm:min-h-[280px]">
-                    <BlurImage
-                      src={getImageSrc(item.image)}
-                      alt={title}
-                      width={1920}
-                      height={820}
-                      className="motion-all absolute inset-0 h-full w-full object-cover"
-                    />
+              <CarouselItem key={i} className="min-w-0 basis-full pl-0">
+                <div className="group relative w-full max-w-full overflow-hidden rounded-[var(--radius)] border border-border bg-muted text-balance">
+                  <div className="relative aspect-[21/9] min-h-[220px] w-full max-w-full sm:min-h-[280px]">
+                    <BlurImage src={getImageSrc(item.image)} alt={title} fill sizes="100vw" className="object-cover" />
                     <div
                       className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-transparent"
                       aria-hidden

@@ -36,7 +36,7 @@ const Header = React.forwardRef<HTMLElement, HeaderTypes & VariantProps<typeof H
   ({ className, variant, ...props }, ref) => {
     return (
       <>
-        <header ref={ref} {...props} className={cn(HeaderVariants({ variant }), className)} />
+        <header ref={ref} data-slot="shell-header" {...props} className={cn(HeaderVariants({ variant }), className)} />
       </>
     );
   },
