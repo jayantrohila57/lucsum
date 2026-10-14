@@ -84,9 +84,11 @@ export default function Footer() {
             </div>
             <div className="pb-8 md:pb-16">
               <h4 className="mb-2 text-lg font-semibold">{"Supported Payment"}</h4>
-              <div className="flex flex-wrap gap-2">
-                <Icons.paypal className="h-6 w-9" />
-                <Icons.visa className="h-10 w-auto" />
+              <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+                <span className="rounded-md border border-border px-2 py-1 font-medium text-foreground">Razorpay</span>
+                <span className="rounded-md border border-border px-2 py-1">UPI</span>
+                <Icons.visa className="h-8 w-auto" aria-label="Cards" />
+                <span className="rounded-md border border-border px-2 py-1">COD</span>
               </div>
             </div>
           </div>

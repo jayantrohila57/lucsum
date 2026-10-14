@@ -1,4 +1,5 @@
 import { z } from "zod/v3";
+import { addressSnapshotSchema } from "@/module/order/order.schema";
 import { detailedResponse, offsetPaginationSchema } from "@/shared/schema";
 
 // ---------------------------------------------
@@ -111,9 +112,14 @@ export const shippingRateRuleUpdateSchema = shippingRateRuleInsertSchema.partial
 // ---------------------------------------------
 
 export const shippingOptionsInputSchema = z.object({
-  body: z.object({
-    shippingAddressId: z.string().min(1, "Shipping address is required to load options"),
-  }),
+  body: z
+    .object({
+      shippingAddressId: z.string().min(1).optional(),
+      shippingAddress: addressSnapshotSchema.optional(),
+    })
+    .refine((b) => Boolean(b.shippingAddressId || b.shippingAddress), {
+      message: "Shipping address is required to load options",
+    }),
 });
 
 export const shippingProviderListInputSchema = z.object({

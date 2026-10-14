@@ -153,8 +153,17 @@ export async function runPurgeMockData(db: ReturnType<typeof drizzle>, options?:
       .where(notInArray(schema.subcategory.categorySlug, [...LUCSUM_CATALOG_CATEGORY_SLUGS]));
   }
 
-  await db.update(schema.marketingContent).set({ isActive: false, updatedAt: now });
-  counts.marketing = seedMarketing.length;
+  if (seedMarketing.length) {
+    await db
+      .update(schema.marketingContent)
+      .set({ isActive: false, updatedAt: now })
+      .where(
+        or(
+          ilike(schema.marketingContent.id, "seed-marketing%"),
+          ilike(schema.marketingContent.image, "%picsum.photos%"),
+        ),
+      );
+  }
 
   if (counts.reviews) {
     await db

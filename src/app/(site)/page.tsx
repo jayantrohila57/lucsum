@@ -1,9 +1,9 @@
 import { apiServer } from "@/core/api/api.server";
 import GetFeaturedCategories from "@/module/category/category.get-featured";
 import ShopByCategoryGrid from "@/module/category/category.shop-by";
-import { ContentCTA, ContentOfferBanner } from "@/module/site/content-sections";
 import SiteHero from "@/module/site/site.hero";
 import Shell from "@/shared/components/layout/shell";
+import { isLucsumCatalogCategorySlug } from "@/shared/config/catalog";
 import { PATH } from "@/shared/config/routes";
 import { site } from "@/shared/config/site";
 import { buildSchemaGraph, itemListGraphNode, webPageGraphNode } from "@/shared/seo/json-ld";
@@ -25,7 +25,7 @@ export default async function Home({}: PageProps<"/">) {
   ]);
 
   const featured = featuredRes.data ?? [];
-  const shopCategories = (categoriesRes.data ?? []).slice(0, 4);
+  const shopCategories = (categoriesRes.data ?? []).filter((c) => isLucsumCatalogCategorySlug(c.slug)).slice(0, 4);
 
   const homeLd = buildSchemaGraph([
     webPageGraphNode({
@@ -65,13 +65,7 @@ export default async function Home({}: PageProps<"/">) {
         <GetFeaturedCategories prefetched={featured} />
       </Shell.Section>
       <Shell.Section>
-        <ContentOfferBanner page="home" />
-      </Shell.Section>
-      <Shell.Section>
         <ShopByCategoryGrid prefetched={shopCategories} />
-      </Shell.Section>
-      <Shell.Section>
-        <ContentCTA page="home" />
       </Shell.Section>
     </Shell>
   );

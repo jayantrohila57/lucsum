@@ -2,6 +2,7 @@ import type { Route } from "next";
 
 export const PATH = {
   ROOT: "/",
+  CART: "/cart" as Route,
   AUTH: {
     ROOT: "/auth",
     SIGN_IN: "/auth/sign-in",

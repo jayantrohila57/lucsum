@@ -381,6 +381,26 @@ export async function runShopifyImport(): Promise<ShopifyImportSummary> {
     }
   }
 
+  if (!dryRun) {
+    for (const styleSlug of Object.values(STYLE_TAGS)) {
+      const sample = await db.query.product.findFirst({
+        where: and(
+          eq(schema.product.categorySlug, categorySlug),
+          eq(schema.product.subcategorySlug, styleSlug),
+          eq(schema.product.isActive, true),
+          isNull(schema.product.deletedAt),
+        ),
+        columns: { baseImage: true },
+        orderBy: (p, { asc }) => [asc(p.title)],
+      });
+      if (!sample?.baseImage) continue;
+      await db
+        .update(schema.subcategory)
+        .set({ image: sample.baseImage, updatedAt: new Date() })
+        .where(and(eq(schema.subcategory.slug, styleSlug), eq(schema.subcategory.categorySlug, categorySlug)));
+    }
+  }
+
   for (const page of misc.data.pages?.nodes ?? []) {
     if (!page.isPublished) continue;
     const mapped = PAGE_ROUTE_MAP[page.handle];

@@ -134,7 +134,8 @@ export const orderContract = {
     input: z.object({
       body: z.object({
         cartId: z.string().optional(),
-        shippingAddressId: z.string().min(1),
+        shippingAddressId: z.string().min(1).optional(),
+        shippingAddress: addressSnapshotSchema.optional(),
         shippingProviderId: z.string().min(1),
         shippingMethodId: z.string().min(1),
         discountCode: z.string().optional(),

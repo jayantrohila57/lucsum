@@ -8,7 +8,6 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { LUCSUM_AUTH_GALLERY_IMAGES } from "@/shared/config/lucsum-media";
 import { site } from "@/shared/config/site";
 import { cn } from "@/shared/utils/lib/utils";
-import SaleAlert from "../../common/sale-alert";
 import { Alert, AlertDescription, AlertTitle } from "../../ui/alert";
 import { Separator } from "../../ui/separator";
 export function AuthCard({
@@ -23,8 +22,8 @@ export function AuthCard({
   footer?: ReactNode;
 }) {
   return (
-    <Card className="motion-all bg-transparent flex h-full border-b min-h-[740px] w-full grid-cols-1 flex-row p-0 gap-0 md:grid-cols-3">
-      <CardContent className="motion-all border-r h-full min-h-[740px] w-full max-w-md p-0 md:col-span-1">
+    <Card className="motion-all bg-transparent flex h-full w-full grid-cols-1 flex-row gap-0 border-b p-0 md:min-h-[520px] md:grid-cols-3">
+      <CardContent className="motion-all h-full w-full max-w-md border-r p-0 md:col-span-1">
         <CardHeader className="w-full p-4 border-b mb-2">
           <CardTitle className="w-full text-left text-3xl text-balance">{title}</CardTitle>
           <CardDescription className="w-full text-left text-sm text-pretty">{description}</CardDescription>
@@ -46,8 +45,7 @@ export function AuthCard({
           </Alert>
         </CardFooter>
       </CardContent>
-      <CardContent className="bg-secondary motion-all p-0 relative hidden w-full overflow-hidden md:col-span-2 md:block">
-        <SaleAlert className="absolute bottom-5 right-5 z-10" />
+      <CardContent className="bg-secondary motion-all relative hidden w-full overflow-hidden p-0 md:col-span-2 md:block">
         <CardSwap width={1200} height={600} cardDistance={200} verticalDistance={200} delay={200} pauseOnHover={false}>
           {LUCSUM_AUTH_GALLERY_IMAGES.map((item) => (
             <CardSwapCard key={item}>

@@ -1,6 +1,8 @@
 export function slugToTitle(slug: string | null | undefined): string {
   if (!slug) return "";
 
+  if (slug.toLowerCase() === "t-shirts") return "T-Shirts";
+
   return slug
     .replace(/[-_]+/g, " ") // replace slug separators with spaces
     .replace(/\s+/g, " ") // collapse multiple spaces

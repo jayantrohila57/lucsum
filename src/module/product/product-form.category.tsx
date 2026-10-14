@@ -9,7 +9,7 @@ const PLACEHOLDER_VALUE = "";
 
 export function CategorySelect() {
   const { data: categories } = apiClient.category.getMany.useQuery({
-    query: {},
+    query: { catalogOnly: false },
   });
 
   const buildCategoryOptions = (): Option[] => {

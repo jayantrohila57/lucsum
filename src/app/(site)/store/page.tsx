@@ -2,16 +2,9 @@ import { LayoutGrid } from "lucide-react";
 import type { Route } from "next";
 import { apiServer } from "@/core/api/api.server";
 import CategoryCard from "@/module/category/category-card";
-import {
-  ContentAnnouncementBar,
-  ContentCTA,
-  ContentFeatureHighlights,
-  ContentOfferBanner,
-  ContentPromoBanner,
-  ContentSplitBanner,
-} from "@/module/site/content-sections";
 import { ContentEmpty } from "@/shared/components/common/content-empty";
 import Section from "@/shared/components/layout/section/section";
+import { StoreSubNav } from "@/shared/components/layout/section/store-sub-nav";
 import Shell from "@/shared/components/layout/shell";
 import { PATH } from "@/shared/config/routes";
 import { site } from "@/shared/config/site";
@@ -97,15 +90,7 @@ export default async function StorePage({ searchParams }: { searchParams: Promis
   return (
     <Shell>
       <JsonLdScript id="jsonld-store" data={storeLd} />
-      <Shell.Section>
-        <ContentAnnouncementBar page="store" />
-      </Shell.Section>
-      <Shell.Section>
-        <ContentPromoBanner page="store" />
-      </Shell.Section>
-      <Shell.Section>
-        <ContentSplitBanner page="store" />
-      </Shell.Section>
+      <StoreSubNav />
       <Shell.Section>
         {q.trim() && categoriesForDisplay.length === 0 ? (
           <ContentEmpty
@@ -163,15 +148,6 @@ export default async function StorePage({ searchParams }: { searchParams: Promis
             </Section>
           ))
         )}
-      </Shell.Section>
-      <Shell.Section>
-        <ContentCTA page="store" />
-      </Shell.Section>
-      <Shell.Section>
-        <ContentOfferBanner page="store" />
-      </Shell.Section>
-      <Shell.Section>
-        <ContentFeatureHighlights page="store" />
       </Shell.Section>
     </Shell>
   );

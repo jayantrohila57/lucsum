@@ -9,8 +9,8 @@ import { Button } from "@/shared/components/ui/button";
 import { PATH } from "@/shared/config/routes";
 
 export function CheckoutClient() {
-  const { cart, addresses, isLoading } = useCheckout();
-  const hasShippingAddress = addresses.shipping.length > 0;
+  const { cart, isLoading, isSignedIn, addresses } = useCheckout();
+  const hasShippingAddress = isSignedIn ? addresses.shipping.length > 0 : true;
 
   if (isLoading) {
     return (
@@ -33,13 +33,18 @@ export function CheckoutClient() {
     );
   }
 
-  if (!hasShippingAddress) {
+  if (isSignedIn && !hasShippingAddress) {
     return (
       <Section title="Checkout" description="Shipping address required">
-        <p className="text-muted-foreground">Please add a shipping address to continue.</p>
-        <Button asChild className="mt-4" variant="outline">
-          <Link href={PATH.ACCOUNT.ADDRESS_NEW}>Add address</Link>
-        </Button>
+        <p className="text-muted-foreground">Add a shipping address, or continue as a guest from the cart.</p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          <Button asChild variant="outline">
+            <Link href={PATH.ACCOUNT.ADDRESS_NEW}>Add address</Link>
+          </Button>
+          <Button asChild variant="ghost">
+            <Link href={PATH.CART}>Back to cart</Link>
+          </Button>
+        </div>
       </Section>
     );
   }

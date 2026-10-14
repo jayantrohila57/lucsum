@@ -1,6 +1,6 @@
 import { and, desc, eq, ilike, sql } from "drizzle-orm";
 import { v4 as uuidv4 } from "uuid";
-import { createTRPCRouter, customerProcedure, staffProcedure } from "@/core/api/api.methods";
+import { createTRPCRouter, customerProcedure, publicProcedure, staffProcedure } from "@/core/api/api.methods";
 import { db } from "@/core/db/db";
 import { order, payment } from "@/core/db/db.schema";
 import { razorpay } from "@/core/payment/razorpay.client";
@@ -80,13 +80,13 @@ export const paymentRouter = createTRPCRouter({
    * Create a payment intent for an order. For Razorpay, creates a Razorpay order and returns
    * razorpayOrderId for checkout.js. Amount is taken from order.grandTotal (paise).
    */
-  createIntent: customerProcedure
+  createIntent: publicProcedure
     .input(paymentContract.createIntent.input)
     .output(paymentContract.createIntent.output)
     .mutation(async ({ input, ctx }) => {
       try {
         const { orderId, provider } = input.body;
-        const userId = ctx.user.id;
+        const userId = ctx.user?.id ?? null;
 
         const orderData = await db.query.order.findFirst({
           where: eq(order.id, orderId),

@@ -1,6 +1,7 @@
 import { apiServer, HydrateClient } from "@/core/api/api.server";
 import CategoriesListing from "@/module/category/category.component.listing";
 import Section from "@/shared/components/layout/section/section";
+import { StoreSubNav } from "@/shared/components/layout/section/store-sub-nav";
 import Shell from "@/shared/components/layout/shell";
 import { PATH } from "@/shared/config/routes";
 import { site } from "@/shared/config/site";
@@ -48,6 +49,7 @@ export default async function CategoriesPage() {
   return (
     <Shell>
       <JsonLdScript id="jsonld-categories-index" data={categoriesLd} />
+      <StoreSubNav />
       <Shell.Section>
         <HydrateClient>
           <Section {...pageHeading}>

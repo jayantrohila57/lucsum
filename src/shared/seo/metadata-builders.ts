@@ -17,6 +17,15 @@ export type PageSeoInput = {
 
 const titleTemplate = `%s | ${seoConfig.siteName}`;
 
+/** Avoid duplicated site name when CMS meta titles already include the brand. */
+export function normalizePageTitle(title: string): string {
+  const brand = seoConfig.siteName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return title
+    .replace(new RegExp(`\\s*\\|\\s*${brand}\\s*(\\|\\s*${brand}\\s*)*$`, "gi"), "")
+    .replace(new RegExp(`^${brand}\\s*\\|\\s*`, "i"), "")
+    .trim();
+}
+
 export function rootMetadataDefaults(): Metadata {
   const base = getMetadataBase();
   const defaultOg = getDefaultOgImageUrl();
@@ -122,8 +131,10 @@ export function buildPageMetadata(input: PageSeoInput): Metadata {
 
   const ogType = input.ogType ?? "website";
 
+  const title = normalizePageTitle(input.title);
+
   return {
-    title: input.title,
+    title,
     description: input.description,
     robots: input.robots,
     alternates: {
@@ -134,14 +145,14 @@ export function buildPageMetadata(input: PageSeoInput): Metadata {
       type: ogType === "product" ? "website" : ogType,
       locale: seoConfig.locale,
       siteName: seoConfig.siteName,
-      title: input.title,
+      title,
       description: input.description,
       url: canonical,
       images,
     },
     twitter: {
       card: input.twitterCard ?? "summary_large_image",
-      title: input.title,
+      title,
       description: input.description,
       images: images.map((i) => i.url.toString()),
     },

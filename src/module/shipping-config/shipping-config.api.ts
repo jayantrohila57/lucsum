@@ -1,6 +1,12 @@
 import { and, eq } from "drizzle-orm";
 import type z from "zod/v3";
-import { adminProcedure, createTRPCRouter, customerProcedure, staffProcedure } from "@/core/api/api.methods";
+import {
+  adminProcedure,
+  createTRPCRouter,
+  customerProcedure,
+  publicProcedure,
+  staffProcedure,
+} from "@/core/api/api.methods";
 import { db } from "@/core/db/db";
 import { shippingMethod, shippingProvider, shippingRateRule, shippingZone } from "@/core/db/db.schema";
 import {
@@ -10,16 +16,18 @@ import {
   type shippingRateRuleListInputSchema,
   type shippingZoneListInputSchema,
 } from "./shipping-config.schema";
-import { getShippingOptionsForAddressId } from "./shipping-options.service";
+import { getShippingOptionsForAddressId, getShippingOptionsForLocation } from "./shipping-options.service";
 
 export const shippingConfigRouter = createTRPCRouter({
-  getOptions: customerProcedure
+  getOptions: publicProcedure
     .input(shippingConfigContract.getOptions.input)
     .output(shippingConfigContract.getOptions.output)
     .query(async ({ input }) => {
-      const { shippingAddressId } = input.body;
+      const { shippingAddressId, shippingAddress } = input.body;
 
-      const { options } = await getShippingOptionsForAddressId(shippingAddressId);
+      const { options } = shippingAddress
+        ? await getShippingOptionsForLocation(shippingAddress.country, shippingAddress.state)
+        : await getShippingOptionsForAddressId(shippingAddressId!);
 
       return {
         status: "success",

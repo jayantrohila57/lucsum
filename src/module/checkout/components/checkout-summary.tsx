@@ -34,6 +34,22 @@ export function CheckoutSummary({ cartId, subtotal, itemCount, currency = "INR" 
     name: "body.shippingAddressId",
   }) as string | undefined;
 
+  const guestShipping = useWatch({
+    control: form.control,
+    name: "body.guestShipping",
+  }) as
+    | {
+        fullName?: string;
+        line1?: string;
+        line2?: string;
+        city?: string;
+        state?: string;
+        postalCode?: string;
+        country?: string;
+        phone?: string;
+      }
+    | undefined;
+
   const shippingMethodId = useWatch({
     control: form.control,
     name: "body.shippingMethodId",
@@ -44,7 +60,16 @@ export function CheckoutSummary({ cartId, subtotal, itemCount, currency = "INR" 
     name: "body.shippingProviderId",
   }) as string | undefined;
 
-  const hasAddress = typeof shippingAddressId === "string" && shippingAddressId.length > 0;
+  const hasSavedAddress = typeof shippingAddressId === "string" && shippingAddressId.length > 0;
+  const hasGuestAddress = Boolean(
+    guestShipping?.fullName?.trim() &&
+      guestShipping?.line1?.trim() &&
+      guestShipping?.city?.trim() &&
+      guestShipping?.state?.trim() &&
+      guestShipping?.postalCode?.trim() &&
+      guestShipping?.country?.trim(),
+  );
+  const hasAddress = hasSavedAddress || hasGuestAddress;
   const hasMethod =
     typeof shippingMethodId === "string" &&
     shippingMethodId.length > 0 &&
@@ -57,7 +82,20 @@ export function CheckoutSummary({ cartId, subtotal, itemCount, currency = "INR" 
     {
       body: {
         cartId,
-        shippingAddressId: shippingAddressId ?? "",
+        shippingAddressId: hasSavedAddress ? shippingAddressId : undefined,
+        shippingAddress:
+          hasGuestAddress && !hasSavedAddress
+            ? {
+                fullName: guestShipping!.fullName!,
+                line1: guestShipping!.line1!,
+                line2: guestShipping?.line2,
+                city: guestShipping!.city!,
+                state: guestShipping!.state!,
+                postalCode: guestShipping!.postalCode!,
+                country: guestShipping!.country!,
+                phone: guestShipping?.phone,
+              }
+            : undefined,
         shippingProviderId: shippingProviderId ?? "",
         shippingMethodId: shippingMethodId ?? "",
         discountCode: discountCode?.trim() || undefined,
@@ -191,10 +229,52 @@ function DeliveryMethodSection() {
     name: "body.shippingAddressId",
   }) as string | undefined;
 
-  const hasAddress = typeof shippingAddressId === "string" && shippingAddressId.length > 0;
+  const guestShipping = useWatch({
+    control: form.control,
+    name: "body.guestShipping",
+  }) as
+    | {
+        fullName?: string;
+        line1?: string;
+        line2?: string;
+        city?: string;
+        state?: string;
+        postalCode?: string;
+        country?: string;
+        phone?: string;
+      }
+    | undefined;
+
+  const hasSavedAddress = typeof shippingAddressId === "string" && shippingAddressId.length > 0;
+  const hasGuestAddress = Boolean(
+    guestShipping?.fullName?.trim() &&
+      guestShipping?.line1?.trim() &&
+      guestShipping?.city?.trim() &&
+      guestShipping?.state?.trim() &&
+      guestShipping?.postalCode?.trim() &&
+      guestShipping?.country?.trim(),
+  );
+  const hasAddress = hasSavedAddress || hasGuestAddress;
 
   const { data, isLoading } = apiClient.shippingConfig.getOptions.useQuery(
-    { body: { shippingAddressId: hasAddress ? shippingAddressId : "" } },
+    {
+      body: hasSavedAddress
+        ? { shippingAddressId }
+        : hasGuestAddress
+          ? {
+              shippingAddress: {
+                fullName: guestShipping!.fullName!,
+                line1: guestShipping!.line1!,
+                line2: guestShipping?.line2,
+                city: guestShipping!.city!,
+                state: guestShipping!.state!,
+                postalCode: guestShipping!.postalCode!,
+                country: guestShipping!.country!,
+                phone: guestShipping?.phone,
+              },
+            }
+          : { shippingAddressId: "" },
+    },
     {
       enabled: hasAddress,
     },

@@ -1,9 +1,10 @@
-import { ArrowLeft, ChevronRight, Package, ShieldCheck } from "lucide-react";
+import { ChevronRight, Package, ShieldCheck } from "lucide-react";
 import type { Route } from "next";
 import Link from "next/link";
 import { PDPImageGallery } from "@/module/product/product-pdp-gallery";
 import { PDPWishlistToggle } from "@/module/product/product-pdp-wishlist-toggle";
 import { ProductReviews } from "@/module/review/components/product-reviews";
+import { CmsHtml } from "@/module/site/cms-html";
 import { AddToCartButton } from "@/shared/components/common/add-to-cart-button";
 import { BuyNowButton } from "@/shared/components/common/buy-now-button";
 import { ViewCartButton } from "@/shared/components/common/view-cart-button";
@@ -13,8 +14,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/shared/components/ui
 import { Separator } from "@/shared/components/ui/separator";
 import { PATH } from "@/shared/config/routes";
 import { computeVariantUnitPrice } from "@/shared/seo/pricing";
+import { compareSizeAttributeValues, formatBreadcrumbLabel } from "@/shared/utils/lib/breadcrumb-label";
 import { getImageSrc } from "@/shared/utils/lib/image.utils";
-import { slugToTitle } from "@/shared/utils/lib/url.utils";
 import type { PDPVariantFullPathPayload } from "./product.types";
 import { extractAttributeGroups, isOptionAvailable, resolveNextVariant } from "./product-utility";
 
@@ -124,8 +125,9 @@ export const PDPProduct = ({ data, slug, categorySlug, subcategorySlug }: PDPPro
   const stock = stockLabel(tracksInventory, inv);
   const aggregate = seo?.reviewAggregate;
 
-  const categoryLabel = slugToTitle(catSlug);
-  const subcategoryLabel = slugToTitle(subcatSlug);
+  const categoryLabel = formatBreadcrumbLabel(catSlug);
+  const subcategoryLabel = formatBreadcrumbLabel(subcatSlug);
+  const outOfStock = tracksInventory && inv != null && inv.availableQuantity <= 0;
   const displayVariantTitle =
     selectedVariant.title && selectedVariant.title.trim() !== product.title?.trim() ? selectedVariant.title : null;
 
@@ -133,14 +135,7 @@ export const PDPProduct = ({ data, slug, categorySlug, subcategorySlug }: PDPPro
     <div className="bg-background">
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
         <nav aria-label="Breadcrumb" className="mb-6 min-w-0">
-          <Link
-            href={PATH.STORE.SUB_CATEGORIES.SUBCATEGORY(subcatSlug, catSlug) as Route}
-            className="mb-3 inline-flex max-w-full items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground sm:hidden"
-          >
-            <ArrowLeft className="size-4 shrink-0" aria-hidden />
-            <span className="truncate">Back to {subcategoryLabel}</span>
-          </Link>
-          <ol className="hidden min-w-0 flex-wrap items-center gap-x-1 gap-y-1 text-sm text-muted-foreground sm:flex">
+          <ol className="flex min-w-0 flex-wrap items-center gap-x-1 gap-y-1 text-sm text-muted-foreground">
             <li className="inline-flex min-w-0 items-center gap-1">
               <Link href={PATH.STORE.ROOT} className="shrink-0 hover:text-foreground">
                 Store
@@ -203,7 +198,7 @@ export const PDPProduct = ({ data, slug, categorySlug, subcategorySlug }: PDPPro
             </div>
 
             {product.description ? (
-              <p className="text-muted-foreground line-clamp-4 text-base leading-relaxed">{product.description}</p>
+              <CmsHtml html={product.description} className="line-clamp-4 text-base leading-relaxed" />
             ) : null}
 
             <div className="flex flex-wrap items-baseline gap-3 border-y border-border py-4">
@@ -231,7 +226,10 @@ export const PDPProduct = ({ data, slug, categorySlug, subcategorySlug }: PDPPro
                   <div key={title}>
                     <p className="text-muted-foreground mb-2 text-xs font-medium uppercase tracking-wide">{title}</p>
                     <div className="flex flex-wrap gap-2">
-                      {Array.from(values).map((value) => {
+                      {(title.toLowerCase() === "size"
+                        ? Array.from(values).sort(compareSizeAttributeValues)
+                        : Array.from(values).sort((a, b) => a.localeCompare(b))
+                      ).map((value) => {
                         const isSelected = selectedVariant?.attributes?.some(
                           (a) => a.title === title && a.value === value,
                         );
@@ -283,7 +281,7 @@ export const PDPProduct = ({ data, slug, categorySlug, subcategorySlug }: PDPPro
 
             <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-stretch">
               <div className="min-w-0 flex-1 sm:max-w-xs">
-                <AddToCartButton variantId={selectedVariant.id} />
+                <AddToCartButton variantId={selectedVariant.id} disabled={outOfStock} />
               </div>
               <ViewCartButton variantId={selectedVariant.id} className="min-w-0 flex-1 sm:max-w-[180px]" />
               <BuyNowButton variantId={selectedVariant.id} className="sm:shrink-0" />
@@ -329,9 +327,7 @@ export const PDPProduct = ({ data, slug, categorySlug, subcategorySlug }: PDPPro
                   About this product
                 </h2>
                 {product.description ? (
-                  <div className="text-muted-foreground mt-4 max-w-prose whitespace-pre-wrap text-base leading-relaxed">
-                    {product.description}
-                  </div>
+                  <CmsHtml html={product.description} className="mt-4 max-w-prose text-base leading-relaxed" />
                 ) : (
                   <p className="text-muted-foreground mt-4 text-sm">No detailed description has been added yet.</p>
                 )}

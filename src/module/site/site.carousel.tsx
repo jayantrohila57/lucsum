@@ -57,22 +57,30 @@ export function MarketingCarousel({ items }: { items: CarouselItem[] | null | un
             const href = item.ctaLink ?? undefined;
             return (
               <CarouselItem key={i}>
-                <div className="bg-transparent h-full w-full  group grid grid-cols-12 text-balance p-0">
-                  <div className="flex h-auto hover:cursor-grab active:cursor-grabbing p-0 col-span-12 sm:col-span-9 md:col-span-9 aspect-video w-full items-center justify-center overflow-hidden">
+                <div className="group relative w-full overflow-hidden rounded-lg border bg-muted text-balance">
+                  <div className="relative aspect-[21/9] min-h-[220px] w-full sm:min-h-[280px]">
                     <BlurImage
                       src={getImageSrc(item.image)}
                       alt={title}
                       width={1920}
-                      height={1080}
-                      className="motion-all h-full w-full object-cover"
+                      height={820}
+                      className="motion-all absolute inset-0 h-full w-full object-cover"
                     />
-                  </div>
-                  <div className="p-8 col-span-12 sm:col-span-3 md:col-span-3 bg-secondary flex flex-col gap-8 justify-center items-start">
-                    <h2 className="text-6xl font-semibold">{title}</h2>
-                    <p className="text-base text-muted-foreground">{item.bodyText ?? ""}</p>
-                    <Button variant="default" size={"lg"} asChild>
-                      <Link href={href as Route}>{item.ctaLabel ?? "View more"}</Link>
-                    </Button>
+                    <div
+                      className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-transparent"
+                      aria-hidden
+                    />
+                    <div className="relative z-10 flex h-full max-w-xl flex-col justify-center gap-4 p-6 md:max-w-2xl md:gap-6 md:p-10">
+                      <h2 className="text-3xl font-semibold tracking-tight md:text-5xl">{title}</h2>
+                      {item.bodyText ? (
+                        <p className="text-sm text-muted-foreground md:text-base">{item.bodyText}</p>
+                      ) : null}
+                      {href ? (
+                        <Button variant="default" size="lg" className="w-fit" asChild>
+                          <Link href={href as Route}>{item.ctaLabel ?? "View more"}</Link>
+                        </Button>
+                      ) : null}
+                    </div>
                   </div>
                 </div>
               </CarouselItem>

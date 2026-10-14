@@ -1,6 +1,6 @@
 import { and, eq, ilike, inArray, isNotNull, isNull, sql } from "drizzle-orm";
 import { v4 as uuidv4 } from "uuid";
-import { createTRPCRouter, customerProcedure, staffProcedure } from "@/core/api/api.methods";
+import { createTRPCRouter, customerProcedure, publicProcedure, staffProcedure } from "@/core/api/api.methods";
 import { APP_ROLE, normalizeRole } from "@/core/auth/auth.roles";
 import { db } from "@/core/db/db";
 import { address, cart, cartLine, inventoryItem, order, orderItem, user as userTable } from "@/core/db/db.schema";
@@ -181,42 +181,63 @@ export const orderRouter = createTRPCRouter({
   /**
    * Server-authoritative checkout totals (shipping, discount, tax) for UI parity with order.create.
    */
-  previewCheckoutTotals: customerProcedure
+  previewCheckoutTotals: publicProcedure
     .input(orderContract.previewCheckoutTotals.input)
     .output(orderContract.previewCheckoutTotals.output)
     .query(async ({ input, ctx }) => {
       try {
-        const userId = ctx.user.id;
-        const { cartId, shippingAddressId, shippingProviderId, shippingMethodId, discountCode } = input.body;
+        const userId = ctx.user?.id;
+        const { cartId, shippingAddressId, shippingAddress, shippingProviderId, shippingMethodId, discountCode } =
+          input.body;
 
-        const addr = await db.query.address.findFirst({
-          where: eq(address.id, shippingAddressId),
-        });
-        if (!addr || addr.userId !== userId) {
-          return API_RESPONSE(STATUS.FAILED, "Invalid shipping address", null);
+        let shippingSnapshot = shippingAddress;
+        if (!shippingSnapshot) {
+          if (!userId || !shippingAddressId) {
+            return API_RESPONSE(STATUS.FAILED, "Shipping address is required", null);
+          }
+          const addr = await db.query.address.findFirst({
+            where: eq(address.id, shippingAddressId),
+          });
+          if (!addr || addr.userId !== userId) {
+            return API_RESPONSE(STATUS.FAILED, "Invalid shipping address", null);
+          }
+          shippingSnapshot = {
+            fullName: "Customer",
+            line1: addr.line1,
+            line2: addr.line2 ?? "",
+            city: addr.city,
+            state: addr.state,
+            postalCode: addr.postalCode,
+            country: addr.country,
+          };
         }
+
+        const cartWithLines = {
+          with: {
+            lines: {
+              with: {
+                variant: { with: { product: true } },
+              },
+            },
+          },
+        } as const;
 
         const cartData = cartId
           ? await db.query.cart.findFirst({
               where: eq(cart.id, cartId),
-              with: {
-                lines: {
-                  with: {
-                    variant: { with: { product: true } },
-                  },
-                },
-              },
+              ...cartWithLines,
             })
-          : await db.query.cart.findFirst({
-              where: eq(cart.userId, userId),
-              with: {
-                lines: {
-                  with: {
-                    variant: { with: { product: true } },
-                  },
-                },
-              },
-            });
+          : userId
+            ? await db.query.cart.findFirst({
+                where: eq(cart.userId, userId),
+                ...cartWithLines,
+              })
+            : ctx.guestCartSessionId
+              ? await db.query.cart.findFirst({
+                  where: eq(cart.sessionId, ctx.guestCartSessionId),
+                  ...cartWithLines,
+                })
+              : null;
 
         if (!cartData?.lines.length) {
           return API_RESPONSE(STATUS.FAILED, "Cart is empty", null);
@@ -241,15 +262,15 @@ export const orderRouter = createTRPCRouter({
         const totals = await computeCheckoutTotals(db, {
           lines,
           shippingAddress: {
-            country: addr.country,
-            state: addr.state,
-            city: addr.city ?? undefined,
-            postalCode: addr.postalCode,
+            country: shippingSnapshot.country,
+            state: shippingSnapshot.state,
+            city: shippingSnapshot.city,
+            postalCode: shippingSnapshot.postalCode,
           },
           shippingProviderId,
           shippingMethodId,
           discountCode,
-          userId,
+          userId: userId ?? "",
           preview: true,
         });
 
@@ -275,44 +296,45 @@ export const orderRouter = createTRPCRouter({
   /**
    * Create order from cart
    */
-  create: customerProcedure
+  create: publicProcedure
     .input(orderContract.create.input)
     .output(orderContract.create.output)
     .mutation(async ({ input, ctx }) => {
       try {
-        const userId = ctx.user.id;
+        const userId = ctx.user?.id ?? null;
         const { cartId, shippingAddress, billingAddress, notes, shippingProviderId, shippingMethodId, discountCode } =
           input.body;
+
+        const cartLinesWithProduct = {
+          with: {
+            lines: {
+              with: {
+                variant: {
+                  with: {
+                    product: true,
+                  },
+                },
+              },
+            },
+          },
+        } as const;
 
         const cartData = cartId
           ? await db.query.cart.findFirst({
               where: eq(cart.id, cartId),
-              with: {
-                lines: {
-                  with: {
-                    variant: {
-                      with: {
-                        product: true,
-                      },
-                    },
-                  },
-                },
-              },
+              ...cartLinesWithProduct,
             })
-          : await db.query.cart.findFirst({
-              where: eq(cart.userId, userId),
-              with: {
-                lines: {
-                  with: {
-                    variant: {
-                      with: {
-                        product: true,
-                      },
-                    },
-                  },
-                },
-              },
-            });
+          : userId
+            ? await db.query.cart.findFirst({
+                where: eq(cart.userId, userId),
+                ...cartLinesWithProduct,
+              })
+            : ctx.guestCartSessionId
+              ? await db.query.cart.findFirst({
+                  where: eq(cart.sessionId, ctx.guestCartSessionId),
+                  ...cartLinesWithProduct,
+                })
+              : null;
 
         if (!cartData || cartData.lines.length === 0) {
           return API_RESPONSE(STATUS.FAILED, "Cart is empty", null);
@@ -348,7 +370,7 @@ export const orderRouter = createTRPCRouter({
             shippingProviderId,
             shippingMethodId,
             discountCode,
-            userId,
+            userId: userId ?? "",
             preview: false,
           });
 
@@ -406,7 +428,7 @@ export const orderRouter = createTRPCRouter({
               discountCode: discountCode.trim(),
               subtotal,
               orderId,
-              userId,
+              userId: userId ?? "",
               currency: "INR",
             });
             if (!persisted) {
@@ -454,9 +476,11 @@ export const orderRouter = createTRPCRouter({
         });
 
         // 8. Upgrade role from user -> customer on first checkout
-        const currentRole = normalizeRole(ctx.user.role);
-        if (currentRole === APP_ROLE.USER) {
-          await db.update(userTable).set({ role: APP_ROLE.CUSTOMER }).where(eq(userTable.id, userId));
+        if (ctx.user && userId) {
+          const currentRole = normalizeRole(ctx.user.role);
+          if (currentRole === APP_ROLE.USER) {
+            await db.update(userTable).set({ role: APP_ROLE.CUSTOMER }).where(eq(userTable.id, userId));
+          }
         }
 
         // 8. Low stock alerts (fire-and-forget)
