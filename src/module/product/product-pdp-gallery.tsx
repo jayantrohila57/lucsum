@@ -21,7 +21,7 @@ export function PDPImageGallery({ images, alt, overlay }: PDPImageGalleryProps) 
 
   if (!list.length) {
     return (
-      <div className="relative aspect-square w-full overflow-hidden rounded-xl border border-border bg-muted">
+      <div className="relative aspect-square w-full overflow-hidden rounded-[var(--radius)] border border-border bg-muted">
         <div className="flex h-full items-center justify-center text-sm text-muted-foreground">No image</div>
       </div>
     );
@@ -29,7 +29,7 @@ export function PDPImageGallery({ images, alt, overlay }: PDPImageGalleryProps) 
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="relative aspect-square w-full overflow-hidden rounded-xl border border-border bg-muted shadow-sm">
+      <div className="relative aspect-square w-full overflow-hidden rounded-[var(--radius)] border border-border bg-muted shadow-sm">
         <BlurImage
           src={mainSrc}
           alt={alt}
@@ -51,8 +51,8 @@ export function PDPImageGallery({ images, alt, overlay }: PDPImageGalleryProps) 
                 type="button"
                 onClick={() => setActive(i)}
                 className={cn(
-                  "relative block size-14 overflow-hidden rounded-lg border-2 p-0 transition-colors sm:size-16",
-                  "min-h-11 min-w-11 sm:min-h-0 sm:min-w-0",
+                  "relative block size-14 overflow-hidden rounded-[var(--radius)] border-2 p-0 transition-colors sm:size-16",
+                  "min-h-11 min-w-11",
                   i === safeIndex
                     ? "border-primary ring-2 ring-primary/20"
                     : "border-border hover:border-muted-foreground/40",

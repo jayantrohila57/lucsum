@@ -45,7 +45,7 @@ export function MobileNavButton() {
   const { setOpen } = useMobileNav();
 
   return (
-    <Button variant="ghost" size="icon" onClick={() => setOpen(true)}>
+    <Button variant="ghost" size="icon" aria-label="Open menu" onClick={() => setOpen(true)}>
       <MenuIcon className="h-5 w-5" />
     </Button>
   );

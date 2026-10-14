@@ -147,7 +147,7 @@ export function ShopCatalogGrid({ items }: { items: ShopCatalogItem[] }) {
                 alt={item.title}
                 width={600}
                 height={600}
-                className="aspect-square w-full bg-muted object-cover transition-transform group-hover:scale-[1.02]"
+                className="aspect-square h-auto max-w-full w-full bg-muted object-cover transition-transform group-hover:scale-[1.02]"
               />
               <BorderedGridCell className="space-y-2 border-t">
                 <CardTitle className="line-clamp-2 text-sm font-medium leading-snug">{item.title}</CardTitle>

@@ -40,7 +40,7 @@ export function HomeFeaturedGrid({ items }: { items: ShopItem[] }) {
                 alt={item.title}
                 width={480}
                 height={480}
-                className="aspect-square w-full bg-muted object-cover transition-transform group-hover:scale-[1.02]"
+                className="aspect-square h-auto max-w-full w-full bg-muted object-cover transition-transform group-hover:scale-[1.02]"
               />
               <BorderedGridCell className="space-y-1 border-t">
                 <CardTitle className="line-clamp-2 text-sm font-medium">{item.title}</CardTitle>

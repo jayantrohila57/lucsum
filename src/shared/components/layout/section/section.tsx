@@ -58,7 +58,9 @@ export default function Section({
         </div>
       )}
       <div className="w-full border-t" />
-      <CardContent className={cn("min-w-0 p-0", isMinHeight && "min-h-0 sm:min-h-[360px] lg:min-h-[600px]")}>
+      <CardContent
+        className={cn("min-w-0 overflow-x-clip p-0", isMinHeight && "min-h-0 sm:min-h-[360px] lg:min-h-[600px]")}
+      >
         {children}
       </CardContent>
     </Card>

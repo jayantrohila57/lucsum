@@ -45,7 +45,7 @@ export function MarketingCarousel({ items }: { items: CarouselItem[] | null | un
 
   return (
     <Carousel
-      className="w-full"
+      className="w-full max-w-full overflow-hidden"
       opts={{ loop: true, align: "start", dragFree: false }}
       plugins={[autoplay.current]}
       setApi={setApi}

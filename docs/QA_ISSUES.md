@@ -8,6 +8,95 @@
 **Date:** 2026-10-14 (UI box system pass: same date)  
 **Site map:** [SITE_MAP.md](./SITE_MAP.md)
 
+---
+
+## Mobile & tablet QA (Jayant priority — read first)
+
+**Order:** 360 → 390 → 430 (mobile), then 768 → 1024 (tablet), then desktop passes elsewhere.  
+**Script:** `node scripts/qa-mobile-tablet.mjs` → `docs/qa-mobile-tablet-results.json`  
+**Screenshots:** `docs/qa-screenshots/mobile-tablet/` (one full-page capture per unique issue)  
+**Coverage:** All KEEP routes in site map (25 PDPs × 5 widths + shop/help/cart/checkout/legal/auth).  
+**Checks:** horizontal pan (user-scrollable), tap targets &lt; 44px, sticky header after scroll, shop nav + filters, PDP gallery thumbs + size chips, checkout field heights.
+
+### Summary (latest run)
+
+| Severity | Theme | Mobile | Tablet | Notes |
+|----------|--------|--------|--------|--------|
+| **P1** | Horizontal pan on `/shop` | 360–430 | — | Product tile images extend past viewport; see screenshots |
+| **P1** | Horizontal pan on `/` hero | 430 | 768 | Carousel slide track scrollable at some widths |
+| **P1** | Horizontal pan on auth | — | 1024 | CardSwap gallery track (md+); hidden on narrow mobile |
+| **P2** | Header not fixed while scrolling | 360 | — | `Shell.Header` cva passed `className` into variants — **fix on branch** |
+| **P2** | Shop filters | 360–430 | — | Inline filter bar only; **no mobile filter drawer** (Jayant asked to verify) |
+| **P2** | Mobile nav sheet | 360–430 | — | Automation flaky opening menu on `/shop` (manual: hamburger + cart in header) |
+| **P2** | Tap targets &lt; 44px | sitewide | some | Footer text links, compact icon rows; cart icon meets 44px when including padding |
+| **OK** | PDP gallery + size | 360–1024 | — | Thumbs scroll horizontally (intended); size chips bumped to `min-h-11` |
+| **OK** | Checkout form | mobile | tablet | No horizontal pan; field count OK |
+
+### Logged issues (with screenshots)
+
+#### P1 — `/shop` and `/shop?style=…` horizontal overflow (mobile)
+
+- **Widths:** 360, 390, 430  
+- **Detail:** User-scrollable horizontal pan; grid images `right≈608` on 360px viewport.  
+- **Screenshots:** `qa-screenshots/mobile-tablet/horizontal-overflow--shop--360.png`, `--390.png`, `--430.png` (and shop-filter variants).  
+- **Fix status:** `BorderedGrid` + image `max-w-full`; re-verify after merge.
+
+#### P1 — `/` hero carousel horizontal pan (430 mobile, 768 tablet)
+
+- **Detail:** Embla track / hero `img.motion-all` wider than viewport.  
+- **Screenshots:** `horizontal-overflow--home--430.png`, `horizontal-overflow--home--768.png`.  
+- **Mitigation:** `body { overflow-x: clip }`, carousel `overflow-hidden` — confirm on device.
+
+#### P1 — Auth sign-in horizontal pan (1024 tablet)
+
+- **Detail:** CardSwap gallery (`motion-all` / `img.bg-card`) scrollable at tablet width.  
+- **Screenshot:** `horizontal-overflow--auth-sign-in--1024.png`.  
+- **Fix status:** `max-md:!hidden` on gallery column; re-verify.
+
+#### P2 — Sticky header scrolls away (mobile)
+
+- **Pages:** `/shop`, sample PDPs (long pages).  
+- **Detail:** `<header>` measured `position=static` with `top` negative after scroll — should be `fixed` via `Shell.Header`.  
+- **Screenshots:** `header-not-sticky--shop--360.png`, `header-not-sticky--pdp-contrast-panel-black--360.png`.  
+- **Fix:** `shell.tsx` — `HeaderVariants({ variant })` only (committed on `cursor/mobile-tablet-qa-8d38`).
+
+#### P2 — Shop: no filter drawer (mobile)
+
+- **Detail:** Style/colour/size filters are always inline (`shop-catalog-grid.tsx`); no sheet/drawer pattern.  
+- **Screenshots:** `interaction--shop--360.png` (with `filters-inline-no-drawer`).  
+- **Product:** Add `Sheet` filter UI for `max-md` or collapse to single “Filters” CTA.
+
+#### P2 — Mobile nav automation
+
+- **Detail:** Playwright could not open menu on shop routes (cart/header hydration). Manual: **Open menu** button (`aria-label` added).  
+- **Screenshots:** `interaction--shop--360.png`, `interaction--shop-filter--360.png`.
+
+#### P2 — Sitewide small tap targets
+
+- **Detail:** Many footer/legal inline links and compact controls &lt; 44×44px bounding box (WCAG 2.5.5).  
+- **Sample screenshots:** `small-tap-target--help--360.png`, `small-tap-target--legal--768.png` (see JSON for full list).  
+- **Note:** Icon buttons with `size="icon"` often measure 36px but include hit padding — treat as manual review.
+
+#### P2 — PDP size/variant (fixed on branch)
+
+- **Was:** Size chips `size="sm"` &lt; 44px; variant links pointed at `/store/...` on mobile.  
+- **Fix:** `min-h-11 min-w-11` on size buttons; minimal URLs → `/products/{slug}`.
+
+### PDP / checkout / cart (spot checks)
+
+| Route | 360 | 390 | 430 | 768 | 1024 |
+|-------|-----|-----|-----|-----|------|
+| `/products/*` (25) | No H-scroll | — | — | OK | OK |
+| `/cart` | OK | OK | OK | OK | OK |
+| `/checkout` | OK | OK | OK | OK | OK |
+| `/help` | OK | OK | OK | OK | OK |
+
+**Cart / header:** Cart affordance remains in header on mobile (`HeaderCommerceActions`); sticky behavior tied to header fix above.
+
+**GitHub umbrella:** [#54](https://github.com/jayantrohila57/lucsum/issues/54)
+
+---
+
 ## Summary
 
 | Area | Desktop | Mobile | Notes |

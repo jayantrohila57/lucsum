@@ -272,7 +272,7 @@ export const PDPProduct = ({ data, slug, categorySlug, subcategorySlug }: PDPPro
                               size="sm"
                               variant="outline"
                               disabled
-                              className="cursor-not-allowed capitalize opacity-40"
+                              className="min-h-11 min-w-11 cursor-not-allowed capitalize opacity-40"
                             >
                               {value}
                             </Button>
@@ -289,10 +289,18 @@ export const PDPProduct = ({ data, slug, categorySlug, subcategorySlug }: PDPPro
                         return (
                           <Link
                             key={value}
-                            href={`/store/${catSlug}/${subcatSlug}/${nextVariant.slug}` as Route}
+                            href={
+                              (storefrontFeatures.minimalPublicSite
+                                ? (`/products/${nextVariant.slug}` as Route)
+                                : (`/store/${catSlug}/${subcatSlug}/${nextVariant.slug}` as Route)) as Route
+                            }
                             prefetch={false}
                           >
-                            <Button size="sm" variant={isSelected ? "default" : "outline"} className="capitalize">
+                            <Button
+                              size="sm"
+                              variant={isSelected ? "default" : "outline"}
+                              className="min-h-11 min-w-11 capitalize"
+                            >
                               {value}
                             </Button>
                           </Link>

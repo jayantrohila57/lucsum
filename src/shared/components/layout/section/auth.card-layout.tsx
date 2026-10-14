@@ -45,7 +45,7 @@ export function AuthCard({
           </Alert>
         </CardFooter>
       </CardContent>
-      <CardContent className="bg-secondary motion-all relative hidden w-full overflow-hidden p-0 md:col-span-2 md:block">
+      <CardContent className="bg-secondary motion-all relative hidden w-full max-w-full overflow-hidden p-0 max-md:!hidden md:col-span-2 md:block">
         <CardSwap width={1200} height={600} cardDistance={200} verticalDistance={200} delay={200} pauseOnHover={false}>
           {LUCSUM_AUTH_GALLERY_IMAGES.map((item) => (
             <CardSwapCard key={item}>

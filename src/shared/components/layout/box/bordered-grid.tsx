@@ -29,7 +29,7 @@ export function BorderedGrid({ className, columns = 2, children, ...props }: Bor
         boxTokens.radius,
         boxTokens.gridGapDense,
         colClass,
-        "[&>*]:border-border [&>*]:border [&>*]:-ml-px [&>*]:-mt-px [&>*]:bg-card",
+        "max-w-full [&>*]:min-w-0 [&>*]:border-border [&>*]:border [&>*]:-ml-px [&>*]:-mt-px [&>*]:overflow-hidden [&>*]:bg-card",
         className,
       )}
       {...props}
