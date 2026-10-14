@@ -2,11 +2,14 @@ import type { Route } from "next";
 import Link from "next/link";
 import type { RouterOutputs } from "@/core/api/api.client";
 import { BlurImage } from "@/shared/components/common/image";
+import { BorderedGrid, BorderedGridCell } from "@/shared/components/layout/box";
+import { boxTokens } from "@/shared/components/layout/box/box-tokens";
 import Section from "@/shared/components/layout/section/section";
-import { Card, CardContent, CardHeader, CardTitle } from "@/shared/components/ui/card";
+import { CardTitle } from "@/shared/components/ui/card";
 import { PATH } from "@/shared/config/routes";
 import { LUCSUM_STYLE_LABELS, LUCSUM_TRUST_FACTS } from "@/shared/config/storefront";
 import { getImageSrc } from "@/shared/utils/lib/image.utils";
+import { cn } from "@/shared/utils/lib/utils";
 
 type ShopItem = NonNullable<RouterOutputs["product"]["listShopCatalog"]["data"]>[number];
 
@@ -29,27 +32,23 @@ export function HomeFeaturedGrid({ items }: { items: ShopItem[] }) {
       {featured.length === 0 ? (
         <p className="text-muted-foreground text-sm">Products will appear here once the catalog is live.</p>
       ) : (
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+        <BorderedGrid columns={4}>
           {featured.map((item) => (
-            <Link key={item.id} href={item.pdpPath as Route} className="group">
-              <Card className="gap-0 overflow-hidden border-border py-0">
-                <CardHeader className="p-0">
-                  <BlurImage
-                    src={getImageSrc(item.image)}
-                    alt={item.title}
-                    width={480}
-                    height={480}
-                    className="aspect-square w-full bg-muted object-cover transition-transform group-hover:scale-[1.02]"
-                  />
-                </CardHeader>
-                <CardContent className="space-y-1 p-3">
-                  <CardTitle className="line-clamp-2 text-sm font-medium">{item.title}</CardTitle>
-                  <p className="text-sm font-semibold text-primary">{formatInr(item.priceMinor)}</p>
-                </CardContent>
-              </Card>
+            <Link key={item.id} href={item.pdpPath as Route} className="group block overflow-hidden p-0">
+              <BlurImage
+                src={getImageSrc(item.image)}
+                alt={item.title}
+                width={480}
+                height={480}
+                className="aspect-square w-full bg-muted object-cover transition-transform group-hover:scale-[1.02]"
+              />
+              <BorderedGridCell className="space-y-1 border-t">
+                <CardTitle className="line-clamp-2 text-sm font-medium">{item.title}</CardTitle>
+                <p className="text-sm font-semibold text-primary">{formatInr(item.priceMinor)}</p>
+              </BorderedGridCell>
             </Link>
           ))}
-        </div>
+        </BorderedGrid>
       )}
     </Section>
   );
@@ -74,13 +73,9 @@ export function HomeShopByStyle({ items }: { items: ShopItem[] }) {
       action="All tees"
       actionLink={PATH.SHOP.ROOT}
     >
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      <BorderedGrid columns={5}>
         {styles.map(({ slug, title, sample }) => (
-          <Link
-            key={slug}
-            href={`/shop?style=${slug}` as Route}
-            className="group overflow-hidden rounded-lg border bg-card transition-shadow hover:shadow-md"
-          >
+          <Link key={slug} href={`/shop?style=${slug}` as Route} className="group block overflow-hidden p-0">
             <BlurImage
               src={getImageSrc(sample?.image)}
               alt={title}
@@ -88,21 +83,23 @@ export function HomeShopByStyle({ items }: { items: ShopItem[] }) {
               height={400}
               className="aspect-square w-full object-cover transition-transform group-hover:scale-[1.02]"
             />
-            <div className="border-t p-3">
+            <BorderedGridCell className="border-t">
               <p className="text-sm font-medium">{title}</p>
               <p className="text-muted-foreground text-xs">5 colours</p>
-            </div>
+            </BorderedGridCell>
           </Link>
         ))}
-      </div>
+      </BorderedGrid>
     </Section>
   );
 }
 
 export function HomeTrustStrip() {
   return (
-    <section aria-label="Why shop LUCSUM" className="border-y bg-muted/40 py-8">
-      <ul className="mx-auto grid max-w-5xl gap-4 px-4 sm:grid-cols-2 lg:grid-cols-4">
+    <section aria-label="Why shop LUCSUM" className={cn("border-y bg-muted/40", boxTokens.sectionY)}>
+      <ul
+        className={cn("mx-auto grid max-w-7xl sm:grid-cols-2 lg:grid-cols-4", boxTokens.containerX, boxTokens.gridGap)}
+      >
         {LUCSUM_TRUST_FACTS.map((fact) => (
           <li key={fact} className="text-center text-sm font-medium text-foreground sm:text-left">
             {fact}

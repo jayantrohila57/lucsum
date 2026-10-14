@@ -3,8 +3,9 @@
 **Run:** `pnpm build && pnpm start` on port 3000  
 **Data:** Shopify backup seed (25 active products)  
 **Automation:** `node scripts/qa-production-pages.mjs` → `docs/qa-production-results.json`  
-**Viewports:** Desktop 1280×900, Mobile iPhone 13  
-**Date:** 2026-10-14  
+**UI screenshots:** `node scripts/qa-ui-screenshots.mjs` → `docs/qa-screenshots/after/` (mobile 390, tablet 834, desktop 1280)  
+**Viewports:** Desktop 1280×900, Mobile iPhone 13 (functional QA); UI pass adds tablet 834  
+**Date:** 2026-10-14 (UI box system pass: same date)  
 **Site map:** [SITE_MAP.md](./SITE_MAP.md)
 
 ## Summary
@@ -35,12 +36,11 @@
 
 ## `/checkout/confirmation`
 
-### P0 — Guest cannot view order confirmation after checkout
+### P0 — Guest cannot view order confirmation after checkout — **fixed on `cursor/ui-box-system-8d38`**
 
 - **GitHub:** [#45](https://github.com/jayantrohila57/lucsum/issues/45)
-- **Observed:** With `?orderId=…`, server redirects unauthenticated users to sign-in (`checkout/confirmation/page.tsx` lines 30–36).
-- **Expected (Jayant scope):** Guest checkout should show thank-you / order summary without forcing account creation.
-- **Desktop/mobile:** Logic issue (not exercised with valid order id in automation).
+- **Was:** Session required before `order.get`.
+- **Fix:** Render confirmation from `orderId` without sign-in gate (re-test with paid test order).
 
 ### P3 — Missing `orderId` redirects to `/shop`
 
@@ -144,9 +144,43 @@
 
 ---
 
-## Layout / shadcn
+## UI / box system (Jayant)
 
-No systematic spacing drift was flagged by automation. **Manual follow-up:** compare checkout steps and mobile nav sheet padding against default shadcn spacing after functional fixes.
+**Goal:** One border width/colour, `--radius: 0`, shadcn spacing (`p-6` cards, `gap-4`/`gap-6` grids, container `px-4 sm:px-6 lg:px-8`). Primitives: `Container`, `PageSection`, `BoxCard`, `BorderedGrid` in `src/shared/components/layout/box/`.
+
+### Audit findings (pre-fix — code + visual review)
+
+| Page / area | Issue | Severity | Screenshot (post-fix verify) |
+|-------------|--------|----------|----------------------------|
+| **Global `Card`** | `rounded-xl` + `ring-1` conflicted with `--radius: 0` box language | P1 | `after/home--desktop.png` |
+| **`/` featured + shop-by-style** | Mixed `gap-4` loose grids vs section `border-t` shell; rounded product tiles | P1 | `after/home--mobile.png`, `after/home--tablet.png` |
+| **`/shop` grid + filters** | Filter bar `rounded-lg`; product cards separate borders (double-line risk) | P1 | `after/shop--desktop.png` |
+| **`/shop` skeleton** | `rounded-lg` skeletons mismatched loading state | P2 | `after/shop--mobile.png` |
+| **`/products/*` PDP** | Ad-hoc `max-w-7xl px-*`; specs `rounded-lg`; “At a glance” spacing | P1 | `after/pdp--desktop.png` |
+| **`/help`** | `max-w-3xl` without shared container; `gap-16` vs section scale | P2 | `after/help--tablet.png` |
+| **Hero carousel** | `rounded-lg` slide frame | P2 | `after/home--desktop.png` |
+| **Footer** | Payment chips `rounded-md`; RSS visible in minimal mode | P2 | `after/home--mobile.png` |
+| **`/cart` summary** | `rounded-lg` + duplicate border classes | P2 | `after/cart--desktop.png` |
+| **Checkout empty CTA** | “Continue shopping” → `/store` (extra redirect) | P2 | `after/checkout--mobile.png` |
+
+**Post-fix metrics:** `docs/qa-screenshots/after/ui-metrics.json` — sampled cards on core routes report `roundedElements: 0` and no `possibleDoubleBorders` heuristics on home/shop/pdp (mobile/tablet/desktop).
+
+**GitHub:** [#52](https://github.com/jayantrohila57/lucsum/issues/52) (umbrella UI systemization)
+
+**Remaining / follow-up:** Studio and legacy `/store/*` pages not fully migrated to `BorderedGrid`; account auth cards; dense shadcn overlays (menus) still use internal radius for accessibility — acceptable off-storefront.
+
+### Functional fixes bundled in UI branch
+
+- **#45** Guest confirmation: auth gate removed on `checkout/confirmation` (verify with real `orderId`).
+- **#47** PDP “At a glance” links → `/shop?style=…` in minimal mode.
+- **#48** Continue shopping → `/shop` when `minimalPublicSite`.
+- **#50** RSS footer hidden when `minimalPublicSite`.
+
+---
+
+## Layout / shadcn (legacy note)
+
+Superseded by UI / box system section above for storefront pages.
 
 ---
 
@@ -160,3 +194,4 @@ No systematic spacing drift was flagged by automation. **Manual follow-up:** com
 | [#48](https://github.com/jayantrohila57/lucsum/issues/48) | P2: Continue shopping → `/store` instead of `/shop` |
 | [#49](https://github.com/jayantrohila57/lucsum/issues/49) | P1: Guest `/orders/[id]` requires sign-in |
 | [#50](https://github.com/jayantrohila57/lucsum/issues/50) | P2: RSS footer in minimal mode |
+| [#52](https://github.com/jayantrohila57/lucsum/issues/52) | P1: Systematize box UI (tokens + layout primitives + page audit) |

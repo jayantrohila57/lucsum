@@ -1,5 +1,6 @@
 import { CmsHtml } from "@/module/site/cms-html";
 import { fetchSitePageBySlug } from "@/module/site/shopify-page-loader";
+import { Container } from "@/shared/components/layout/box";
 import Section from "@/shared/components/layout/section/section";
 import Shell from "@/shared/components/layout/shell";
 import { site } from "@/shared/config/site";
@@ -22,7 +23,7 @@ export default async function HelpPage() {
   return (
     <Shell>
       <Shell.Section>
-        <div className="mx-auto flex max-w-3xl flex-col gap-16">
+        <Container width="narrow" className="flex flex-col gap-12 md:gap-16">
           <section id="about" className="scroll-mt-24">
             <Section title={about?.title ?? "About"} description={about?.metaDescription ?? `About ${site.name}.`}>
               {about?.bodyHtml ? (
@@ -67,7 +68,7 @@ export default async function HelpPage() {
               )}
             </Section>
           </section>
-        </div>
+        </Container>
       </Shell.Section>
     </Shell>
   );

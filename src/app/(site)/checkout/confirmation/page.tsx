@@ -1,14 +1,11 @@
 import type { Route } from "next";
-import { headers } from "next/headers";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { apiServer } from "@/core/api/api.server";
-import { getServerSession } from "@/core/auth/auth.server";
 import { OrderDetailSection } from "@/module/order/order-detail.section";
 import Section from "@/shared/components/layout/section/section";
 import { Button } from "@/shared/components/ui/button";
 import { PATH } from "@/shared/config/routes";
-import { safeAuthCallbackPath, signInUrlWithCallback } from "@/shared/utils/auth-callback";
 
 interface ConfirmationPageProps {
   searchParams: Promise<{ orderId?: string }>;
@@ -25,14 +22,6 @@ export default async function CheckoutConfirmationPage({ searchParams }: Confirm
 
   if (!orderId) {
     return redirect(PATH.SHOP.ROOT);
-  }
-
-  const { session } = await getServerSession();
-  if (!session) {
-    const h = await headers();
-    const fallback = `${PATH.CHECKOUT.CONFIRMATION}?orderId=${encodeURIComponent(orderId)}`;
-    const intended = safeAuthCallbackPath(h.get("x-intended-path") ?? undefined) ?? (fallback as Route);
-    redirect(signInUrlWithCallback(intended) as Route);
   }
 
   const res = await apiServer.order.get({

@@ -8,6 +8,7 @@ import { CmsHtml } from "@/module/site/cms-html";
 import { AddToCartButton } from "@/shared/components/common/add-to-cart-button";
 import { BuyNowButton } from "@/shared/components/common/buy-now-button";
 import { ViewCartButton } from "@/shared/components/common/view-cart-button";
+import { BoxCard, Container } from "@/shared/components/layout/box";
 import { Badge } from "@/shared/components/ui/badge";
 import { Button } from "@/shared/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/shared/components/ui/card";
@@ -136,7 +137,7 @@ export const PDPProduct = ({ data, slug, categorySlug, subcategorySlug }: PDPPro
 
   return (
     <div className="bg-background">
-      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
+      <Container className="py-8 lg:py-10">
         <nav aria-label="Breadcrumb" className="mb-6 min-w-0">
           <ol className="flex min-w-0 flex-wrap items-center gap-x-1 gap-y-1 text-sm text-muted-foreground">
             {storefrontFeatures.minimalPublicSite ? (
@@ -312,7 +313,7 @@ export const PDPProduct = ({ data, slug, categorySlug, subcategorySlug }: PDPPro
             </div>
 
             {(inv?.sku || inv?.barcode) && (
-              <dl className="grid gap-3 rounded-lg border border-border bg-muted/30 p-4 text-sm sm:grid-cols-2">
+              <BoxCard padding="compact" className="grid gap-3 bg-muted/30 text-sm sm:grid-cols-2">
                 {inv.sku ? (
                   <div>
                     <dt className="text-muted-foreground">SKU</dt>
@@ -325,7 +326,7 @@ export const PDPProduct = ({ data, slug, categorySlug, subcategorySlug }: PDPPro
                     <dd className="mt-0.5 font-mono text-foreground">{inv.barcode}</dd>
                   </div>
                 ) : null}
-              </dl>
+              </BoxCard>
             )}
 
             <div className="text-muted-foreground flex flex-wrap items-start gap-2 text-xs">
@@ -383,19 +384,27 @@ export const PDPProduct = ({ data, slug, categorySlug, subcategorySlug }: PDPPro
                   <div className="flex justify-between gap-4 border-b border-border pb-3">
                     <span className="text-muted-foreground">Category</span>
                     <Link
-                      href={PATH.STORE.CATEGORIES.CATEGORY(catSlug) as Route}
+                      href={
+                        (storefrontFeatures.minimalPublicSite
+                          ? (`/shop?style=${subcatSlug}` as Route)
+                          : PATH.STORE.CATEGORIES.CATEGORY(catSlug)) as Route
+                      }
                       className="text-right font-medium text-primary hover:underline"
                     >
-                      {categoryLabel}
+                      {storefrontFeatures.minimalPublicSite ? subcategoryLabel : categoryLabel}
                     </Link>
                   </div>
                   <div className="flex justify-between gap-4 border-b border-border pb-3">
                     <span className="text-muted-foreground">Collection</span>
                     <Link
-                      href={PATH.STORE.SUB_CATEGORIES.SUBCATEGORY(subcatSlug, catSlug) as Route}
+                      href={
+                        (storefrontFeatures.minimalPublicSite
+                          ? PATH.SHOP.ROOT
+                          : PATH.STORE.SUB_CATEGORIES.SUBCATEGORY(subcatSlug, catSlug)) as Route
+                      }
                       className="text-right font-medium text-primary hover:underline"
                     >
-                      {subcategoryLabel}
+                      {storefrontFeatures.minimalPublicSite ? "All tees" : subcategoryLabel}
                     </Link>
                   </div>
                   {inv?.sku ? (
@@ -409,12 +418,12 @@ export const PDPProduct = ({ data, slug, categorySlug, subcategorySlug }: PDPPro
             </aside>
           </div>
         </div>
-      </div>
+      </Container>
 
       <div className="border-t border-border bg-muted/20">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <Container className="py-12">
           <ProductReviews productId={product.id} canWriteReview />
-        </div>
+        </Container>
       </div>
     </div>
   );

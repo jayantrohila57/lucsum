@@ -117,10 +117,12 @@ export default function Footer() {
             <div className="pb-8 md:pb-16">
               <h4 className="mb-2 text-lg font-semibold">{"Supported Payment"}</h4>
               <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
-                <span className="rounded-md border border-border px-2 py-1 font-medium text-foreground">Razorpay</span>
-                <span className="rounded-md border border-border px-2 py-1">UPI</span>
+                <span className="rounded-[var(--radius)] border border-border px-2 py-1 font-medium text-foreground">
+                  Razorpay
+                </span>
+                <span className="rounded-[var(--radius)] border border-border px-2 py-1">UPI</span>
                 <Icons.visa className="h-8 w-auto" aria-label="Cards" />
-                <span className="rounded-md border border-border px-2 py-1">COD</span>
+                <span className="rounded-[var(--radius)] border border-border px-2 py-1">COD</span>
               </div>
             </div>
           </div>
@@ -178,9 +180,11 @@ export default function Footer() {
             <div className="flex h-full w-14 items-center justify-center border-l p-3 sm:w-16 sm:p-4">
               <ThemeToggle />
             </div>
-            <div className="flex h-full w-14 items-center justify-center border-l p-3 sm:w-16 sm:p-4">
-              <RSS />
-            </div>
+            {!storefrontFeatures.minimalPublicSite ? (
+              <div className="flex h-full w-14 items-center justify-center border-l p-3 sm:w-16 sm:p-4">
+                <RSS />
+              </div>
+            ) : null}
           </div>
         </div>
       </div>

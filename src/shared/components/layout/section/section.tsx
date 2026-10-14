@@ -32,7 +32,7 @@ export default function Section({
 }: SectionProps) {
   const DynamicIcon = icon;
   return (
-    <Card className={cn("bg-background ring-0 gap-0 border-none p-0 shadow-none", className)}>
+    <Card className={cn("bg-background gap-0 p-0 shadow-none", className)}>
       {title && description && (
         <div className="flex w-full flex-col border-t sm:flex-row">
           {DynamicIcon && (

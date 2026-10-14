@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { apiServer } from "@/core/api/api.server";
 import { ShopCatalogGrid } from "@/module/shop/shop-catalog-grid";
 import { ContentEmpty } from "@/shared/components/common/content-empty";
+import { BorderedGrid, BoxCard } from "@/shared/components/layout/box";
 import Section from "@/shared/components/layout/section/section";
 import { Skeleton } from "@/shared/components/ui/skeleton";
 import { PATH } from "@/shared/config/routes";
@@ -14,12 +15,14 @@ import { absoluteUrl } from "@/shared/seo/site-origin";
 function ShopGridFallback() {
   return (
     <div className="space-y-6">
-      <Skeleton className="h-24 w-full rounded-lg" />
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+      <BoxCard padding="compact" className="bg-muted/30">
+        <Skeleton className="h-20 w-full" />
+      </BoxCard>
+      <BorderedGrid columns={4}>
         {Array.from({ length: 8 }).map((_, i) => (
-          <Skeleton key={i} className="aspect-square w-full rounded-lg" />
+          <Skeleton key={i} className="aspect-square w-full rounded-none" />
         ))}
-      </div>
+      </BorderedGrid>
     </div>
   );
 }
