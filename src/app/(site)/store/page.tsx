@@ -1,21 +1,27 @@
 import { LayoutGrid } from "lucide-react";
 import type { Route } from "next";
+import { Suspense } from "react";
 import { apiServer } from "@/core/api/api.server";
 import CategoryCard from "@/module/category/category-card";
+import { ShopCatalogGrid } from "@/module/shop/shop-catalog-grid";
 import { ContentEmpty } from "@/shared/components/common/content-empty";
 import Section from "@/shared/components/layout/section/section";
 import { StoreSubNav } from "@/shared/components/layout/section/store-sub-nav";
 import Shell from "@/shared/components/layout/shell";
+import { Skeleton } from "@/shared/components/ui/skeleton";
 import { PATH } from "@/shared/config/routes";
 import { site } from "@/shared/config/site";
+import { storefrontFeatures } from "@/shared/config/storefront";
 import { buildSchemaGraph, collectionPageGraphNode, itemListGraphNode } from "@/shared/seo/json-ld";
 import { JsonLdScript } from "@/shared/seo/json-ld-script";
 import { buildPageMetadata } from "@/shared/seo/metadata-builders";
 import { absoluteUrl } from "@/shared/seo/site-origin";
 
 export const metadata = buildPageMetadata({
-  title: "Store",
-  description: `Shop ${site.name} — browse categories and discover products.`,
+  title: storefrontFeatures.simplifiedShop ? "Shop all tees" : "Store",
+  description: storefrontFeatures.simplifiedShop
+    ? `Shop all LUCSUM oversized tees — filter by style, colour, and size.`
+    : `Shop ${site.name} — browse categories and discover products.`,
   canonicalPath: "/store",
   ogType: "website",
 });
@@ -42,7 +48,78 @@ function filterCategoriesByQuery(categories: CategoryWithSubs[] | null | undefin
     .filter((c): c is CategoryWithSubs => c != null);
 }
 
+function ShopGridFallback() {
+  return (
+    <div className="space-y-6">
+      <Skeleton className="h-24 w-full rounded-lg" />
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+        {Array.from({ length: 8 }).map((_, i) => (
+          <Skeleton key={i} className="aspect-square w-full rounded-lg" />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+async function SimplifiedShopPage() {
+  const { data: items } = await apiServer.product.listShopCatalog({});
+
+  const catalogItems = items ?? [];
+  const listItems = catalogItems.map((item) => ({
+    name: item.title,
+    url: absoluteUrl(item.pdpPath),
+  }));
+
+  const storeLd = buildSchemaGraph([
+    collectionPageGraphNode({
+      name: "Shop",
+      description: "All LUCSUM oversized t-shirt colourways.",
+      path: "/store",
+    }),
+    itemListGraphNode({
+      name: "LUCSUM tees",
+      description: "Shop all live colourway products.",
+      path: "/store",
+      idSuffix: "catalog",
+      items: listItems,
+    }),
+  ]);
+
+  return (
+    <>
+      <JsonLdScript id="jsonld-store" data={storeLd} />
+      <StoreSubNav />
+      <Shell.Section>
+        <Section title="Shop all tees" description="25 colourways · filter by style, colour, size, or collection">
+          {catalogItems.length === 0 ? (
+            <ContentEmpty
+              icon={LayoutGrid}
+              className="mx-auto max-w-lg"
+              title="Catalog is empty"
+              description="Live tees will appear here once products are published."
+              primaryAction={{ label: "Home", href: PATH.ROOT }}
+              secondaryAction={{ label: "Contact", href: PATH.SITE.CONTACT }}
+            />
+          ) : (
+            <Suspense fallback={<ShopGridFallback />}>
+              <ShopCatalogGrid items={catalogItems} />
+            </Suspense>
+          )}
+        </Section>
+      </Shell.Section>
+    </>
+  );
+}
+
 export default async function StorePage({ searchParams }: { searchParams: Promise<{ q?: string | string[] }> }) {
+  if (storefrontFeatures.simplifiedShop) {
+    return (
+      <Shell>
+        <SimplifiedShopPage />
+      </Shell>
+    );
+  }
+
   const sp = await searchParams;
   const rawQ = sp?.q;
   const q = typeof rawQ === "string" ? rawQ : Array.isArray(rawQ) ? (rawQ[0] ?? "") : "";

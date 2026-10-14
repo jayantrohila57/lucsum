@@ -16,6 +16,7 @@ import {
 import { useSession } from "@/core/auth/auth.client";
 import { APP_ROLE, normalizeRole, roleCanAccessStudio } from "@/core/auth/auth.roles";
 import { PATH } from "@/shared/config/routes";
+import { storefrontFeatures } from "@/shared/config/storefront";
 
 export interface NavItem {
   title: string;
@@ -157,25 +158,38 @@ export function useSidebarSections(): { sections: NavSection[]; isPending: boole
     return { sections: [], isPending };
   }
 
-  const sections: NavSection[] = [
-    { title: "Dashboard", section: getDashboardItems(role) },
-    {
-      title: "Studio",
-      section: [
-        getCatalogItems(role),
-        getOrdersItems(role),
-        getPaymentsItems(role),
-        getCustomersItems(role),
-        getInventoryItems(role),
-        getShippingItems(role),
-      ].flat(),
-    },
-    {
-      title: "Analytics & Marketing",
-      section: [getAnalyticsItems(role), getMarketingItems(role)].flat(),
-    },
-    { title: "Help & Support", section: [getSupportItems(role), getSettingsItems(role)].flat() },
+  const catalogSlim: NavItem[] = [
+    { title: "Products", url: PATH.STUDIO.PRODUCTS.ROOT, icon: Package },
+    { title: "Inventory", url: PATH.STUDIO.INVENTORY.ROOT, icon: Package },
   ];
+
+  const sections: NavSection[] = storefrontFeatures.studioSlimNav
+    ? [
+        { title: "Dashboard", section: getDashboardItems(role) },
+        {
+          title: "Studio",
+          section: [catalogSlim, getOrdersItems(role)].flat(),
+        },
+      ]
+    : [
+        { title: "Dashboard", section: getDashboardItems(role) },
+        {
+          title: "Studio",
+          section: [
+            getCatalogItems(role),
+            getOrdersItems(role),
+            getPaymentsItems(role),
+            getCustomersItems(role),
+            getInventoryItems(role),
+            getShippingItems(role),
+          ].flat(),
+        },
+        {
+          title: "Analytics & Marketing",
+          section: [getAnalyticsItems(role), getMarketingItems(role)].flat(),
+        },
+        { title: "Help & Support", section: [getSupportItems(role), getSettingsItems(role)].flat() },
+      ];
 
   return { sections, isPending: false };
 }

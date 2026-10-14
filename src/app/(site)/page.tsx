@@ -2,10 +2,12 @@ import { apiServer } from "@/core/api/api.server";
 import GetFeaturedCategories from "@/module/category/category.get-featured";
 import ShopByCategoryGrid from "@/module/category/category.shop-by";
 import SiteHero from "@/module/site/site.hero";
+import { HomeFeaturedGrid, HomeShopByStyle, HomeTrustStrip } from "@/module/site/site-home-simplified";
 import Shell from "@/shared/components/layout/shell";
 import { isLucsumCatalogCategorySlug } from "@/shared/config/catalog";
 import { PATH } from "@/shared/config/routes";
 import { site } from "@/shared/config/site";
+import { storefrontFeatures } from "@/shared/config/storefront";
 import { buildSchemaGraph, itemListGraphNode, webPageGraphNode } from "@/shared/seo/json-ld";
 import { JsonLdScript } from "@/shared/seo/json-ld-script";
 import { buildPageMetadata } from "@/shared/seo/metadata-builders";
@@ -19,6 +21,45 @@ export const metadata = buildPageMetadata({
 });
 
 export default async function Home({}: PageProps<"/">) {
+  if (storefrontFeatures.simplifiedShop) {
+    const { data: catalog } = await apiServer.product.listShopCatalog({});
+    const items = catalog ?? [];
+
+    const homeLd = buildSchemaGraph([
+      webPageGraphNode({
+        name: "Home",
+        description: site.description,
+        path: "/",
+      }),
+      itemListGraphNode({
+        name: "Featured tees",
+        description: "LUCSUM oversized cotton tees",
+        path: "/",
+        idSuffix: "featured",
+        items: items.slice(0, 8).map((item) => ({
+          name: item.title,
+          url: absoluteUrl(item.pdpPath),
+        })),
+      }),
+    ]);
+
+    return (
+      <Shell>
+        <JsonLdScript id="jsonld-home" data={homeLd} />
+        <Shell.Section>
+          <SiteHero />
+        </Shell.Section>
+        <HomeTrustStrip />
+        <Shell.Section>
+          <HomeFeaturedGrid items={items} />
+        </Shell.Section>
+        <Shell.Section>
+          <HomeShopByStyle items={items} />
+        </Shell.Section>
+      </Shell>
+    );
+  }
+
   const [featuredRes, categoriesRes] = await Promise.all([
     apiServer.category.getAllFeaturedCategories({ query: {} }),
     apiServer.category.getMany({ query: {} }),

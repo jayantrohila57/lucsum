@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { db } from "@/core/db/db";
+import { STOREFRONT_SIMPLIFIED } from "@/shared/config/storefront";
 import { getSiteOrigin } from "@/shared/seo/site-origin";
 
 const LEGAL_SLUGS = [
@@ -13,12 +14,11 @@ const LEGAL_SLUGS = [
   "cookies-policy",
 ] as const;
 
-const STATIC_PATHS = [
+const STATIC_PATHS_SIMPLIFIED = [
   "/",
   "/store",
-  "/store/categories",
+  "/cart",
   "/marketing/about",
-  "/marketing/newsletter",
   "/support",
   "/support/contact",
   "/support/shipping",
@@ -27,7 +27,12 @@ const STATIC_PATHS = [
   "/support/help-center",
   "/support/size-guide",
   "/legal",
+  "/store/checkout",
 ] as const;
+
+const STATIC_PATHS_FULL = [...STATIC_PATHS_SIMPLIFIED, "/store/categories", "/marketing/newsletter"] as const;
+
+const STATIC_PATHS = STOREFRONT_SIMPLIFIED ? STATIC_PATHS_SIMPLIFIED : STATIC_PATHS_FULL;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = getSiteOrigin();
@@ -58,6 +63,44 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 }
 
 async function appendCatalogUrls(add: (path: string, lastModified?: Date | null) => void) {
+  if (STOREFRONT_SIMPLIFIED) {
+    const products = await db.query.product.findMany({
+      where: (p, { and, eq, isNull: isNullFn }) =>
+        and(isNullFn(p.deletedAt), eq(p.isActive, true), eq(p.status, "live"), eq(p.categorySlug, "t-shirts")),
+      columns: {
+        categorySlug: true,
+        subcategorySlug: true,
+        slug: true,
+        updatedAt: true,
+      },
+      with: {
+        variants: {
+          where: (pv, { isNull: isNullFn }) => isNullFn(pv.deletedAt),
+          columns: { slug: true, updatedAt: true },
+        },
+      },
+    });
+
+    for (const p of products) {
+      if (p.variants.length === 0) {
+        add(`/store/${p.categorySlug}/${p.subcategorySlug}/${p.slug}`, p.updatedAt);
+      } else {
+        for (const v of p.variants) {
+          add(`/store/${p.categorySlug}/${p.subcategorySlug}/${v.slug}`, v.updatedAt ?? p.updatedAt);
+        }
+      }
+    }
+
+    const articles = await db.query.sitePage.findMany({
+      where: (sp, { and, eq, isNotNull }) => and(eq(sp.kind, "article"), isNotNull(sp.publishedAt)),
+      columns: { slug: true, updatedAt: true },
+    });
+    for (const article of articles) {
+      add(`/blog/${article.slug}`, article.updatedAt);
+    }
+    return;
+  }
+
   const publicCategories = await db.query.category.findMany({
     where: (c, { and, eq, isNull: isNullFn }) => and(isNullFn(c.deletedAt), eq(c.visibility, "public")),
     columns: { slug: true, updatedAt: true },

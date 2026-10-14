@@ -1,13 +1,22 @@
-import { and, eq, ilike, isNull, not, sql } from "drizzle-orm";
+import { and, eq, ilike, inArray, isNull, not, sql } from "drizzle-orm";
 import { v4 as uuidv4 } from "uuid";
 import { createTRPCRouter, publicProcedure, staffProcedure } from "@/core/api/api.methods";
 import { db } from "@/core/db/db";
-import { category, inventoryItem, product, productVariant, review, subcategory } from "@/core/db/db.schema";
+import {
+  category,
+  inventoryItem,
+  product,
+  productCollection,
+  productVariant,
+  review,
+  subcategory,
+} from "@/core/db/db.schema";
 import { MESSAGE, STATUS } from "@/shared/config/api.config";
 import { API_RESPONSE } from "@/shared/config/api.utils";
 import { buildPagination, buildPaginationMeta } from "@/shared/schema";
 import { debugError } from "@/shared/utils/lib/logger.utils";
 import { productContract } from "./product.schema";
+import { colorLabelFromProductSlug, pdpPathForProduct, sortSizes, styleTitle } from "./shop-catalog.lib";
 
 /**
  * Validate that category and subcategory exist and belong together.
@@ -609,6 +618,94 @@ export const productRouter = createTRPCRouter({
         return API_RESPONSE(STATUS.ERROR, MESSAGE.PRODUCT.DELETE.ERROR, null, err as Error);
       }
     }),
+  listShopCatalog: publicProcedure
+    .input(productContract.listShopCatalog.input)
+    .output(productContract.listShopCatalog.output)
+    .query(async () => {
+      try {
+        const rows = await db.query.product.findMany({
+          where: and(
+            eq(product.categorySlug, "t-shirts"),
+            eq(product.isActive, true),
+            eq(product.status, "live"),
+            isNull(product.deletedAt),
+          ),
+          with: {
+            variants: {
+              where: (v, { isNull: isNullV }) => isNullV(v.deletedAt),
+            },
+          },
+          orderBy: (p, { asc }) => [asc(p.subcategorySlug), asc(p.title)],
+        });
+
+        const productIds = rows.map((r) => r.id);
+        const memberships =
+          productIds.length > 0
+            ? await db
+                .select({
+                  productId: productCollection.productId,
+                  collectionSlug: productCollection.collectionSlug,
+                })
+                .from(productCollection)
+                .where(inArray(productCollection.productId, productIds))
+            : [];
+        const collectionsByProduct = new Map<string, string[]>();
+        for (const m of memberships) {
+          const list = collectionsByProduct.get(m.productId) ?? [];
+          list.push(m.collectionSlug);
+          collectionsByProduct.set(m.productId, list);
+        }
+
+        const variantIds = rows.flatMap((r) => r.variants.map((v) => v.id));
+        const invRows =
+          variantIds.length > 0
+            ? await db.query.inventoryItem.findMany({
+                where: and(inArray(inventoryItem.variantId, variantIds), isNull(inventoryItem.deletedAt)),
+              })
+            : [];
+        const availableByVariant = new Map(
+          invRows.map((i) => [i.variantId, Math.max(0, i.quantity - i.reserved)] as const),
+        );
+
+        const sizeOfVariant = (v: (typeof rows)[0]["variants"][0]) => {
+          const attr = v.attributes?.find((a) => a.type === "size" || a.title === "Size");
+          return attr?.value ?? v.title;
+        };
+
+        const items = rows.map((p) => {
+          const allSizes = sortSizes(p.variants.map(sizeOfVariant));
+          const sizesInStock = sortSizes(
+            p.variants.filter((v) => (availableByVariant.get(v.id) ?? 0) > 0).map(sizeOfVariant),
+          );
+
+          return {
+            id: p.id,
+            title: p.title,
+            slug: p.slug,
+            styleSlug: p.subcategorySlug,
+            styleTitle: styleTitle(p.subcategorySlug),
+            colorLabel: colorLabelFromProductSlug(p.slug, p.subcategorySlug),
+            image: p.baseImage,
+            priceMinor: p.basePrice,
+            currency: p.baseCurrency ?? "INR",
+            pdpPath: pdpPathForProduct(p.categorySlug, p.subcategorySlug, p.slug),
+            sizesInStock,
+            allSizes,
+            collectionSlugs: collectionsByProduct.get(p.id) ?? [],
+          };
+        });
+
+        return API_RESPONSE(
+          items.length ? STATUS.SUCCESS : STATUS.FAILED,
+          items.length ? MESSAGE.PRODUCT.GET_MANY.SUCCESS : MESSAGE.PRODUCT.GET_MANY.FAILED,
+          items,
+        );
+      } catch (err) {
+        debugError("PRODUCT:LIST_SHOP_CATALOG:ERROR", err);
+        return API_RESPONSE(STATUS.ERROR, MESSAGE.PRODUCT.GET_MANY.ERROR, [], err as Error);
+      }
+    }),
+
   search: publicProcedure
     .input(productContract.search.input)
     .output(productContract.search.output)

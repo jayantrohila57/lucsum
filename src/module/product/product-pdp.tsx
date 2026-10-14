@@ -13,6 +13,7 @@ import { Button } from "@/shared/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/shared/components/ui/card";
 import { Separator } from "@/shared/components/ui/separator";
 import { PATH } from "@/shared/config/routes";
+import { storefrontFeatures } from "@/shared/config/storefront";
 import { computeVariantUnitPrice } from "@/shared/seo/pricing";
 import { compareSizeAttributeValues, formatBreadcrumbLabel } from "@/shared/utils/lib/breadcrumb-label";
 import { getImageSrc } from "@/shared/utils/lib/image.utils";
@@ -169,7 +170,9 @@ export const PDPProduct = ({ data, slug, categorySlug, subcategorySlug }: PDPPro
             <PDPImageGallery
               images={galleryImages}
               alt={product?.title ?? "Product"}
-              overlay={<PDPWishlistToggle variantId={selectedVariant.id} />}
+              overlay={
+                storefrontFeatures.showWishlist ? <PDPWishlistToggle variantId={selectedVariant.id} /> : undefined
+              }
             />
           </div>
 

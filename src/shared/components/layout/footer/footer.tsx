@@ -7,6 +7,7 @@ import Social from "@/shared/components/common/social";
 import { ThemeToggle } from "@/shared/components/theme/theme-toggle";
 import { PATH } from "@/shared/config/routes";
 import { site, siteConfig } from "@/shared/config/site";
+import { LUCSUM_NAV_COLLECTIONS, LUCSUM_STYLE_LABELS, storefrontFeatures } from "@/shared/config/storefront";
 import { AppBrand } from "../section/auth.card-layout";
 
 type NavItem<T extends string = string> = {
@@ -20,13 +21,31 @@ interface NavType {
   submenu: NavItem<Route>[];
 }
 
+const shopFooterLinks: NavItem<Route>[] = storefrontFeatures.simplifiedShop
+  ? [
+      { title: "All tees", href: PATH.STORE.ROOT as Route, newTab: false },
+      ...Object.entries(LUCSUM_STYLE_LABELS)
+        .slice(0, 3)
+        .map(([slug, title]) => ({
+          title,
+          href: `/store?style=${slug}` as Route,
+          newTab: false,
+        })),
+      ...LUCSUM_NAV_COLLECTIONS.slice(0, 2).map((c) => ({
+        title: c.title,
+        href: `/store?collection=${c.slug}` as Route,
+        newTab: false,
+      })),
+    ]
+  : [
+      { title: "All products", href: PATH.STORE.ROOT as Route, newTab: false },
+      { title: "Categories", href: PATH.STORE.CATEGORIES.ROOT as Route, newTab: false },
+    ];
+
 export const footer: NavType[] = [
   {
     title: "Shop",
-    submenu: [
-      { title: "All products", href: PATH.STORE.ROOT as Route, newTab: false },
-      { title: "Categories", href: PATH.STORE.CATEGORIES.ROOT as Route, newTab: false },
-    ],
+    submenu: shopFooterLinks,
   },
   {
     title: "Customer Care",
@@ -53,7 +72,9 @@ export const footer: NavType[] = [
       { title: "Instagram", href: siteConfig.socialLinks[1]!.url as Route, newTab: true },
       { title: "Twitter", href: siteConfig.socialLinks[2]!.url as Route, newTab: true },
       { title: "Facebook", href: siteConfig.socialLinks[0]!.url as Route, newTab: true },
-      { title: "Newsletter", href: PATH.SITE.NEWSLETTER, newTab: false },
+      ...(storefrontFeatures.showNewsletterPromo
+        ? [{ title: "Newsletter", href: PATH.SITE.NEWSLETTER, newTab: false }]
+        : []),
     ],
   },
 ];
@@ -100,15 +121,17 @@ export default function Footer() {
                   <Social />
                 </div>
               </div>
-              <div className="col-span-1 md:col-span-2">
-                <h4 className="mb-2 text-lg font-semibold">Sign up to our newsletter</h4>
-                <NewsletterSignupForm
-                  source="footer"
-                  className="max-w-md space-y-2"
-                  inputClassName="flex-1"
-                  submitLabel="Subscribe"
-                />
-              </div>
+              {storefrontFeatures.showNewsletterPromo ? (
+                <div className="col-span-1 md:col-span-2">
+                  <h4 className="mb-2 text-lg font-semibold">Sign up to our newsletter</h4>
+                  <NewsletterSignupForm
+                    source="footer"
+                    className="max-w-md space-y-2"
+                    inputClassName="flex-1"
+                    submitLabel="Subscribe"
+                  />
+                </div>
+              ) : null}
             </div>
             <div className="grid w-full grid-cols-2 gap-x-4 gap-y-8 p-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6">
               {footer?.map(({ title, submenu }) => {

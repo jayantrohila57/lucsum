@@ -225,6 +225,28 @@ export const productContract = {
     output: detailedResponse(productSelectSchema.pick({ id: true }).nullable()),
   },
 
+  listShopCatalog: {
+    input: z.object({}).optional(),
+    output: detailedResponse(
+      z.array(
+        z.object({
+          id: z.string(),
+          title: z.string(),
+          slug: z.string(),
+          styleSlug: z.string(),
+          styleTitle: z.string(),
+          colorLabel: z.string(),
+          image: z.string().nullable(),
+          priceMinor: z.number(),
+          currency: z.string(),
+          pdpPath: z.string(),
+          sizesInStock: z.array(z.string()),
+          allSizes: z.array(z.string()),
+          collectionSlugs: z.array(z.string()),
+        }),
+      ),
+    ),
+  },
   search: {
     input: z.object({
       query: offsetPaginationSchema.extend({
