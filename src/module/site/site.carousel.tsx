@@ -88,7 +88,7 @@ export function MarketingCarousel({ items }: { items: CarouselItem[] | null | un
             <div
               key={i}
               onClick={() => api?.scrollTo(i)}
-              className="size-12 md:size-16 cursor-pointer hover:bg-secondary flex items-center justify-center border-r"
+              className="size-11 min-h-11 min-w-11 cursor-pointer hover:bg-secondary flex items-center justify-center border-r md:size-16"
             >
               <SquareIcon
                 className={cn(
@@ -100,11 +100,19 @@ export function MarketingCarousel({ items }: { items: CarouselItem[] | null | un
           ))}
         </div>
         <div className="flex relative h-full w-full items-center justify-end">
-          <div className="size-12 md:size-16 cursor-pointer hover:bg-secondary flex items-center justify-center border-l">
-            <CarouselPrevious variant={"ghost"} className="relative cursor-pointer rounded-none" />
+          <div className="size-11 min-h-11 min-w-11 cursor-pointer hover:bg-secondary flex items-center justify-center border-l md:size-16">
+            <CarouselPrevious
+              variant="ghost"
+              size="icon"
+              className="relative size-11 min-h-11 min-w-11 cursor-pointer rounded-none"
+            />
           </div>
-          <div className="size-12 md:size-16 cursor-pointer hover:bg-secondary flex items-center justify-center border-l">
-            <CarouselNext variant={"ghost"} className="relative cursor-pointer rounded-none" />
+          <div className="size-11 min-h-11 min-w-11 cursor-pointer hover:bg-secondary flex items-center justify-center border-l md:size-16">
+            <CarouselNext
+              variant="ghost"
+              size="icon"
+              className="relative size-11 min-h-11 min-w-11 cursor-pointer rounded-none"
+            />
           </div>
         </div>
       </div>

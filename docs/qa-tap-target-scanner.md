@@ -13,13 +13,14 @@ A control **passes** when effective width and height are both **≥ 44px**.
 - `button`, `[role="button"]`, `[data-slot="button"]`
 - `[data-slot="select-trigger"]`
 - `input`, `select`, `textarea` (checkout/cart forms)
-- Links inside `header`, `footer`, `[data-slot="shell-header"]`, `[data-slot="sheet-content"]`, `[data-slot="navigation-menu"]`
+- Links inside `header`, `footer`, `[data-slot="shell-header"]`, `[data-slot="sheet-content"]`, `[data-slot="navigation-menu"]` (must be **visible** — closed sheets, hidden breakpoints, and Radix menu portals are skipped via `checkVisibility`)
 - Cart, menu, and icon actions in the storefront chrome
 
 ## Excluded (not counted)
 
 - Inline **prose** links: `a` inside `p`, `.prose`, `[data-slot="prose"]`, or help/legal article body without `data-interactive-link`
-- Hidden / zero-size nodes (`display: none`, `visibility: hidden`, 0×0 box)
+- **Breadcrumb** and in-page `nav` links (e.g. PDP “Shop” trail) — same treatment as prose; storefront chrome nav in the header is still measured
+- Hidden / non-visible nodes (`checkVisibility`, `display: none`, closed dialogs/sheets, desktop-only nav at mobile widths)
 - Decorative `a` without `href`
 - Studio (`/studio`) and account-only chrome (not in KEEP mobile pass routes)
 

@@ -1,45 +1,144 @@
 {
   "base": "http://localhost:3000",
-  "at": "2026-10-14T05:56:43.310Z",
+  "at": "2026-10-14T06:51:14.464Z",
   "pages": [
     {
       "route": "home",
       "path": "/",
-      "viewport": "mobile",
-      "screenshot": "home--mobile.png",
+      "viewport": "mobile-360",
+      "screenshot": "home--mobile-360.png",
       "metrics": {
         "roundedElements": 0,
         "radiusSamples": [],
-        "possibleDoubleBorders": []
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.w-full"
+          },
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          },
+          {
+            "parent": "DIV.grid",
+            "child": "A.group"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          }
+        ]
       }
     },
     {
       "route": "shop",
       "path": "/shop",
-      "viewport": "mobile",
-      "screenshot": "shop--mobile.png",
+      "viewport": "mobile-360",
+      "screenshot": "shop--mobile-360.png",
       "metrics": {
         "roundedElements": 0,
         "radiusSamples": [],
-        "possibleDoubleBorders": []
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          },
+          {
+            "parent": "DIV.grid",
+            "child": "A.group"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          }
+        ]
       }
     },
     {
       "route": "shop-filter",
       "path": "/shop?style=celestial-graphic",
-      "viewport": "mobile",
-      "screenshot": "shop-filter--mobile.png",
+      "viewport": "mobile-360",
+      "screenshot": "shop-filter--mobile-360.png",
       "metrics": {
         "roundedElements": 0,
         "radiusSamples": [],
-        "possibleDoubleBorders": []
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          },
+          {
+            "parent": "BUTTON.group/button",
+            "child": "SPAN.group/badge"
+          },
+          {
+            "parent": "DIV.grid",
+            "child": "A.group"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          }
+        ]
       }
     },
     {
       "route": "pdp",
       "path": "/products/celestial-graphic-black",
-      "viewport": "mobile",
-      "screenshot": "pdp--mobile.png",
+      "viewport": "mobile-360",
+      "screenshot": "pdp--mobile-360.png",
       "metrics": {
         "roundedElements": 0,
         "radiusSamples": [],
@@ -49,107 +148,244 @@
     {
       "route": "help",
       "path": "/help",
-      "viewport": "mobile",
-      "screenshot": "help--mobile.png",
+      "viewport": "mobile-360",
+      "screenshot": "help--mobile-360.png",
       "metrics": {
         "roundedElements": 0,
         "radiusSamples": [],
-        "possibleDoubleBorders": []
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          },
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          },
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          }
+        ]
       }
     },
     {
       "route": "cart",
       "path": "/cart",
-      "viewport": "mobile",
-      "screenshot": "cart--mobile.png",
+      "viewport": "mobile-360",
+      "screenshot": "cart--mobile-360.png",
       "metrics": {
         "roundedElements": 0,
         "radiusSamples": [],
-        "possibleDoubleBorders": []
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          }
+        ]
       }
     },
     {
       "route": "checkout",
       "path": "/checkout",
-      "viewport": "mobile",
-      "screenshot": "checkout--mobile.png",
+      "viewport": "mobile-360",
+      "screenshot": "checkout--mobile-360.png",
       "metrics": {
         "roundedElements": 0,
         "radiusSamples": [],
-        "possibleDoubleBorders": []
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          }
+        ]
       }
     },
     {
       "route": "legal",
       "path": "/legal",
-      "viewport": "mobile",
-      "screenshot": "legal--mobile.png",
+      "viewport": "mobile-360",
+      "screenshot": "legal--mobile-360.png",
       "metrics": {
         "roundedElements": 0,
         "radiusSamples": [],
-        "possibleDoubleBorders": []
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          }
+        ]
       }
     },
     {
       "route": "legal-shipping",
       "path": "/legal/shipping-policy",
-      "viewport": "mobile",
-      "screenshot": "legal-shipping--mobile.png",
+      "viewport": "mobile-360",
+      "screenshot": "legal-shipping--mobile-360.png",
       "metrics": {
         "roundedElements": 0,
         "radiusSamples": [],
-        "possibleDoubleBorders": []
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.w-full"
+          }
+        ]
       }
     },
     {
       "route": "auth-sign-in",
       "path": "/auth/sign-in",
-      "viewport": "mobile",
-      "screenshot": "auth-sign-in--mobile.png",
+      "viewport": "mobile-360",
+      "screenshot": "auth-sign-in--mobile-360.png",
       "metrics": {
         "roundedElements": 0,
         "radiusSamples": [],
-        "possibleDoubleBorders": []
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.w-full"
+          }
+        ]
       }
     },
     {
       "route": "home",
       "path": "/",
-      "viewport": "tablet",
-      "screenshot": "home--tablet.png",
+      "viewport": "mobile-390",
+      "screenshot": "home--mobile-390.png",
       "metrics": {
         "roundedElements": 0,
         "radiusSamples": [],
-        "possibleDoubleBorders": []
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.w-full"
+          },
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          },
+          {
+            "parent": "DIV.grid",
+            "child": "A.group"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          }
+        ]
       }
     },
     {
       "route": "shop",
       "path": "/shop",
-      "viewport": "tablet",
-      "screenshot": "shop--tablet.png",
+      "viewport": "mobile-390",
+      "screenshot": "shop--mobile-390.png",
       "metrics": {
         "roundedElements": 0,
         "radiusSamples": [],
-        "possibleDoubleBorders": []
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          },
+          {
+            "parent": "DIV.grid",
+            "child": "A.group"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          }
+        ]
       }
     },
     {
       "route": "shop-filter",
       "path": "/shop?style=celestial-graphic",
-      "viewport": "tablet",
-      "screenshot": "shop-filter--tablet.png",
+      "viewport": "mobile-390",
+      "screenshot": "shop-filter--mobile-390.png",
       "metrics": {
         "roundedElements": 0,
         "radiusSamples": [],
-        "possibleDoubleBorders": []
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          },
+          {
+            "parent": "BUTTON.group/button",
+            "child": "SPAN.group/badge"
+          },
+          {
+            "parent": "DIV.grid",
+            "child": "A.group"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          }
+        ]
       }
     },
     {
       "route": "pdp",
       "path": "/products/celestial-graphic-black",
-      "viewport": "tablet",
-      "screenshot": "pdp--tablet.png",
+      "viewport": "mobile-390",
+      "screenshot": "pdp--mobile-390.png",
       "metrics": {
         "roundedElements": 0,
         "radiusSamples": [],
@@ -159,107 +395,244 @@
     {
       "route": "help",
       "path": "/help",
-      "viewport": "tablet",
-      "screenshot": "help--tablet.png",
+      "viewport": "mobile-390",
+      "screenshot": "help--mobile-390.png",
       "metrics": {
         "roundedElements": 0,
         "radiusSamples": [],
-        "possibleDoubleBorders": []
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          },
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          },
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          }
+        ]
       }
     },
     {
       "route": "cart",
       "path": "/cart",
-      "viewport": "tablet",
-      "screenshot": "cart--tablet.png",
+      "viewport": "mobile-390",
+      "screenshot": "cart--mobile-390.png",
       "metrics": {
         "roundedElements": 0,
         "radiusSamples": [],
-        "possibleDoubleBorders": []
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          }
+        ]
       }
     },
     {
       "route": "checkout",
       "path": "/checkout",
-      "viewport": "tablet",
-      "screenshot": "checkout--tablet.png",
+      "viewport": "mobile-390",
+      "screenshot": "checkout--mobile-390.png",
       "metrics": {
         "roundedElements": 0,
         "radiusSamples": [],
-        "possibleDoubleBorders": []
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          }
+        ]
       }
     },
     {
       "route": "legal",
       "path": "/legal",
-      "viewport": "tablet",
-      "screenshot": "legal--tablet.png",
+      "viewport": "mobile-390",
+      "screenshot": "legal--mobile-390.png",
       "metrics": {
         "roundedElements": 0,
         "radiusSamples": [],
-        "possibleDoubleBorders": []
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          }
+        ]
       }
     },
     {
       "route": "legal-shipping",
       "path": "/legal/shipping-policy",
-      "viewport": "tablet",
-      "screenshot": "legal-shipping--tablet.png",
+      "viewport": "mobile-390",
+      "screenshot": "legal-shipping--mobile-390.png",
       "metrics": {
         "roundedElements": 0,
         "radiusSamples": [],
-        "possibleDoubleBorders": []
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.w-full"
+          }
+        ]
       }
     },
     {
       "route": "auth-sign-in",
       "path": "/auth/sign-in",
-      "viewport": "tablet",
-      "screenshot": "auth-sign-in--tablet.png",
+      "viewport": "mobile-390",
+      "screenshot": "auth-sign-in--mobile-390.png",
       "metrics": {
         "roundedElements": 0,
         "radiusSamples": [],
-        "possibleDoubleBorders": []
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.w-full"
+          }
+        ]
       }
     },
     {
       "route": "home",
       "path": "/",
-      "viewport": "desktop",
-      "screenshot": "home--desktop.png",
+      "viewport": "mobile-430",
+      "screenshot": "home--mobile-430.png",
       "metrics": {
         "roundedElements": 0,
         "radiusSamples": [],
-        "possibleDoubleBorders": []
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.w-full"
+          },
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          },
+          {
+            "parent": "DIV.grid",
+            "child": "A.group"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          }
+        ]
       }
     },
     {
       "route": "shop",
       "path": "/shop",
-      "viewport": "desktop",
-      "screenshot": "shop--desktop.png",
+      "viewport": "mobile-430",
+      "screenshot": "shop--mobile-430.png",
       "metrics": {
         "roundedElements": 0,
         "radiusSamples": [],
-        "possibleDoubleBorders": []
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          },
+          {
+            "parent": "DIV.grid",
+            "child": "A.group"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          }
+        ]
       }
     },
     {
       "route": "shop-filter",
       "path": "/shop?style=celestial-graphic",
-      "viewport": "desktop",
-      "screenshot": "shop-filter--desktop.png",
+      "viewport": "mobile-430",
+      "screenshot": "shop-filter--mobile-430.png",
       "metrics": {
         "roundedElements": 0,
         "radiusSamples": [],
-        "possibleDoubleBorders": []
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          },
+          {
+            "parent": "BUTTON.group/button",
+            "child": "SPAN.group/badge"
+          },
+          {
+            "parent": "DIV.grid",
+            "child": "A.group"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          }
+        ]
       }
     },
     {
       "route": "pdp",
       "path": "/products/celestial-graphic-black",
-      "viewport": "desktop",
-      "screenshot": "pdp--desktop.png",
+      "viewport": "mobile-430",
+      "screenshot": "pdp--mobile-430.png",
       "metrics": {
         "roundedElements": 0,
         "radiusSamples": [],
@@ -269,52 +642,244 @@
     {
       "route": "help",
       "path": "/help",
-      "viewport": "desktop",
-      "screenshot": "help--desktop.png",
+      "viewport": "mobile-430",
+      "screenshot": "help--mobile-430.png",
       "metrics": {
         "roundedElements": 0,
         "radiusSamples": [],
-        "possibleDoubleBorders": []
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          },
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          },
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          }
+        ]
       }
     },
     {
       "route": "cart",
       "path": "/cart",
-      "viewport": "desktop",
-      "screenshot": "cart--desktop.png",
+      "viewport": "mobile-430",
+      "screenshot": "cart--mobile-430.png",
       "metrics": {
         "roundedElements": 0,
         "radiusSamples": [],
-        "possibleDoubleBorders": []
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          }
+        ]
       }
     },
     {
       "route": "checkout",
       "path": "/checkout",
-      "viewport": "desktop",
-      "screenshot": "checkout--desktop.png",
+      "viewport": "mobile-430",
+      "screenshot": "checkout--mobile-430.png",
       "metrics": {
         "roundedElements": 0,
         "radiusSamples": [],
-        "possibleDoubleBorders": []
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          }
+        ]
       }
     },
     {
       "route": "legal",
       "path": "/legal",
-      "viewport": "desktop",
-      "screenshot": "legal--desktop.png",
+      "viewport": "mobile-430",
+      "screenshot": "legal--mobile-430.png",
       "metrics": {
         "roundedElements": 0,
         "radiusSamples": [],
-        "possibleDoubleBorders": []
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          }
+        ]
       }
     },
     {
       "route": "legal-shipping",
       "path": "/legal/shipping-policy",
-      "viewport": "desktop",
-      "screenshot": "legal-shipping--desktop.png",
+      "viewport": "mobile-430",
+      "screenshot": "legal-shipping--mobile-430.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.w-full"
+          }
+        ]
+      }
+    },
+    {
+      "route": "auth-sign-in",
+      "path": "/auth/sign-in",
+      "viewport": "mobile-430",
+      "screenshot": "auth-sign-in--mobile-430.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.w-full"
+          }
+        ]
+      }
+    },
+    {
+      "route": "home",
+      "path": "/",
+      "viewport": "tablet-768",
+      "screenshot": "home--tablet-768.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.w-full"
+          },
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          },
+          {
+            "parent": "DIV.grid",
+            "child": "A.group"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          }
+        ]
+      }
+    },
+    {
+      "route": "shop",
+      "path": "/shop",
+      "viewport": "tablet-768",
+      "screenshot": "shop--tablet-768.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          },
+          {
+            "parent": "DIV.grid",
+            "child": "A.group"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          }
+        ]
+      }
+    },
+    {
+      "route": "shop-filter",
+      "path": "/shop?style=celestial-graphic",
+      "viewport": "tablet-768",
+      "screenshot": "shop-filter--tablet-768.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          },
+          {
+            "parent": "DIV.box-card",
+            "child": "BUTTON.group/button"
+          },
+          {
+            "parent": "DIV.grid",
+            "child": "A.group"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          }
+        ]
+      }
+    },
+    {
+      "route": "pdp",
+      "path": "/products/celestial-graphic-black",
+      "viewport": "tablet-768",
+      "screenshot": "pdp--tablet-768.png",
       "metrics": {
         "roundedElements": 0,
         "radiusSamples": [],
@@ -322,14 +887,354 @@
       }
     },
     {
+      "route": "help",
+      "path": "/help",
+      "viewport": "tablet-768",
+      "screenshot": "help--tablet-768.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          },
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          },
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          }
+        ]
+      }
+    },
+    {
+      "route": "cart",
+      "path": "/cart",
+      "viewport": "tablet-768",
+      "screenshot": "cart--tablet-768.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          }
+        ]
+      }
+    },
+    {
+      "route": "checkout",
+      "path": "/checkout",
+      "viewport": "tablet-768",
+      "screenshot": "checkout--tablet-768.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          }
+        ]
+      }
+    },
+    {
+      "route": "legal",
+      "path": "/legal",
+      "viewport": "tablet-768",
+      "screenshot": "legal--tablet-768.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          }
+        ]
+      }
+    },
+    {
+      "route": "legal-shipping",
+      "path": "/legal/shipping-policy",
+      "viewport": "tablet-768",
+      "screenshot": "legal-shipping--tablet-768.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.w-full"
+          }
+        ]
+      }
+    },
+    {
       "route": "auth-sign-in",
       "path": "/auth/sign-in",
-      "viewport": "desktop",
-      "screenshot": "auth-sign-in--desktop.png",
+      "viewport": "tablet-768",
+      "screenshot": "auth-sign-in--tablet-768.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.w-full"
+          }
+        ]
+      }
+    },
+    {
+      "route": "home",
+      "path": "/",
+      "viewport": "tablet-1024",
+      "screenshot": "home--tablet-1024.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.w-full"
+          },
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          },
+          {
+            "parent": "DIV.grid",
+            "child": "A.group"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          }
+        ]
+      }
+    },
+    {
+      "route": "shop",
+      "path": "/shop",
+      "viewport": "tablet-1024",
+      "screenshot": "shop--tablet-1024.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          },
+          {
+            "parent": "DIV.grid",
+            "child": "A.group"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          }
+        ]
+      }
+    },
+    {
+      "route": "shop-filter",
+      "path": "/shop?style=celestial-graphic",
+      "viewport": "tablet-1024",
+      "screenshot": "shop-filter--tablet-1024.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          },
+          {
+            "parent": "DIV.box-card",
+            "child": "BUTTON.group/button"
+          },
+          {
+            "parent": "DIV.grid",
+            "child": "A.group"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          },
+          {
+            "parent": "A.group",
+            "child": "DIV.min-w-0"
+          }
+        ]
+      }
+    },
+    {
+      "route": "pdp",
+      "path": "/products/celestial-graphic-black",
+      "viewport": "tablet-1024",
+      "screenshot": "pdp--tablet-1024.png",
       "metrics": {
         "roundedElements": 0,
         "radiusSamples": [],
         "possibleDoubleBorders": []
+      }
+    },
+    {
+      "route": "help",
+      "path": "/help",
+      "viewport": "tablet-1024",
+      "screenshot": "help--tablet-1024.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          },
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          },
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          }
+        ]
+      }
+    },
+    {
+      "route": "cart",
+      "path": "/cart",
+      "viewport": "tablet-1024",
+      "screenshot": "cart--tablet-1024.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          }
+        ]
+      }
+    },
+    {
+      "route": "checkout",
+      "path": "/checkout",
+      "viewport": "tablet-1024",
+      "screenshot": "checkout--tablet-1024.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          }
+        ]
+      }
+    },
+    {
+      "route": "legal",
+      "path": "/legal",
+      "viewport": "tablet-1024",
+      "screenshot": "legal--tablet-1024.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.flex"
+          }
+        ]
+      }
+    },
+    {
+      "route": "legal-shipping",
+      "path": "/legal/shipping-policy",
+      "viewport": "tablet-1024",
+      "screenshot": "legal-shipping--tablet-1024.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.w-full"
+          }
+        ]
+      }
+    },
+    {
+      "route": "auth-sign-in",
+      "path": "/auth/sign-in",
+      "viewport": "tablet-1024",
+      "screenshot": "auth-sign-in--tablet-1024.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": [
+          {
+            "parent": "DIV.group/card",
+            "child": "DIV.w-full"
+          }
+        ]
       }
     }
   ]

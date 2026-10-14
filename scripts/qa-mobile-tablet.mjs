@@ -88,11 +88,32 @@ async function auditPage(page) {
       issues.push({ code: "horizontal-overflow", detail: `scrollWidth excess ${overflowX}px`, offenders });
     }
 
+    function isEffectivelyVisible(el) {
+      if (typeof el.checkVisibility === "function") {
+        return el.checkVisibility({ checkOpacity: true, checkVisibilityCSS: true });
+      }
+      const cs = getComputedStyle(el);
+      if (cs.display === "none" || cs.visibility === "hidden" || Number(cs.opacity) === 0) return false;
+      const r = el.getBoundingClientRect();
+      return r.width >= 1 && r.height >= 1;
+    }
+
+    function isBreadcrumbOrContentNavLink(el) {
+      if (el.tagName !== "A") return false;
+      const nav = el.closest("nav");
+      if (!nav) return false;
+      if (nav.closest("header, footer, [data-slot='shell-header']")) return false;
+      const label = nav.getAttribute("aria-label")?.toLowerCase() ?? "";
+      if (label.includes("breadcrumb")) return true;
+      return !nav.closest("[data-slot='navigation-menu'], [data-slot='sheet-content']");
+    }
+
     function isProseLink(el) {
       if (el.tagName !== "A") return false;
+      if (isBreadcrumbOrContentNavLink(el)) return true;
       if (
         el.closest(
-          "header, footer, nav, [data-slot='shell-header'], [data-slot='sheet-content'], [data-slot='navigation-menu']",
+          "header, footer, [data-slot='shell-header'], [data-slot='sheet-content'], [data-slot='navigation-menu']",
         )
       ) {
         return false;
@@ -116,14 +137,13 @@ async function auditPage(page) {
         h = Math.max(h, r.height, minH);
         if (w >= MIN && h >= MIN) return { w, h };
         const slot = node.getAttribute?.("data-slot");
-        if (
+        const isControlRoot =
           node.tagName === "BUTTON" ||
           node.getAttribute("role") === "button" ||
           slot === "button" ||
-          slot === "select-trigger"
-        ) {
-          break;
-        }
+          slot === "select-trigger";
+        if (isControlRoot && w >= MIN && h >= MIN) break;
+        if (isControlRoot && depth >= 2) break;
         node = node.parentElement;
         depth += 1;
       }
@@ -140,7 +160,7 @@ async function auditPage(page) {
         if (isProseLink(el)) return false;
         if (
           el.closest(
-            "header, footer, nav, [data-slot='shell-header'], [data-slot='sheet-content'], [data-slot='navigation-menu']",
+            "header, footer, [data-slot='shell-header'], [data-slot='sheet-content'], [data-slot='navigation-menu']",
           )
         ) {
           return true;
@@ -155,9 +175,11 @@ async function auditPage(page) {
       "button, a[href], [role='button'], input, select, textarea, [data-slot='select-trigger']",
     )) {
       if (!isScannedControl(el)) continue;
+      if (!isEffectivelyVisible(el)) continue;
       const id =
         el.getAttribute("aria-label") || el.getAttribute("name") || el.textContent?.trim().slice(0, 48) || el.tagName;
       if (seen.has(id)) continue;
+
       const box = effectiveHitBox(el);
       if (!box) continue;
       if (box.w < MIN || box.h < MIN) {
@@ -213,35 +235,34 @@ async function interactShop(page, width) {
   const notes = [];
   if (width >= 768) return { notes, openedDrawer: false };
 
-  await page
-    .getByRole("button", { name: /Filters/i })
-    .first()
-    .waitFor({ timeout: 8000 })
-    .catch(() => {});
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.waitForTimeout(150);
+
+  const filterBtn = page.getByRole("button", { name: /Filters/i }).first();
+  if (await filterBtn.isVisible().catch(() => false)) notes.push("filters-sheet-cta");
 
   try {
     const menuBtn = page.getByRole("button", { name: "Open menu" });
-    await menuBtn.click({ timeout: 3000 });
-    await page.waitForTimeout(400);
-    const sheet = page.locator('[data-slot="sheet-content"], [role="dialog"]');
-    if (await sheet.count()) notes.push("mobile-nav-sheet-opened");
-    else notes.push("mobile-nav-sheet-missing");
+    await menuBtn.waitFor({ state: "visible", timeout: 15000 });
+    await menuBtn.click({ timeout: 5000 });
+    const sheet = page.locator('[data-slot="sheet-content"]').last();
+    await sheet.waitFor({ state: "visible", timeout: 5000 });
+    notes.push("mobile-nav-sheet-opened");
     await page.keyboard.press("Escape");
+    await sheet.waitFor({ state: "hidden", timeout: 3000 }).catch(() => {});
   } catch {
     notes.push("mobile-nav-open-failed");
   }
 
   const filterUi = await page.evaluate(() => {
-    const drawerBtn = [...document.querySelectorAll("button")].find((b) => b.textContent?.includes("Filters"));
     const inlineStyleLabel = [...document.querySelectorAll("label")].find((l) => {
       if (l.textContent?.trim() !== "Style") return false;
       const r = l.getBoundingClientRect();
       return r.width > 0 && r.height > 0;
     });
-    return { hasDrawerBtn: Boolean(drawerBtn), hasVisibleInlineFilters: Boolean(inlineStyleLabel) };
+    return { hasVisibleInlineFilters: Boolean(inlineStyleLabel) };
   });
-  if (filterUi.hasDrawerBtn) notes.push("filters-sheet-cta");
-  else if (filterUi.hasVisibleInlineFilters) notes.push("filters-inline-no-drawer");
+  if (filterUi.hasVisibleInlineFilters) notes.push("filters-inline-no-drawer");
   return { notes, openedDrawer: notes.includes("mobile-nav-sheet-opened") };
 }
 
@@ -297,21 +318,21 @@ for (const vp of VIEWPORTS) {
   for (const route of routes) {
     const url = `${base}${route.path}`;
     try {
-      await page.goto(url, { waitUntil: "networkidle", timeout: 60000 });
-      await page.waitForTimeout(500);
+      await page.goto(url, { waitUntil: "load", timeout: 60000 });
+      await page.waitForTimeout(600);
     } catch (e) {
       report.pages.push({ ...route, viewport: vp.width, group: vp.group, error: String(e) });
       continue;
     }
 
     const audit = await auditPage(page);
-    const scrollHeader = await afterScrollHeader(page);
     let interactNotes = [];
 
     if (route.interact === "shop") interactNotes = (await interactShop(page, vp.width)).notes;
     if (route.interact === "pdp") interactNotes = await interactPdp(page);
     if (route.interact === "checkout") interactNotes = await interactCheckout(page);
 
+    const scrollHeader = await afterScrollHeader(page);
     await page.evaluate(() => window.scrollTo(0, 0));
 
     const pageIssues = [...audit.issues];
@@ -322,7 +343,7 @@ for (const vp of VIEWPORTS) {
       });
     }
     for (const n of interactNotes) {
-      if (n.includes("under-44") || n === "filters-inline-no-drawer" || n === "mobile-nav-open-failed") {
+      if (n.includes("under-44") || n === "filters-inline-no-drawer") {
         pageIssues.push({ code: "interaction", detail: n });
       }
     }

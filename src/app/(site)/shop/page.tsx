@@ -1,5 +1,4 @@
 import { ShopCatalogPage } from "@/module/shop/shop-page";
-import Shell from "@/shared/components/layout/shell";
 import { buildPageMetadata } from "@/shared/seo/metadata-builders";
 
 export const metadata = buildPageMetadata({
@@ -15,11 +14,5 @@ type ShopPageProps = {
 
 export default async function ShopPage({ searchParams }: ShopPageProps) {
   const query = await searchParams;
-  return (
-    <Shell>
-      <Shell.Section>
-        <ShopCatalogPage searchParams={query} />
-      </Shell.Section>
-    </Shell>
-  );
+  return <ShopCatalogPage searchParams={query} />;
 }

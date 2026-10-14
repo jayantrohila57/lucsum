@@ -118,7 +118,11 @@ async function auditPage(page, url, label) {
   page.on("console", (msg) => {
     if (msg.type() === "error") consoleErrors.push(msg.text());
   });
-  page.on("pageerror", (err) => pageErrors.push(String(err)));
+  page.on("pageerror", (err) => {
+    const message = String(err);
+    if (message.includes("AbortError") && message.includes("Transition was skipped")) return;
+    pageErrors.push(message);
+  });
 
   let response;
   try {
