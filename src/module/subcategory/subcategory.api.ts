@@ -2,7 +2,7 @@ import { and, eq, ilike, inArray, isNull, not } from "drizzle-orm";
 import { v4 as uuidv4 } from "uuid";
 import { createTRPCRouter, publicProcedure, staffProcedure } from "@/core/api/api.methods";
 import { db } from "@/core/db/db";
-import { product, productCollection, productVariant, subcategory } from "@/core/db/db.schema";
+import { product, productCollection, type productVariant, subcategory } from "@/core/db/db.schema";
 import { MESSAGE, STATUS } from "@/shared/config/api.config";
 import { API_RESPONSE } from "@/shared/config/api.utils";
 import { subcategoryContract } from "./subcategory.schema";
