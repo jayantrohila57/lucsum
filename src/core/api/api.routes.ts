@@ -23,6 +23,7 @@ import { productVariantRouter } from "@/module/product-variant/product-variant.a
 import { reviewRouter } from "@/module/review/review.api";
 import { shipmentRouter } from "@/module/shipment/shipment.api";
 import { shippingConfigRouter } from "@/module/shipping-config/shipping-config.api";
+import { sitePageRouter } from "@/module/site-page/site-page.api";
 import { subcategoryRouter } from "@/module/subcategory/subcategory.api";
 import { wishlistRouter } from "@/module/wishlist/wishlist.api";
 
@@ -47,6 +48,7 @@ export const appRouter = createTRPCRouter({
   shippingConfig: shippingConfigRouter,
   discount: discountRouter,
   cookieConsent: cookieConsentRouter,
+  sitePage: sitePageRouter,
 });
 
 export type AppRouter = typeof appRouter;

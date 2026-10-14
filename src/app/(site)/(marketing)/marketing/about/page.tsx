@@ -1,54 +1,29 @@
-import {
-  ContentAnnouncementBar,
-  ContentCTA,
-  ContentFeatureHighlights,
-  ContentOfferBanner,
-  ContentPromoBanner,
-  ContentSplitBanner,
-} from "@/module/site/content-sections";
+import { CmsHtml } from "@/module/site/cms-html";
+import { fetchSitePageBySlug, getShopifyCmsMetadata } from "@/module/site/shopify-page-loader";
 import Section from "@/shared/components/layout/section/section";
 import Shell from "@/shared/components/layout/shell";
 import { site } from "@/shared/config/site";
-import { buildPageMetadata } from "@/shared/seo/metadata-builders";
 
-const pageHeading = {
+const fallback = {
   title: "About",
-  description: `Learn more about ${site.name} and what we offer.`,
+  description: `Learn more about ${site.name}.`,
+  canonicalPath: "/marketing/about",
 };
 
-export const metadata = buildPageMetadata({
-  title: pageHeading.title,
-  description: pageHeading.description,
-  canonicalPath: "/marketing/about",
-  ogType: "website",
-});
+export const generateMetadata = () => getShopifyCmsMetadata("about", fallback);
 
-export default function Page() {
+export default async function Page() {
+  const page = await fetchSitePageBySlug("about");
   return (
     <Shell>
       <Shell.Section>
-        <ContentAnnouncementBar page="about" />
-      </Shell.Section>
-      <Shell.Section>
-        <ContentPromoBanner page="about" />
-      </Shell.Section>
-      <Shell.Section>
-        <ContentSplitBanner page="about" />
-      </Shell.Section>
-      <Shell.Section>
-        <Section title={pageHeading.title} description={pageHeading.description}>
-          <h1>{pageHeading.title}</h1>
-          <p>{pageHeading.description}</p>
+        <Section title={page?.title ?? fallback.title} description={page?.metaDescription ?? fallback.description}>
+          {page?.bodyHtml ? (
+            <CmsHtml html={page.bodyHtml} />
+          ) : (
+            <p className="text-muted-foreground">{fallback.description}</p>
+          )}
         </Section>
-      </Shell.Section>
-      <Shell.Section>
-        <ContentCTA page="about" />
-      </Shell.Section>
-      <Shell.Section>
-        <ContentOfferBanner page="about" />
-      </Shell.Section>
-      <Shell.Section>
-        <ContentFeatureHighlights page="about" />
       </Shell.Section>
     </Shell>
   );

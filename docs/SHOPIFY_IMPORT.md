@@ -27,6 +27,9 @@ pnpm db:migrate
 ## Commands
 
 ```bash
+# Production seed (only supported path): purge non-backup rows, then idempotent Shopify import
+pnpm db:seed
+
 # Soft-deactivate demo/seed data (products, categories, marketing, reviews, etc.)
 pnpm purge-mock
 

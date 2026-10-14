@@ -12,8 +12,12 @@ import { and, eq, ilike, inArray, isNull, notExists, or, sql } from "drizzle-orm
 import { drizzle } from "drizzle-orm/neon-serverless";
 import { v4 as uuidv4 } from "uuid";
 import * as schema from "../src/core/db/db.schema";
+import { SHOPIFY_PAGE_ROUTE_BY_HANDLE } from "../src/shared/config/shopify-pages";
 import { runPurgeMockData } from "./purge-mock-data";
 import { paiseFromInr, productPrimaryImageUrl, STYLE_TAGS, shopifyId, styleFromTags } from "./shopify-import.lib";
+import { mapMenuTree, type ShopifyMenuExport } from "./shopify-import-nav.lib";
+
+const PAGE_ROUTE_MAP = SHOPIFY_PAGE_ROUTE_BY_HANDLE;
 
 const STYLE_SUBCATEGORY_TITLES: Record<string, string> = {
   "branded-tape": "Branded Tape",
@@ -21,18 +25,6 @@ const STYLE_SUBCATEGORY_TITLES: Record<string, string> = {
   "celestial-graphic": "Celestial Graphic",
   "shoulder-logo": "Shoulder Logo",
   "raglan-baseball": "Raglan Baseball",
-};
-
-const PAGE_ROUTE_MAP: Record<string, string> = {
-  about: "/marketing/about",
-  contact: "/support/contact",
-  shipping: "/support/shipping",
-  faq: "/support/faq",
-  "returns-refunds": "/support/returns",
-  "size-fit": "/support/size-guide",
-  "track-order": "/account/order",
-  "care-guide": "/support/help-center",
-  "why-lucsum": "/marketing/about",
 };
 
 const POLICY_SLUG_MAP: Record<string, string> = {
@@ -69,20 +61,45 @@ async function cleanupDemo(db: ReturnType<typeof drizzle>) {
   await runPurgeMockData(db, { dryRun });
 }
 
-async function main() {
+export type ShopifyImportSummary = {
+  products: number;
+  variants: number;
+  collections: number;
+  catalogCollections: number;
+  sitePages: number;
+  articles: number;
+  redirects: number;
+  menus: number;
+  discounts: number;
+  marketingHeroSlides: number;
+};
+
+export async function runShopifyImport(): Promise<ShopifyImportSummary> {
   const databaseUrl = process.env.DATABASE_URL;
   if (!databaseUrl) {
-    console.error("DATABASE_URL is required");
-    process.exit(1);
+    throw new Error("DATABASE_URL is required");
   }
 
   const pool = new Pool({ connectionString: databaseUrl });
   const db = drizzle({ client: pool, schema });
 
+  const summary: ShopifyImportSummary = {
+    products: 0,
+    variants: 0,
+    collections: 0,
+    catalogCollections: 0,
+    sitePages: 0,
+    articles: 0,
+    redirects: 0,
+    menus: 0,
+    discounts: 0,
+    marketingHeroSlides: 0,
+  };
+
   if (cleanupOnly) {
     await cleanupDemo(db);
     await pool.end();
-    return;
+    return summary;
   }
 
   const productsFile = loadJson<{ data: { products: { nodes: ShopifyProduct[] } } }>("products.json");
@@ -91,6 +108,9 @@ async function main() {
   const misc = loadJson<{ data: ShopifyMisc }>("content-misc.json");
 
   const activeProducts = productsFile.data.products.nodes.filter((p) => p.status === "ACTIVE");
+  summary.products = activeProducts.length;
+  summary.variants = variantsFile.data.productVariants.nodes.length;
+  summary.collections = collectionsFile.data.collections.nodes.length;
   console.log(`Importing ${activeProducts.length} active products (skipping DRAFT legacy listings)`);
 
   const variantsByProduct = new Map<string, ShopifyVariant[]>();
@@ -285,6 +305,7 @@ async function main() {
             baseImage,
             isActive: true,
             status: "live",
+            deletedAt: null,
             updatedAt: new Date(),
           },
         });
@@ -446,6 +467,95 @@ async function main() {
     }
   }
 
+  const outDir = path.join(process.cwd(), "data");
+
+  const menuNodes = misc.data.menus?.nodes ?? [];
+  summary.menus = menuNodes.length;
+  if (!dryRun && menuNodes.length) {
+    const mappedMenus: ShopifyMenuExport[] = menuNodes.map((menu) => ({
+      handle: menu.handle,
+      title: menu.title,
+      items: mapMenuTree((menu.items ?? []) as import("./shopify-import-nav.lib").ShopifyMenuItemExport[], pathMap),
+    }));
+    writeFileSync(path.join(outDir, "shopify-menus.json"), JSON.stringify({ menus: mappedMenus }, null, 2));
+  }
+
+  for (const node of misc.data.discountNodes?.nodes ?? []) {
+    const discount = node.discount;
+    if (!discount || discount.status !== "ACTIVE") continue;
+    const code = discount.codes?.nodes?.[0]?.code;
+    if (!code) continue;
+    const nodeId = shopifyId(node.id);
+    const pct = discount.customerGets?.value?.percentage;
+    const isPercent = typeof pct === "number";
+    if (!dryRun) {
+      await db
+        .insert(schema.discount)
+        .values({
+          id: `shopify-discount-${nodeId}`,
+          code,
+          type: isPercent ? "percent" : "flat",
+          value: isPercent ? Math.round(pct * 10000) : 0,
+          isActive: true,
+        })
+        .onConflictDoUpdate({
+          target: schema.discount.code,
+          set: {
+            type: isPercent ? "percent" : "flat",
+            value: isPercent ? Math.round(pct * 10000) : 0,
+            isActive: true,
+            updatedAt: new Date(),
+          },
+        });
+      summary.discounts += 1;
+    }
+  }
+
+  const heroSlides = activeProducts
+    .flatMap((p) => {
+      const img = productPrimaryImageUrl(p);
+      if (!img) return [];
+      const style = styleFromTags(p.tags);
+      const dest = style ? `/store/${categorySlug}/${style}/${p.handle}` : `/store/${categorySlug}`;
+      return [
+        {
+          title: p.title,
+          bodyText: p.seo?.description ?? null,
+          image: img,
+          ctaLabel: "Shop now",
+          ctaLink: dest,
+        },
+      ];
+    })
+    .slice(0, 5);
+
+  summary.marketingHeroSlides = heroSlides.length;
+  if (!dryRun && heroSlides.length) {
+    await db
+      .insert(schema.marketingContent)
+      .values({
+        id: "shopify-home-hero",
+        page: "home",
+        section: "crousel",
+        title: "LUCSUM",
+        items: heroSlides,
+        displayOrder: 0,
+        isActive: true,
+      })
+      .onConflictDoUpdate({
+        target: schema.marketingContent.id,
+        set: {
+          items: heroSlides,
+          isActive: true,
+          updatedAt: new Date(),
+        },
+      });
+  }
+
+  summary.sitePages = (misc.data.pages?.nodes ?? []).filter((p) => p.isPublished).length;
+  summary.articles = misc.data.articles?.nodes?.length ?? 0;
+  summary.catalogCollections = collectionsFile.data.collections.nodes.length;
+
   for (const r of misc.data.urlRedirects?.nodes ?? []) {
     let destination = r.target;
     if (destination.startsWith("/products/")) {
@@ -455,15 +565,27 @@ async function main() {
     redirects.push({ source: r.path, destination, permanent: true });
   }
 
-  const outDir = path.join(process.cwd(), "data");
-  writeFileSync(path.join(outDir, "catalog-paths.json"), JSON.stringify(pathMap, null, 2));
-  writeFileSync(path.join(outDir, "shopify-redirects.json"), JSON.stringify(redirects, null, 2));
+  if (!dryRun) {
+    writeFileSync(path.join(outDir, "catalog-paths.json"), JSON.stringify(pathMap, null, 2));
+    writeFileSync(path.join(outDir, "shopify-redirects.json"), JSON.stringify(redirects, null, 2));
+  }
+  summary.redirects = redirects.length;
 
   console.log(
     `Import ${dryRun ? "(dry-run) " : ""}finished: ${activeProducts.length} products, ${redirects.length} redirects written to data/`,
   );
 
   await pool.end();
+  return summary;
+}
+
+async function main() {
+  try {
+    await runShopifyImport();
+  } catch (err) {
+    console.error(err);
+    process.exit(1);
+  }
 }
 
 type ShopifyProduct = {
@@ -525,9 +647,30 @@ type ShopifyMisc = {
   blogs?: { nodes: { handle: string }[] };
   urlRedirects?: { nodes: { path: string; target: string }[] };
   shop?: { shopPolicies?: { title: string; body?: string; type?: string }[] };
+  menus?: {
+    nodes: {
+      handle: string;
+      title: string;
+      items: {
+        title: string;
+        type: string;
+        url: string;
+        items?: { title: string; type: string; url: string; items?: unknown[] }[];
+      }[];
+    }[];
+  };
+  discountNodes?: {
+    nodes: {
+      id: string;
+      discount: {
+        status: string;
+        codes?: { nodes: { code: string }[] };
+        customerGets?: { value?: { percentage?: number } };
+      };
+    }[];
+  };
 };
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+if (/shopify-import\.ts$/.test(process.argv[1] ?? "")) {
+  main();
+}
