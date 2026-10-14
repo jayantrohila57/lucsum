@@ -290,7 +290,7 @@ Superseded by UI / box system section above for storefront pages.
 
 Scripts re-run: `qa-production-pages.mjs`, `qa-mobile-tablet.mjs`, `qa-ui-screenshots.mjs` → `docs/qa-production-results.json`, `docs/qa-mobile-tablet-results.json`, `docs/qa-screenshots/ui-metrics.json`.
 
-**dev → master PR (draft, do not merge):** https://github.com/jayantrohila57/lucsum/compare/master...dev
+**dev → master PR (draft, do not merge):** https://github.com/jayantrohila57/lucsum/pull/56
 
 ---
 
