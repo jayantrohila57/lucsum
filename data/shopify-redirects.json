@@ -1,0 +1,547 @@
+[
+  {
+    "source": "/collections/t-shirts",
+    "destination": "/store/collections/t-shirts",
+    "permanent": true
+  },
+  {
+    "source": "/collections/new-arrivals",
+    "destination": "/store/collections/new-arrivals",
+    "permanent": true
+  },
+  {
+    "source": "/collections/graphic-tees",
+    "destination": "/store/collections/graphic-tees",
+    "permanent": true
+  },
+  {
+    "source": "/collections/lucsum-essentials",
+    "destination": "/store/collections/lucsum-essentials",
+    "permanent": true
+  },
+  {
+    "source": "/collections/branded-tape",
+    "destination": "/store/t-shirts/branded-tape",
+    "permanent": true
+  },
+  {
+    "source": "/collections/contrast-panel",
+    "destination": "/store/t-shirts/contrast-panel",
+    "permanent": true
+  },
+  {
+    "source": "/collections/celestial-graphic",
+    "destination": "/store/t-shirts/celestial-graphic",
+    "permanent": true
+  },
+  {
+    "source": "/collections/shoulder-logo",
+    "destination": "/store/t-shirts/shoulder-logo",
+    "permanent": true
+  },
+  {
+    "source": "/collections/raglan-baseball",
+    "destination": "/store/t-shirts/raglan-baseball",
+    "permanent": true
+  },
+  {
+    "source": "/collections/red-t-shirts",
+    "destination": "/store/collections/red-t-shirts",
+    "permanent": true
+  },
+  {
+    "source": "/collections/grey-t-shirts",
+    "destination": "/store/collections/grey-t-shirts",
+    "permanent": true
+  },
+  {
+    "source": "/collections/black-t-shirts",
+    "destination": "/store/collections/black-t-shirts",
+    "permanent": true
+  },
+  {
+    "source": "/collections/white-t-shirts",
+    "destination": "/store/collections/white-t-shirts",
+    "permanent": true
+  },
+  {
+    "source": "/collections/olive-t-shirts",
+    "destination": "/store/collections/olive-t-shirts",
+    "permanent": true
+  },
+  {
+    "source": "/products/celestial-graphic-black",
+    "destination": "/store/t-shirts/celestial-graphic/celestial-graphic-black",
+    "permanent": true
+  },
+  {
+    "source": "/products/shoulder-logo-charcoal",
+    "destination": "/store/t-shirts/shoulder-logo/shoulder-logo-charcoal",
+    "permanent": true
+  },
+  {
+    "source": "/products/branded-tape-black",
+    "destination": "/store/t-shirts/branded-tape/branded-tape-black",
+    "permanent": true
+  },
+  {
+    "source": "/products/branded-tape-olive",
+    "destination": "/store/t-shirts/branded-tape/branded-tape-olive",
+    "permanent": true
+  },
+  {
+    "source": "/products/contrast-panel-black",
+    "destination": "/store/t-shirts/contrast-panel/contrast-panel-black",
+    "permanent": true
+  },
+  {
+    "source": "/products/contrast-panel-white",
+    "destination": "/store/t-shirts/contrast-panel/contrast-panel-white",
+    "permanent": true
+  },
+  {
+    "source": "/products/contrast-panel-red",
+    "destination": "/store/t-shirts/contrast-panel/contrast-panel-red",
+    "permanent": true
+  },
+  {
+    "source": "/products/raglan-baseball-black-white",
+    "destination": "/store/t-shirts/raglan-baseball/raglan-baseball-black-white",
+    "permanent": true
+  },
+  {
+    "source": "/products/raglan-baseball-maroon-white",
+    "destination": "/store/t-shirts/raglan-baseball/raglan-baseball-maroon-white",
+    "permanent": true
+  },
+  {
+    "source": "/products/branded-tape-red",
+    "destination": "/store/t-shirts/branded-tape/branded-tape-red",
+    "permanent": true
+  },
+  {
+    "source": "/products/branded-tape-grey",
+    "destination": "/store/t-shirts/branded-tape/branded-tape-grey",
+    "permanent": true
+  },
+  {
+    "source": "/products/branded-tape-white",
+    "destination": "/store/t-shirts/branded-tape/branded-tape-white",
+    "permanent": true
+  },
+  {
+    "source": "/products/contrast-panel-grey",
+    "destination": "/store/t-shirts/contrast-panel/contrast-panel-grey",
+    "permanent": true
+  },
+  {
+    "source": "/products/contrast-panel-olive",
+    "destination": "/store/t-shirts/contrast-panel/contrast-panel-olive",
+    "permanent": true
+  },
+  {
+    "source": "/products/celestial-graphic-red",
+    "destination": "/store/t-shirts/celestial-graphic/celestial-graphic-red",
+    "permanent": true
+  },
+  {
+    "source": "/products/celestial-graphic-grey",
+    "destination": "/store/t-shirts/celestial-graphic/celestial-graphic-grey",
+    "permanent": true
+  },
+  {
+    "source": "/products/celestial-graphic-white",
+    "destination": "/store/t-shirts/celestial-graphic/celestial-graphic-white",
+    "permanent": true
+  },
+  {
+    "source": "/products/celestial-graphic-olive",
+    "destination": "/store/t-shirts/celestial-graphic/celestial-graphic-olive",
+    "permanent": true
+  },
+  {
+    "source": "/products/shoulder-logo-red",
+    "destination": "/store/t-shirts/shoulder-logo/shoulder-logo-red",
+    "permanent": true
+  },
+  {
+    "source": "/products/shoulder-logo-black",
+    "destination": "/store/t-shirts/shoulder-logo/shoulder-logo-black",
+    "permanent": true
+  },
+  {
+    "source": "/products/shoulder-logo-white",
+    "destination": "/store/t-shirts/shoulder-logo/shoulder-logo-white",
+    "permanent": true
+  },
+  {
+    "source": "/products/shoulder-logo-olive",
+    "destination": "/store/t-shirts/shoulder-logo/shoulder-logo-olive",
+    "permanent": true
+  },
+  {
+    "source": "/products/raglan-baseball-grey-white",
+    "destination": "/store/t-shirts/raglan-baseball/raglan-baseball-grey-white",
+    "permanent": true
+  },
+  {
+    "source": "/products/raglan-baseball-olive-white",
+    "destination": "/store/t-shirts/raglan-baseball/raglan-baseball-olive-white",
+    "permanent": true
+  },
+  {
+    "source": "/products/raglan-baseball-white-white",
+    "destination": "/store/t-shirts/raglan-baseball/raglan-baseball-white-white",
+    "permanent": true
+  },
+  {
+    "source": "/pages/contact",
+    "destination": "/support/contact",
+    "permanent": true
+  },
+  {
+    "source": "/pages/about",
+    "destination": "/marketing/about",
+    "permanent": true
+  },
+  {
+    "source": "/pages/shipping",
+    "destination": "/support/shipping",
+    "permanent": true
+  },
+  {
+    "source": "/pages/size-fit",
+    "destination": "/support/size-guide",
+    "permanent": true
+  },
+  {
+    "source": "/pages/faq",
+    "destination": "/support/faq",
+    "permanent": true
+  },
+  {
+    "source": "/pages/returns-refunds",
+    "destination": "/support/returns",
+    "permanent": true
+  },
+  {
+    "source": "/pages/track-order",
+    "destination": "/account/order",
+    "permanent": true
+  },
+  {
+    "source": "/pages/care-guide",
+    "destination": "/support/help-center",
+    "permanent": true
+  },
+  {
+    "source": "/pages/why-lucsum",
+    "destination": "/marketing/about",
+    "permanent": true
+  },
+  {
+    "source": "/policies/contact-information",
+    "destination": "/support/contact",
+    "permanent": true
+  },
+  {
+    "source": "/policies/privacy-policy",
+    "destination": "/legal/privacy-policy",
+    "permanent": true
+  },
+  {
+    "source": "/policies/refund-policy",
+    "destination": "/legal/refund-policy",
+    "permanent": true
+  },
+  {
+    "source": "/policies/shipping-policy",
+    "destination": "/legal/shipping-policy",
+    "permanent": true
+  },
+  {
+    "source": "/policies/terms-of-service",
+    "destination": "/legal/terms-of-service",
+    "permanent": true
+  },
+  {
+    "source": "/blogs/lucsum-journal/why-we-choose-oversized",
+    "destination": "/blog/why-we-choose-oversized",
+    "permanent": true
+  },
+  {
+    "source": "/blogs/lucsum-journal/how-to-find-your-best-oversized-fit",
+    "destination": "/blog/how-to-find-your-best-oversized-fit",
+    "permanent": true
+  },
+  {
+    "source": "/blogs/lucsum-journal/the-lucsum-approach-to-everyday-essentials",
+    "destination": "/blog/the-lucsum-approach-to-everyday-essentials",
+    "permanent": true
+  },
+  {
+    "source": "/blogs/lucsum-journal/how-to-make-your-clothes-last-longer",
+    "destination": "/blog/how-to-make-your-clothes-last-longer",
+    "permanent": true
+  },
+  {
+    "source": "/blogs/lucsum-journal/graphic-tees-how-to-style-statement-pieces",
+    "destination": "/blog/graphic-tees-how-to-style-statement-pieces",
+    "permanent": true
+  },
+  {
+    "source": "/blogs/lucsum-journal/contrast-panel-vs-raglan-picking-your-silhouette",
+    "destination": "/blog/contrast-panel-vs-raglan-picking-your-silhouette",
+    "permanent": true
+  },
+  {
+    "source": "/blogs/lucsum-journal/branded-tape-details-the-lucsum-signature",
+    "destination": "/blog/branded-tape-details-the-lucsum-signature",
+    "permanent": true
+  },
+  {
+    "source": "/blogs/lucsum-journal/new-arrivals-guide-whats-in-the-orbit",
+    "destination": "/blog/new-arrivals-guide-whats-in-the-orbit",
+    "permanent": true
+  },
+  {
+    "source": "/products/classic-heavyweight-oversized",
+    "destination": "/products/branded-tape-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/products/classic-heavyweight-oversized-t-shirt",
+    "destination": "/products/branded-tape-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/products/classic-heavyweight",
+    "destination": "/products/branded-tape-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/products/heavyweight-oversized",
+    "destination": "/products/branded-tape-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/products/heavyweight-oversized-t-shirt",
+    "destination": "/products/branded-tape-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/products/240-gsm-tie-dye",
+    "destination": "/products/branded-tape-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/products/240-gsm-tie-dye-oversized-t-shirt",
+    "destination": "/products/branded-tape-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/products/tie-dye",
+    "destination": "/products/branded-tape-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/products/tie-dye-oversized-t-shirt",
+    "destination": "/products/branded-tape-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/products/240gsm-tie-dye",
+    "destination": "/products/branded-tape-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/products/240-gsm-stone-washed",
+    "destination": "/products/branded-tape-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/products/240-gsm-stone-washed-oversized-t-shirt",
+    "destination": "/products/branded-tape-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/products/stone-washed",
+    "destination": "/products/branded-tape-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/products/stone-washed-oversized-t-shirt",
+    "destination": "/products/branded-tape-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/products/240gsm-stone-washed",
+    "destination": "/products/branded-tape-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/products/french-terry",
+    "destination": "/products/branded-tape-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/products/french-terry-oversized-t-shirt",
+    "destination": "/products/branded-tape-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/products/240gsm-french-terry",
+    "destination": "/products/branded-tape-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/products/240-gsm-french-terry",
+    "destination": "/products/branded-tape-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/products/waffle",
+    "destination": "/products/branded-tape-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/products/waffle-oversized-t-shirt",
+    "destination": "/products/branded-tape-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/products/240gsm-waffle",
+    "destination": "/products/branded-tape-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/products/240-gsm-waffle",
+    "destination": "/products/branded-tape-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/products/gold-cotton",
+    "destination": "/products/branded-tape-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/products/gold-cotton-oversized-t-shirt",
+    "destination": "/products/branded-tape-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/products/230-gsm-gold-cotton",
+    "destination": "/products/branded-tape-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/products/230gsm-gold-cotton",
+    "destination": "/products/branded-tape-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/products/raglan-half-sleeve",
+    "destination": "/products/raglan-baseball-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/products/raglan-half-sleeve-t-shirt",
+    "destination": "/products/raglan-baseball-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/products/raglan-half-sleeve-oversized-t-shirt",
+    "destination": "/products/raglan-baseball-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/products/210-gsm-raglan-half-sleeve",
+    "destination": "/products/raglan-baseball-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/products/210gsm-raglan-half-sleeve",
+    "destination": "/products/raglan-baseball-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/products/cotton-sinker-regular-fit",
+    "destination": "/collections/all",
+    "permanent": true
+  },
+  {
+    "source": "/products/cotton-sinker-regular-fit-t-shirt",
+    "destination": "/collections/all",
+    "permanent": true
+  },
+  {
+    "source": "/products/180-gsm-cotton-sinker-regular-fit",
+    "destination": "/collections/all",
+    "permanent": true
+  },
+  {
+    "source": "/products/180gsm-cotton-sinker-regular-fit",
+    "destination": "/collections/all",
+    "permanent": true
+  },
+  {
+    "source": "/products/cotton-sinker",
+    "destination": "/collections/all",
+    "permanent": true
+  },
+  {
+    "source": "/products/essential-regular-fit-t-shirt",
+    "destination": "/collections/all",
+    "permanent": true
+  },
+  {
+    "source": "/products/essential-regular-fit",
+    "destination": "/collections/all",
+    "permanent": true
+  },
+  {
+    "source": "/products/essential-regular-fit-tee",
+    "destination": "/collections/all",
+    "permanent": true
+  },
+  {
+    "source": "/products/lucsum-essential-regular-fit",
+    "destination": "/collections/all",
+    "permanent": true
+  },
+  {
+    "source": "/products/essential-regular",
+    "destination": "/collections/all",
+    "permanent": true
+  },
+  {
+    "source": "/products/essential-tee",
+    "destination": "/collections/all",
+    "permanent": true
+  },
+  {
+    "source": "/products/essential-t-shirt",
+    "destination": "/collections/all",
+    "permanent": true
+  },
+  {
+    "source": "/products/classic-heavyweight-oversized-tee",
+    "destination": "/products/branded-tape-oversized-t-shirt",
+    "permanent": true
+  },
+  {
+    "source": "/collections/all-t-shirts",
+    "destination": "/collections/t-shirts",
+    "permanent": true
+  },
+  {
+    "source": "/pages/care",
+    "destination": "/pages/care-guide",
+    "permanent": true
+  },
+  {
+    "source": "/pages/help-centre",
+    "destination": "/pages/faq",
+    "permanent": true
+  }
+]

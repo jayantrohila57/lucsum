@@ -299,6 +299,8 @@ export const subcategory = pgTable(
     visibility: visibilityEnum("visibility").default("public").notNull(),
     displayOrder: integer("display_order").default(0).notNull(),
     image: text("image"),
+    /** When set, listing uses product_collection membership for this slug instead of product.subcategory_slug. */
+    collectionSlug: text("collection_slug"),
     isFeatured: boolean("is_featured").default(false).notNull(),
     createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
     deletedAt: timestamp("deleted_at", { withTimezone: true }),
@@ -310,6 +312,7 @@ export const subcategory = pgTable(
     categorySlugIdx: index("subcategory_category_slug_idx").on(table.categorySlug),
     visibilityIdx: index("subcategory_visibility_idx").on(table.visibility),
     isFeaturedIdx: index("subcategory_is_featured_idx").on(table.isFeatured),
+    collectionSlugIdx: index("subcategory_collection_slug_idx").on(table.collectionSlug),
   }),
 );
 export const attribute = pgTable("attribute", {
@@ -373,6 +376,28 @@ export const marketingContent = pgTable(
 );
 
 /** Public marketing signups (footer + newsletter page). */
+/** CMS pages and blog articles imported from Shopify (and editable in Studio later). */
+export const sitePage = pgTable(
+  "site_page",
+  {
+    id: text("id").primaryKey(),
+    slug: text("slug").notNull().unique(),
+    kind: text("kind").$type<"page" | "article" | "policy">().notNull(),
+    title: text("title").notNull(),
+    bodyHtml: text("body_html").notNull(),
+    metaTitle: text("meta_title"),
+    metaDescription: text("meta_description"),
+    publishedAt: timestamp("published_at", { withTimezone: true }),
+    createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+    updatedAt: timestamp("updated_at", { withTimezone: true })
+      .defaultNow()
+      .$onUpdate(() => new Date()),
+  },
+  (table) => ({
+    kindIdx: index("site_page_kind_idx").on(table.kind),
+  }),
+);
+
 export const newsletterSubscriber = pgTable(
   "newsletter_subscriber",
   {
@@ -888,6 +913,45 @@ export const refund = pgTable(
     orderIdx: index("refund_order_idx").on(table.orderId),
     paymentIdx: index("refund_payment_idx").on(table.paymentId),
     statusIdx: index("refund_status_idx").on(table.status),
+  }),
+);
+
+/** Shopify-style collection metadata (style, colour, and catalogue groupings). */
+export const catalogCollection = pgTable(
+  "catalog_collection",
+  {
+    slug: text("slug").primaryKey(),
+    title: text("title").notNull(),
+    description: text("description"),
+    metaTitle: text("meta_title"),
+    metaDescription: text("meta_description"),
+    image: text("image"),
+    createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+    updatedAt: timestamp("updated_at", { withTimezone: true })
+      .defaultNow()
+      .$onUpdate(() => new Date()),
+  },
+  (table) => ({
+    titleIdx: index("catalog_collection_title_idx").on(table.title),
+  }),
+);
+
+export const productCollection = pgTable(
+  "product_collection",
+  {
+    id: text("id").primaryKey(),
+    productId: text("product_id")
+      .notNull()
+      .references(() => product.id, { onDelete: "cascade" }),
+    collectionSlug: text("collection_slug")
+      .notNull()
+      .references(() => catalogCollection.slug, { onDelete: "cascade" }),
+    createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+  },
+  (table) => ({
+    productIdx: index("product_collection_product_idx").on(table.productId),
+    collectionIdx: index("product_collection_collection_idx").on(table.collectionSlug),
+    uniqueMembership: uniqueIndex("product_collection_unique").on(table.productId, table.collectionSlug),
   }),
 );
 

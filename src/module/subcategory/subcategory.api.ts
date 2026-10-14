@@ -1,11 +1,19 @@
-import { and, eq, ilike, isNull, not } from "drizzle-orm";
+import { and, eq, ilike, inArray, isNull, not } from "drizzle-orm";
 import { v4 as uuidv4 } from "uuid";
 import { createTRPCRouter, publicProcedure, staffProcedure } from "@/core/api/api.methods";
 import { db } from "@/core/db/db";
-import { product, subcategory } from "@/core/db/db.schema";
+import { product, productCollection, productVariant, subcategory } from "@/core/db/db.schema";
 import { MESSAGE, STATUS } from "@/shared/config/api.config";
 import { API_RESPONSE } from "@/shared/config/api.utils";
 import { subcategoryContract } from "./subcategory.schema";
+
+function variantsAreSizesOnly(variants: { attributes: { title: string; type: string; value: string }[] | null }[]) {
+  if (variants.length === 0) return false;
+  return variants.every((v) => {
+    const attrs = v.attributes ?? [];
+    return attrs.length > 0 && attrs.every((a) => a.type === "size" || a.title === "Size");
+  });
+}
 
 const computePrice = (basePrice: number, priceModifierValue: string, priceModifierType: string): number => {
   const base = basePrice;
@@ -110,29 +118,78 @@ export const subcategoryRouter = createTRPCRouter({
 
         if (!subcategoryData) return API_RESPONSE(STATUS.FAILED, MESSAGE.SUBCATEGORY.GET_BY_SLUG.FAILED, null);
 
-        // Fetch products with their variants for this subcategory
-        const productsRaw = await db.query.product.findMany({
-          where: (p, { eq, and, isNull }) =>
-            and(
-              eq(p.subcategorySlug, slug),
-              eq(p.categorySlug, categorySlug),
-              eq(p.isActive, true),
-              eq(p.status, "live"),
-              isNull(p.deletedAt),
-            ),
-          with: {
-            variants: {
-              where: (pv, { isNull }) => isNull(pv.deletedAt),
-            },
-          },
-          orderBy: (p, { desc }) => [desc(p.createdAt)],
-        });
+        const liveProductFilter = and(
+          eq(product.categorySlug, categorySlug),
+          eq(product.isActive, true),
+          eq(product.status, "live"),
+          isNull(product.deletedAt),
+        );
 
-        // Flatten all variants with their product data; include products without variants as "virtual" entries
+        type ProductWithVariants = typeof product.$inferSelect & {
+          variants: (typeof productVariant.$inferSelect)[];
+        };
+        let productsRaw: ProductWithVariants[] = [];
+
+        if (subcategoryData.collectionSlug) {
+          const members = await db
+            .select({ productId: productCollection.productId })
+            .from(productCollection)
+            .where(eq(productCollection.collectionSlug, subcategoryData.collectionSlug));
+          const productIds = members.map((m) => m.productId);
+          productsRaw =
+            productIds.length === 0
+              ? []
+              : await db.query.product.findMany({
+                  where: and(inArray(product.id, productIds), liveProductFilter),
+                  with: {
+                    variants: {
+                      where: (pv, { isNull: isNullPv }) => isNullPv(pv.deletedAt),
+                    },
+                  },
+                  orderBy: (p, { desc }) => [desc(p.createdAt)],
+                });
+        } else {
+          productsRaw = await db.query.product.findMany({
+            where: and(eq(product.subcategorySlug, slug), liveProductFilter),
+            with: {
+              variants: {
+                where: (pv, { isNull: isNullPv }) => isNullPv(pv.deletedAt),
+              },
+            },
+            orderBy: (p, { desc }) => [desc(p.createdAt)],
+          });
+        }
+
+        // Flatten variants for grid cards (one card per colour product when variants are sizes only)
         const flattenedVariants = [];
-        for (const product of productsRaw) {
-          if (product.variants.length > 0) {
-            for (const variant of product.variants) {
+        for (const productRow of productsRaw) {
+          if (productRow.variants.length > 0 && variantsAreSizesOnly(productRow.variants)) {
+            const displayVariant = productRow.variants[0]!;
+            flattenedVariants.push({
+              id: displayVariant.id,
+              slug: productRow.slug,
+              title: productRow.title,
+              priceModifierType: displayVariant.priceModifierType,
+              priceModifierValue: displayVariant.priceModifierValue,
+              attributes: displayVariant.attributes,
+              media: displayVariant.media?.length ? displayVariant.media : [{ url: productRow.baseImage ?? "" }],
+              productId: productRow.id,
+              productTitle: productRow.title,
+              productSlug: productRow.slug,
+              productDescription: productRow.description,
+              productBasePrice: productRow.basePrice,
+              productBaseImage: productRow.baseImage,
+              finalPrice: computePrice(
+                productRow.basePrice,
+                displayVariant.priceModifierValue,
+                displayVariant.priceModifierType,
+              ),
+            });
+            continue;
+          }
+
+          if (productRow.variants.length > 0) {
+            for (const variant of productRow.variants) {
               flattenedVariants.push({
                 id: variant.id,
                 slug: variant.slug,
@@ -141,32 +198,32 @@ export const subcategoryRouter = createTRPCRouter({
                 priceModifierValue: variant.priceModifierValue,
                 attributes: variant.attributes,
                 media: variant.media,
-                productId: product.id,
-                productTitle: product.title,
-                productSlug: product.slug,
-                productDescription: product.description,
-                productBasePrice: product.basePrice,
-                productBaseImage: product.baseImage,
-                finalPrice: computePrice(product.basePrice, variant.priceModifierValue, variant.priceModifierType),
+                productId: productRow.id,
+                productTitle: productRow.title,
+                productSlug: productRow.slug,
+                productDescription: productRow.description,
+                productBasePrice: productRow.basePrice,
+                productBaseImage: productRow.baseImage,
+                finalPrice: computePrice(productRow.basePrice, variant.priceModifierValue, variant.priceModifierType),
               });
             }
           } else {
             // Product without variants: add as virtual entry using product slug
             flattenedVariants.push({
-              id: product.id,
-              slug: product.slug,
-              title: product.title,
+              id: productRow.id,
+              slug: productRow.slug,
+              title: productRow.title,
               priceModifierType: "flat_decrease",
               priceModifierValue: "0",
               attributes: null,
               media: null,
-              productId: product.id,
-              productTitle: product.title,
-              productSlug: product.slug,
-              productDescription: product.description,
-              productBasePrice: product.basePrice,
-              productBaseImage: product.baseImage,
-              finalPrice: product.basePrice,
+              productId: productRow.id,
+              productTitle: productRow.title,
+              productSlug: productRow.slug,
+              productDescription: productRow.description,
+              productBasePrice: productRow.basePrice,
+              productBaseImage: productRow.baseImage,
+              finalPrice: productRow.basePrice,
             });
           }
         }

@@ -1,0 +1,1282 @@
+{
+  "data": {
+    "draftOrders": {
+      "nodes": []
+    },
+    "discountNodes": {
+      "nodes": [
+        {
+          "id": "gid://shopify/DiscountCodeNode/1187785408612",
+          "discount": {
+            "__typename": "DiscountCodeBasic",
+            "title": "Varun",
+            "status": "EXPIRED",
+            "startsAt": "2026-09-06T15:34:17Z",
+            "endsAt": "2026-09-12T19:12:56Z",
+            "usageLimit": null,
+            "appliesOncePerCustomer": false,
+            "asyncUsageCount": 4,
+            "summary": "",
+            "codes": {
+              "nodes": [
+                {
+                  "code": "Varun"
+                }
+              ]
+            },
+            "customerGets": {
+              "value": {
+                "percentage": 1
+              }
+            },
+            "minimumRequirement": null
+          }
+        },
+        {
+          "id": "gid://shopify/DiscountCodeNode/1187852681316",
+          "discount": {
+            "__typename": "DiscountCodeBasic",
+            "title": "WELCOME10",
+            "status": "ACTIVE",
+            "startsAt": "2026-09-06T18:38:29Z",
+            "endsAt": null,
+            "usageLimit": null,
+            "appliesOncePerCustomer": true,
+            "asyncUsageCount": 0,
+            "summary": "10% off entire order • One use per customer",
+            "codes": {
+              "nodes": [
+                {
+                  "code": "WELCOME10"
+                }
+              ]
+            },
+            "customerGets": {
+              "value": {
+                "percentage": 0.1
+              }
+            },
+            "minimumRequirement": null
+          }
+        }
+      ]
+    },
+    "pages": {
+      "nodes": [
+        {
+          "id": "gid://shopify/Page/129190625380",
+          "handle": "contact",
+          "title": "Contact Lucsum",
+          "body": "<h2>Contact LUCSUM</h2>\n<p>Questions about fit, shipping, or your order? Reach us by email or WhatsApp — real people, real answers.</p>\n<h3>Email</h3>\n<p><a href=\"mailto:support@lucsum.com\">support@lucsum.com</a></p>\n<h3>WhatsApp</h3>\n<p><a href=\"https://wa.me/918272810805\">+91 82728 10805</a></p>\n<h3>Address</h3>\n<p>2653 Radha Vihar, Saharanpur 247001, Uttar Pradesh, India</p>\n<h3>Response time</h3>\n<p>Within 24–48 hours, Monday–Friday.</p>\n<h3>What to include</h3>\n<ul>\n<li>\n<strong>Order help:</strong> Your order number and the email used at checkout.</li>\n<li>\n<strong>Sizing:</strong> Your height, usual size, and the product you are considering.</li>\n<li>\n<strong>Returns:</strong> Your order number and reason. Wait for approval before sending items back.</li>\n</ul>\n<p>Quick links: <a href=\"/pages/shipping\">Shipping</a> · <a href=\"/pages/returns-refunds\">Returns &amp; Refunds</a> · <a href=\"/pages/faq\">Help Centre</a> · <a href=\"/pages/track-order\">Track Order</a> · <a href=\"/pages/size-fit\">Size &amp; Fit</a></p>\n",
+          "bodySummary": "Contact LUCSUM Questions about fit, shipping, or your order? Reach us by email or WhatsApp — real people, real answers. Email support@lucsum.com Wh...",
+          "isPublished": true,
+          "publishedAt": "2026-09-05T05:08:12Z",
+          "templateSuffix": "contact",
+          "createdAt": "2026-09-05T05:08:12Z",
+          "updatedAt": "2026-10-10T03:12:39Z",
+          "metafields": {
+            "nodes": [
+              {
+                "namespace": "global",
+                "key": "title_tag",
+                "type": "single_line_text_field",
+                "value": "Contact LUCSUM | WhatsApp & Email Support"
+              },
+              {
+                "namespace": "global",
+                "key": "description_tag",
+                "type": "single_line_text_field",
+                "value": "Reach LUCSUM on WhatsApp +91 82728 10805 or support@lucsum.com. Replies within 24–48 hours, Monday–Friday. Based in Saharanpur, India."
+              }
+            ]
+          }
+        },
+        {
+          "id": "gid://shopify/Page/129230864484",
+          "handle": "about",
+          "title": "About Lucsum",
+          "body": "<h2>Be your own universe.</h2>\n<p>LUC is light. SUM is I am. Together: <strong>I am light.</strong></p>\n<p>LUCSUM is a direct-to-consumer Indian streetwear label based in Saharanpur, Uttar Pradesh. We sell oversized T-shirts online, straight to you, shipped across India.</p>\n\n<h3>What we make today</h3>\n<p>25 colourways across 5 oversized styles, in sizes S–XXL, priced ₹899–₹1,099:</p>\n<ul>\n<li>\n<a href=\"/collections/branded-tape\">Branded Tape</a>: <a href=\"/products/branded-tape-olive\">Olive</a>, <a href=\"/products/branded-tape-black\">Black</a>, <a href=\"/products/branded-tape-white\">White</a>, <a href=\"/products/branded-tape-grey\">Grey</a>, <a href=\"/products/branded-tape-red\">Red</a>\n</li>\n<li>\n<a href=\"/collections/contrast-panel\">Contrast Panel</a>: <a href=\"/products/contrast-panel-red\">Red</a>, <a href=\"/products/contrast-panel-white\">White</a>, <a href=\"/products/contrast-panel-black\">Black</a>, <a href=\"/products/contrast-panel-olive\">Olive</a>, <a href=\"/products/contrast-panel-grey\">Grey</a>\n</li>\n<li>\n<a href=\"/collections/celestial-graphic\">Celestial Graphic</a>: <a href=\"/products/celestial-graphic-black\">Black</a>, <a href=\"/products/celestial-graphic-olive\">Olive</a>, <a href=\"/products/celestial-graphic-white\">White</a>, <a href=\"/products/celestial-graphic-grey\">Grey</a>, <a href=\"/products/celestial-graphic-red\">Red</a>\n</li>\n<li>\n<a href=\"/collections/shoulder-logo\">Shoulder Logo</a>: <a href=\"/products/shoulder-logo-charcoal\">Charcoal</a>, <a href=\"/products/shoulder-logo-olive\">Olive</a>, <a href=\"/products/shoulder-logo-white\">White</a>, <a href=\"/products/shoulder-logo-black\">Black</a>, <a href=\"/products/shoulder-logo-red\">Red</a>\n</li>\n<li>\n<a href=\"/collections/raglan-baseball\">Raglan Baseball</a>: <a href=\"/products/raglan-baseball-maroon-white\">Maroon/White</a>, <a href=\"/products/raglan-baseball-black-white\">Black/White</a>, <a href=\"/products/raglan-baseball-olive-white\">Olive/White</a>, <a href=\"/products/raglan-baseball-white-white\">White/White</a>, <a href=\"/products/raglan-baseball-grey-white\">Grey/White</a>\n</li>\n</ul>\n<p>Each style comes in one colour per listing, so the only choice you make is your size.</p>\n\n<h3>Fabric</h3>\n<p>Every current tee is 100% cotton jersey.</p>\n\n<h3>How we work with you</h3>\n<ul>\n<li>\n<strong>Shipping:</strong> India-wide. Standard ₹20, free on orders ₹1,000+. Dispatch in 1–2 business days, delivery usually 3–7 business days after dispatch. <a href=\"/pages/shipping\">Shipping details</a>\n</li>\n<li>\n<strong>Returns:</strong> request within 30 days of delivery (unworn, tags attached). <a href=\"/pages/returns-refunds\">Returns &amp; Refunds</a>\n</li>\n<li>\n<strong>Support:</strong> WhatsApp <a href=\"https://wa.me/918272810805\">+91 82728 10805</a> or <a href=\"mailto:support@lucsum.com\">support@lucsum.com</a>, replies within 24–48 hours (Mon–Fri).</li>\n</ul>\n\n<h3>What LUCSUM stands for</h3>\n<p><strong>Your world. Your rules. Your orbit.</strong> Clothes that fit your own idea of style, not someone else's trend calendar.</p>\n\n<p>Learn more: <a href=\"/pages/why-lucsum\">Why LUCSUM</a> · <a href=\"/pages/size-fit\">Size &amp; Fit</a> · <a href=\"/pages/care-guide\">Care Guide</a> · <a href=\"/pages/faq\">Help Centre</a></p>\n<p>LUCSUM · 2653 Radha Vihar, Saharanpur 247001, Uttar Pradesh, India</p>",
+          "bodySummary": "Be your own universe. LUC is light. SUM is I am. Together: I am light. LUCSUM is a direct-to-consumer Indian streetwear label based in Saharanpur, ...",
+          "isPublished": true,
+          "publishedAt": "2026-09-06T10:16:57Z",
+          "templateSuffix": "about",
+          "createdAt": "2026-09-06T10:16:57Z",
+          "updatedAt": "2026-10-12T11:34:29Z",
+          "metafields": {
+            "nodes": [
+              {
+                "namespace": "global",
+                "key": "title_tag",
+                "type": "single_line_text_field",
+                "value": "About LUCSUM | Oversized Streetwear from Saharanpur, India"
+              },
+              {
+                "namespace": "global",
+                "key": "description_tag",
+                "type": "multi_line_text_field",
+                "value": "LUCSUM is a D2C Indian streetwear label from Saharanpur: 25 oversized 100% cotton tees across 5 styles, S–XXL, with 30-day returns."
+              }
+            ]
+          }
+        },
+        {
+          "id": "gid://shopify/Page/129231061092",
+          "handle": "shipping",
+          "title": "Shipping Policy",
+          "body": "<h2>Shipping across India</h2>\n<p>We ship India-wide to serviceable pin codes. Standard shipping is ₹20, and free on orders of ₹1,000 or more.</p>\n<h3>Processing time</h3>\n<p>Orders are generally processed within <strong>1–2 business days</strong> (Monday–Friday, excluding public holidays). You will receive a confirmation email when your order is placed.</p>\n<h3>Standard delivery</h3>\n<p>After dispatch, standard delivery across India is typically <strong>3–7 business days</strong>. Metro cities are usually at the shorter end; remote pin codes may take longer. Delivery times are estimates and are not guaranteed.</p>\n<h3>Shipping charges</h3>\n<p>Our Standard shipping rates for India:</p>\n<ul>\n<li>\n<strong>Standard shipping:</strong> ₹20</li>\n<li>\n<strong>Free Standard shipping</strong> on orders of <strong>₹1,000 or more</strong> (order total in INR)</li>\n</ul>\n<p>Your checkout shows the final amount: ₹20, or ₹0 once your order total reaches ₹1,000.</p>\n<h3>Cash on Delivery (COD)</h3>\n<p>COD may be available at checkout for eligible pincodes in India. Select COD during checkout to confirm availability.</p>\n<h3>Tracking</h3>\n<p>When your order ships, you will receive an email (and SMS where available) with a live tracking link. Visit our <a href=\"/pages/track-order\">Track Order</a> page or sign in to your account.</p>\n<h3>Address accuracy</h3>\n<p>Please double-check your shipping address at checkout. Contact us immediately if you need to correct an address before dispatch.</p>\n<h3>Lost or damaged shipments</h3>\n<p><strong>Damaged or wrong item:</strong> contact us within <strong>48 hours of delivery</strong> with your order number and clear photos of the item and packaging. <strong>Parcel not arrived:</strong> contact us within <strong>48 hours of the expected delivery date</strong> with your order number. See <a href=\"/pages/faq#damaged\">Help Centre</a>.</p>\n<h3>Common shipping questions</h3>\n<p><strong>When will my order arrive?</strong> Dispatch in 1–2 business days, then usually 3–7 business days.</p>\n<p><strong>Do you ship outside India?</strong> No, we currently ship only within India.</p>\n<p><strong>Can I change my address?</strong> Contact us immediately, before dispatch.</p>\n<p>More answers in the <a href=\"/pages/faq\">Help Centre</a>.</p>\n<h3>Need help?</h3>\n<p>Email <a href=\"mailto:support@lucsum.com\">support@lucsum.com</a> or WhatsApp <a href=\"https://wa.me/918272810805\">+91 82728 10805</a>. See also: <a href=\"/pages/returns-refunds\">Returns &amp; Refunds</a> · <a href=\"/pages/faq\">Help Centre</a></p>\n",
+          "bodySummary": "Shipping across India We ship India-wide to serviceable pin codes. Standard shipping is ₹20, and free on orders of ₹1,000 or more. Processing time ...",
+          "isPublished": true,
+          "publishedAt": "2026-09-06T10:21:24Z",
+          "templateSuffix": "shipping",
+          "createdAt": "2026-09-06T10:21:24Z",
+          "updatedAt": "2026-10-10T03:12:39Z",
+          "metafields": {
+            "nodes": [
+              {
+                "namespace": "global",
+                "key": "title_tag",
+                "type": "single_line_text_field",
+                "value": "Shipping Policy | ₹20 or Free over ₹1,000 | LUCSUM"
+              },
+              {
+                "namespace": "global",
+                "key": "description_tag",
+                "type": "single_line_text_field",
+                "value": "LUCSUM ships India-wide. Dispatch in 1–2 business days, delivery in 3–7. Standard shipping ₹20, free on orders ₹1,000+. COD on eligible pin codes."
+              }
+            ]
+          }
+        },
+        {
+          "id": "gid://shopify/Page/129325924452",
+          "handle": "size-fit",
+          "title": "Size & Fit Guide",
+          "body": "<h2>Find your fit</h2> <p>All current LUCSUM tees are cut <strong>oversized</strong> in sizes S–XXL. Use this guide alongside the garment measurements on each product page.</p> <h3>Oversized fit — garment measurements (inches, laid flat)</h3> <table> <thead><tr>\n<th>Size</th>\n<th>Chest (in)</th>\n<th>Length (in)</th>\n<th>Shoulder (in)</th>\n<th>Sleeve (in)</th>\n</tr></thead> <tbody> <tr>\n<td>S</td>\n<td>21</td>\n<td>28</td>\n<td>18</td>\n<td>9</td>\n</tr> <tr>\n<td>M</td>\n<td>22</td>\n<td>29</td>\n<td>19</td>\n<td>9.5</td>\n</tr> <tr>\n<td>L</td>\n<td>23</td>\n<td>30</td>\n<td>20</td>\n<td>10</td>\n</tr> <tr>\n<td>XL</td>\n<td>24</td>\n<td>31</td>\n<td>21</td>\n<td>10.5</td>\n</tr> <tr>\n<td>XXL</td>\n<td>25</td>\n<td>32</td>\n<td>22</td>\n<td>11</td>\n</tr> </tbody> </table> <p>Chest is measured armpit to armpit. Double for full circumference.</p> <h3>How to measure</h3> <ul> <li>\n<strong>Chest:</strong> Lay flat, measure armpit to armpit, then double.</li> <li>\n<strong>Length:</strong> Highest shoulder point to bottom hem.</li> <li>\n<strong>Shoulder:</strong> Seam to seam across the back.</li> <li>\n<strong>Sleeve:</strong> Shoulder seam to cuff.</li> </ul> <h3>Choosing your size</h3> <p>Choose your usual size for the intended oversized look. Size up for more drape; size down for a closer fit. Compare with a tee you already own.</p> <p>Read: <a href=\"/blogs/lucsum-journal/how-to-find-your-best-oversized-fit\">How to choose your size using garment measurements</a></p> <p>Shop: <a href=\"/collections/t-shirts\">All T-Shirts</a> · <a href=\"/collections/lucsum-essentials\">Essentials</a> · <a href=\"/collections/graphic-tees\">Graphic Tees</a></p> <p>Need help? Email <a href=\"mailto:support@lucsum.com\">support@lucsum.com</a> or see the <a href=\"/pages/faq\">Help Centre</a>.</p>",
+          "bodySummary": "Find your fit All current LUCSUM tees are cut oversized in sizes S–XXL. Use this guide alongside the garment measurements on each product page. Ove...",
+          "isPublished": true,
+          "publishedAt": "2026-09-08T17:31:51Z",
+          "templateSuffix": "size-fit",
+          "createdAt": "2026-09-08T17:31:51Z",
+          "updatedAt": "2026-10-10T03:12:39Z",
+          "metafields": {
+            "nodes": [
+              {
+                "namespace": "global",
+                "key": "title_tag",
+                "type": "single_line_text_field",
+                "value": "Size & Fit Guide for Oversized Tees (S–XXL) | LUCSUM"
+              },
+              {
+                "namespace": "global",
+                "key": "description_tag",
+                "type": "single_line_text_field",
+                "value": "Garment measurements for LUCSUM oversized tees in inches: chest, length, shoulder and sleeve for S–XXL, plus how to measure and pick a size."
+              }
+            ]
+          }
+        },
+        {
+          "id": "gid://shopify/Page/129325957220",
+          "handle": "faq",
+          "title": "Help Centre",
+          "body": "<p>Everything about ordering, delivery, returns and payments in one place. Can't find your answer? Email <a href=\"mailto:support@lucsum.com\">support@lucsum.com</a> or WhatsApp <a href=\"https://wa.me/918272810805\">+91 82728 10805</a> — we respond within 24–48 hours, Monday–Friday.</p>\n<p><strong>Jump to:</strong> <a href=\"#orders\">Orders &amp; tracking</a> · <a href=\"#cancellations\">Cancellations &amp; changes</a> · <a href=\"#exchanges\">Exchanges</a> · <a href=\"#failed-delivery\">Failed delivery</a> · <a href=\"#damaged\">Damaged or wrong items</a> · <a href=\"#returns\">Returns &amp; refunds</a> · <a href=\"#payments\">Payments &amp; COD</a> · <a href=\"#fit\">Size &amp; care</a> · <a href=\"#contact\">Contact &amp; escalation</a></p>\n\n<h2 id=\"orders\">Orders &amp; tracking</h2>\n<h3>What happens after I place an order?</h3>\n<ol>\n<li>\n<strong>Order placed</strong> — you get a confirmation email with your order number.</li>\n<li>\n<strong>Processing</strong> — we pack and dispatch within <strong>1–2 business days</strong> (Monday–Friday, excluding public holidays).</li>\n<li>\n<strong>Shipped</strong> — you get a tracking link by email (and SMS where available).</li>\n<li>\n<strong>In transit</strong> — delivery is typically <strong>3–7 business days</strong> after dispatch. Metro cities are usually quicker; remote pin codes may take longer. These are estimates, not guarantees.</li>\n<li>\n<strong>Delivered</strong> — inspect your parcel when it arrives.</li>\n</ol>\n<h3>How do I check my order status?</h3>\n<p>Use the tracking link in your shipping email, sign in to your account, or visit <a href=\"/pages/track-order\">Track Order</a>. Guest orders can use the link in the shipping email or contact support with the order number.</p>\n<h3>Tracking isn't updating</h3>\n<p>Courier scans can take a few hours. If there is no update 48 hours after dispatch, email support with your order number.</p>\n<h3>Where do you ship and how much does it cost?</h3>\n<p>India-wide to serviceable pin codes (no international shipping yet). <strong>Standard shipping is ₹20</strong>; <strong>free on orders of ₹1,000 or more</strong>. The exact amount is shown at checkout. Full details: <a href=\"/pages/shipping\">Shipping</a>.</p>\n\n<h2 id=\"cancellations\">Cancellations &amp; order changes</h2>\n<h3>Can I cancel or change my order?</h3>\n<p>Contact support as soon as possible with your order number — ideally before your order is dispatched. Address corrections should be sent immediately, before dispatch. Support will confirm what can be changed for your order.</p>\n\n<h2 id=\"exchanges\">Exchanges</h2>\n<h3>Can I exchange for a different size or style?</h3>\n<p>Exchanges can be requested through support, depend on stock availability, and the item must meet our return conditions (unworn, tags attached, original packaging, within 30 days of delivery). The fastest path is often to return the item once approved and place a new order for the size you want. Check the <a href=\"/pages/size-fit\">Size &amp; Fit</a> guide first.</p>\n\n<h2 id=\"failed-delivery\">Failed or undelivered delivery</h2>\n<h3>My parcel hasn't arrived</h3>\n<p>Contact us within <strong>48 hours of the expected delivery date</strong> with your order number. We will work with the courier to resolve it.</p>\n<h3>A delivery attempt failed or my parcel was returned</h3>\n<p>Contact support with your order number and we'll check with the courier and confirm the next steps for your order. Please double-check your address and phone number at checkout to avoid failed attempts.</p>\n\n<h2 id=\"damaged\">Damaged or wrong items</h2>\n<p>Inspect your order on arrival. If an item is defective, damaged, or not what you ordered, contact us <strong>within 48 hours of delivery</strong> with your order number and clear photos of the item and packaging. Damaged, defective or incorrect items reported in this window are handled at no cost to you.</p>\n\n<h2 id=\"returns\">Returns &amp; refunds</h2>\n<h3>What can be returned?</h3>\n<p>You can request a return within <strong>30 days of delivery</strong>. Items must be unworn/unused, unwashed, with tags attached, in original packaging, with your order number. We can't accept items showing wear, washing or damage after delivery, items missing tags or packaging, or gift cards. Sale items may be non-returnable if stated at the time of purchase.</p>\n<h3>How do I return something? (timeline)</h3>\n<ol>\n<li>\n<strong>Request</strong> — email <a href=\"mailto:support@lucsum.com\">support@lucsum.com</a> or WhatsApp <a href=\"https://wa.me/918272810805\">+91 82728 10805</a> with your order number and reason.</li>\n<li>\n<strong>Approval</strong> — wait for approval and return instructions. Items sent back without approval may not be accepted.</li>\n<li>\n<strong>Ship it back</strong> — pack securely with tags and original packaging, to: LUCSUM Returns, 2653 Radha Vihar, Saharanpur 247001, Uttar Pradesh, India.</li>\n<li>\n<strong>Inspection</strong> — we notify you once the return is received and inspected, and whether the refund is approved.</li>\n<li>\n<strong>Refund</strong> — approved refunds go to your original payment method within <strong>5–10 business days</strong>. Your bank may take extra time to post it.</li>\n</ol>\n<h3>Who pays return shipping?</h3>\n<p>For change-of-mind returns, return shipping responsibility is confirmed in your return approval email. Damaged, defective or wrong items reported within 48 hours are handled at no cost to you.</p>\n<h3>My refund hasn't arrived</h3>\n<p>If more than 15 business days have passed since we approved your return, contact <a href=\"mailto:support@lucsum.com\">support@lucsum.com</a>. Full policy: <a href=\"/pages/returns-refunds\">Returns &amp; Refunds</a>.</p>\n\n<h2 id=\"payments\">Payments &amp; COD</h2>\n<h3>What payment methods can I use?</h3>\n<p>UPI, cards, net banking, wallets, and Cash on Delivery where eligible — available options are shown at checkout. Checkout is hosted and processed securely by Shopify.</p>\n<h3>Do you offer Cash on Delivery?</h3>\n<p>COD may be available for eligible pin codes in India. Select COD at checkout to confirm availability for your address.</p>\n\n<h2 id=\"fit\">Size, fit &amp; care</h2>\n<h3>How do LUCSUM tees fit?</h3>\n<p>All current tees are cut oversized in sizes S–XXL and are unisex. Choose your usual size for the oversized look; size up for more drape. See <a href=\"/pages/size-fit\">Size &amp; Fit</a>.</p>\n<h3>What fabric do you use?</h3>\n<p>100% cotton. Construction details for each style are on its product page.</p>\n<h3>How do I care for my tee?</h3>\n<p>Cold wash inside out, dry in shade, and follow the sewn-in care label. Full guidance: <a href=\"/pages/care-guide\">Care Guide</a>.</p>\n\n<h2 id=\"contact\">Contact &amp; escalation</h2>\n<h3>How do I reach LUCSUM?</h3>\n<p>Email <a href=\"mailto:support@lucsum.com\">support@lucsum.com</a> or WhatsApp <a href=\"https://wa.me/918272810805\">+91 82728 10805</a>. We respond within 24–48 hours, Monday–Friday. Please include your order number.</p>\n<h3>My issue hasn't been resolved</h3>\n<p>Reply on your existing email thread or WhatsApp chat with your order number and a short summary, and our support team will follow up.</p>\n<h3>Where are you based?</h3>\n<p>LUCSUM, 2653 Radha Vihar, Saharanpur 247001, Uttar Pradesh, India. More: <a href=\"/pages/contact\">Contact</a> · <a href=\"/policies/shipping-policy\">Shipping policy</a> · <a href=\"/policies/refund-policy\">Refund policy</a> · <a href=\"/policies/terms-of-service\">Terms</a> · <a href=\"/policies/privacy-policy\">Privacy</a></p>\n",
+          "bodySummary": "Everything about ordering, delivery, returns and payments in one place. Can't find your answer? Email support@lucsum.com or WhatsApp +91 82728 1080...",
+          "isPublished": true,
+          "publishedAt": "2026-09-08T17:31:58Z",
+          "templateSuffix": "faq",
+          "createdAt": "2026-09-08T17:31:58Z",
+          "updatedAt": "2026-10-12T11:39:07Z",
+          "metafields": {
+            "nodes": [
+              {
+                "namespace": "global",
+                "key": "title_tag",
+                "type": "single_line_text_field",
+                "value": "Help Centre & FAQs | Orders, Returns, COD | LUCSUM"
+              },
+              {
+                "namespace": "global",
+                "key": "description_tag",
+                "type": "single_line_text_field",
+                "value": "Answers on LUCSUM orders, tracking, shipping charges, 30-day returns, refunds, damaged items, payments and Cash on Delivery."
+              }
+            ]
+          }
+        },
+        {
+          "id": "gid://shopify/Page/129326252132",
+          "handle": "returns-refunds",
+          "title": "Returns & Refunds",
+          "body": "<h2>Returns &amp; Refunds</h2>\n<p>We want you to love your LUCSUM pieces. If something is not right, here is how returns and refunds work.</p>\n<h3>Return window</h3>\n<p>LUCSUM offers a <strong>30-day window</strong> to request a return after delivery, subject to the conditions below.</p>\n<h3>Eligibility</h3>\n<ul>\n<li>Items must be <strong>unworn or unused</strong>, with tags attached and in original packaging.</li>\n<li>Proof of purchase (order number) is required.</li>\n<li>Items must meet the conditions in our <a href=\"/policies/refund-policy\">Refund Policy</a>.</li>\n</ul>\n<h3>How to start a return</h3>\n<ol>\n<li>Email <a href=\"mailto:support@lucsum.com\">support@lucsum.com</a> or WhatsApp <a href=\"https://wa.me/918272810805\">+91 82728 10805</a> with your order number and reason for the return.</li>\n<li>Wait for approval and return instructions before sending anything back.</li>\n<li>Pack the item securely with tags attached and include any original packaging.</li>\n<li>Ship to the return address below only after support confirms.</li>\n</ol>\n<h3>Return address</h3>\n<p>LUCSUM Returns<br>2653 Radha Vihar<br>Saharanpur 247001<br>Uttar Pradesh, India</p>\n<p>Do not ship items back until support has approved your return and confirmed instructions.</p>\n<h3>Exchanges</h3>\n<p>Size or product exchanges can be requested through support and depend on stock availability and the item meeting return conditions. The fastest path is often to return the item (once approved) and place a new order for the size or style you want. Browse <a href=\"/collections/t-shirts\">All T-Shirts</a> for available sizes.</p>\n<h3>Damaged or incorrect orders</h3>\n<p>Contact us within <strong>48 hours</strong> of delivery with your order number and clear photos of the item and packaging. Email <a href=\"mailto:support@lucsum.com\">support@lucsum.com</a> or WhatsApp <a href=\"https://wa.me/918272810805\">+91 82728 10805</a>.</p>\n<h3>Refunds</h3>\n<p>After an approved return is received and inspected, refunds are processed to the original payment method within <strong>5–10 business days</strong>. Your bank or payment provider may take additional time to post the refund. If more than 15 business days have passed since we approved your return and you have not received your refund, contact <a href=\"mailto:support@lucsum.com\">support@lucsum.com</a>.</p>\n<h3>Return shipping</h3>\n<p>For change-of-mind returns, return shipping responsibility is confirmed in your return approval email. Damaged, defective or incorrect items reported within 48 hours of delivery are handled at no cost to you.</p>\n<h3>Non-returnable items</h3>\n<p>Items that show signs of wear, washing or damage after delivery; items missing tags or original packaging; and gift cards. Sale items may be non-returnable if stated at the time of purchase. See our <a href=\"/policies/refund-policy\">Refund Policy</a>.</p>\n<p>Related: <a href=\"/pages/shipping\">Shipping</a> · <a href=\"/pages/size-fit\">Size &amp; Fit</a> · <a href=\"/pages/faq\">Help Centre</a> · <a href=\"/pages/contact\">Contact</a></p>",
+          "bodySummary": "Returns & Refunds We want you to love your LUCSUM pieces. If something is not right, here is how returns and refunds work. Return window LUCSUM off...",
+          "isPublished": true,
+          "publishedAt": "2026-09-08T17:34:46Z",
+          "templateSuffix": null,
+          "createdAt": "2026-09-08T17:34:46Z",
+          "updatedAt": "2026-10-10T03:12:39Z",
+          "metafields": {
+            "nodes": [
+              {
+                "namespace": "global",
+                "key": "title_tag",
+                "type": "single_line_text_field",
+                "value": "Returns & Refunds | 30-Day Returns | LUCSUM"
+              },
+              {
+                "namespace": "global",
+                "key": "description_tag",
+                "type": "single_line_text_field",
+                "value": "How to return a LUCSUM tee within 30 days of delivery, what's eligible, damaged-item reporting within 48 hours, and refund timelines."
+              }
+            ]
+          }
+        },
+        {
+          "id": "gid://shopify/Page/129326284900",
+          "handle": "track-order",
+          "title": "Track Your Order",
+          "body": "<h2>Track your LUCSUM order</h2> <p>Follow your order from placement to delivery.</p> <h3>How tracking works</h3> <ol> <li>\n<strong>Order placed</strong> — Confirmation email with your order number.</li> <li>\n<strong>Processing</strong> — We pack and dispatch within 1–2 business days.</li> <li>\n<strong>Shipped</strong> — Tracking link sent by email (and SMS where available).</li> <li>\n<strong>In transit</strong> — Follow live courier updates (typically 3–7 business days).</li> <li>\n<strong>Delivered</strong> — Your order arrives at your shipping address.</li> </ol> <h3>What you need</h3> <p>Your <strong>order number</strong> (from the confirmation email) or <strong>AWB tracking number</strong> (from the shipping notification).</p> <h3>Guest orders</h3> <p>Use the tracking link in your shipping email, or contact <a href=\"mailto:support@lucsum.com\">support@lucsum.com</a> with your order number.</p> <h3>Tracking not updating?</h3> <p>Courier scans can take a few hours. If no update 48 hours after dispatch, email support with your order number.</p> <p>See also: <a href=\"/pages/shipping\">Shipping</a> · <a href=\"/pages/contact\">Contact</a> · <a href=\"/pages/faq\">Help Centre</a></p>",
+          "bodySummary": "Track your LUCSUM order Follow your order from placement to delivery. How tracking works Order placed — Confirmation email with your order number. ...",
+          "isPublished": true,
+          "publishedAt": "2026-09-08T17:34:56Z",
+          "templateSuffix": "track-order",
+          "createdAt": "2026-09-08T17:34:56Z",
+          "updatedAt": "2026-10-10T03:12:39Z",
+          "metafields": {
+            "nodes": [
+              {
+                "namespace": "global",
+                "key": "title_tag",
+                "type": "single_line_text_field",
+                "value": "Track Your Order | LUCSUM"
+              },
+              {
+                "namespace": "global",
+                "key": "description_tag",
+                "type": "single_line_text_field",
+                "value": "Track your LUCSUM order with the tracking link sent by email (and SMS where available), or sign in to your account."
+              }
+            ]
+          }
+        },
+        {
+          "id": "gid://shopify/Page/129326317668",
+          "handle": "care-guide",
+          "title": "Care Guide",
+          "body": "<h2>Care for your LUCSUM pieces</h2>\n<p>Proper care keeps premium cotton looking and feeling its best. Always follow the sewn-in care label first.</p>\n<h3>About our cotton</h3>\n<p>All current LUCSUM tees are 100% cotton jersey.</p>\n<h3>Washing</h3>\n<ul>\n<li>Machine wash with similar colours on a gentle cycle.</li>\n<li>Use <strong>cold water</strong> — hot water can shrink cotton and fade prints.</li>\n<li>Turn garments <strong>inside out</strong>, especially graphic tees.</li>\n<li>Do not bleach unless the label allows it.</li>\n<li>Wash less often — air overnight between wears when fresh.</li>\n</ul>\n<h3>Drying</h3>\n<ul>\n<li>Line dry in shade where possible.</li>\n<li>If tumble drying, use the lowest heat and remove while slightly damp.</li>\n<li>High heat can shrink oversized tees and warp proportions.</li>\n</ul>\n<h3>Ironing</h3>\n<p>Iron on low to medium heat. Iron on the reverse side when possible, especially on prints and branded tape.</p>\n<h3>Storage</h3>\n<p>Fold cotton tees rather than hanging long-term. Store clean and dry, away from direct sunlight.</p>\n<p>Questions about orders, returns or damaged items? See the <a href=\"/pages/faq\">Help Centre</a>.</p>\n<p>Read more: <a href=\"/blogs/lucsum-journal/how-to-make-your-clothes-last-longer\">Journal: How to Wash and Dry Cotton Tees</a> · <a href=\"/pages/size-fit\">Size &amp; Fit</a> · <a href=\"/collections/t-shirts\">Shop T-Shirts</a></p>",
+          "bodySummary": "Care for your LUCSUM pieces Proper care keeps premium cotton looking and feeling its best. Always follow the sewn-in care label first. About our co...",
+          "isPublished": true,
+          "publishedAt": "2026-09-08T17:35:01Z",
+          "templateSuffix": "care-guide",
+          "createdAt": "2026-09-08T17:35:01Z",
+          "updatedAt": "2026-10-12T11:34:29Z",
+          "metafields": {
+            "nodes": [
+              {
+                "namespace": "global",
+                "key": "title_tag",
+                "type": "single_line_text_field",
+                "value": "Cotton T-Shirt Care Guide | Wash, Dry & Store | LUCSUM"
+              },
+              {
+                "namespace": "global",
+                "key": "description_tag",
+                "type": "single_line_text_field",
+                "value": "How to wash, dry, iron and store LUCSUM 100% cotton oversized tees so prints, tape details and shape last."
+              }
+            ]
+          }
+        },
+        {
+          "id": "gid://shopify/Page/129326514276",
+          "handle": "why-lucsum",
+          "title": "Why LUCSUM",
+          "body": "<p>Lucsum is Indian streetwear from Saharanpur, Uttar Pradesh. Tagline: <strong>Be your own universe</strong>. Shop: <a href=\"https://lucsum.com\">lucsum.com</a>.</p>\n\n<h2>At a glance</h2>\n<ul>\n<li>\n<strong>Catalog:</strong> 5 oversized styles in 25 colourways · sizes S–XXL · prices ₹899–₹1,099</li>\n<li>\n<strong>Fabric:</strong> 100% cotton jersey, oversized silhouette</li>\n<li>\n<strong>Buying with confidence:</strong> shipping, COD, returns and support are all covered in one place — our <a href=\"/pages/faq\">Help Centre</a>.</li>\n</ul>\n\n<h2>The lineup</h2>\n<table>\n<thead><tr>\n<th>Style</th>\n<th>From</th>\n<th>Colors</th>\n<th>Shop</th>\n</tr></thead>\n<tbody>\n<tr>\n<td>Branded Tape</td>\n<td>₹1,099</td>\n<td>Black, Olive</td>\n<td><a href=\"/products/branded-tape-black\">View</a></td>\n</tr>\n<tr>\n<td>Contrast Panel</td>\n<td>₹1,099</td>\n<td>Black, White, Red</td>\n<td><a href=\"/products/contrast-panel-black\">View</a></td>\n</tr>\n<tr>\n<td>Celestial Graphic</td>\n<td>₹999</td>\n<td>Black</td>\n<td><a href=\"/products/celestial-graphic-black\">View</a></td>\n</tr>\n<tr>\n<td>Shoulder Logo</td>\n<td>₹999</td>\n<td>Charcoal</td>\n<td><a href=\"/products/shoulder-logo-charcoal\">View</a></td>\n</tr>\n<tr>\n<td>Raglan Baseball</td>\n<td>₹899</td>\n<td>Black/White, Maroon/White</td>\n<td><a href=\"/products/raglan-baseball-black-white\">View</a></td>\n</tr>\n</tbody>\n</table>\n<p>Browse: <a href=\"/collections/t-shirts\">All T-Shirts</a> · <a href=\"/collections/lucsum-essentials\">Essentials</a> · <a href=\"/collections/graphic-tees\">Graphic Tees</a>.</p>\n\n<h2>Design</h2>\n<p>Each style has its own construction — branded shoulder tape, contrast panels and piping, celestial graphics, shoulder wordmarks, or raglan contrast sleeves — always on an oversized silhouette.</p>\n\n<h2>Questions?</h2>\n<p>Orders, delivery, returns and payments: see the <a href=\"/pages/faq\">Help Centre</a> or <a href=\"/pages/contact\">Contact</a> us.</p>\n\n<p><strong>Be your own universe.</strong> · <a href=\"/collections/t-shirts\">Shop All</a> · <a href=\"/pages/size-fit\">Size &amp; Fit</a> · <a href=\"/pages/faq\">Help Centre</a> · <a href=\"/pages/care-guide\">Care Guide</a></p>",
+          "bodySummary": "Lucsum is Indian streetwear from Saharanpur, Uttar Pradesh. Tagline: Be your own universe. Shop: lucsum.com. At a glance Catalog: 5 oversized style...",
+          "isPublished": true,
+          "publishedAt": "2026-09-08T17:40:02Z",
+          "templateSuffix": "why-lucsum",
+          "createdAt": "2026-09-08T17:40:02Z",
+          "updatedAt": "2026-10-12T11:34:29Z",
+          "metafields": {
+            "nodes": [
+              {
+                "namespace": "global",
+                "key": "title_tag",
+                "type": "single_line_text_field",
+                "value": "Why LUCSUM | Oversized Cotton Tees Built for Repeat Wear"
+              },
+              {
+                "namespace": "global",
+                "key": "description_tag",
+                "type": "single_line_text_field",
+                "value": "What sets LUCSUM oversized tees apart: 100% cotton, oversized cuts, construction details, and clear product specs on every page."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "blogs": {
+      "nodes": [
+        {
+          "id": "gid://shopify/Blog/103381631076",
+          "handle": "lucsum-journal",
+          "title": "The LUCSUM Journal",
+          "templateSuffix": null,
+          "commentPolicy": "CLOSED"
+        }
+      ]
+    },
+    "articles": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "nodes": [
+        {
+          "id": "gid://shopify/Article/569879593060",
+          "handle": "why-we-choose-oversized",
+          "title": "What Oversized Fit Means: Shoulders, Length and Drape",
+          "body": "<p><em><strong>Understand the oversized silhouette.</strong> By the end you'll know what makes a tee oversized (dropped shoulders, extra chest width, longer length) and why LUCSUM cuts every style this way.</em></p>\n<p>At LUCSUM, oversized is not a passing trend — it is the foundation of how we design streetwear. Every piece in our <a href=\"/collections/t-shirts\">T-Shirts collection</a> is built around relaxed proportions, substantial cotton, and room to move. We believe clothing should give you space to express yourself without fighting your body. That is what <strong>BE YOUR OWN UNIVERSE</strong> means in practice: wear what feels like you, not what a size chart tells you to be.</p> <h2>Why oversized works for streetwear</h2>\n<p>Streetwear has always been about attitude as much as aesthetics. An oversized silhouette creates a deliberate shape — dropped shoulders, a boxy body, and sleeves that sit away from the arm rather than clinging to it. The result is a look that reads confident and unhurried, whether you are pairing a tee with wide-leg trousers or layering under an open overshirt.</p>\n<p>Unlike a generic baggy fit, LUCSUM oversized is engineered. We think about shoulder placement, body width, and hem length together so the garment looks intentional from every angle. A tee that is wide but too short can feel accidental; one with balanced proportions feels like a choice. That intention is what separates streetwear from simply wearing clothes that are too big.</p> <h2>Movement, comfort, and everyday wear</h2>\n<p>Oversized clothing should make your day easier, not harder. Whether you are commuting, creating, or catching up with friends, you should not have to think about whether your shirt will ride up or pull tight across your back. Every current LUCSUM tee is 100% cotton jersey. Styles include <a href=\"/products/raglan-baseball-black-white\">Raglan Baseball</a>, <a href=\"/products/celestial-graphic-black\">Celestial Graphic</a>, <a href=\"/products/contrast-panel-black\">Contrast Panel</a>, <a href=\"/products/shoulder-logo-charcoal\">Shoulder Logo</a> and <a href=\"/products/branded-tape-black\">Branded Tape</a>.</p>\n<p>The relaxed fit also makes layering natural. An oversized tee works as a base under a jacket in cooler months, or on its own when the temperature rises. Browse our full range in the <a href=\"/collections/t-shirts\">All T-Shirts collection</a> to see how each design — from graphic statements to clean essentials — shares the same commitment to comfortable proportions.</p> <h2>Fit still matters — even when the fit is oversized</h2>\n<p>Oversized does not mean one-size-fits-all. Shoulder seam placement, sleeve length, and body length all change how a piece looks on different frames. That is why we publish detailed measurements and fit guidance on our <a href=\"/pages/size-fit\">Size &amp; Fit page</a> rather than relying on S, M, L labels alone.</p>\n<p>If you are new to oversized dressing, start by comparing a LUCSUM garment's flat measurements with a tee you already love. Pay attention to where the shoulder sits and how long the body falls past your hip. The goal is a silhouette that feels relaxed while still looking composed — not swallowed, not sloppy.</p> <h2>The LUCSUM point of view</h2>\n<p>We started LUCSUM because we wanted everyday streetwear that felt considered. Oversized fit is our way of giving you room — room to move, room to layer, room to make the outfit yours. It connects directly to why we exist: premium cotton, bold details, and pieces designed for self-expression.</p>\n<p>Read more about our philosophy on the <a href=\"/pages/why-lucsum\">Why LUCSUM page</a>, then explore the latest drops in <a href=\"/collections/new-arrivals\">New Arrivals</a>. However you style it, oversized should feel like an extension of your orbit — not a costume you put on for the day.</p> <p><strong>Relaxed fit. Clear intention. BE YOUR OWN UNIVERSE.</strong></p>\n<p>Related: <a href=\"/pages/care-guide\">Care Guide</a></p>",
+          "summary": "What oversized fit means: dropped shoulders, wider chest, longer length. How LUCSUM cuts its oversized tees.",
+          "tags": [
+            "Fit",
+            "LUCSUM",
+            "Oversized",
+            "Streetwear",
+            "T-Shirts"
+          ],
+          "isPublished": true,
+          "publishedAt": "2026-09-12T11:35:26Z",
+          "author": {
+            "name": "LUCSUM"
+          },
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0805/8847/2420/articles/contrast-panel-black-front_9b965980-6e3a-4402-9fcd-89b03dfa3e47.png?v=1789243780",
+            "altText": "LUCSUM oversized tee — contrast panel front view"
+          },
+          "blog": {
+            "handle": "lucsum-journal"
+          },
+          "metafields": {
+            "nodes": [
+              {
+                "namespace": "global",
+                "key": "title_tag",
+                "type": "single_line_text_field",
+                "value": "What Oversized Fit Means: Shoulders, Length and Drape"
+              },
+              {
+                "namespace": "global",
+                "key": "description_tag",
+                "type": "single_line_text_field",
+                "value": "What oversized fit means: dropped shoulders, wider chest, longer length. How LUCSUM cuts its oversized tees."
+              }
+            ]
+          }
+        },
+        {
+          "id": "gid://shopify/Article/569879625828",
+          "handle": "how-to-find-your-best-oversized-fit",
+          "title": "How to Choose Your Oversized Tee Size Using Garment Measurements",
+          "body": "<p><em><strong>Pick the right size.</strong> Use a tee you already own and our <a href=\"/pages/size-fit\">garment measurement chart</a> to pick your size in under five minutes.</em></p>\n<p>Choosing an oversized tee should feel exciting, not confusing. At LUCSUM, we design every piece in our <a href=\"/collections/t-shirts\">T-Shirts collection</a> with deliberate proportions — but the best fit is still personal. This guide walks you through how to find a silhouette that feels relaxed, looks intentional, and works with the way you actually dress.</p> <h2>Start with measurements, not size labels</h2>\n<p>Size names vary between brands. A medium at one label might match a large at another. That is why our <a href=\"/pages/size-fit\">Size &amp; Fit page</a> lists chest width, body length, and shoulder width for every garment. Before you order, lay a favourite tee flat, measure across the chest from armpit to armpit, and compare those numbers to our size chart.</p>\n<p>If you are between sizes, think about the look you want. A true-to-chart LUCSUM size gives a clean oversized silhouette — relaxed but balanced. Sizing up adds more drape and length for a bolder streetwear shape. Neither is wrong; it depends on your proportions and styling preferences.</p> <h2>Shoulders set the tone</h2>\n<p>In an oversized tee, the shoulder seam typically sits lower than a classic fit — that is the dropped-shoulder look. It should still create a clean line across your upper body rather than hanging halfway down your arm. Check product photos and measurements to see where the seam lands relative to your own shoulder width.</p>\n<p>Our <a href=\"/products/contrast-panel-black\">Contrast Panel tee</a> and <a href=\"/products/raglan-baseball-black-white\">Raglan Baseball tee</a> use different construction at the shoulder, which changes how the fit reads. Contrast panel styles offer a classic dropped shoulder, while raglan sleeves create a smoother diagonal line — worth considering if you prefer a softer shoulder profile.</p> <h2>Body width and length work together</h2>\n<p>Width alone does not define oversized. A wide body with a short length can feel boxy and cropped; extra width paired with a longer hem creates the flowing streetwear silhouette most people picture. Look at both measurements together when comparing styles.</p>\n<p>For a more dramatic look, explore pieces in our <a href=\"/collections/new-arrivals\">New Arrivals</a> collection and consider sizing up one level. For everyday rotation pieces, true-to-size often delivers the sweet spot — enough room to move without excess fabric bunching at the waist.</p> <h2>Styling changes how fit reads</h2>\n<p>The rest of your outfit affects how oversized looks. Wide-leg trousers balance a relaxed top; a structured jacket over a roomy tee creates contrast. If you are wearing an oversized graphic from our <a href=\"/collections/graphic-tees\">Graphic Tees collection</a>, keep the bottom half cleaner so the print remains the focal point.</p>\n<p>Essentials from <a href=\"/collections/lucsum-essentials\">LUCSUM Essentials</a> — contrast panels, raglan cuts, branded tape — are designed to anchor a wardrobe. They pair easily with denim, cargos, or shorts, making them ideal starting points if you are building your first oversized rotation.</p> <h2>When in doubt, reach out</h2>\n<p>Fit is personal, and we would rather you feel confident before you buy. Use our size chart, compare flat measurements, and remember that LUCSUM pieces are cut for oversized streetwear — not slim tailoring. For fabric care that keeps your fit consistent wash after wash, see our <a href=\"/pages/care-guide\">Care Guide</a>.</p>\n<p><strong>The right fit is the one that makes you stop adjusting your clothes and start living in them.</strong></p>",
+          "summary": "Pick your oversized tee size by comparing a tee you own with LUCSUM garment measurements for S–XXL.",
+          "tags": [
+            "Fit",
+            "LUCSUM",
+            "Oversized",
+            "Size Guide",
+            "T-Shirts"
+          ],
+          "isPublished": true,
+          "publishedAt": "2026-09-12T11:35:26Z",
+          "author": {
+            "name": "LUCSUM"
+          },
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0805/8847/2420/articles/raglan-black-white-front_1a76ae61-22ce-4ffe-a71b-a00d697638e8.png?v=1789243783",
+            "altText": "LUCSUM raglan baseball oversized tee"
+          },
+          "blog": {
+            "handle": "lucsum-journal"
+          },
+          "metafields": {
+            "nodes": [
+              {
+                "namespace": "global",
+                "key": "title_tag",
+                "type": "single_line_text_field",
+                "value": "How to Choose Your Oversized Tee Size Using Garment Measurements"
+              },
+              {
+                "namespace": "global",
+                "key": "description_tag",
+                "type": "single_line_text_field",
+                "value": "Pick your oversized tee size by comparing a tee you own with LUCSUM garment measurements for S–XXL."
+              }
+            ]
+          }
+        },
+        {
+          "id": "gid://shopify/Article/569879658596",
+          "handle": "the-lucsum-approach-to-everyday-essentials",
+          "title": "How to Build a Streetwear Wardrobe With a Few Oversized Tees",
+          "body": "<p><em><strong>Build a small rotation.</strong> You'll leave with a simple plan: two or three neutral <a href=\"/collections/lucsum-essentials\">Essentials</a> plus one statement piece, and how to rotate them.</em></p>\n<p>A strong streetwear wardrobe is not built on quantity — it is built on pieces that work together, wear well, and still feel like you. LUCSUM Essentials exist for exactly that purpose. Our <a href=\"/collections/lucsum-essentials\">Essentials collection</a> brings together the core silhouettes that define the brand: contrast panel construction, raglan baseball cuts, and signature branded tape details on premium oversized cotton.</p> <h2>What makes an essential essential</h2>\n<p>An essential should do three things: fit your lifestyle, pair with what you already own, and hold up to repeat wear. Trends come and go, but the pieces you reach for every week need dependable fabric, consistent proportions, and enough character to avoid feeling anonymous.</p>\n<p>Every LUCSUM essential is cut oversized in 100% cotton jersey: <a href=\"/products/raglan-baseball-black-white\">Raglan Baseball</a>, <a href=\"/products/contrast-panel-black\">Contrast Panel</a> and <a href=\"/products/branded-tape-black\">Branded Tape</a>. These are the pieces you build outfits around, whether you are dressing down for errands or putting together a deliberate streetwear look.</p> <h2>Start with three silhouettes</h2>\n<p>If you are building from scratch, three LUCSUM shapes cover most of what you need. The <a href=\"/products/contrast-panel-black\">Contrast Panel tee</a> delivers clean colour blocking and a classic dropped shoulder — versatile enough for minimal outfits or layered looks. The <a href=\"/products/raglan-baseball-black-white\">Raglan Baseball tee</a> adds athletic energy with its diagonal sleeve seam, ideal when you want a softer shoulder line. The <a href=\"/products/branded-tape-black\">Branded Tape tee</a> carries our signature tape detail — a quiet mark of LUCSUM craft that reads from across the room.</p>\n<p>Together, these three cover neutral days, statement-adjacent days, and everything in between. Add a graphic from our <a href=\"/collections/graphic-tees\">Graphic Tees collection</a> when you want the outfit to lead with print and personality.</p> <h2>Colour and rotation strategy</h2>\n<p>Essentials work best when colours complement each other. Start with one neutral base — black, white, or charcoal — then add one accent colour that fits your existing wardrobe. LUCSUM contrast panels and raglan colourways are designed to mix without clashing, so you can rotate through the week without repeating the same outfit.</p>\n<p>Check <a href=\"/collections/new-arrivals\">New Arrivals</a> when you want to refresh your rotation with the latest drops. Because essentials are meant to be worn often, follow our <a href=\"/pages/care-guide\">Care Guide</a> to keep cotton soft and shapes consistent over time.</p> <h2>Essentials vs. statement pieces</h2>\n<p>Not every tee in your wardrobe needs to shout. Essentials balance the louder pieces — like the <a href=\"/products/celestial-graphic-black\">Celestial Graphic tee</a> or <a href=\"/products/shoulder-logo-charcoal\">Shoulder Logo tee</a> — by giving you reliable options on days when the fit and fabric do the talking.</p>\n<p>Think of your wardrobe as an orbit: essentials are the gravity that keeps everything grounded; graphics and logos are the satellites that add movement and expression. Both matter. LUCSUM designs for that balance.</p> <h2>Make it yours</h2>\n<p>The final step in building a streetwear wardrobe is wearing it your way. Tuck, half-tuck, layer under an open shirt, pair with wide trousers or shorts — essentials adapt because their proportions are generous and their details are intentional. That is the LUCSUM approach: fewer pieces, better reasons to wear them.</p>\n<p>Explore the full <a href=\"/collections/lucsum-essentials\">Essentials collection</a>, read about our fit philosophy on <a href=\"/pages/why-lucsum\">Why LUCSUM</a>, and build a rotation that feels unmistakably yours. <strong>BE YOUR OWN UNIVERSE</strong> starts with what you reach for every morning.</p>\n<p>Related: <a href=\"/pages/size-fit\">Size &amp; Fit</a></p>",
+          "summary": "Build a streetwear wardrobe around a few oversized tees: neutral essentials, one statement piece, and a rotation plan.",
+          "tags": [
+            "Essentials",
+            "LUCSUM",
+            "Streetwear",
+            "Styling",
+            "Wardrobe"
+          ],
+          "isPublished": true,
+          "publishedAt": "2026-09-12T11:35:26Z",
+          "author": {
+            "name": "LUCSUM"
+          },
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0805/8847/2420/articles/branded-tape-black-front_d87bd2b7-3117-49f0-9fee-f6086daabdeb.png?v=1789243786",
+            "altText": "LUCSUM branded tape oversized tee"
+          },
+          "blog": {
+            "handle": "lucsum-journal"
+          },
+          "metafields": {
+            "nodes": [
+              {
+                "namespace": "global",
+                "key": "title_tag",
+                "type": "single_line_text_field",
+                "value": "How to Build a Streetwear Wardrobe With a Few Oversized Tees"
+              },
+              {
+                "namespace": "global",
+                "key": "description_tag",
+                "type": "single_line_text_field",
+                "value": "Build a streetwear wardrobe around a few oversized tees: neutral essentials, one statement piece, and a rotation plan."
+              }
+            ]
+          }
+        },
+        {
+          "id": "gid://shopify/Article/569879691364",
+          "handle": "how-to-make-your-clothes-last-longer",
+          "title": "How to Wash and Dry Cotton Tees So They Keep Their Shape",
+          "body": "<p><em><strong>Make your tees last.</strong> Practical washing, drying and stain steps for 100% cotton tees. For the quick checklist, see our <a href=\"/pages/care-guide\">Care Guide</a>.</em></p>\n<p>Every current LUCSUM tee is 100% cotton jersey, including <a href=\"/products/raglan-baseball-black-white\">Raglan Baseball</a>, <a href=\"/products/celestial-graphic-black\">Celestial Graphic</a>, <a href=\"/products/contrast-panel-black\">Contrast Panel</a>, <a href=\"/products/shoulder-logo-charcoal\">Shoulder Logo</a> and <a href=\"/products/branded-tape-black\">Branded Tape</a>. Cotton rewards good habits. Whether you live in our <a href=\"/collections/lucsum-essentials\">Essentials collection</a> or rotate through <a href=\"/collections/graphic-tees\">Graphic Tees</a>, a few consistent care habits will keep your pieces looking sharp wash after wash.</p> <h2>Wash less, air more</h2>\n<p>Cotton does not need to hit the machine after every single wear. If a tee smells fresh and looks clean, hang it to air overnight — especially for oversized fits that breathe well away from the body. Fewer washes mean less fibre stress, less fading on prints, and a longer life for taped seams and contrast panels.</p>\n<p>When it is time to wash, turn graphic tees inside out to protect prints. Close zippers and empty pockets on anything going in the same load to avoid snagging.</p> <h2>Follow the fundamentals</h2>\n<p>Cold or lukewarm water is your friend. Hot water can shrink cotton and accelerate colour loss — particularly on contrast panel and raglan colourways. Use a mild detergent without harsh bleaches, and skip fabric softener if you want to preserve the natural hand-feel of premium cotton.</p>\n<p>Our full <a href=\"/pages/care-guide\">Care Guide page</a> covers garment-specific notes, but the rule of thumb for every LUCSUM tee is gentle cycle, cold wash, and low heat or air dry. Treat branded tape and printed graphics with the same care you would give any detail you want to last.</p> <h2>Drying: low heat or line dry</h2>\n<p>High heat is the fastest way to shrink an oversized tee and warp its proportions. If you use a tumble dryer, choose the lowest heat setting and remove the garment while it is still slightly damp. Reshape the shoulders and lay flat or hang to finish drying.</p>\n<p>Line drying is ideal for maintaining the relaxed silhouette that defines LUCSUM fit. Oversized pieces benefit from gravity pulling the hem straight — just avoid prolonged direct sunlight on dark colours, which can fade over time.</p> <h2>Storage that preserves shape</h2>\n<p>Fold cotton tees rather than hanging them long-term. Hangers can stretch the shoulder line on oversized garments, especially when the fabric is wet or damp. Store in a cool, dry place with space to breathe — not compressed under heavier items that can crease branded tape or contrast panels.</p>\n<p>If you are rotating through multiple pieces from our <a href=\"/collections/t-shirts\">T-Shirts collection</a>, give each tee room in the drawer. Essentials like the <a href=\"/products/branded-tape-black\">Branded Tape tee</a> and <a href=\"/products/contrast-panel-black\">Contrast Panel tee</a> are designed for frequent wear — storing them properly means they are ready when you are.</p> <h2>Handle stains quickly</h2>\n<p>Address spills as soon as you can. Blot — do not rub — and use cold water on the spot before it sets. For oil or food stains, a gentle pre-treat before a cold wash usually does the job. Avoid aggressive scrubbing on printed areas; pat the stain from the back of the fabric when possible.</p> <h2>Care is part of the brand experience</h2>\n<p>LUCSUM is built on the idea that better everyday clothing should last. Taking care of your tees is not extra work — it is how you protect the fit, colour, and feel that made you choose them in the first place. Pair these habits with our <a href=\"/pages/size-fit\">Size &amp; Fit guidance</a> so your pieces continue to drape the way they did on day one.</p>\n<p>Browse <a href=\"/collections/lucsum-essentials\">Essentials</a> and <a href=\"/collections/new-arrivals\">New Arrivals</a> when you are ready to add to a wardrobe you actually maintain. <strong>Wear often. Care thoughtfully. BE YOUR OWN UNIVERSE.</strong></p>",
+          "summary": "How to wash, dry, store and treat stains on 100% cotton oversized tees so they keep their shape and colour.",
+          "tags": [
+            "Care Guide",
+            "Clothing Care",
+            "Cotton",
+            "Essentials",
+            "LUCSUM"
+          ],
+          "isPublished": true,
+          "publishedAt": "2026-09-12T11:35:26Z",
+          "author": {
+            "name": "LUCSUM"
+          },
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0805/8847/2420/articles/contrast-panel-black-front_655318af-89b7-4f54-803a-087f407aaa6b.png?v=1789243789",
+            "altText": "LUCSUM contrast panel tee — premium cotton"
+          },
+          "blog": {
+            "handle": "lucsum-journal"
+          },
+          "metafields": {
+            "nodes": [
+              {
+                "namespace": "global",
+                "key": "title_tag",
+                "type": "single_line_text_field",
+                "value": "How to Wash and Dry Cotton Tees So They Keep Their Shape"
+              },
+              {
+                "namespace": "global",
+                "key": "description_tag",
+                "type": "single_line_text_field",
+                "value": "How to wash, dry, store and treat stains on 100% cotton oversized tees so they keep their shape and colour."
+              }
+            ]
+          }
+        },
+        {
+          "id": "gid://shopify/Article/569881198692",
+          "handle": "graphic-tees-how-to-style-statement-pieces",
+          "title": "How to Style Graphic Tees: Outfit Ideas for Statement Prints",
+          "body": "<p><em><strong>Style a statement tee.</strong> Outfit formulas for letting a graphic lead, using <a href=\"/products/celestial-graphic-black\">Celestial Graphic Black</a> and <a href=\"/products/shoulder-logo-charcoal\">Shoulder Logo Charcoal</a> as examples.</em></p>\n<p>Graphic tees are where self-expression meets streetwear — and LUCSUM treats them as statement pieces, not afterthoughts. Our <a href=\"/collections/graphic-tees\">Graphic Tees collection</a> pairs bold design with the same premium oversized cotton and considered proportions as the rest of the brand. The question is not whether to wear a graphic; it is how to style it so the print lands with intention.</p> <h2>Let the graphic lead</h2>\n<p>A strong graphic tee deserves visual space. When you wear the <a href=\"/products/celestial-graphic-black\">Celestial Graphic tee</a>, let the celestial print be the focal point — pair it with neutral bottoms in black, stone, or washed denim. Avoid competing patterns on trousers or jackets; the oversized silhouette already creates presence, and the print completes the statement.</p>\n<p>The <a href=\"/products/shoulder-logo-charcoal\">Shoulder Logo tee</a> works differently: the mark sits at the shoulder rather than centre chest, which means you can layer an open overshirt or unzipped hoodie without hiding the design. Think of it as a signature detail that rewards a closer look — perfect for outfits that feel understated until someone notices the placement.</p> <h2>Balance proportion</h2>\n<p>Oversized graphics need balanced outfits. If the top is wide and bold, keep the lower half cleaner — straight or wide-leg trousers, relaxed denim, or structured shorts in solid colours. Footwear can add energy: chunky sneakers ground a celestial print; minimal leather shoes refine a shoulder-logo look for evening.</p>\n<p>Layering adds depth without drowning the tee. A plain oversized hoodie worn open frames a graphic; a longline coat in neutral tone lets the hem of the tee peek through. Browse the full <a href=\"/collections/t-shirts\">T-Shirts collection</a> to see how graphics relate to our essentials in scale and proportion.</p> <h2>Colour coordination</h2>\n<p>Pull one colour from the graphic and repeat it subtly elsewhere — socks, a cap, or a bag strap. You do not need a full colour match; a single echo is enough to make the outfit feel composed. For the Celestial Graphic, deep navy or charcoal bottoms mirror the print's mood; for Shoulder Logo charcoal, white or cream trousers create high contrast.</p>\n<p>When in doubt, monochrome below the waist is the safest move. Graphic tees from <a href=\"/collections/new-arrivals\">New Arrivals</a> often introduce seasonal colour stories — check each product page for exact tones before you build the rest of the look.</p> <h2>Occasion and attitude</h2>\n<p>Graphic streetwear works across contexts if you calibrate the surrounding pieces. For casual days, graphic plus joggers or cargos reads effortless. For something sharper, swap joggers for pressed wide trousers and clean sneakers — the oversized tee becomes the relaxed counterpoint to a more structured bottom.</p>\n<p>LUCSUM graphics are designed for <strong>BE YOUR OWN UNIVERSE</strong> energy: wear them when you want your outfit to say something. Pair with essentials from <a href=\"/collections/lucsum-essentials\">LUCSUM Essentials</a> on other days to keep the rotation balanced.</p> <h2>Care keeps graphics crisp</h2>\n<p>Statement prints last longer when you wash inside out on cold, air dry when possible, and avoid high-heat drying. See our <a href=\"/pages/care-guide\">Care Guide</a> for full details. A faded graphic loses impact — proper care protects the investment you made in self-expression.</p> <h2>Build your graphic rotation</h2>\n<p>Start with one centre-chest statement and one shoulder-detail piece — that gives you two distinct styling modes. Add essentials in neutral tones so you are never forcing a graphic when the day calls for quiet. Explore <a href=\"/collections/graphic-tees\">Graphic Tees</a>, read about fit on our <a href=\"/pages/size-fit\">Size &amp; Fit page</a>, and wear prints that feel like your orbit — not someone else's trend calendar.</p>",
+          "summary": "Outfit ideas for graphic tees: balance proportions, pick colours, and style Celestial Graphic and Shoulder Logo oversized tees.",
+          "tags": [
+            "Graphic Tees",
+            "LUCSUM",
+            "Self-Expression",
+            "Streetwear",
+            "Styling"
+          ],
+          "isPublished": true,
+          "publishedAt": "2026-09-12T20:09:17Z",
+          "author": {
+            "name": "LUCSUM"
+          },
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0805/8847/2420/articles/celestial-graphic-front_c4dcc131-648a-43f5-8213-791153e198ac.png?v=1789243792",
+            "altText": "LUCSUM Celestial Graphic oversized tee"
+          },
+          "blog": {
+            "handle": "lucsum-journal"
+          },
+          "metafields": {
+            "nodes": [
+              {
+                "namespace": "global",
+                "key": "title_tag",
+                "type": "single_line_text_field",
+                "value": "How to Style Graphic Tees: Outfit Ideas for Statement Prints"
+              },
+              {
+                "namespace": "global",
+                "key": "description_tag",
+                "type": "single_line_text_field",
+                "value": "Outfit ideas for graphic tees: balance proportions, pick colours, and style Celestial Graphic and Shoulder Logo oversized tees."
+              }
+            ]
+          }
+        },
+        {
+          "id": "gid://shopify/Article/569881231460",
+          "handle": "contrast-panel-vs-raglan-picking-your-silhouette",
+          "title": "Contrast Panel vs Raglan Baseball: Which Oversized Tee Suits You?",
+          "body": "<p><em><strong>Compare two silhouettes.</strong> A side-by-side of the <a href=\"/products/contrast-panel-black\">Contrast Panel</a> and <a href=\"/products/raglan-baseball-black-white\">Raglan Baseball</a>: shoulder line, look, and which to buy first.</em></p>\n<p>Not all oversized tees are built the same way. Two of the most popular shapes in our <a href=\"/collections/lucsum-essentials\">LUCSUM Essentials collection</a> — the contrast panel and the raglan baseball cut — share premium cotton and relaxed proportions, but they create different lines on the body. Here is how to choose the silhouette that fits your style.</p> <h2>Contrast Panel: clean blocks, classic shoulders</h2>\n<p>The <a href=\"/products/contrast-panel-black\">Contrast Panel tee</a> uses colour-blocked panels — typically a body colour with contrasting sleeves or side panels — to create visual structure without relying on graphics. The shoulder seam follows a classic dropped-shoulder line, which gives a boxy, streetwear-forward shape that reads sharp from the front and back.</p>\n<p>Contrast panels work well if you like outfits built on colour geometry: pair a black body with contrasting sleeves against neutral trousers, or lean into the colour story with matching accents in footwear. It is the essential for people who want their tee to add visual interest through construction rather than print.</p> <h2>Raglan Baseball: softer shoulders, athletic ease</h2>\n<p>The <a href=\"/products/raglan-baseball-black-white\">Raglan Baseball tee</a> replaces the straight shoulder seam with a diagonal raglan sleeve that runs from underarm to collar. That line softens the shoulder profile and adds a subtle athletic reference — think relaxed baseball tee energy scaled up to oversized streetwear proportions.</p>\n<p>Raglan cuts drape differently across the upper chest. The diagonal seam draws the eye inward, which can feel slightly less boxy than a contrast panel on certain frames. If you find dropped shoulders too broad visually, raglan is often the more forgiving entry point into LUCSUM oversized fit.</p> <h2>Fabric and weight: style-specific</h2>\n<p>Both are 100% cotton jersey; see the <a href=\"/products/contrast-panel-black\">Contrast Panel</a> and <a href=\"/products/raglan-baseball-black-white\">Raglan Baseball</a> product pages for full details. The difference you'll notice most is the shoulder line, not the fabric. Follow our <a href=\"/pages/care-guide\">Care Guide</a> to maintain the drape and colour contrast that define each style.</p>\n<p>For exact measurements on each product, visit our <a href=\"/pages/size-fit\">Size &amp; Fit page</a>. Raglan and contrast panel pieces may differ slightly in chest width and sleeve length even at the same size label, so compare flat measurements if you are choosing between both.</p> <h2>Styling each silhouette</h2>\n<p>Contrast panels shine in minimal outfits — let the panel lines do the work with solid bottoms and clean sneakers. Raglan tees pair naturally with cargos, track pants, and layered hoodies; the athletic seam line complements sport-influenced streetwear without looking like gym wear.</p>\n<p>Both styles sit comfortably within a broader wardrobe that includes <a href=\"/collections/graphic-tees\">Graphic Tees</a> for statement days. Think of contrast panel and raglan as your weekday essentials, with graphics reserved for when you want the outfit to broadcast louder.</p> <h2>Which should you pick first?</h2>\n<p>If you gravitate toward clean lines and colour blocking, start with the <a href=\"/products/contrast-panel-black\">Contrast Panel tee</a>. If you prefer a softer shoulder and subtle sport reference, start with the <a href=\"/products/raglan-baseball-black-white\">Raglan Baseball tee</a>. Many LUCSUM customers eventually own both — they solve different outfit problems.</p>\n<p>Explore the full <a href=\"/collections/lucsum-essentials\">Essentials collection</a>, see everything in context via our <a href=\"/collections/t-shirts\">All T-Shirts collection</a>, and pick the silhouette that matches your orbit. You can always add the other when you are ready to expand.</p> <p><strong>Same brand. Style-specific cotton. Different energy. BE YOUR OWN UNIVERSE.</strong></p>",
+          "summary": "Contrast Panel vs Raglan Baseball oversized tees compared: shoulder line, look, styling and which to pick first.",
+          "tags": [
+            "Contrast Panel",
+            "Essentials",
+            "Fit",
+            "LUCSUM",
+            "Raglan"
+          ],
+          "isPublished": true,
+          "publishedAt": "2026-09-12T20:09:19Z",
+          "author": {
+            "name": "LUCSUM"
+          },
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0805/8847/2420/articles/raglan-black-white-front_f260bffd-f133-431c-bc48-6a1fa5311a0f.png?v=1789243795",
+            "altText": "LUCSUM raglan baseball tee — black and white"
+          },
+          "blog": {
+            "handle": "lucsum-journal"
+          },
+          "metafields": {
+            "nodes": [
+              {
+                "namespace": "global",
+                "key": "title_tag",
+                "type": "single_line_text_field",
+                "value": "Contrast Panel vs Raglan Baseball: Which Oversized Tee Suits You?"
+              },
+              {
+                "namespace": "global",
+                "key": "description_tag",
+                "type": "single_line_text_field",
+                "value": "Contrast Panel vs Raglan Baseball oversized tees compared: shoulder line, look, styling and which to pick first."
+              }
+            ]
+          }
+        },
+        {
+          "id": "gid://shopify/Article/569881264228",
+          "handle": "branded-tape-details-the-lucsum-signature",
+          "title": "Branded Tape Tees: What the Shoulder Tape Detail Is and How to Wear It",
+          "body": "<p><em><strong>Understand one design detail.</strong> What the branded shoulder tape on our <a href=\"/products/branded-tape-black\">Branded Tape Black</a> and <a href=\"/products/branded-tape-olive\">Olive</a> tees is, how it changes a plain tee, and how to care for it.</em></p>\n<p>Not every LUCSUM detail shouts. Some of the best ones reward attention — like the branded tape that defines our signature essential. The <a href=\"/products/branded-tape-black\">Branded Tape tee</a> is a centrepiece of the <a href=\"/collections/lucsum-essentials\">LUCSUM Essentials collection</a>, built for people who want craft and character without centre-chest graphics.</p> <h2>What branded tape means at LUCSUM</h2>\n<p>Branded tape is a woven or printed tape insert — often at the shoulder, hem, or neckline — that carries the LUCSUM mark in a refined, repeated format. It is a construction detail borrowed from premium sportswear and workwear, adapted for oversized streetwear proportions. The tape adds visual structure and brand presence without dominating the chest.</p>\n<p>On a plain oversized body, that small repeated mark creates rhythm: your eye catches it when you move, when you layer, when someone stands close enough to notice the finish. It is the kind of detail that separates a basic tee from a LUCSUM tee.</p> <h2>Design philosophy: quiet distinction</h2>\n<p>LUCSUM exists at the intersection of self-expression and everyday wear. Graphic tees in our <a href=\"/collections/graphic-tees\">Graphic Tees collection</a> speak loudly; branded tape speaks precisely. It is for days when you want the fit and fabric to lead, with a signature that feels personal rather than promotional.</p>\n<p>This aligns with <strong>BE YOUR OWN UNIVERSE</strong> — not every outfit needs to broadcast. Sometimes confidence looks like wearing something well-made that only you and people who notice details will fully read.</p> <h2>Fit and fabric</h2>\n<p>The Branded Tape tee is cut in 100% cotton jersey, the same fabric construction as our <a href=\"/products/contrast-panel-black\">Contrast Panel</a>. Oversized proportions, dropped shoulder and generous body width keep the tape in proportion rather than feeling like an afterthought label.</p>\n<p>Consult our <a href=\"/pages/size-fit\">Size &amp; Fit page</a> for measurements. Because the tee is designed as a wardrobe anchor, getting the right size matters: true-to-size for a clean oversized look, or size up for extra drape.</p> <h2>How to style branded tape</h2>\n<p>Branded tape tees are among the most versatile pieces LUCSUM makes. Wear solo with wide denim and sneakers for an everyday orbit; layer under an open shirt or lightweight jacket so the tape peek shows at the hem or collar. They pair cleanly with statement bottoms — patterned cargos, bold footwear — because the top stays refined.</p>\n<p>Build a core rotation with the <a href=\"/products/contrast-panel-black\">Contrast Panel</a> and <a href=\"/products/raglan-baseball-black-white\">Raglan Baseball</a> tees for shape variety, and let branded tape be the piece you reach for when you want minimal with meaning.</p> <h2>Caring for taped details</h2>\n<p>Tape inserts can stress if you wash hot or tumble dry aggressively. Turn the tee inside out, cold wash, low heat or air dry — the same approach we outline in our full <a href=\"/pages/care-guide\">Care Guide</a>. Proper care keeps tape flat, colour-true, and aligned with the garment's shape.</p> <h2>The signature essential</h2>\n<p>If you are curating a LUCSUM wardrobe with intention, branded tape belongs in the conversation early. It connects to our <a href=\"/pages/why-lucsum\">Why LUCSUM</a> story — considered details, premium cotton, oversized fit for self-expression. Shop the <a href=\"/products/branded-tape-black\">Branded Tape tee</a> and explore the wider <a href=\"/collections/t-shirts\">T-Shirts collection</a> to see how one small detail can define an entire piece.</p>",
+          "summary": "What the LUCSUM branded shoulder tape detail is, how to style a Branded Tape tee in Black or Olive, and how to care for it.",
+          "tags": [
+            "Branded Tape",
+            "Design",
+            "Details",
+            "Essentials",
+            "LUCSUM"
+          ],
+          "isPublished": true,
+          "publishedAt": "2026-09-12T20:09:22Z",
+          "author": {
+            "name": "LUCSUM"
+          },
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0805/8847/2420/articles/branded-tape-black-front_f0fb9c43-c7c8-4148-801b-8da8fe30a8f0.png?v=1789243798",
+            "altText": "LUCSUM branded tape detail on oversized tee"
+          },
+          "blog": {
+            "handle": "lucsum-journal"
+          },
+          "metafields": {
+            "nodes": [
+              {
+                "namespace": "global",
+                "key": "title_tag",
+                "type": "single_line_text_field",
+                "value": "Branded Tape Tees: What the Shoulder Tape Detail Is and How to Wear It"
+              },
+              {
+                "namespace": "global",
+                "key": "description_tag",
+                "type": "single_line_text_field",
+                "value": "What the LUCSUM branded shoulder tape detail is, how to style a Branded Tape tee in Black or Olive, and how to care for it."
+              }
+            ]
+          }
+        },
+        {
+          "id": "gid://shopify/Article/569881296996",
+          "handle": "new-arrivals-guide-whats-in-the-orbit",
+          "title": "The LUCSUM Lineup: 25 Colourways Across 5 Oversized Styles",
+          "body": "<p><em><strong>Know the current range.</strong> A quick map of everything we sell right now, so you can jump straight to the style you want. Latest drops live in <a href=\"/collections/new-arrivals\">New Arrivals</a>.</em></p>\n<p>Fresh drops land in the LUCSUM orbit regularly — and our <a href=\"/collections/new-arrivals\">New Arrivals collection</a> is the first place to see what is new. Whether you are hunting for a statement graphic, a core essential, or your first oversized tee, this guide walks through what you will find and how each piece connects to the wider brand.</p> <h2>What counts as a new arrival at LUCSUM</h2>\n<p>New Arrivals brings together the latest additions across our range — not a separate product tier, but a curated view of recent releases and seasonal highlights from the full <a href=\"/collections/t-shirts\">T-Shirts collection</a>. You will see graphic statements alongside essentials, all unified by oversized fit, premium cotton, and LUCSUM design language.</p>\n<p>Because our catalog focuses on quality over quantity, each new arrival earns its spot. We would rather release pieces that last in your wardrobe than flood the collection with disposable trends.</p> <h2>Graphic tees: first impressions</h2>\n<p>When a graphic drops, it often appears here first. The <a href=\"/products/celestial-graphic-black\">Celestial Graphic tee</a> is a flagship example — bold celestial artwork on cotton with the relaxed proportions LUCSUM is known for. The <a href=\"/products/shoulder-logo-charcoal\">Shoulder Logo tee</a> offers a different mode: subtle branding placed at the shoulder for layered looks.</p>\n<p>Shop the dedicated <a href=\"/collections/graphic-tees\">Graphic Tees collection</a> for the full graphic rotation, or start with New Arrivals to catch the latest print stories as they launch.</p> <h2>Essentials: the backbone drops</h2>\n<p>New colourways and restocks of core silhouettes also surface in New Arrivals. Watch for updates to the <a href=\"/products/contrast-panel-black\">Contrast Panel tee</a>, <a href=\"/products/raglan-baseball-black-white\">Raglan Baseball tee</a>, and <a href=\"/products/branded-tape-black\">Branded Tape tee</a> — the three shapes that anchor our <a href=\"/collections/lucsum-essentials\">Essentials collection</a>.</p>\n<p>If you are building a wardrobe from scratch, New Arrivals is a sensible entry point: you see what is current without navigating the entire catalog. Pair one essential with one graphic and you have the foundation for dozens of outfits.</p> <h2>How to shop new drops smartly</h2>\n<p>Before you buy, check our <a href=\"/pages/size-fit\">Size &amp; Fit page</a>. LUCSUM oversized runs deliberately relaxed; comparing flat measurements to a tee you already own prevents guesswork. Read the <a href=\"/pages/care-guide\">Care Guide</a> so your new pieces stay in rotation for years, not weeks.</p>\n<p>If you are unsure which silhouette suits you, read our comparison of <a href=\"/blogs/lucsum-journal/contrast-panel-vs-raglan-picking-your-silhouette\">Contrast Panel vs Raglan</a> or explore <a href=\"/pages/why-lucsum\">Why LUCSUM</a> to understand the brand's fit and design philosophy.</p> <h2>Stay in the orbit</h2>\n<p>New Arrivals changes as drops land — bookmark the collection and check back when you are ready to refresh your rotation. The LUCSUM newsletter on our homepage keeps you informed about restocks and releases before they sell through.</p>\n<p>Whether your next piece is a celestial graphic, a contrast panel essential, or branded tape minimalism, it all starts in <a href=\"/collections/new-arrivals\">New Arrivals</a>. <strong>BE YOUR OWN UNIVERSE</strong> — one considered drop at a time.</p> <h2>Why shop New Arrivals first</h2>\n<p>If you are new to LUCSUM, New Arrivals is the fastest way to understand what the brand is building right now — oversized proportions, premium cotton, and details that reward a closer look. Start with one piece that matches your daily style, nail the fit using our size chart, and build from there. The orbit expands one tee at a time.</p>",
+          "summary": "A guide to the current LUCSUM lineup: 25 colourways across Branded Tape, Contrast Panel, Celestial Graphic, Shoulder Logo and Raglan Baseball.",
+          "tags": [
+            "Drops",
+            "Guide",
+            "LUCSUM",
+            "New Arrivals",
+            "Streetwear"
+          ],
+          "isPublished": true,
+          "publishedAt": "2026-09-12T20:09:23Z",
+          "author": {
+            "name": "LUCSUM"
+          },
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0805/8847/2420/articles/celestial-graphic-front_294cc928-a833-4c28-9752-40e945701bdc.png?v=1789243801",
+            "altText": "LUCSUM new arrivals — celestial graphic tee"
+          },
+          "blog": {
+            "handle": "lucsum-journal"
+          },
+          "metafields": {
+            "nodes": [
+              {
+                "namespace": "global",
+                "key": "title_tag",
+                "type": "single_line_text_field",
+                "value": "The LUCSUM Lineup: 25 Colourways Across 5 Oversized Styles"
+              },
+              {
+                "namespace": "global",
+                "key": "description_tag",
+                "type": "multi_line_text_field",
+                "value": "A guide to the current LUCSUM lineup: 25 colourways across Branded Tape, Contrast Panel, Celestial Graphic, Shoulder Logo and Raglan Baseball."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "urlRedirects": {
+      "nodes": [
+        {
+          "id": "gid://shopify/UrlRedirect/605523116132",
+          "path": "/products/classic-heavyweight-oversized",
+          "target": "/products/branded-tape-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605523148900",
+          "path": "/products/classic-heavyweight-oversized-t-shirt",
+          "target": "/products/branded-tape-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605523181668",
+          "path": "/products/classic-heavyweight",
+          "target": "/products/branded-tape-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605523214436",
+          "path": "/products/heavyweight-oversized",
+          "target": "/products/branded-tape-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605523247204",
+          "path": "/products/heavyweight-oversized-t-shirt",
+          "target": "/products/branded-tape-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605523279972",
+          "path": "/products/240-gsm-tie-dye",
+          "target": "/products/branded-tape-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605523312740",
+          "path": "/products/240-gsm-tie-dye-oversized-t-shirt",
+          "target": "/products/branded-tape-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605523345508",
+          "path": "/products/tie-dye",
+          "target": "/products/branded-tape-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605523378276",
+          "path": "/products/tie-dye-oversized-t-shirt",
+          "target": "/products/branded-tape-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605523411044",
+          "path": "/products/240gsm-tie-dye",
+          "target": "/products/branded-tape-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605523443812",
+          "path": "/products/240-gsm-stone-washed",
+          "target": "/products/branded-tape-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605523476580",
+          "path": "/products/240-gsm-stone-washed-oversized-t-shirt",
+          "target": "/products/branded-tape-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605523509348",
+          "path": "/products/stone-washed",
+          "target": "/products/branded-tape-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605523542116",
+          "path": "/products/stone-washed-oversized-t-shirt",
+          "target": "/products/branded-tape-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605523574884",
+          "path": "/products/240gsm-stone-washed",
+          "target": "/products/branded-tape-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605523607652",
+          "path": "/products/french-terry",
+          "target": "/products/branded-tape-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605523640420",
+          "path": "/products/french-terry-oversized-t-shirt",
+          "target": "/products/branded-tape-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605523673188",
+          "path": "/products/240gsm-french-terry",
+          "target": "/products/branded-tape-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605523705956",
+          "path": "/products/240-gsm-french-terry",
+          "target": "/products/branded-tape-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605523738724",
+          "path": "/products/waffle",
+          "target": "/products/branded-tape-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605523771492",
+          "path": "/products/waffle-oversized-t-shirt",
+          "target": "/products/branded-tape-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605523804260",
+          "path": "/products/240gsm-waffle",
+          "target": "/products/branded-tape-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605523837028",
+          "path": "/products/240-gsm-waffle",
+          "target": "/products/branded-tape-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605523869796",
+          "path": "/products/gold-cotton",
+          "target": "/products/branded-tape-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605523902564",
+          "path": "/products/gold-cotton-oversized-t-shirt",
+          "target": "/products/branded-tape-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605523935332",
+          "path": "/products/230-gsm-gold-cotton",
+          "target": "/products/branded-tape-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605523968100",
+          "path": "/products/230gsm-gold-cotton",
+          "target": "/products/branded-tape-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605524000868",
+          "path": "/products/raglan-half-sleeve",
+          "target": "/products/raglan-baseball-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605524033636",
+          "path": "/products/raglan-half-sleeve-t-shirt",
+          "target": "/products/raglan-baseball-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605524066404",
+          "path": "/products/raglan-half-sleeve-oversized-t-shirt",
+          "target": "/products/raglan-baseball-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605524099172",
+          "path": "/products/210-gsm-raglan-half-sleeve",
+          "target": "/products/raglan-baseball-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605524131940",
+          "path": "/products/210gsm-raglan-half-sleeve",
+          "target": "/products/raglan-baseball-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605524164708",
+          "path": "/products/cotton-sinker-regular-fit",
+          "target": "/collections/all"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605524197476",
+          "path": "/products/cotton-sinker-regular-fit-t-shirt",
+          "target": "/collections/all"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605524230244",
+          "path": "/products/180-gsm-cotton-sinker-regular-fit",
+          "target": "/collections/all"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605524263012",
+          "path": "/products/180gsm-cotton-sinker-regular-fit",
+          "target": "/collections/all"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605524295780",
+          "path": "/products/cotton-sinker",
+          "target": "/collections/all"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605524328548",
+          "path": "/products/essential-regular-fit-t-shirt",
+          "target": "/collections/all"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605524361316",
+          "path": "/products/essential-regular-fit",
+          "target": "/collections/all"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605524394084",
+          "path": "/products/essential-regular-fit-tee",
+          "target": "/collections/all"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605524426852",
+          "path": "/products/lucsum-essential-regular-fit",
+          "target": "/collections/all"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605524459620",
+          "path": "/products/essential-regular",
+          "target": "/collections/all"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605524951140",
+          "path": "/products/essential-tee",
+          "target": "/collections/all"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605524983908",
+          "path": "/products/essential-t-shirt",
+          "target": "/collections/all"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605525016676",
+          "path": "/products/classic-heavyweight-oversized-tee",
+          "target": "/products/branded-tape-oversized-t-shirt"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605531013220",
+          "path": "/collections/all-t-shirts",
+          "target": "/collections/t-shirts"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/605549428836",
+          "path": "/pages/care",
+          "target": "/pages/care-guide"
+        },
+        {
+          "id": "gid://shopify/UrlRedirect/606356897892",
+          "path": "/pages/help-centre",
+          "target": "/pages/faq"
+        }
+      ]
+    },
+    "menus": {
+      "nodes": [
+        {
+          "id": "gid://shopify/Menu/258976284772",
+          "handle": "main-menu",
+          "title": "Main menu",
+          "items": [
+            {
+              "title": "Shop",
+              "type": "COLLECTIONS",
+              "url": "/collections",
+              "resourceId": null,
+              "items": [
+                {
+                  "title": "All T-Shirts",
+                  "type": "COLLECTION",
+                  "url": "/collections/t-shirts",
+                  "resourceId": "gid://shopify/Collection/324672847972",
+                  "items": []
+                },
+                {
+                  "title": "New Arrivals",
+                  "type": "COLLECTION",
+                  "url": "/collections/new-arrivals",
+                  "resourceId": "gid://shopify/Collection/324672880740",
+                  "items": []
+                },
+                {
+                  "title": "Essentials",
+                  "type": "COLLECTION",
+                  "url": "/collections/lucsum-essentials",
+                  "resourceId": "gid://shopify/Collection/324672979044",
+                  "items": []
+                },
+                {
+                  "title": "Graphic Tees",
+                  "type": "COLLECTION",
+                  "url": "/collections/graphic-tees",
+                  "resourceId": "gid://shopify/Collection/324672913508",
+                  "items": []
+                },
+                {
+                  "title": "Shop by Style",
+                  "type": "COLLECTIONS",
+                  "url": "/collections",
+                  "resourceId": null,
+                  "items": [
+                    {
+                      "title": "Branded Tape",
+                      "type": "COLLECTION",
+                      "url": "/collections/branded-tape",
+                      "resourceId": "gid://shopify/Collection/510311137380"
+                    },
+                    {
+                      "title": "Contrast Panel",
+                      "type": "COLLECTION",
+                      "url": "/collections/contrast-panel",
+                      "resourceId": "gid://shopify/Collection/510311170148"
+                    },
+                    {
+                      "title": "Celestial Graphic",
+                      "type": "COLLECTION",
+                      "url": "/collections/celestial-graphic",
+                      "resourceId": "gid://shopify/Collection/510311202916"
+                    },
+                    {
+                      "title": "Shoulder Logo",
+                      "type": "COLLECTION",
+                      "url": "/collections/shoulder-logo",
+                      "resourceId": "gid://shopify/Collection/510311235684"
+                    },
+                    {
+                      "title": "Raglan Baseball",
+                      "type": "COLLECTION",
+                      "url": "/collections/raglan-baseball",
+                      "resourceId": "gid://shopify/Collection/510311268452"
+                    }
+                  ]
+                },
+                {
+                  "title": "Shop by Colour",
+                  "type": "COLLECTIONS",
+                  "url": "/collections",
+                  "resourceId": null,
+                  "items": [
+                    {
+                      "title": "Red",
+                      "type": "COLLECTION",
+                      "url": "/collections/red-t-shirts",
+                      "resourceId": "gid://shopify/Collection/510311301220"
+                    },
+                    {
+                      "title": "Grey",
+                      "type": "COLLECTION",
+                      "url": "/collections/grey-t-shirts",
+                      "resourceId": "gid://shopify/Collection/510311333988"
+                    },
+                    {
+                      "title": "Black",
+                      "type": "COLLECTION",
+                      "url": "/collections/black-t-shirts",
+                      "resourceId": "gid://shopify/Collection/510311399524"
+                    },
+                    {
+                      "title": "White",
+                      "type": "COLLECTION",
+                      "url": "/collections/white-t-shirts",
+                      "resourceId": "gid://shopify/Collection/510311432292"
+                    },
+                    {
+                      "title": "Olive",
+                      "type": "COLLECTION",
+                      "url": "/collections/olive-t-shirts",
+                      "resourceId": "gid://shopify/Collection/510311465060"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Journal",
+              "type": "BLOG",
+              "url": "/blogs/lucsum-journal",
+              "resourceId": "gid://shopify/Blog/103381631076",
+              "items": []
+            },
+            {
+              "title": "Support",
+              "type": "PAGE",
+              "url": "/pages/contact",
+              "resourceId": "gid://shopify/Page/129190625380",
+              "items": [
+                {
+                  "title": "Help Centre",
+                  "type": "PAGE",
+                  "url": "/pages/faq",
+                  "resourceId": "gid://shopify/Page/129325957220",
+                  "items": []
+                },
+                {
+                  "title": "Shipping",
+                  "type": "HTTP",
+                  "url": "/pages/shipping",
+                  "resourceId": null,
+                  "items": []
+                },
+                {
+                  "title": "Returns & Refunds",
+                  "type": "HTTP",
+                  "url": "/pages/returns-refunds",
+                  "resourceId": null,
+                  "items": []
+                },
+                {
+                  "title": "Track Order",
+                  "type": "PAGE",
+                  "url": "/pages/track-order",
+                  "resourceId": "gid://shopify/Page/129326284900",
+                  "items": []
+                },
+                {
+                  "title": "Size & Fit",
+                  "type": "PAGE",
+                  "url": "/pages/size-fit",
+                  "resourceId": "gid://shopify/Page/129325924452",
+                  "items": []
+                },
+                {
+                  "title": "Care Guide",
+                  "type": "PAGE",
+                  "url": "/pages/care-guide",
+                  "resourceId": "gid://shopify/Page/129326317668",
+                  "items": []
+                },
+                {
+                  "title": "Contact",
+                  "type": "PAGE",
+                  "url": "/pages/contact",
+                  "resourceId": "gid://shopify/Page/129190625380",
+                  "items": []
+                }
+              ]
+            },
+            {
+              "title": "Why LUCSUM",
+              "type": "PAGE",
+              "url": "/pages/why-lucsum",
+              "resourceId": "gid://shopify/Page/129326514276",
+              "items": []
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/Menu/258976317540",
+          "handle": "footer",
+          "title": "Footer menu",
+          "items": [
+            {
+              "title": "Search",
+              "type": "SEARCH",
+              "url": "/search",
+              "resourceId": null,
+              "items": []
+            },
+            {
+              "title": "About",
+              "type": "PAGE",
+              "url": "/pages/about",
+              "resourceId": "gid://shopify/Page/129230864484",
+              "items": []
+            },
+            {
+              "title": "Why Lucsum",
+              "type": "PAGE",
+              "url": "/pages/why-lucsum",
+              "resourceId": "gid://shopify/Page/129326514276",
+              "items": []
+            },
+            {
+              "title": "Help Centre",
+              "type": "PAGE",
+              "url": "/pages/faq",
+              "resourceId": "gid://shopify/Page/129325957220",
+              "items": []
+            },
+            {
+              "title": "Size & Fit",
+              "type": "PAGE",
+              "url": "/pages/size-fit",
+              "resourceId": "gid://shopify/Page/129325924452",
+              "items": []
+            },
+            {
+              "title": "Care Guide",
+              "type": "PAGE",
+              "url": "/pages/care-guide",
+              "resourceId": "gid://shopify/Page/129326317668",
+              "items": []
+            },
+            {
+              "title": "Shipping",
+              "type": "PAGE",
+              "url": "/pages/shipping",
+              "resourceId": "gid://shopify/Page/129231061092",
+              "items": []
+            },
+            {
+              "title": "Track Order",
+              "type": "PAGE",
+              "url": "/pages/track-order",
+              "resourceId": "gid://shopify/Page/129326284900",
+              "items": []
+            },
+            {
+              "title": "Returns & Refunds",
+              "type": "PAGE",
+              "url": "/pages/returns-refunds",
+              "resourceId": "gid://shopify/Page/129326252132",
+              "items": []
+            },
+            {
+              "title": "Privacy",
+              "type": "SHOP_POLICY",
+              "url": "/policies/privacy-policy",
+              "resourceId": "gid://shopify/ShopPolicy/46472724580",
+              "items": []
+            },
+            {
+              "title": "Terms",
+              "type": "SHOP_POLICY",
+              "url": "/policies/terms-of-service",
+              "resourceId": "gid://shopify/ShopPolicy/46478426212",
+              "items": []
+            },
+            {
+              "title": "Contact",
+              "type": "PAGE",
+              "url": "/pages/contact",
+              "resourceId": "gid://shopify/Page/129190625380",
+              "items": []
+            },
+            {
+              "title": "Sitemap",
+              "type": "HTTP",
+              "url": "/sitemap.xml",
+              "resourceId": null,
+              "items": []
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/Menu/258976350308",
+          "handle": "customer-account-main-menu",
+          "title": "Customer account main menu",
+          "items": [
+            {
+              "title": "Orders",
+              "type": "CUSTOMER_ACCOUNT_PAGE",
+              "url": "https://shopify.com/80588472420/account/orders",
+              "resourceId": "gid://shopify/CustomerAccountPage/123637104740",
+              "items": []
+            },
+            {
+              "title": "Profile",
+              "type": "CUSTOMER_ACCOUNT_PAGE",
+              "url": "https://shopify.com/80588472420/account/profile",
+              "resourceId": "gid://shopify/CustomerAccountPage/123637137508",
+              "items": []
+            }
+          ]
+        }
+      ]
+    },
+    "shop": {
+      "shopPolicies": [
+        {
+          "type": "CONTACT_INFORMATION",
+          "title": "Contact",
+          "body": "<p><strong>Trade name:</strong> LUCSUM (Lucsum)</p>\n<p><strong>Support email:</strong> <a href=\"mailto:support@lucsum.com\">support@lucsum.com</a></p>\n<p><strong>Phone / WhatsApp:</strong> <a href=\"https://wa.me/918272810805\">+91 82728 10805</a></p>\n<p><strong>Business / return address:</strong> 2653 Radha Vihar, Saharanpur 247001, Uttar Pradesh, India</p>\n<p><strong>Support hours:</strong> Monday–Friday; we typically respond within 24–48 hours.</p>",
+          "url": "https://checkout.shopify.com/80588472420/policies/46478458980.html?locale=en",
+          "updatedAt": "2026-10-02T12:48:42+05:30"
+        },
+        {
+          "type": "PRIVACY_POLICY",
+          "title": "Privacy policy",
+          "body": "<div>\n  <p>Last updated: September 5, 2026</p>\n  <p>Lucsum operates this store and website, including all related information, content, features, tools, products and services, in order to provide you, the customer, with a curated shopping experience (the  \"Services\"). Lucsum is powered by Shopify, which enables us to provide the Services to you. This Privacy Policy describes how we collect, use, and disclose your personal information when you visit, use, or make a purchase or other transaction using the Services or otherwise communicate with us. If there is a conflict between our Terms of Service and this Privacy Policy, this Privacy Policy controls with respect to the collection, processing, and disclosure of your personal information. </p>\n  <p>Please read this Privacy Policy carefully. By using and accessing any of the Services, you acknowledge that you have read this Privacy Policy and understand the collection, use, and disclosure of your information as described in this Privacy Policy.</p>\n  <h2>Personal Information We Collect or Process</h2>\n  <p>When we use the term  \"personal information,\" we are referring to information that identifies or can reasonably be linked to you or another person. Personal information does not include information that is collected anonymously or that has been de-identified, so that it cannot identify or be reasonably linked to you. We may collect or process the following categories of personal information, including inferences drawn from this personal information, depending on how you interact with the Services, where you live, and as permitted or required by applicable law:</p>\n  <ul>\n      <li><strong>Contact details</strong> including your name, address, billing address, shipping address, phone number, and email address.</li>\n      <li><strong>Financial information</strong> including credit card, debit card, and financial account numbers, payment card information, financial account information, transaction details, form of payment, payment confirmation and other payment details.</li>\n      <li><strong>Account information</strong> including your username, password, security questions, preferences and settings.</li>\n      <li><strong>Transaction information</strong> including the items you view, put in your cart, add to your wishlist, or purchase, return, exchange or cancel and your past transactions.</li>\n      <li><strong>Communications with us</strong> including the information you include in communications with us, for example, when sending a customer support inquiry.</li>\n      <li><strong>Device information</strong> including information about your device, browser, or network connection, your IP address, and other unique identifiers.</li>\n      <li><strong>Usage information</strong> including information regarding your interaction with the Services, including how and when you interact with or navigate the Services. </li>\n  </ul>\n  <h2>Personal Information Sources</h2>\n  <p>We may collect personal information from the following sources:</p>\n  <ul>\n      <li><strong>Directly from you</strong> including when you create an account, visit or use the Services, communicate with us, or otherwise provide us with your personal information;</li>\n      <li><strong>Automatically through the Services</strong> including from your device when you use our products or services or visit our websites, and through the use of cookies and similar technologies;</li>\n      <li><strong>From our service providers</strong> including when we engage them to enable certain technology and when they collect or process your personal information on our behalf; </li>\n      <li><strong>From our partners or other third parties.</strong></li>\n  </ul>\n  <h2>How We Use Your Personal Information</h2>\n  <p>Depending on how you interact with us or which of the Services you use, we may use personal information for the following purposes:</p>\n  <ul>\n      <li><strong>Provide, Tailor, and Improve the Services.</strong> We use your personal information to provide you with the Services, including to perform our contract with you, to process your payments, to fulfill your orders, to remember your preferences and items you are interested in, to send notifications to you related to your account, to process purchases, returns, exchanges or other transactions, to create, maintain and otherwise manage your account, to arrange for shipping, to facilitate any returns and exchanges, to enable you to post reviews, and to create a customized shopping experience for you, such as recommending products related to your purchases. This may include using your personal information to better tailor and improve the Services.</li>\n      <li><strong>Marketing and Advertising.</strong> We use your personal information for marketing and promotional purposes, such as to send marketing, advertising and promotional communications by email, text message or postal mail, and to show you online advertisements for products or services on the Services or other websites, including based on items you previously have purchased or added to your cart and other activity on the Services. </li>\n      <li><strong>Security and Fraud Prevention.</strong> We use your personal information to authenticate your account, to provide a secure payment and shopping experience, detect, investigate or take action regarding possible fraudulent, illegal, unsafe, or malicious activity, protect public safety, and to secure our services. If you choose to use the Services and register an account, you are responsible for keeping your account credentials safe. We highly recommend that you do not share your username, password or other access details with anyone else.</li>\n      <li><strong>Communicating with You.</strong> We use your personal information to provide you with customer support, to be responsive to you, to provide effective services to you and to maintain our business relationship with you. </li>\n      <li><strong>Legal Reasons.</strong> We use your personal information to comply with applicable law or respond to valid legal process, including requests from law enforcement or government agencies, to investigate or participate in civil discovery, potential or actual litigation, or other adversarial legal proceedings, and to enforce or investigate potential violations of our terms or policies.</li>\n  </ul>\n  <h2>How We Disclose Personal Information</h2>\n  <p>In certain circumstances, we may disclose your personal information to third parties for legitimate purposes subject to this Privacy Policy. Such circumstances may include:</p>\n  <ul>\n      <li>With Shopify, vendors and other third parties who perform services on our behalf (e.g. IT management, payment processing, data analytics, customer support, cloud storage, fulfillment and shipping).</li>\n      <li>With business and marketing partners to provide marketing services and advertise to you.  For example, we use Shopify to support personalized advertising with third-party services based on your online activity with different merchants and websites.  Our business and marketing partners will use your information in accordance with their own privacy notices. Depending on where you reside, you may have a right to direct us not to share information about you to show you targeted advertisements and marketing based on your online activity with different merchants and websites. .</li>\n      <li>When you direct, request us or otherwise consent to our disclosure of certain information to third parties, such as to ship you products or through your use of social media widgets or login integrations.</li>\n      <li>With our affiliates or otherwise within our corporate group.</li>\n      <li>\n      In connection with a business transaction such as a merger or bankruptcy, to comply with any applicable legal obligations (including to respond to subpoenas, search warrants and similar requests), to enforce any applicable terms of service or policies, and to protect or defend the Services, our rights, and the rights of our users or others.\n      </li>\n  </ul>\n  <h2>Relationship with Shopify</h2>\n  <p>The Services are hosted by Shopify, which collects and processes personal information about your access to and use of the Services in order to provide and improve the Services for you. Information you submit to the Services will be transmitted to and shared with Shopify as well as third parties that may be located in countries other than where you reside, in order to provide and improve the Services for you. In addition, to help protect, grow, and improve our business, we use certain Shopify enhanced features that incorporate data and information obtained from your interactions with our Store, along with other merchants and with Shopify. To provide these enhanced features, Shopify may make use of personal information collected about your interactions with our store, along with other merchants, and with Shopify. In these circumstances, Shopify is responsible for the processing of your personal information, including for responding to your requests to exercise your rights over use of your personal information for these purposes. To learn more about how Shopify uses your personal information and any rights you may have, you can visit the <a href=\"https://www.shopify.com/legal/privacy/app-users\">Shopify Consumer Privacy Policy</a> . Depending on where you live, you may exercise certain rights with respect to your personal information here <a href=\"https://privacy.shopify.com/en\">Shopify Privacy Portal Link</a>. </p>\n  <h2>Third Party Websites and Links</h2>\n  <p>The Services may provide links to websites or other online platforms operated by third parties. If you follow links to sites not affiliated or controlled by us, you should review their privacy and security policies and other terms and conditions. We do not guarantee and are not responsible for the privacy or security of such sites, including the accuracy, completeness, or reliability of information found on these sites. Information you provide on public or semi-public venues, including information you share on third-party social networking platforms may also be viewable by other users of the Services and/or users of those third-party platforms without limitation as to its use by us or by a third party. Our inclusion of such links does not, by itself, imply any endorsement of the content on such platforms or of their owners or operators, except as disclosed on the Services.</p>\n  <h2>Children's Data</h2>\n  <p>The Services are not intended to be used by children, and we do not knowingly collect any personal information about children under the age of majority in your jurisdiction. If you are the parent or guardian of a child who has provided us with their personal information, you may contact us using the contact details set out below to request that it be deleted.As of the Effective Date of this Privacy Policy, we do not have actual knowledge that we  \"share\" or  \"sell\" (as those terms are defined in applicable law) personal information of individuals under 16 years of age.</p>\n  <h2>Security and Retention of Your Information</h2>\n  <p>Please be aware that no security measures are perfect or impenetrable, and we cannot guarantee \"perfect security.\" In addition, any information you send to us may not be secure while in transit. We recommend that you do not use unsecure channels to communicate sensitive or confidential information to us.</p>\n  <p>How long we retain your personal information depends on different factors, such as whether we need the information to maintain your account, to provide you with Services, comply with legal obligations, resolve disputes or enforce other applicable contracts and policies.</p>\n  <h2>Your Rights and Choices</h2>\n  <p>Depending on where you live, you may have some or all of the rights listed below in relation to your personal information. However, these rights are not absolute, may apply only in certain circumstances and, in certain cases, we may decline your request as permitted by law.</p>\n  <ul>\n      <li><strong>Right to Access / Know.</strong> You may have a right to request access to personal information that we hold about you.</li>\n      <li><strong>Right to Delete.</strong> You may have a right to request that we delete personal information we maintain about you.</li>\n      <li><strong>Right to Correct.</strong> You may have a right to request that we correct inaccurate personal information we maintain about you.</li>\n      <li><strong>Right of Portability.</strong> You may have a right to receive a copy of the personal information we hold about you and to request that we transfer it to a third party, in certain circumstances and with certain exceptions.</li>\n      \n      <li>\n      <strong>Managing Communication Preferences.</strong> We may send you promotional emails, and you may opt out of receiving these at any time by using the unsubscribe option displayed in our emails to you. If you opt out, we may still send you non-promotional emails, such as those about your account or orders that you have made.\n      </li>\n  </ul>\n  <div>\n      \n  </div>\n  <p>You may exercise any of these rights where indicated on the Services or by contacting us using the contact details provided below. To learn more about how Shopify uses your personal information and any rights you may have, including rights related to data processed by Shopify, you can visit https://privacy.shopify.com/en. </p>\n  <p>We will not discriminate against you for exercising any of these rights. We may need to verify your identity before we can process your requests, as permitted or required under applicable law. In accordance with applicable laws, you may designate an authorized agent to make requests on your behalf to exercise your rights. Before accepting such a request from an agent, we will require that the agent provide proof you have authorized them to act on your behalf, and we may need you to verify your identity directly with us. We will respond to your request in a timely manner as required under applicable law.</p>\n  <h2>Complaints</h2>\n  <p>If you have complaints about how we process your personal information, please contact us using the contact details provided below. Depending on where you live, you may have the right to appeal our decision by contacting us using the contact details set out below, or lodge your complaint with your local data protection authority.</p>\n  <h2>International Transfers</h2>\n  <p>Please note that we may transfer, store and process your personal information outside the country you live in. </p>\n  <p>If we transfer your personal information out of the European Economic Area or the United Kingdom, we will rely on recognized transfer mechanisms like the European Commission's Standard Contractual Clauses, or any equivalent contracts issued by the relevant competent authority of the UK, as relevant, unless the data transfer is to a country that has been determined to provide an adequate level of protection.</p>\n  <h2>Changes to This Privacy Policy</h2>\n  <p>We may update this Privacy Policy from time to time, including to reflect changes to our practices or for other operational, legal, or regulatory reasons. We will post the revised Privacy Policy on this website, update the  \"Last updated\" date and provide notice as required by applicable law.</p>\n  <h2>Contact</h2>\n  <p>Should you have any questions about our privacy practices or this Privacy Policy, or if you would like to exercise any of the rights available to you, please call +91 82728 10805 or email us at support@lucsum.com or contact us at 2653 Radha Vihar, Saharanpur 247001, Uttar Pradesh, India. </p>\n</div>",
+          "url": "https://checkout.shopify.com/80588472420/policies/46472724580.html?locale=en",
+          "updatedAt": "2026-10-02T12:49:57+05:30"
+        },
+        {
+          "type": "REFUND_POLICY",
+          "title": "Refund policy",
+          "body": "<p>We have a <strong>30-day return policy</strong>, which means you have 30 days after receiving your item to request a return.</p>\n<p>To be eligible for a return, your item must be in the same condition that you received it, unworn or unused, with tags attached, and in its original packaging. You will also need the receipt or proof of purchase (order number).</p>\n<p>To start a return, contact us at <a href=\"mailto:support@lucsum.com\">support@lucsum.com</a> or WhatsApp <a href=\"https://wa.me/918272810805\">+91 82728 10805</a> with your order number and reason for the return. Please wait for approval and return instructions before sending anything back.</p>\n<p><strong>Return address</strong><br>\nLUCSUM Returns<br>\n2653 Radha Vihar<br>\nSaharanpur 247001<br>\nUttar Pradesh, India</p>\n<p>Items sent back to us without first requesting a return may not be accepted.</p>\n<p>You can always contact us for return questions at <a href=\"mailto:support@lucsum.com\">support@lucsum.com</a> or WhatsApp <a href=\"https://wa.me/918272810805\">+91 82728 10805</a>.</p>\n<p><strong>Damages and issues</strong><br>\nPlease inspect your order upon reception and contact us within 48 hours of delivery if the item is defective, damaged, or if you received the wrong item, so that we can evaluate the issue and make it right. Include your order number and clear photos of the item and packaging.</p>\n<p><strong>Exceptions / non-returnable items</strong><br>\nWe cannot accept returns on items that show signs of wear, washing, or damage after delivery; items missing tags or original packaging; or gift cards. Sale items may be non-returnable if stated at the time of purchase. Please get in touch if you have questions about your specific order.</p>\n<p><strong>Exchanges</strong><br>\nSize or product exchanges can be requested through support. The fastest path is often to return the item you have (once approved) and place a new order for the size or style you want, subject to stock availability.</p>\n<p><strong>Return shipping</strong><br>\nFor approved returns of eligible items that arrived as described, we will provide return instructions. For change-of-mind returns, return shipping responsibility will be confirmed in your return approval email. Damaged, defective, or incorrect items are handled at no cost to you when reported within the window above.</p>\n<p><strong>Refunds</strong><br>\nWe will notify you once we have received and inspected your return, and let you know if the refund was approved. If approved, you will be refunded on your original payment method within 5–10 business days. Your bank or payment provider may take additional time to post the refund. If more than 15 business days have passed since we approved your return and you have not received your refund, please contact us at <a href=\"mailto:support@lucsum.com\">support@lucsum.com</a>.</p>",
+          "url": "https://checkout.shopify.com/80588472420/policies/46478393444.html?locale=en",
+          "updatedAt": "2026-10-02T13:56:02+05:30"
+        },
+        {
+          "type": "SHIPPING_POLICY",
+          "title": "Shipping",
+          "body": "<p><strong>Coverage</strong><br>\nLUCSUM ships India-wide to serviceable pin codes. We do not currently offer international shipping.</p>\n<p><strong>Processing</strong><br>\nOrders are typically processed within 1–2 business days (Monday–Friday, excluding public holidays). You will receive a confirmation email when your order is placed.</p>\n<p><strong>Delivery</strong><br>\nAfter dispatch, standard delivery across India is typically 3–7 business days. Metro cities are usually at the shorter end; remote pin codes may take longer. All delivery times are estimates and are not guaranteed.</p>\n<p><strong>Shipping charges</strong><br>\nOur Standard shipping rates for India:</p>\n<ul>\n<li><strong>Standard shipping:</strong> ₹20</li>\n<li><strong>Free Standard shipping</strong> on orders of <strong>₹1,000 or more</strong> (order total in INR)</li>\n</ul>\n<p>The exact shipping amount for your order is calculated and shown at checkout.</p>\n<p><strong>Cash on Delivery (COD)</strong><br>\nCOD may be available at checkout for eligible pincodes in India. Select COD during checkout to confirm availability for your address.</p>\n<p><strong>Tracking</strong><br>\nWhen your order ships, you will receive an email (and SMS where available) with a tracking link. You can also use our Track Order page or sign in to your account.</p>\n<p><strong>Address accuracy</strong><br>\nPlease double-check your shipping address at checkout. Contact us immediately at <a href=\"mailto:support@lucsum.com\">support@lucsum.com</a> if you need to correct an address before dispatch.</p>\n<p><strong>Lost or damaged shipments</strong><br>\nDamaged or wrong item: contact us within 48 hours of delivery with your order number and clear photos of the item and packaging. Parcel not arrived: contact us within 48 hours of the expected delivery date with your order number. We will work with the courier to resolve the issue.</p>\n<p><strong>Need help?</strong><br>\nEmail <a href=\"mailto:support@lucsum.com\">support@lucsum.com</a> or WhatsApp <a href=\"https://wa.me/918272810805\">+91 82728 10805</a>. Business address: 2653 Radha Vihar, Saharanpur 247001, Uttar Pradesh, India.</p>\n",
+          "url": "https://checkout.shopify.com/80588472420/policies/48391389284.html?locale=en",
+          "updatedAt": "2026-10-10T08:32:49+05:30"
+        },
+        {
+          "type": "TERMS_OF_SERVICE",
+          "title": "Terms of service",
+          "body": "<p><strong>OVERVIEW</strong> <br>Welcome to Lucsum! The terms \"we\", \"us\" and \"our\" refer to Lucsum. Lucsum operates this store and website, including all related information, content, features, tools, products and services in order to provide you, the customer, with a curated shopping experience (the \"Services\"). Lucsum is powered by Shopify, which enables us to provide the Services to you. <br>The below terms and conditions, together with any policies referenced herein (these \"Terms of Service\" or \"Terms\") describe your rights and responsibilities when you use the Services. <br>Please read these Terms of Service carefully, as they include important information about your legal rights and cover areas such as warranty disclaimers and limitations of liability. <br>By visiting, interacting with or using our Services, you agree to be bound by these Terms of Service and our Privacy Policy (<a href=\"https://lucsum.com/policies/privacy-policy\">https://lucsum.com/policies/privacy-policy</a>). If you do not agree to these Terms of Service or Privacy Policy, you should not use or access our Services.&nbsp;</p>\n<p><strong>SECTION 1 - ACCESS AND ACCOUNT</strong> <br>By agreeing to these Terms of Service, you represent that you are at least the age of majority in your state or province of residence, and you have given us your consent to allow any of your minor dependents to use the Services on devices you own, purchase or manage. <br>To use the Services, including accessing or browsing our online stores or purchasing any of the products or services we offer, you may be asked to provide certain information, such as your email address, billing, payment, and shipping information. You represent and warrant that all the information you provide in our stores is correct, current and complete and that you have all rights necessary to provide this information. <br>You are solely responsible for maintaining the security of your account credentials and for all of your account activity. You may not transfer, sell, assign, or license your account to any other person. <br><br><strong>SECTION 2 - OUR PRODUCTS</strong> <br>We have made every effort to provide an accurate representation of our products and services in our online stores. However, please note that colors or product appearance may differ from how they may appear on your screen due to the type of device you use to access the store and your device settings and configuration. <br>We do not warrant that the appearance or quality of any products or services purchased by you will meet your expectations or be the same as depicted or rendered in our online stores. <br>All descriptions of products are subject to change at any time without notice at our sole discretion. We reserve the right to discontinue any product at any time and may limit the quantities of any products that we offer to any person, geographic region or jurisdiction, on a case-by-case basis. <br><br><strong>SECTION 3 - ORDERS</strong> <br>When you place an order, you are making an offer to purchase. Lucsum reserves the right to accept or decline your order for any reason at its discretion. Your order is not accepted until Lucsum confirms acceptance. We must receive and process your payment before your order is accepted. Please review your order carefully before submitting, as Lucsum may be unable to accommodate cancellation requests after an order is accepted. In the event that we do not accept, make a change to, or cancel an order, we will attempt to notify you by contacting the e‑mail, billing address, and/or phone number provided at the time the order was made. <br>Your purchases are subject to return or exchange solely in accordance with our Refund Policy (<a href=\"https://lucsum.com/policies/refund-policy\">https://lucsum.com/policies/refund-policy</a>). <br>You represent and warrant that your purchases are for your own personal or household use and not for commercial resale or export. <br><br><strong>SECTION 4 - PRICES AND BILLING</strong> <br>Prices, discounts and promotions are subject to change without notice. The price charged for a product or service will be the price in effect at the time the order is placed and will be set out in your order confirmation email. Unless otherwise expressly stated, posted prices include applicable taxes. Shipping and handling charges (if any) are calculated and shown at checkout. <br>Prices posted in our online stores may be different from prices offered in physical stores or in online or other stores operated by third parties. We may offer, from time to time, promotions on the Services that may affect pricing and that are governed by terms and conditions separate from these Terms. If there is a conflict between the terms for a promotion and these Terms, the promotion terms will govern. <br>You agree to provide current, complete and accurate purchase, payment and account information for all purchases made at our stores. You agree to promptly update your account and other information, including your email address, credit card numbers and expiration dates, so that we can complete your transactions and contact you as needed. <br>You represent and warrant that (i) the credit card information you provide is true, correct, and complete, (ii) you are duly authorized to use such credit card for the purchase, (iii) charges incurred by you will be honored by your credit card company, and (iv) you will pay charges incurred by you at the posted prices, including shipping and handling charges and all applicable taxes, if any. <br><br><strong>SECTION 5 - SHIPPING AND DELIVERY</strong> <br>We are not liable for shipping and delivery delays. All delivery times are estimates only and are not guaranteed. We are not responsible for delays caused by shipping carriers, customs processing, or events outside our control. Once we transfer products to the carrier, title and risk of loss passes to you. <br><br><strong>SECTION 6 - INTELLECTUAL PROPERTY</strong> <br>Our Services, including but not limited to all trademarks, brands, text, displays, images, graphics, product reviews, video, and audio, and the design, selection, and arrangement thereof, are owned by Lucsum, its affiliates or licensors and are protected by U.S. and foreign patent, copyright and other intellectual property laws. <br>These Terms permit you to use the Services for your personal, non-commercial use only. You must not reproduce, distribute, modify, create derivative works of, publicly display, publicly perform, republish, download, store, or transmit any of the material on the Services without our prior written consent. Except as expressly provided herein, nothing in these Terms grants or shall be construed as granting a license or other rights to you under any patent, trademark, copyright, or other intellectual property of Lucsum, Shopify or any third party. Unauthorized use of the Services may be a violation of federal and state intellectual property laws. All rights not expressly granted herein are reserved by Lucsum. <br>Lucsum's names, logos, product and service names, designs, and slogans are trademarks of Lucsum or its affiliates or licensors. You must not use such trademarks without the prior written permission of Lucsum. Shopify's name, logo, product and service names, designs and slogans are trademarks of Shopify. All other names, logos, product and service names, designs, and slogans on the Services are the trademarks of their respective owners. <br><br><strong>SECTION 7 - OPTIONAL TOOLS</strong> <br>You may be provided with access to customer tools offered by third parties as part of the Services, which we neither monitor nor have any control nor input. <br>You acknowledge and agree that we provide access to such tools \"as is\" and \"as available\" without any warranties, representations or conditions of any kind and without any endorsement. We shall have no liability whatsoever arising from or relating to your use of optional third-party tools. <br>Any use by you of the optional tools offered through the site is entirely at your own risk and discretion and you should ensure that you are familiar with and approve of the terms on which tools are provided by the relevant third-party provider(s). <br>We may also, in the future, offer new features through the Services (including the release of new tools and resources). Such new features shall also be deemed part of the Services and are subject to these Terms of Service. <br><br><strong>SECTION 8 - THIRD-PARTY LINKS</strong> <br>The Services may contain materials and hyperlinks to websites provided or operated by third parties (including any embedded third party functionality). We are not responsible for examining or evaluating the content or accuracy of any third-party materials or websites you choose to access. If you decide to leave the Services to access these materials or third party sites, you do so at your own risk. <br>We are not liable for any harm or damages related to your access of any third-party websites, or your purchase or use of any products, services, resources, or content on any third-party websites. Please review carefully the third-party's policies and practices and make sure you understand them before you engage in any transaction. Complaints, claims, concerns, or questions regarding third-party products and services should be directed to the third-party. <br><br><strong>SECTION 9 - RELATIONSHIP WITH SHOPIFY</strong> <br>Lucsum is powered by Shopify, which enables us to provide the Services to you. However, any sales and purchases you make in our Store are made directly with Lucsum. By using the Services, you acknowledge and agree that Shopify is not responsible for any aspect of any sales between you and Lucsum, including any injury, damage, or loss resulting from purchased products and services. You hereby expressly release Shopify and its affiliates from all claims, damages, and liabilities arising from or related to your purchases and transactions with Lucsum. <br><br><strong>SECTION 10 - PRIVACY POLICY</strong> <br>All personal information we collect through the Services is subject to our Privacy Policy, which can be viewed <a href=\"https://lucsum.com/policies/privacy-policy\">here</a>, and certain personal information may be subject to Shopify's Privacy Policy, which can be viewed <a href=\"https://www.shopify.com/legal/privacy/app-users\">here</a>. By using the Services, you acknowledge that you have read these privacy policies. <br>Because the Services are hosted by Shopify, Shopify collects and processes personal information about your access to and use of the Services in order to provide and improve the Services for you. Information you submit to the Services will be transmitted to and shared with Shopify as well as third parties that may be located in other countries than where you reside, in order to provide services to you. Review our Privacy Policy (<a href=\"https://lucsum.com/policies/privacy-policy\">https://lucsum.com/policies/privacy-policy</a>) for more details on how we, Shopify, and our partners use your personal information. <br><br><strong>SECTION 11 - FEEDBACK</strong> <br>If you submit, upload, post, email, or otherwise transmit any ideas, suggestions, feedback, reviews, proposals, plans, or other content (collectively, \"Feedback\"), you grant us a perpetual, worldwide, sublicensable, royalty-free license to use, reproduce, modify, publish, distribute and display such Feedback in any medium for any purpose, including for commercial use. We may, for example, use our rights under this license to operate, provide, evaluate, enhance, improve and promote the Services and to perform our obligations and exercise our rights under the Terms of Service. <br>You also represent and warrant that: (i) you own or have all necessary rights to all Feedback; (ii) you have disclosed any compensation or incentives received in connection with your submission of Feedback; and (iii) your Feedback will comply with these Terms. We are and shall be under no obligation (1) to maintain your Feedback in confidence; (2) to pay compensation for your Feedback; or (3) to respond to your Feedback. <br>We may, but have no obligation to, monitor, edit or remove Feedback that we determine in our sole discretion to be unlawful, offensive, threatening, libelous, defamatory, pornographic, obscene or otherwise objectionable or violates any party's intellectual property or these Terms of Service. <br>You agree that your Feedback will not violate any right of any third-party, including copyright, trademark, privacy, personality or other personal or proprietary right. You further agree that your Feedback will not contain libelous or otherwise unlawful, abusive or obscene Feedback, or contain any computer virus or other malware that could in any way affect the operation of the Services or any related website. You may not use a false email address, pretend to be someone other than yourself, or otherwise mislead us or third-parties as to the origin of any Feedback. You are solely responsible for any Feedback you make and its accuracy. We take no responsibility and assume no liability for any Feedback posted by you or any third-party. <br><br><strong>SECTION 12 - ERRORS, INACCURACIES AND OMISSIONS</strong> <br>Occasionally there may be information on or in the Services that contain typographical errors, inaccuracies or omissions that may relate to product descriptions, pricing, promotions, offers, product shipping charges, transit times and availability. We reserve the right to correct any errors, inaccuracies or omissions, and to change or update information or cancel orders if any information is inaccurate at any time without prior notice (including after you have submitted your order). <br><br><strong>SECTION 13 - PROHIBITED USES</strong> <br>You may access and use the Services for lawful purposes only. You may not access or use the Services, directly or indirectly: (a) for any unlawful or malicious purpose; (b) to violate any international, federal, provincial or state regulations, rules, laws, or local ordinances; (c) to infringe upon or violate our intellectual property rights or the intellectual property rights of others; (d) to harass, abuse, insult, harm, defame, slander, disparage, intimidate, or harm any of our employees or any other person; (e) to transmit false or misleading information; (f) to send, knowingly receive, upload, download, use, or re-use any material that does not comply with the these Terms; (g) to transmit, or procure the sending of, any advertising or promotional material, including any \"junk mail,\" \"chain letter,\" \"spam,\" or any other similar solicitation; (h) to impersonate or attempt to impersonate any other person or entity; or (i) to engage in any other conduct that restricts or inhibits anyone's use or enjoyment of the Services, or which, as determined by us, may harm Lucsum, Shopify or users of the Services, or expose them to liability. <br>In addition, you agree not to: (a) upload or transmit viruses or any other type of malicious code that will or may be used in any way that will affect the functionality or operation of the Services; (b) reproduce, duplicate, copy, extract, sell, resell or exploit any portion of the Services; (c) collect or track the personal information of others; (d) spam, phish, pharm, or pretext the services; (e) use any robot, spider, scraping, data gathering and extraction tools, automatic devices or processes, AI tools (such as agentic AI) or automated or manual means to access the Services; or (f) interfere with, bypass, or circumvent the security or authorization features, robot exclusion headers, or other measures we employ to restrict access to the Services. We reserve the right to suspend, disable, or terminate your account at any time, without notice, if we determine that you have violated any part of these Terms. <br><br><strong>SECTION 14 - AGENTS</strong> <br>14.1 This section (\"Agent Terms\") applies if you use, allow, enable, or cause the deployment of an Agent to access, use, or interact with any Services. \"Agent\" means any software or service that takes autonomous or semi-autonomous action on behalf of, or at the instruction of, any person or entity and that can be executed on behalf of or using persons device, without direct supervision. <br>14.2 No Agent may access, use, or interact with Services unless, at all times, it identifies itself and operates in strict accordance with the requirements in section 14.4 below. In addition, no Agent may access, use, or interact with Services if we have requested that the Agent refrain from accessing, using, or interacting with any service. <br>14.3 We may limit, including by technical measures, whether and how any Agent accesses, uses, and interacts with Services. <br>14.4 Agents must: (i) in all HTTP/HTTPS requests, identify that the request is from an Agent and disclose the name of the Agent by including the following in the request's user agent string: \"Agent/[agent name]\"; (ii) not conceal or obfuscate that any access, use, or interactions are from an Agent, such as by (a) mimicking human behavior and interaction patterns, or (b) completing or circumventing CAPTCHAs or measures intended to distinguish computer use from humans, (iii) respond truthfully to any question or prompt seeking to determine if interactions are coming from a human or a computer, (iv) not circumvent or otherwise avoid any measure intended to block, limit, modify, or control whether and how Agents access, use, or interact with the Services. <br><br><strong>SECTION 15 - TERMINATION</strong> <br>We may terminate this agreement or your access to the Services (or any part thereof) in our sole discretion at any time without notice, and you will remain liable for all amounts due up to and including the date of termination. <br>The following sections will continue to apply following any termination: Intellectual Property, Feedback, Termination, Disclaimer of Warranties, Limitation of Liability, Indemnification, Severability, Waiver; Entire Agreement, Assignment, Governing Law, Privacy Policy, and any other provisions that by their nature should survive termination. <br><br><strong>SECTION 16 - DISCLAIMER OF WARRANTIES</strong> <br>The information presented on or through the Services is made available solely for general information purposes. We do not warrant the accuracy, completeness, or usefulness of this information. Any reliance you place on such information is strictly at your own risk. We disclaim all liability and responsibility arising from any reliance placed on such materials by you or any other visitor to the Services, or by anyone who may be informed of any of its contents. <br>EXCEPT AS EXPRESSLY STATED BY Lucsum, THE SERVICES AND ALL PRODUCTS OFFERED THROUGH THE SERVICES ARE PROVIDED 'AS IS' AND 'AS AVAILABLE' FOR YOUR USE, WITHOUT ANY REPRESENTATION, WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ALL IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, MERCHANTABLE QUALITY, FITNESS FOR A PARTICULAR PURPOSE, DURABILITY, TITLE, AND NON-INFRINGEMENT. WE DO NOT GUARANTEE, REPRESENT OR WARRANT THAT YOUR USE OF THE SERVICES WILL BE UNINTERRUPTED, TIMELY, SECURE OR ERROR-FREE. SOME JURISDICTIONS LIMIT OR DO NOT ALLOW THE DISCLAIMER OF IMPLIED OR OTHER WARRANTIES SO THE ABOVE DISCLAIMER MAY NOT APPLY TO YOU. <br><br><strong>SECTION 17 - LIMITATION OF LIABILITY</strong> <br>TO THE FULLEST EXTENT PROVIDED BY LAW, IN NO CASE SHALL Lucsum, OUR PARTNERS, DIRECTORS, OFFICERS, EMPLOYEES, AFFILIATES, AGENTS, CONTRACTORS, SERVICE PROVIDERS OR LICENSORS, OR THOSE OF SHOPIFY AND ITS AFFILIATES, BE LIABLE FOR ANY INJURY, LOSS, CLAIM, OR ANY DIRECT, INDIRECT, INCIDENTAL, PUNITIVE, SPECIAL, OR CONSEQUENTIAL DAMAGES OF ANY KIND, INCLUDING, WITHOUT LIMITATION, LOST PROFITS, LOST REVENUE, LOST SAVINGS, LOSS OF DATA, REPLACEMENT COSTS, OR ANY SIMILAR DAMAGES, WHETHER BASED IN CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY OR OTHERWISE, ARISING FROM YOUR USE OF ANY OF THE SERVICES OR ANY PRODUCTS PROCURED USING THE SERVICES, OR FOR ANY OTHER CLAIM RELATED IN ANY WAY TO YOUR USE OF THE SERVICES OR ANY PRODUCT, INCLUDING, BUT NOT LIMITED TO, ANY ERRORS OR OMISSIONS IN ANY CONTENT, OR ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF THE USE OF THE SERVICES OR ANY CONTENT (OR PRODUCT) POSTED, TRANSMITTED, OR OTHERWISE MADE AVAILABLE VIA THE SERVICES, EVEN IF ADVISED OF THEIR POSSIBILITY. <br><br><strong>SECTION 18 - INDEMNIFICATION</strong> <br>You agree to indemnify, defend and hold harmless Lucsum, Shopify, and our affiliates, partners, officers, directors, employees, agents, contractors, licensors, and service providers from any losses, damages, liabilities or claims, including reasonable attorneys' fees, payable to any third party due to or arising out of (1) your breach of these Terms of Service or the documents they incorporate by reference, (2) your violation of any law or the rights of a third party, or (3) your access to and use of the Services. <br>We will notify you of any indemnifiable claim, provided that a failure to promptly notify will not relieve you of your obligations unless you are materially prejudiced. We may control the defense and settlement of such claim at your expense, including choice of counsel, but will not settle any claim requiring non-monetary obligations from you without your consent (not to be unreasonably withheld). You will cooperate in the defense of indemnified claims, including by providing relevant documents. <br><br><strong>SECTION 19 - SEVERABILITY</strong> <br>In the event that any provision of these Terms of Service is determined to be unlawful, void or unenforceable, such provision shall nonetheless be enforceable to the fullest extent permitted by applicable law, and the unenforceable portion shall be deemed to be severed from these Terms of Service, such determination shall not affect the validity and enforceability of any other remaining provisions. <br><br><strong>SECTION 20 - WAIVER; ENTIRE AGREEMENT</strong> <br>The failure of us to exercise or enforce any right or provision of these Terms of Service shall not constitute a waiver of such right or provision. <br>These Terms of Service and any policies or operating rules posted by us on this site or in respect to the Service constitutes the entire agreement and understanding between you and us and governs your use of the Service, superseding any prior or contemporaneous agreements, communications and proposals, whether oral or written, between you and us (including, but not limited to, any prior versions of the Terms of Service). <br>Any ambiguities in the interpretation of these Terms of Service shall not be construed against the drafting party. <br><br><strong>SECTION 21 - ASSIGNMENT</strong> <br>You may not delegate, transfer or assign this Agreement or any of your rights or obligations under these Terms without our prior written consent, and any such attempt will be null and void. We may transfer, assign, or delegate these Terms and our rights and obligations without consent or notice to you. <br><br><strong>SECTION 22 - GOVERNING LAW</strong> <br>These Terms of Service and any separate agreements whereby we provide you Services shall be governed by and construed in accordance with the federal and state or territorial courts in the jurisdiction where Lucsum is headquartered. You and Lucsum consent to venue and personal jurisdiction in such courts. <br><br><strong>SECTION 23 - HEADINGS</strong> <br>The headings used in this agreement are included for convenience only and will not limit or otherwise affect these Terms. <br><br><strong>SECTION 24 - CHANGES TO TERMS OF SERVICE</strong> <br>You can review the most current version of the Terms of Service at any time on this page. <br>We reserve the right, in our sole discretion, to update, change, or replace any part of these Terms of Service by posting updates and changes to our website. It is your responsibility to check our website periodically for changes. We will notify you of any material changes to these Terms in accordance with applicable law, and such changes will be effective on the date specified in the notice. Your continued use of or access to the Services following the posting of any changes to these Terms of Service constitutes acceptance of those changes. <br><br><strong>SECTION 25 - CONTACT INFORMATION</strong> <br>Questions about the Terms of Service should be sent to us at support@lucsum.com. <br>Our contact information is posted below: <br>LUCSUM (Lucsum) <br>support@lucsum.com <br>2653 Radha Vihar, Saharanpur 247001, Uttar Pradesh, India <br>+91 82728 10805</p>",
+          "url": "https://checkout.shopify.com/80588472420/policies/46478426212.html?locale=en",
+          "updatedAt": "2026-10-02T12:49:35+05:30"
+        }
+      ]
+    }
+  },
+  "extensions": {
+    "cost": {
+      "requestedQueryCost": 305,
+      "actualQueryCost": 45,
+      "throttleStatus": {
+        "maximumAvailable": 2000,
+        "currentlyAvailable": 1955,
+        "restoreRate": 100
+      }
+    }
+  }
+}
