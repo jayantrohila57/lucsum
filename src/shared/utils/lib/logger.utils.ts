@@ -50,4 +50,4 @@ const debugLog = (file: string, ...props: unknown[]) => printDebug("log", file, 
 const debugWarn = (file: string, ...props: unknown[]) => printDebug("warn", file, ...props);
 const debugError = (file: string, ...props: unknown[]) => printDebug("error", file, ...props);
 
-export { debugLog, debugWarn, debugError };
+export { debugError, debugLog, debugWarn };

@@ -1,0 +1,1179 @@
+{
+  "data": {
+    "collections": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "nodes": [
+        {
+          "id": "gid://shopify/Collection/324672847972",
+          "handle": "t-shirts",
+          "title": "All T-Shirts",
+          "descriptionHtml": "<p>All 25 LUCSUM tees: 5 oversized styles (Branded Tape, Contrast Panel, Celestial Graphic, Shoulder Logo, Raglan Baseball), each in red, grey, black, white and olive. Oversized cotton, sizes S–XXL. ₹899–₹1,099.</p>",
+          "sortOrder": "BEST_SELLING",
+          "templateSuffix": null,
+          "updatedAt": "2026-10-12T08:33:51Z",
+          "seo": {
+            "title": "All Oversized T-Shirts | 5 Styles, 5 Colours | LUCSUM",
+            "description": "Shop every LUCSUM oversized cotton tee: 5 styles in red, grey, black, white and olive. Sizes S–XXL, ₹899–₹1,099. Free shipping on ₹1,000+."
+          },
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0805/8847/2420/collections/contrast-panel-black-front.png?v=1791794030",
+            "altText": "All T-Shirts – LUCSUM"
+          },
+          "ruleSet": {
+            "appliedDisjunctively": true,
+            "rules": [
+              {
+                "column": "TAG",
+                "relation": "EQUALS",
+                "condition": "style-branded-tape"
+              },
+              {
+                "column": "TAG",
+                "relation": "EQUALS",
+                "condition": "style-contrast-panel"
+              },
+              {
+                "column": "TAG",
+                "relation": "EQUALS",
+                "condition": "style-celestial-graphic"
+              },
+              {
+                "column": "TAG",
+                "relation": "EQUALS",
+                "condition": "style-shoulder-logo"
+              },
+              {
+                "column": "TAG",
+                "relation": "EQUALS",
+                "condition": "style-raglan-baseball"
+              }
+            ]
+          },
+          "metafields": {
+            "nodes": [
+              {
+                "namespace": "global",
+                "key": "title_tag",
+                "type": "string",
+                "value": "All Oversized T-Shirts | 5 Styles, 5 Colours | LUCSUM"
+              },
+              {
+                "namespace": "global",
+                "key": "description_tag",
+                "type": "string",
+                "value": "Shop every LUCSUM oversized cotton tee: 5 styles in red, grey, black, white and olive. Sizes S–XXL, ₹899–₹1,099. Free shipping on ₹1,000+."
+              }
+            ]
+          },
+          "productsCount": {
+            "count": 25
+          },
+          "products": {
+            "nodes": [
+              {
+                "id": "gid://shopify/Product/15418980663396",
+                "handle": "raglan-baseball-white-white"
+              },
+              {
+                "id": "gid://shopify/Product/15418980630628",
+                "handle": "raglan-baseball-olive-white"
+              },
+              {
+                "id": "gid://shopify/Product/15418980597860",
+                "handle": "raglan-baseball-grey-white"
+              },
+              {
+                "id": "gid://shopify/Product/15418980565092",
+                "handle": "shoulder-logo-olive"
+              },
+              {
+                "id": "gid://shopify/Product/15418980532324",
+                "handle": "shoulder-logo-white"
+              },
+              {
+                "id": "gid://shopify/Product/15418980335716",
+                "handle": "shoulder-logo-black"
+              },
+              {
+                "id": "gid://shopify/Product/15418980302948",
+                "handle": "shoulder-logo-red"
+              },
+              {
+                "id": "gid://shopify/Product/15418980270180",
+                "handle": "celestial-graphic-olive"
+              },
+              {
+                "id": "gid://shopify/Product/15418980204644",
+                "handle": "celestial-graphic-white"
+              },
+              {
+                "id": "gid://shopify/Product/15418980171876",
+                "handle": "celestial-graphic-grey"
+              },
+              {
+                "id": "gid://shopify/Product/15418980139108",
+                "handle": "celestial-graphic-red"
+              },
+              {
+                "id": "gid://shopify/Product/15418980106340",
+                "handle": "contrast-panel-olive"
+              },
+              {
+                "id": "gid://shopify/Product/15418980073572",
+                "handle": "contrast-panel-grey"
+              },
+              {
+                "id": "gid://shopify/Product/15418980040804",
+                "handle": "branded-tape-white"
+              },
+              {
+                "id": "gid://shopify/Product/15418980008036",
+                "handle": "branded-tape-grey"
+              },
+              {
+                "id": "gid://shopify/Product/15418979975268",
+                "handle": "branded-tape-red"
+              },
+              {
+                "id": "gid://shopify/Product/15410888802404",
+                "handle": "raglan-baseball-maroon-white"
+              },
+              {
+                "id": "gid://shopify/Product/15410888540260",
+                "handle": "raglan-baseball-black-white"
+              },
+              {
+                "id": "gid://shopify/Product/15410888310884",
+                "handle": "contrast-panel-red"
+              },
+              {
+                "id": "gid://shopify/Product/15410887786596",
+                "handle": "contrast-panel-white"
+              },
+              {
+                "id": "gid://shopify/Product/15410887458916",
+                "handle": "contrast-panel-black"
+              },
+              {
+                "id": "gid://shopify/Product/15410887164004",
+                "handle": "branded-tape-olive"
+              },
+              {
+                "id": "gid://shopify/Product/15410885492836",
+                "handle": "branded-tape-black"
+              },
+              {
+                "id": "gid://shopify/Product/8736115818596",
+                "handle": "shoulder-logo-charcoal"
+              },
+              {
+                "id": "gid://shopify/Product/8736114966628",
+                "handle": "celestial-graphic-black"
+              }
+            ]
+          }
+        },
+        {
+          "id": "gid://shopify/Collection/324672880740",
+          "handle": "new-arrivals",
+          "title": "New Arrivals",
+          "descriptionHtml": "<p>The 16 new colourways added in October 2026, completing all 5 styles in red, grey, black, white and olive. Oversized cotton, sizes S–XXL.</p>",
+          "sortOrder": "CREATED_DESC",
+          "templateSuffix": null,
+          "updatedAt": "2026-10-12T08:36:37Z",
+          "seo": {
+            "title": "New Arrivals | New Colourways October 2026 | LUCSUM",
+            "description": "New LUCSUM colourways: Branded Tape, Contrast Panel, Celestial Graphic, Shoulder Logo and Raglan Baseball in new colours. Sizes S–XXL."
+          },
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0805/8847/2420/collections/01-front.png?v=1791794197",
+            "altText": "New Arrivals – LUCSUM"
+          },
+          "ruleSet": null,
+          "metafields": {
+            "nodes": [
+              {
+                "namespace": "global",
+                "key": "title_tag",
+                "type": "string",
+                "value": "New Arrivals | New Colourways October 2026 | LUCSUM"
+              },
+              {
+                "namespace": "global",
+                "key": "description_tag",
+                "type": "string",
+                "value": "New LUCSUM colourways: Branded Tape, Contrast Panel, Celestial Graphic, Shoulder Logo and Raglan Baseball in new colours. Sizes S–XXL."
+              }
+            ]
+          },
+          "productsCount": {
+            "count": 16
+          },
+          "products": {
+            "nodes": [
+              {
+                "id": "gid://shopify/Product/15418980663396",
+                "handle": "raglan-baseball-white-white"
+              },
+              {
+                "id": "gid://shopify/Product/15418980630628",
+                "handle": "raglan-baseball-olive-white"
+              },
+              {
+                "id": "gid://shopify/Product/15418980597860",
+                "handle": "raglan-baseball-grey-white"
+              },
+              {
+                "id": "gid://shopify/Product/15418980565092",
+                "handle": "shoulder-logo-olive"
+              },
+              {
+                "id": "gid://shopify/Product/15418980532324",
+                "handle": "shoulder-logo-white"
+              },
+              {
+                "id": "gid://shopify/Product/15418980335716",
+                "handle": "shoulder-logo-black"
+              },
+              {
+                "id": "gid://shopify/Product/15418980302948",
+                "handle": "shoulder-logo-red"
+              },
+              {
+                "id": "gid://shopify/Product/15418980270180",
+                "handle": "celestial-graphic-olive"
+              },
+              {
+                "id": "gid://shopify/Product/15418980204644",
+                "handle": "celestial-graphic-white"
+              },
+              {
+                "id": "gid://shopify/Product/15418980171876",
+                "handle": "celestial-graphic-grey"
+              },
+              {
+                "id": "gid://shopify/Product/15418980139108",
+                "handle": "celestial-graphic-red"
+              },
+              {
+                "id": "gid://shopify/Product/15418980106340",
+                "handle": "contrast-panel-olive"
+              },
+              {
+                "id": "gid://shopify/Product/15418980073572",
+                "handle": "contrast-panel-grey"
+              },
+              {
+                "id": "gid://shopify/Product/15418980040804",
+                "handle": "branded-tape-white"
+              },
+              {
+                "id": "gid://shopify/Product/15418980008036",
+                "handle": "branded-tape-grey"
+              },
+              {
+                "id": "gid://shopify/Product/15418979975268",
+                "handle": "branded-tape-red"
+              }
+            ]
+          }
+        },
+        {
+          "id": "gid://shopify/Collection/324672913508",
+          "handle": "graphic-tees",
+          "title": "Graphic Tees",
+          "descriptionHtml": "<p>Tees with printed artwork: the Celestial Graphic star print and the Shoulder Logo wordmark printed across both shoulders. 10 tees in 5 colours. Oversized cotton, sizes S–XXL. ₹999.</p>",
+          "sortOrder": "BEST_SELLING",
+          "templateSuffix": null,
+          "updatedAt": "2026-10-12T08:33:54Z",
+          "seo": {
+            "title": "Graphic Oversized T-Shirts | Celestial & Shoulder Logo | LUCSUM",
+            "description": "LUCSUM graphic tees: Celestial Graphic and Shoulder Logo in red, grey, black, white and olive. Oversized cotton, sizes S–XXL, ₹999."
+          },
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0805/8847/2420/collections/celestial-graphic-front_3d1819cd-fd5d-4cf6-b52f-108e16a7e3ae.png?v=1791794034",
+            "altText": "Graphic Tees – LUCSUM"
+          },
+          "ruleSet": null,
+          "metafields": {
+            "nodes": [
+              {
+                "namespace": "global",
+                "key": "title_tag",
+                "type": "string",
+                "value": "Graphic Oversized T-Shirts | Celestial & Shoulder Logo | LUCSUM"
+              },
+              {
+                "namespace": "global",
+                "key": "description_tag",
+                "type": "string",
+                "value": "LUCSUM graphic tees: Celestial Graphic and Shoulder Logo in red, grey, black, white and olive. Oversized cotton, sizes S–XXL, ₹999."
+              }
+            ]
+          },
+          "productsCount": {
+            "count": 10
+          },
+          "products": {
+            "nodes": [
+              {
+                "id": "gid://shopify/Product/15418980565092",
+                "handle": "shoulder-logo-olive"
+              },
+              {
+                "id": "gid://shopify/Product/15418980532324",
+                "handle": "shoulder-logo-white"
+              },
+              {
+                "id": "gid://shopify/Product/15418980335716",
+                "handle": "shoulder-logo-black"
+              },
+              {
+                "id": "gid://shopify/Product/15418980302948",
+                "handle": "shoulder-logo-red"
+              },
+              {
+                "id": "gid://shopify/Product/15418980270180",
+                "handle": "celestial-graphic-olive"
+              },
+              {
+                "id": "gid://shopify/Product/15418980204644",
+                "handle": "celestial-graphic-white"
+              },
+              {
+                "id": "gid://shopify/Product/15418980171876",
+                "handle": "celestial-graphic-grey"
+              },
+              {
+                "id": "gid://shopify/Product/15418980139108",
+                "handle": "celestial-graphic-red"
+              },
+              {
+                "id": "gid://shopify/Product/8736115818596",
+                "handle": "shoulder-logo-charcoal"
+              },
+              {
+                "id": "gid://shopify/Product/8736114966628",
+                "handle": "celestial-graphic-black"
+              }
+            ]
+          }
+        },
+        {
+          "id": "gid://shopify/Collection/324672979044",
+          "handle": "lucsum-essentials",
+          "title": "Essentials",
+          "descriptionHtml": "<p>The everyday core: Branded Tape, Contrast Panel and Raglan Baseball — the styles defined by their tape, panels and stitching rather than a graphic. 15 tees, 5 colours each. Oversized cotton, sizes S–XXL.</p>",
+          "sortOrder": "BEST_SELLING",
+          "templateSuffix": null,
+          "updatedAt": "2026-10-12T08:35:03Z",
+          "seo": {
+            "title": "Essential Oversized Tees | Branded Tape, Contrast Panel, Raglan | LUCSUM",
+            "description": "LUCSUM Essentials: Branded Tape, Contrast Panel and Raglan Baseball oversized cotton tees in 5 colours each. Sizes S–XXL, ₹899–₹1,099."
+          },
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0805/8847/2420/collections/raglan-black-white-front.png?v=1791794032",
+            "altText": "Essentials – LUCSUM"
+          },
+          "ruleSet": null,
+          "metafields": {
+            "nodes": [
+              {
+                "namespace": "global",
+                "key": "title_tag",
+                "type": "string",
+                "value": "Essential Oversized Tees | Branded Tape, Contrast Panel, Raglan | LUCSUM"
+              },
+              {
+                "namespace": "global",
+                "key": "description_tag",
+                "type": "string",
+                "value": "LUCSUM Essentials: Branded Tape, Contrast Panel and Raglan Baseball oversized cotton tees in 5 colours each. Sizes S–XXL, ₹899–₹1,099."
+              }
+            ]
+          },
+          "productsCount": {
+            "count": 15
+          },
+          "products": {
+            "nodes": [
+              {
+                "id": "gid://shopify/Product/15418980663396",
+                "handle": "raglan-baseball-white-white"
+              },
+              {
+                "id": "gid://shopify/Product/15418980630628",
+                "handle": "raglan-baseball-olive-white"
+              },
+              {
+                "id": "gid://shopify/Product/15418980597860",
+                "handle": "raglan-baseball-grey-white"
+              },
+              {
+                "id": "gid://shopify/Product/15418980106340",
+                "handle": "contrast-panel-olive"
+              },
+              {
+                "id": "gid://shopify/Product/15418980073572",
+                "handle": "contrast-panel-grey"
+              },
+              {
+                "id": "gid://shopify/Product/15418980040804",
+                "handle": "branded-tape-white"
+              },
+              {
+                "id": "gid://shopify/Product/15418980008036",
+                "handle": "branded-tape-grey"
+              },
+              {
+                "id": "gid://shopify/Product/15418979975268",
+                "handle": "branded-tape-red"
+              },
+              {
+                "id": "gid://shopify/Product/15410888802404",
+                "handle": "raglan-baseball-maroon-white"
+              },
+              {
+                "id": "gid://shopify/Product/15410888540260",
+                "handle": "raglan-baseball-black-white"
+              },
+              {
+                "id": "gid://shopify/Product/15410888310884",
+                "handle": "contrast-panel-red"
+              },
+              {
+                "id": "gid://shopify/Product/15410887786596",
+                "handle": "contrast-panel-white"
+              },
+              {
+                "id": "gid://shopify/Product/15410887458916",
+                "handle": "contrast-panel-black"
+              },
+              {
+                "id": "gid://shopify/Product/15410887164004",
+                "handle": "branded-tape-olive"
+              },
+              {
+                "id": "gid://shopify/Product/15410885492836",
+                "handle": "branded-tape-black"
+              }
+            ]
+          }
+        },
+        {
+          "id": "gid://shopify/Collection/510311137380",
+          "handle": "branded-tape",
+          "title": "Branded Tape Tees",
+          "descriptionHtml": "<p>Shoulder tape printed with the LUCSUM wordmark and a small chest logo. Available in red, grey, black, white and olive. Oversized cotton, sizes S–XXL. ₹1,099.</p>",
+          "sortOrder": "BEST_SELLING",
+          "templateSuffix": null,
+          "updatedAt": "2026-10-12T08:35:02Z",
+          "seo": {
+            "title": "Branded Tape Oversized T-Shirt | 5 Colours | LUCSUM",
+            "description": "The LUCSUM Branded Tape oversized cotton tee in red, grey, black, white and olive. Sizes S–XXL, ₹1,099. Free shipping on ₹1,000+."
+          },
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0805/8847/2420/collections/branded-tape-olive-front_326cbd77-6804-4990-8950-9e026841ecb0.png?v=1791794041",
+            "altText": "Branded Tape Tees – LUCSUM"
+          },
+          "ruleSet": {
+            "appliedDisjunctively": false,
+            "rules": [
+              {
+                "column": "TAG",
+                "relation": "EQUALS",
+                "condition": "style-branded-tape"
+              }
+            ]
+          },
+          "metafields": {
+            "nodes": [
+              {
+                "namespace": "global",
+                "key": "title_tag",
+                "type": "string",
+                "value": "Branded Tape Oversized T-Shirt | 5 Colours | LUCSUM"
+              },
+              {
+                "namespace": "global",
+                "key": "description_tag",
+                "type": "string",
+                "value": "The LUCSUM Branded Tape oversized cotton tee in red, grey, black, white and olive. Sizes S–XXL, ₹1,099. Free shipping on ₹1,000+."
+              }
+            ]
+          },
+          "productsCount": {
+            "count": 5
+          },
+          "products": {
+            "nodes": [
+              {
+                "id": "gid://shopify/Product/15418980040804",
+                "handle": "branded-tape-white"
+              },
+              {
+                "id": "gid://shopify/Product/15418980008036",
+                "handle": "branded-tape-grey"
+              },
+              {
+                "id": "gid://shopify/Product/15418979975268",
+                "handle": "branded-tape-red"
+              },
+              {
+                "id": "gid://shopify/Product/15410887164004",
+                "handle": "branded-tape-olive"
+              },
+              {
+                "id": "gid://shopify/Product/15410885492836",
+                "handle": "branded-tape-black"
+              }
+            ]
+          }
+        },
+        {
+          "id": "gid://shopify/Collection/510311170148",
+          "handle": "contrast-panel",
+          "title": "Contrast Panel Tees",
+          "descriptionHtml": "<p>Contrast side panels and piping set against the body colour. Available in red, grey, black, white and olive. Oversized cotton, sizes S–XXL. ₹1,099.</p>",
+          "sortOrder": "BEST_SELLING",
+          "templateSuffix": null,
+          "updatedAt": "2026-10-12T08:35:02Z",
+          "seo": {
+            "title": "Contrast Panel Oversized T-Shirt | 5 Colours | LUCSUM",
+            "description": "The LUCSUM Contrast Panel oversized cotton tee in red, grey, black, white and olive. Sizes S–XXL, ₹1,099. Free shipping on ₹1,000+."
+          },
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0805/8847/2420/collections/contrast-panel-red-front_fc6357af-4f7b-459e-a410-00caec063ab8.png?v=1791794044",
+            "altText": "Contrast Panel Tees – LUCSUM"
+          },
+          "ruleSet": {
+            "appliedDisjunctively": false,
+            "rules": [
+              {
+                "column": "TAG",
+                "relation": "EQUALS",
+                "condition": "style-contrast-panel"
+              }
+            ]
+          },
+          "metafields": {
+            "nodes": [
+              {
+                "namespace": "global",
+                "key": "title_tag",
+                "type": "string",
+                "value": "Contrast Panel Oversized T-Shirt | 5 Colours | LUCSUM"
+              },
+              {
+                "namespace": "global",
+                "key": "description_tag",
+                "type": "string",
+                "value": "The LUCSUM Contrast Panel oversized cotton tee in red, grey, black, white and olive. Sizes S–XXL, ₹1,099. Free shipping on ₹1,000+."
+              }
+            ]
+          },
+          "productsCount": {
+            "count": 5
+          },
+          "products": {
+            "nodes": [
+              {
+                "id": "gid://shopify/Product/15418980106340",
+                "handle": "contrast-panel-olive"
+              },
+              {
+                "id": "gid://shopify/Product/15418980073572",
+                "handle": "contrast-panel-grey"
+              },
+              {
+                "id": "gid://shopify/Product/15410888310884",
+                "handle": "contrast-panel-red"
+              },
+              {
+                "id": "gid://shopify/Product/15410887786596",
+                "handle": "contrast-panel-white"
+              },
+              {
+                "id": "gid://shopify/Product/15410887458916",
+                "handle": "contrast-panel-black"
+              }
+            ]
+          }
+        },
+        {
+          "id": "gid://shopify/Collection/510311202916",
+          "handle": "celestial-graphic",
+          "title": "Celestial Graphic Tees",
+          "descriptionHtml": "<p>A celestial star graphic printed on the chest. Available in red, grey, black, white and olive. Oversized cotton, sizes S–XXL. ₹999.</p>",
+          "sortOrder": "BEST_SELLING",
+          "templateSuffix": null,
+          "updatedAt": "2026-10-12T08:35:03Z",
+          "seo": {
+            "title": "Celestial Graphic Oversized T-Shirt | 5 Colours | LUCSUM",
+            "description": "The LUCSUM Celestial Graphic oversized cotton tee in red, grey, black, white and olive. Sizes S–XXL, ₹999. Free shipping on ₹1,000+."
+          },
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0805/8847/2420/collections/01-front_ae0f2272-414d-4fd2-9a31-537000b4e0f6.png?v=1791794049",
+            "altText": "Celestial Graphic Tees – LUCSUM"
+          },
+          "ruleSet": {
+            "appliedDisjunctively": false,
+            "rules": [
+              {
+                "column": "TAG",
+                "relation": "EQUALS",
+                "condition": "style-celestial-graphic"
+              }
+            ]
+          },
+          "metafields": {
+            "nodes": [
+              {
+                "namespace": "global",
+                "key": "title_tag",
+                "type": "string",
+                "value": "Celestial Graphic Oversized T-Shirt | 5 Colours | LUCSUM"
+              },
+              {
+                "namespace": "global",
+                "key": "description_tag",
+                "type": "string",
+                "value": "The LUCSUM Celestial Graphic oversized cotton tee in red, grey, black, white and olive. Sizes S–XXL, ₹999. Free shipping on ₹1,000+."
+              }
+            ]
+          },
+          "productsCount": {
+            "count": 5
+          },
+          "products": {
+            "nodes": [
+              {
+                "id": "gid://shopify/Product/15418980270180",
+                "handle": "celestial-graphic-olive"
+              },
+              {
+                "id": "gid://shopify/Product/15418980204644",
+                "handle": "celestial-graphic-white"
+              },
+              {
+                "id": "gid://shopify/Product/15418980171876",
+                "handle": "celestial-graphic-grey"
+              },
+              {
+                "id": "gid://shopify/Product/15418980139108",
+                "handle": "celestial-graphic-red"
+              },
+              {
+                "id": "gid://shopify/Product/8736114966628",
+                "handle": "celestial-graphic-black"
+              }
+            ]
+          }
+        },
+        {
+          "id": "gid://shopify/Collection/510311235684",
+          "handle": "shoulder-logo",
+          "title": "Shoulder Logo Tees",
+          "descriptionHtml": "<p>The LUCSUM wordmark printed across both shoulders, with piping. Available in red, grey, black, white and olive. Oversized cotton, sizes S–XXL. ₹999.</p>",
+          "sortOrder": "BEST_SELLING",
+          "templateSuffix": null,
+          "updatedAt": "2026-10-12T08:35:03Z",
+          "seo": {
+            "title": "Shoulder Logo Oversized T-Shirt | 5 Colours | LUCSUM",
+            "description": "The LUCSUM Shoulder Logo oversized cotton tee in red, grey, black, white and olive. Sizes S–XXL, ₹999. Free shipping on ₹1,000+."
+          },
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0805/8847/2420/collections/shoulder-logo-charcoal-front_887b2e3b-784f-4321-a7d5-768945dafdfb.png?v=1791794051",
+            "altText": "Shoulder Logo Tees – LUCSUM"
+          },
+          "ruleSet": {
+            "appliedDisjunctively": false,
+            "rules": [
+              {
+                "column": "TAG",
+                "relation": "EQUALS",
+                "condition": "style-shoulder-logo"
+              }
+            ]
+          },
+          "metafields": {
+            "nodes": [
+              {
+                "namespace": "global",
+                "key": "title_tag",
+                "type": "string",
+                "value": "Shoulder Logo Oversized T-Shirt | 5 Colours | LUCSUM"
+              },
+              {
+                "namespace": "global",
+                "key": "description_tag",
+                "type": "string",
+                "value": "The LUCSUM Shoulder Logo oversized cotton tee in red, grey, black, white and olive. Sizes S–XXL, ₹999. Free shipping on ₹1,000+."
+              }
+            ]
+          },
+          "productsCount": {
+            "count": 5
+          },
+          "products": {
+            "nodes": [
+              {
+                "id": "gid://shopify/Product/15418980565092",
+                "handle": "shoulder-logo-olive"
+              },
+              {
+                "id": "gid://shopify/Product/15418980532324",
+                "handle": "shoulder-logo-white"
+              },
+              {
+                "id": "gid://shopify/Product/15418980335716",
+                "handle": "shoulder-logo-black"
+              },
+              {
+                "id": "gid://shopify/Product/15418980302948",
+                "handle": "shoulder-logo-red"
+              },
+              {
+                "id": "gid://shopify/Product/8736115818596",
+                "handle": "shoulder-logo-charcoal"
+              }
+            ]
+          }
+        },
+        {
+          "id": "gid://shopify/Collection/510311268452",
+          "handle": "raglan-baseball",
+          "title": "Raglan Baseball Tees",
+          "descriptionHtml": "<p>Raglan sleeves in a contrast colour on a white body, baseball-tee style. The white version is all white. Available in red, grey, black, white and olive. Oversized cotton, sizes S–XXL. ₹899.</p>",
+          "sortOrder": "BEST_SELLING",
+          "templateSuffix": null,
+          "updatedAt": "2026-10-12T08:35:03Z",
+          "seo": {
+            "title": "Raglan Baseball Oversized T-Shirt | 5 Colours | LUCSUM",
+            "description": "The LUCSUM Raglan Baseball oversized cotton tee in red, grey, black, white and olive. Sizes S–XXL, ₹899. Free shipping on ₹1,000+."
+          },
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0805/8847/2420/collections/raglan-maroon-white-front_315bbb91-3ad8-4b9b-8b62-11b79e2e64c0.png?v=1791794053",
+            "altText": "Raglan Baseball Tees – LUCSUM"
+          },
+          "ruleSet": {
+            "appliedDisjunctively": false,
+            "rules": [
+              {
+                "column": "TAG",
+                "relation": "EQUALS",
+                "condition": "style-raglan-baseball"
+              }
+            ]
+          },
+          "metafields": {
+            "nodes": [
+              {
+                "namespace": "global",
+                "key": "title_tag",
+                "type": "string",
+                "value": "Raglan Baseball Oversized T-Shirt | 5 Colours | LUCSUM"
+              },
+              {
+                "namespace": "global",
+                "key": "description_tag",
+                "type": "string",
+                "value": "The LUCSUM Raglan Baseball oversized cotton tee in red, grey, black, white and olive. Sizes S–XXL, ₹899. Free shipping on ₹1,000+."
+              }
+            ]
+          },
+          "productsCount": {
+            "count": 5
+          },
+          "products": {
+            "nodes": [
+              {
+                "id": "gid://shopify/Product/15418980663396",
+                "handle": "raglan-baseball-white-white"
+              },
+              {
+                "id": "gid://shopify/Product/15418980630628",
+                "handle": "raglan-baseball-olive-white"
+              },
+              {
+                "id": "gid://shopify/Product/15418980597860",
+                "handle": "raglan-baseball-grey-white"
+              },
+              {
+                "id": "gid://shopify/Product/15410888802404",
+                "handle": "raglan-baseball-maroon-white"
+              },
+              {
+                "id": "gid://shopify/Product/15410888540260",
+                "handle": "raglan-baseball-black-white"
+              }
+            ]
+          }
+        },
+        {
+          "id": "gid://shopify/Collection/510311301220",
+          "handle": "red-t-shirts",
+          "title": "Red Tees",
+          "descriptionHtml": "<p>All 5 LUCSUM styles in red. Raglan Baseball red is maroon sleeves on white. Oversized cotton, sizes S–XXL.</p>",
+          "sortOrder": "BEST_SELLING",
+          "templateSuffix": null,
+          "updatedAt": "2026-10-12T08:35:03Z",
+          "seo": {
+            "title": "Red Oversized T-Shirts | All 5 Styles | LUCSUM",
+            "description": "LUCSUM oversized cotton tees in red: Branded Tape, Contrast Panel, Celestial Graphic, Shoulder Logo and Raglan Baseball. Sizes S–XXL."
+          },
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0805/8847/2420/collections/01-front_685172b4-24b9-449a-8d96-61cebf0e76f3.png?v=1791794057",
+            "altText": "Red Tees – LUCSUM"
+          },
+          "ruleSet": {
+            "appliedDisjunctively": false,
+            "rules": [
+              {
+                "column": "TAG",
+                "relation": "EQUALS",
+                "condition": "colour-red"
+              }
+            ]
+          },
+          "metafields": {
+            "nodes": [
+              {
+                "namespace": "global",
+                "key": "title_tag",
+                "type": "string",
+                "value": "Red Oversized T-Shirts | All 5 Styles | LUCSUM"
+              },
+              {
+                "namespace": "global",
+                "key": "description_tag",
+                "type": "string",
+                "value": "LUCSUM oversized cotton tees in red: Branded Tape, Contrast Panel, Celestial Graphic, Shoulder Logo and Raglan Baseball. Sizes S–XXL."
+              }
+            ]
+          },
+          "productsCount": {
+            "count": 5
+          },
+          "products": {
+            "nodes": [
+              {
+                "id": "gid://shopify/Product/15418980302948",
+                "handle": "shoulder-logo-red"
+              },
+              {
+                "id": "gid://shopify/Product/15418980139108",
+                "handle": "celestial-graphic-red"
+              },
+              {
+                "id": "gid://shopify/Product/15418979975268",
+                "handle": "branded-tape-red"
+              },
+              {
+                "id": "gid://shopify/Product/15410888802404",
+                "handle": "raglan-baseball-maroon-white"
+              },
+              {
+                "id": "gid://shopify/Product/15410888310884",
+                "handle": "contrast-panel-red"
+              }
+            ]
+          }
+        },
+        {
+          "id": "gid://shopify/Collection/510311333988",
+          "handle": "grey-t-shirts",
+          "title": "Grey Tees",
+          "descriptionHtml": "<p>All 5 LUCSUM styles in grey. Shoulder Logo grey is charcoal; Raglan grey is grey sleeves on white. Oversized cotton, sizes S–XXL.</p>",
+          "sortOrder": "BEST_SELLING",
+          "templateSuffix": null,
+          "updatedAt": "2026-10-12T08:35:03Z",
+          "seo": {
+            "title": "Grey Oversized T-Shirts | All 5 Styles | LUCSUM",
+            "description": "LUCSUM oversized cotton tees in grey: Branded Tape, Contrast Panel, Celestial Graphic, Shoulder Logo and Raglan Baseball. Sizes S–XXL."
+          },
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0805/8847/2420/collections/01-front_a13ce825-ff43-4a2d-8425-ec6bb6aeb376.png?v=1791794061",
+            "altText": "Grey Tees – LUCSUM"
+          },
+          "ruleSet": {
+            "appliedDisjunctively": false,
+            "rules": [
+              {
+                "column": "TAG",
+                "relation": "EQUALS",
+                "condition": "colour-grey"
+              }
+            ]
+          },
+          "metafields": {
+            "nodes": [
+              {
+                "namespace": "global",
+                "key": "title_tag",
+                "type": "string",
+                "value": "Grey Oversized T-Shirts | All 5 Styles | LUCSUM"
+              },
+              {
+                "namespace": "global",
+                "key": "description_tag",
+                "type": "string",
+                "value": "LUCSUM oversized cotton tees in grey: Branded Tape, Contrast Panel, Celestial Graphic, Shoulder Logo and Raglan Baseball. Sizes S–XXL."
+              }
+            ]
+          },
+          "productsCount": {
+            "count": 5
+          },
+          "products": {
+            "nodes": [
+              {
+                "id": "gid://shopify/Product/15418980597860",
+                "handle": "raglan-baseball-grey-white"
+              },
+              {
+                "id": "gid://shopify/Product/15418980171876",
+                "handle": "celestial-graphic-grey"
+              },
+              {
+                "id": "gid://shopify/Product/15418980073572",
+                "handle": "contrast-panel-grey"
+              },
+              {
+                "id": "gid://shopify/Product/15418980008036",
+                "handle": "branded-tape-grey"
+              },
+              {
+                "id": "gid://shopify/Product/8736115818596",
+                "handle": "shoulder-logo-charcoal"
+              }
+            ]
+          }
+        },
+        {
+          "id": "gid://shopify/Collection/510311399524",
+          "handle": "black-t-shirts",
+          "title": "Black Tees",
+          "descriptionHtml": "<p>All 5 LUCSUM styles in black. Raglan black is black sleeves on white. Oversized cotton, sizes S–XXL.</p>",
+          "sortOrder": "BEST_SELLING",
+          "templateSuffix": null,
+          "updatedAt": "2026-10-12T08:35:03Z",
+          "seo": {
+            "title": "Black Oversized T-Shirts | All 5 Styles | LUCSUM",
+            "description": "LUCSUM oversized cotton tees in black: Branded Tape, Contrast Panel, Celestial Graphic, Shoulder Logo and Raglan Baseball. Sizes S–XXL."
+          },
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0805/8847/2420/collections/01-front_89a2fe13-16ec-426c-b79d-08078054e39f.png?v=1791794066",
+            "altText": "Black Tees – LUCSUM"
+          },
+          "ruleSet": {
+            "appliedDisjunctively": false,
+            "rules": [
+              {
+                "column": "TAG",
+                "relation": "EQUALS",
+                "condition": "colour-black"
+              }
+            ]
+          },
+          "metafields": {
+            "nodes": [
+              {
+                "namespace": "global",
+                "key": "title_tag",
+                "type": "string",
+                "value": "Black Oversized T-Shirts | All 5 Styles | LUCSUM"
+              },
+              {
+                "namespace": "global",
+                "key": "description_tag",
+                "type": "string",
+                "value": "LUCSUM oversized cotton tees in black: Branded Tape, Contrast Panel, Celestial Graphic, Shoulder Logo and Raglan Baseball. Sizes S–XXL."
+              }
+            ]
+          },
+          "productsCount": {
+            "count": 5
+          },
+          "products": {
+            "nodes": [
+              {
+                "id": "gid://shopify/Product/15418980335716",
+                "handle": "shoulder-logo-black"
+              },
+              {
+                "id": "gid://shopify/Product/15410888540260",
+                "handle": "raglan-baseball-black-white"
+              },
+              {
+                "id": "gid://shopify/Product/15410887458916",
+                "handle": "contrast-panel-black"
+              },
+              {
+                "id": "gid://shopify/Product/15410885492836",
+                "handle": "branded-tape-black"
+              },
+              {
+                "id": "gid://shopify/Product/8736114966628",
+                "handle": "celestial-graphic-black"
+              }
+            ]
+          }
+        },
+        {
+          "id": "gid://shopify/Collection/510311432292",
+          "handle": "white-t-shirts",
+          "title": "White Tees",
+          "descriptionHtml": "<p>All 5 LUCSUM styles in white. Oversized cotton, sizes S–XXL.</p>",
+          "sortOrder": "BEST_SELLING",
+          "templateSuffix": null,
+          "updatedAt": "2026-10-12T08:35:04Z",
+          "seo": {
+            "title": "White Oversized T-Shirts | All 5 Styles | LUCSUM",
+            "description": "LUCSUM oversized cotton tees in white: Branded Tape, Contrast Panel, Celestial Graphic, Shoulder Logo and Raglan Baseball. Sizes S–XXL."
+          },
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0805/8847/2420/collections/01-front_9fe69db1-992d-44a9-a1f4-e2809e6b5cdd.png?v=1791794071",
+            "altText": "White Tees – LUCSUM"
+          },
+          "ruleSet": {
+            "appliedDisjunctively": false,
+            "rules": [
+              {
+                "column": "TAG",
+                "relation": "EQUALS",
+                "condition": "colour-white"
+              }
+            ]
+          },
+          "metafields": {
+            "nodes": [
+              {
+                "namespace": "global",
+                "key": "title_tag",
+                "type": "string",
+                "value": "White Oversized T-Shirts | All 5 Styles | LUCSUM"
+              },
+              {
+                "namespace": "global",
+                "key": "description_tag",
+                "type": "string",
+                "value": "LUCSUM oversized cotton tees in white: Branded Tape, Contrast Panel, Celestial Graphic, Shoulder Logo and Raglan Baseball. Sizes S–XXL."
+              }
+            ]
+          },
+          "productsCount": {
+            "count": 5
+          },
+          "products": {
+            "nodes": [
+              {
+                "id": "gid://shopify/Product/15418980663396",
+                "handle": "raglan-baseball-white-white"
+              },
+              {
+                "id": "gid://shopify/Product/15418980532324",
+                "handle": "shoulder-logo-white"
+              },
+              {
+                "id": "gid://shopify/Product/15418980204644",
+                "handle": "celestial-graphic-white"
+              },
+              {
+                "id": "gid://shopify/Product/15418980040804",
+                "handle": "branded-tape-white"
+              },
+              {
+                "id": "gid://shopify/Product/15410887786596",
+                "handle": "contrast-panel-white"
+              }
+            ]
+          }
+        },
+        {
+          "id": "gid://shopify/Collection/510311465060",
+          "handle": "olive-t-shirts",
+          "title": "Olive Tees",
+          "descriptionHtml": "<p>All 5 LUCSUM styles in olive. Raglan olive is olive sleeves on white. Oversized cotton, sizes S–XXL.</p>",
+          "sortOrder": "BEST_SELLING",
+          "templateSuffix": null,
+          "updatedAt": "2026-10-12T08:35:04Z",
+          "seo": {
+            "title": "Olive Oversized T-Shirts | All 5 Styles | LUCSUM",
+            "description": "LUCSUM oversized cotton tees in olive: Branded Tape, Contrast Panel, Celestial Graphic, Shoulder Logo and Raglan Baseball. Sizes S–XXL."
+          },
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0805/8847/2420/collections/01-front_d994233e-2a00-4d8f-9a5e-1f2509d4597e.png?v=1791794073",
+            "altText": "Olive Tees – LUCSUM"
+          },
+          "ruleSet": {
+            "appliedDisjunctively": false,
+            "rules": [
+              {
+                "column": "TAG",
+                "relation": "EQUALS",
+                "condition": "colour-olive"
+              }
+            ]
+          },
+          "metafields": {
+            "nodes": [
+              {
+                "namespace": "global",
+                "key": "title_tag",
+                "type": "string",
+                "value": "Olive Oversized T-Shirts | All 5 Styles | LUCSUM"
+              },
+              {
+                "namespace": "global",
+                "key": "description_tag",
+                "type": "string",
+                "value": "LUCSUM oversized cotton tees in olive: Branded Tape, Contrast Panel, Celestial Graphic, Shoulder Logo and Raglan Baseball. Sizes S–XXL."
+              }
+            ]
+          },
+          "productsCount": {
+            "count": 5
+          },
+          "products": {
+            "nodes": [
+              {
+                "id": "gid://shopify/Product/15418980630628",
+                "handle": "raglan-baseball-olive-white"
+              },
+              {
+                "id": "gid://shopify/Product/15418980565092",
+                "handle": "shoulder-logo-olive"
+              },
+              {
+                "id": "gid://shopify/Product/15418980270180",
+                "handle": "celestial-graphic-olive"
+              },
+              {
+                "id": "gid://shopify/Product/15418980106340",
+                "handle": "contrast-panel-olive"
+              },
+              {
+                "id": "gid://shopify/Product/15410887164004",
+                "handle": "branded-tape-olive"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "extensions": {
+    "cost": {
+      "requestedQueryCost": 156,
+      "actualQueryCost": 18,
+      "throttleStatus": {
+        "maximumAvailable": 2000,
+        "currentlyAvailable": 1982,
+        "restoreRate": 100
+      }
+    }
+  }
+}

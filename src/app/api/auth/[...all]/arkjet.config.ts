@@ -42,7 +42,7 @@ const laxRateLimitSettings = {
 
 const emailSettings = {
   mode: "LIVE",
-  block: ["DISPOSABLE", "INVALID", "NO_MX_RECORDS"],
+  deny: ["DISPOSABLE", "INVALID", "NO_MX_RECORDS"],
 } satisfies EmailOptions;
 
 async function safeJson(request: Request) {

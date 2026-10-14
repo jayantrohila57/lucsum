@@ -4,21 +4,21 @@ export const siteConfig = {
   // Site Identity
   name: "Lucsum",
   domain: "lucsum.com",
-  description: "Lucsum is a modern commerce brand built to feel focused, trustworthy, and unmistakably present.",
+  description: "LUCSUM is a direct-to-consumer Indian streetwear label — oversized cotton tees, shipped across India.",
 
   // Contact Information
   contact: {
     email: "support@lucsum.com",
     supportEmail: "support@lucsum.com",
     noreplyEmail: "noreply@lucsum.com",
-    phone: "+1 (555) 123-4567",
+    phone: "+91 82728 10805",
     address: {
-      line1: "123 Commerce Street",
-      line2: "Suite 100",
-      city: "San Francisco",
-      state: "CA",
-      postalCode: "94105",
-      country: "United States",
+      line1: "2653 Radha Vihar",
+      line2: "",
+      city: "Saharanpur",
+      state: "Uttar Pradesh",
+      postalCode: "247001",
+      country: "India",
     },
   },
 
@@ -48,7 +48,7 @@ export const siteConfig = {
     replyTo: "support@lucsum.com",
     footer: {
       company: "Lucsum",
-      address: "123 Commerce Street, Suite 100, San Francisco, CA 94105, United States",
+      address: "2653 Radha Vihar, Saharanpur 247001, Uttar Pradesh, India",
       unsubscribe: "If you no longer wish to receive these emails, you can unsubscribe here.",
       privacy: "Privacy Policy",
       terms: "Terms of Service",
@@ -100,16 +100,16 @@ export const siteConfig = {
   // Business Info
   business: {
     hours: "Mon-Fri 9AM-6PM EST",
-    freeShippingThreshold: 50,
-    returnPolicy: "30-day return policy",
-    paymentMethods: ["Visa", "Mastercard", "American Express", "PayPal", "Apple Pay", "Google Pay"],
+    freeShippingThreshold: 1000,
+    returnPolicy: "30-day return window after delivery",
+    paymentMethods: ["Razorpay", "UPI", "Cards", "Cash on delivery"],
   },
 
   // Legal
   legal: {
     companyName: "Lucsum",
-    taxId: "12-3456789",
-    lastUpdated: "March 2026",
+    taxId: "",
+    lastUpdated: "October 2026",
   },
 };
 

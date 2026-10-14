@@ -48,6 +48,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     add(`/legal/${slug}`);
   }
 
+  try {
+    await appendCatalogUrls(add);
+  } catch {
+    // Build/CI may run without a reachable database; static URLs above are enough.
+  }
+
+  return [...byUrl.entries()].map(([url, lastModified]) => ({ url, lastModified }));
+}
+
+async function appendCatalogUrls(add: (path: string, lastModified?: Date | null) => void) {
   const publicCategories = await db.query.category.findMany({
     where: (c, { and, eq, isNull: isNullFn }) => and(isNullFn(c.deletedAt), eq(c.visibility, "public")),
     columns: { slug: true, updatedAt: true },
@@ -99,6 +109,4 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       }
     }
   }
-
-  return [...byUrl.entries()].map(([url, lastModified]) => ({ url, lastModified }));
 }

@@ -57,7 +57,12 @@ export function TwoFactorAuthForm({ isEnabled }: { isEnabled: boolean }) {
     if (result.error) {
       toast.error(result.error.message || "Failed to enable 2FA");
     }
-    setTwoFactorData(result.data);
+    if (result.data?.method === "totp") {
+      setTwoFactorData({
+        totpURI: result.data.totpURI,
+        backupCodes: result.data.backupCodes,
+      });
+    }
     form.reset();
   }
 
