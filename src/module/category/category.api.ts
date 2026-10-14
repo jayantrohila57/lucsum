@@ -1,10 +1,11 @@
-import { and, eq, ilike, isNull, not, sql } from "drizzle-orm";
+import { and, eq, ilike, inArray, isNull, not, sql } from "drizzle-orm";
 import { v4 as uuidv4 } from "uuid";
 import { createTRPCRouter, publicProcedure, staffProcedure } from "@/core/api/api.methods";
 import { db } from "@/core/db/db";
 import { category } from "@/core/db/db.schema";
 import { MESSAGE, STATUS } from "@/shared/config/api.config";
 import { API_RESPONSE } from "@/shared/config/api.utils";
+import { LUCSUM_CATALOG_CATEGORY_SLUGS } from "@/shared/config/catalog";
 import { buildPagination, buildPaginationMeta } from "@/shared/schema";
 import { debugError } from "@/shared/utils/lib/logger.utils";
 import { categoryContract } from "./category.schema";
@@ -106,7 +107,8 @@ export const categoryRouter = createTRPCRouter({
     .query(async () => {
       try {
         const output = await db.query.category.findMany({
-          where: (c, { eq, and, isNull }) => and(eq(c.isFeatured, true), isNull(c.deletedAt)),
+          where: (c, { eq, and, isNull }) =>
+            and(eq(c.isFeatured, true), isNull(c.deletedAt), inArray(c.slug, [...LUCSUM_CATALOG_CATEGORY_SLUGS])),
           orderBy: (c, { asc }) => [asc(c.displayOrder)],
         });
 

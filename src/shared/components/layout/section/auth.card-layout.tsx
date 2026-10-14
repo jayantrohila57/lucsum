@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import CardSwap, { Card as CardSwapCard } from "@/shared/components/common/card-swap";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/shared/components/ui/card";
+import { LUCSUM_AUTH_GALLERY_IMAGES } from "@/shared/config/lucsum-media";
 import { site } from "@/shared/config/site";
 import { cn } from "@/shared/utils/lib/utils";
 import SaleAlert from "../../common/sale-alert";
@@ -48,22 +49,11 @@ export function AuthCard({
       <CardContent className="bg-secondary motion-all p-0 relative hidden w-full overflow-hidden md:col-span-2 md:block">
         <SaleAlert className="absolute bottom-5 right-5 z-10" />
         <CardSwap width={1200} height={600} cardDistance={200} verticalDistance={200} delay={200} pauseOnHover={false}>
-          {[
-            "https://images.unsplash.com/photo-1508427953056-b00b8d78ebf5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=100&w=1000",
-            "https://images.unsplash.com/photo-1513188447171-ecf00455f051?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=100&w=1000",
-            "https://images.unsplash.com/photo-1507297448044-a99b358cd06e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=100&w=1000",
-            "https://images.unsplash.com/photo-1511892549826-a48122d9b258?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=100&w=1000",
-            "https://images.unsplash.com/photo-1509996458151-27d65fd9c869?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=100&w=1000",
-            "https://images.unsplash.com/photo-1508853363419-a9263d752c59?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=100&w=1000",
-            "https://images.unsplash.com/photo-1508270222513-bba3976b0e5c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=100&w=1000",
-            "https://images.unsplash.com/photo-1508160703418-fde5a61fdf38?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=100&w=1000",
-            "https://images.unsplash.com/photo-1507734287543-9db7622389e4?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=100&w=1000",
-            "https://images.unsplash.com/photo-1507553532144-b9df5e38c8d1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=100&w=1000",
-          ].map((item) => (
+          {LUCSUM_AUTH_GALLERY_IMAGES.map((item) => (
             <CardSwapCard key={item}>
               <Image
                 src={item}
-                alt="Auth Left"
+                alt="LUCSUM product"
                 className="bg-card h-full w-full rounded-md border object-cover"
                 width={1920}
                 height={1080}

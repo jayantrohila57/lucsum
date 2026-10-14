@@ -22,6 +22,7 @@
     "db:seed": "tsx scripts/shopify-import.ts --seed-only",
     "shopify:import": "tsx scripts/shopify-import.ts",
     "shopify:import:cleanup": "tsx scripts/shopify-import.ts --cleanup-demo",
+    "purge-mock": "tsx scripts/purge-mock-data.ts",
     "typecheck": "next typegen && tsc --noEmit",
     "check-types": "pnpm run typecheck",
     "lint": "biome lint .",
