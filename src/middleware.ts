@@ -1,54 +1,102 @@
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 import { STOREFRONT_SIMPLIFIED } from "@/shared/config/storefront";
+import { modernizeStorefrontDestination } from "@/shared/config/storefront-redirects";
 
-const REDIRECTS: Record<string, string> = {
-  "/store/categories": "/store",
-  "/marketing/newsletter": "/support/contact",
+function permanentRedirect(request: NextRequest, pathname: string, search = "") {
+  const url = request.nextUrl.clone();
+  url.pathname = pathname;
+  if (search) {
+    url.search = search.startsWith("?") ? search : `?${search}`;
+  }
+  return NextResponse.redirect(url, 301);
+}
+
+const EXACT_REDIRECTS: Record<string, string> = {
+  "/store": "/shop",
+  "/store/categories": "/shop",
+  "/marketing/about": "/help#about",
+  "/marketing/newsletter": "/help#contact",
+  "/support": "/help",
+  "/support/contact": "/help#contact",
+  "/support/faq": "/help#faq",
+  "/support/help-center": "/help#faq",
+  "/support/shipping": "/legal/shipping-policy",
+  "/support/returns": "/legal/return-policy",
+  "/support/size-guide": "/help#faq",
+  "/account/wishlist": "/shop",
+  "/blog": "/",
 };
-
-const STYLE_PREFIX = "/store/t-shirts/";
 
 export function middleware(request: NextRequest) {
   if (!STOREFRONT_SIMPLIFIED) {
     return NextResponse.next();
   }
 
-  const { pathname } = request.nextUrl;
+  const { pathname, search } = request.nextUrl;
 
-  if (REDIRECTS[pathname]) {
-    return NextResponse.redirect(new URL(REDIRECTS[pathname], request.url));
+  if (EXACT_REDIRECTS[pathname]) {
+    const dest = EXACT_REDIRECTS[pathname];
+    const [path, hash] = dest.split("#");
+    const url = request.nextUrl.clone();
+    url.pathname = path;
+    url.hash = hash ? `#${hash}` : "";
+    return NextResponse.redirect(url, 301);
   }
 
-  if (pathname.startsWith(STYLE_PREFIX)) {
-    const rest = pathname.slice(STYLE_PREFIX.length);
+  if (pathname === "/store/checkout" || pathname.startsWith("/store/checkout/")) {
+    return permanentRedirect(request, pathname.replace("/store/checkout", "/checkout"), search);
+  }
+
+  if (pathname.startsWith("/store/order/")) {
+    const id = pathname.replace("/store/order/", "").split("/")[0];
+    if (id) return permanentRedirect(request, `/orders/${id}`, search);
+  }
+
+  if (pathname.startsWith("/store/t-shirts/")) {
+    const rest = pathname.slice("/store/t-shirts/".length);
     const segments = rest.split("/").filter(Boolean);
+    if (segments.length >= 2) {
+      return permanentRedirect(request, `/products/${segments[1]}`, search);
+    }
     if (segments.length === 1) {
-      const style = segments[0];
-      const url = request.nextUrl.clone();
-      url.pathname = "/store";
-      url.searchParams.set("style", style);
-      return NextResponse.redirect(url);
+      const params = new URLSearchParams(search);
+      params.set("style", segments[0]);
+      return permanentRedirect(request, "/shop", `?${params.toString()}`);
     }
   }
 
   if (pathname.startsWith("/store/collections/")) {
-    const collection = pathname.replace("/store/collections/", "").split("/")[0];
-    if (collection) {
-      const url = request.nextUrl.clone();
-      url.pathname = "/store";
-      url.searchParams.set("collection", collection);
-      return NextResponse.redirect(url);
-    }
+    return permanentRedirect(request, "/shop", search);
   }
 
-  if (pathname === "/account/wishlist") {
-    return NextResponse.redirect(new URL("/store", request.url));
+  if (pathname.startsWith("/store/") && pathname !== "/store") {
+    const modernized = modernizeStorefrontDestination(pathname);
+    if (modernized !== pathname) {
+      return permanentRedirect(request, modernized, search);
+    }
+    return permanentRedirect(request, "/shop", search);
+  }
+
+  if (pathname.startsWith("/blog/")) {
+    return permanentRedirect(request, "/", search);
+  }
+
+  if (pathname.startsWith("/support/tickets")) {
+    return permanentRedirect(request, "/help#contact", search);
   }
 
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: ["/store/:path*", "/account/wishlist", "/marketing/newsletter"],
+  matcher: [
+    "/store/:path*",
+    "/store",
+    "/marketing/:path*",
+    "/support/:path*",
+    "/blog/:path*",
+    "/blog",
+    "/account/wishlist",
+  ],
 };

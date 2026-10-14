@@ -131,6 +131,46 @@ export const productContract = {
         .nullable(),
     ),
   },
+  getPDPByProductSlug: {
+    input: z.object({
+      params: z.object({
+        slug: z.string().min(1),
+      }),
+    }),
+    output: detailedResponse(
+      z
+        .object({
+          product: productSelectSchema.extend({
+            variants: z.array(productVariantBaseSchema),
+          }),
+          seo: z.object({
+            reviewAggregate: z
+              .object({
+                ratingValue: z.number(),
+                reviewCount: z.number(),
+              })
+              .nullable(),
+            reviewsForSchema: z
+              .array(
+                z.object({
+                  ratingValue: z.number().int().min(1).max(5),
+                  reviewBody: z.string(),
+                  datePublished: z.string(),
+                }),
+              )
+              .optional(),
+            variantInventory: z
+              .object({
+                sku: z.string().nullable(),
+                availableQuantity: z.number(),
+                barcode: z.string().nullable().optional(),
+              })
+              .nullable(),
+          }),
+        })
+        .nullable(),
+    ),
+  },
   getPDPProductByVariantFullPath: {
     input: z.object({
       params: z.object({

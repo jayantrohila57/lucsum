@@ -12,7 +12,11 @@ const LUCSUM_HOME_HERO_FALLBACK = [
     bodyText: site.description,
     image: LUCSUM_SHOPIFY_CDN.celestialLifestyle,
     ctaLabel: "Shop t-shirts",
-    ctaLink: storefrontFeatures.simplifiedShop ? PATH.STORE.ROOT : PATH.STORE.CATEGORIES.CATEGORY("t-shirts"),
+    ctaLink: storefrontFeatures.minimalPublicSite
+      ? PATH.SHOP.ROOT
+      : storefrontFeatures.simplifiedShop
+        ? PATH.STORE.ROOT
+        : PATH.STORE.CATEGORIES.CATEGORY("t-shirts"),
   },
 ];
 

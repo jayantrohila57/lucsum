@@ -1,4 +1,5 @@
-import { LUCSUM_STYLE_LABELS } from "@/shared/config/storefront";
+import { PATH } from "@/shared/config/routes";
+import { LUCSUM_STYLE_LABELS, storefrontFeatures } from "@/shared/config/storefront";
 import { compareSizeAttributeValues } from "@/shared/utils/lib/breadcrumb-label";
 
 export function colorLabelFromProductSlug(productSlug: string, styleSlug: string): string {
@@ -20,5 +21,8 @@ export function sortSizes(sizes: string[]): string[] {
 }
 
 export function pdpPathForProduct(categorySlug: string, styleSlug: string, productSlug: string): string {
+  if (storefrontFeatures.minimalPublicSite) {
+    return PATH.PRODUCTS.PDP(productSlug);
+  }
   return `/store/${categorySlug}/${styleSlug}/${productSlug}`;
 }

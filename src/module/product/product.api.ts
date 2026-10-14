@@ -324,6 +324,59 @@ export const productRouter = createTRPCRouter({
         return API_RESPONSE(STATUS.ERROR, MESSAGE.PRODUCT.GET_PDP_PRODUCT.ERROR, null, err as Error);
       }
     }),
+  getPDPByProductSlug: publicProcedure
+    .input(productContract.getPDPByProductSlug.input)
+    .output(productContract.getPDPByProductSlug.output)
+    .query(async ({ input }) => {
+      try {
+        const { slug } = input.params;
+        const found = await db.query.product.findFirst({
+          where: (p, { eq, and, isNull }) =>
+            and(eq(p.slug, slug), eq(p.isActive, true), eq(p.status, "live"), isNull(p.deletedAt)),
+          with: { variants: { where: (pv, { isNull: isNullV }) => isNullV(pv.deletedAt) } },
+        });
+
+        if (!found) {
+          return API_RESPONSE(STATUS.FAILED, MESSAGE.PRODUCT.GET_PDP_PRODUCT.NOT_FOUND, null);
+        }
+
+        if (found.variants.length === 0) {
+          const productWithVirtualVariant = {
+            ...found,
+            variants: [
+              {
+                id: found.id,
+                slug: found.slug,
+                title: found.title,
+                productId: found.id,
+                priceModifierType: "flat_decrease" as const,
+                priceModifierValue: "0",
+                attributes: null as { title: string; type: string; value: string }[] | null,
+                media: null as { url: string }[] | null,
+                createdAt: found.createdAt,
+                updatedAt: found.updatedAt,
+                deletedAt: null as Date | null,
+              },
+            ],
+          };
+          const seo = await loadPdpSeoForVariant(found.id, found.id);
+          return API_RESPONSE(STATUS.SUCCESS, MESSAGE.PRODUCT.GET_PDP_PRODUCT.SUCCESS, {
+            product: productWithVirtualVariant,
+            seo,
+          });
+        }
+
+        const primaryVariant = found.variants[0]!;
+        const seo = await loadPdpSeoForVariant(found.id, primaryVariant.id);
+        return API_RESPONSE(STATUS.SUCCESS, MESSAGE.PRODUCT.GET_PDP_PRODUCT.SUCCESS, {
+          product: found,
+          seo,
+        });
+      } catch (err) {
+        debugError("PRODUCT:GET_PDP_BY_PRODUCT_SLUG:ERROR", err);
+        return API_RESPONSE(STATUS.ERROR, MESSAGE.PRODUCT.GET_PDP_PRODUCT.ERROR, null, err as Error);
+      }
+    }),
   getPDPProductByVariantFullPath: publicProcedure
     .input(productContract.getPDPProductByVariantFullPath.input)
     .output(productContract.getPDPProductByVariantFullPath.output)

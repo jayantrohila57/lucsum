@@ -7,7 +7,7 @@ import Social from "@/shared/components/common/social";
 import { ThemeToggle } from "@/shared/components/theme/theme-toggle";
 import { PATH } from "@/shared/config/routes";
 import { site, siteConfig } from "@/shared/config/site";
-import { LUCSUM_NAV_COLLECTIONS, LUCSUM_STYLE_LABELS, storefrontFeatures } from "@/shared/config/storefront";
+import { LUCSUM_STYLE_LABELS, storefrontFeatures } from "@/shared/config/storefront";
 import { AppBrand } from "../section/auth.card-layout";
 
 type NavItem<T extends string = string> = {
@@ -21,25 +21,47 @@ interface NavType {
   submenu: NavItem<Route>[];
 }
 
-const shopFooterLinks: NavItem<Route>[] = storefrontFeatures.simplifiedShop
+const shopFooterLinks: NavItem<Route>[] = storefrontFeatures.minimalPublicSite
   ? [
-      { title: "All tees", href: PATH.STORE.ROOT as Route, newTab: false },
-      ...Object.entries(LUCSUM_STYLE_LABELS)
-        .slice(0, 3)
-        .map(([slug, title]) => ({
-          title,
-          href: `/store?style=${slug}` as Route,
-          newTab: false,
-        })),
-      ...LUCSUM_NAV_COLLECTIONS.slice(0, 2).map((c) => ({
-        title: c.title,
-        href: `/store?collection=${c.slug}` as Route,
+      { title: "All tees", href: PATH.SHOP.ROOT, newTab: false },
+      ...Object.entries(LUCSUM_STYLE_LABELS).map(([slug, title]) => ({
+        title,
+        href: `/shop?style=${slug}` as Route,
         newTab: false,
       })),
     ]
+  : storefrontFeatures.simplifiedShop
+    ? [{ title: "All tees", href: PATH.STORE.ROOT as Route, newTab: false }]
+    : [
+        { title: "All products", href: PATH.STORE.ROOT as Route, newTab: false },
+        { title: "Categories", href: PATH.STORE.CATEGORIES.ROOT as Route, newTab: false },
+      ];
+
+const customerCareLinks: NavItem<Route>[] = storefrontFeatures.minimalPublicSite
+  ? [
+      { title: "Help & FAQ", href: PATH.HELP, newTab: false },
+      { title: "Track order", href: PATH.ACCOUNT.ORDER as Route, newTab: false },
+    ]
   : [
-      { title: "All products", href: PATH.STORE.ROOT as Route, newTab: false },
-      { title: "Categories", href: PATH.STORE.CATEGORIES.ROOT as Route, newTab: false },
+      { title: "Track order", href: PATH.ACCOUNT.ORDER as Route, newTab: false },
+      { title: "Shipping info", href: "/support/shipping" as Route, newTab: false },
+      { title: "Returns & exchanges", href: "/support/returns" as Route, newTab: false },
+      { title: "Size guide", href: PATH.SITE.SUPPORT.SIZE_GUIDE, newTab: false },
+      { title: "Contact support", href: PATH.SITE.CONTACT as Route, newTab: false },
+    ];
+
+const legalFooterLinks: NavItem<Route>[] = storefrontFeatures.minimalPublicSite
+  ? [
+      { title: "Privacy", href: PATH.SITE.LEGAL.PRIVACY, newTab: false },
+      { title: "Terms", href: PATH.SITE.LEGAL.TERMS, newTab: false },
+      { title: "Shipping", href: PATH.SITE.LEGAL.SHIPPING, newTab: false },
+      { title: "Returns", href: PATH.SITE.LEGAL.RETURN, newTab: false },
+    ]
+  : [
+      { title: "Privacy Policy", href: PATH.SITE.LEGAL.PRIVACY, newTab: false },
+      { title: "Terms of Service", href: PATH.SITE.LEGAL.TERMS, newTab: false },
+      { title: "Refund Policy", href: PATH.SITE.LEGAL.REFUND, newTab: false },
+      { title: "Cookies", href: PATH.SITE.LEGAL.COOKIES, newTab: false },
     ];
 
 export const footer: NavType[] = [
@@ -49,22 +71,11 @@ export const footer: NavType[] = [
   },
   {
     title: "Customer Care",
-    submenu: [
-      { title: "Track order", href: PATH.ACCOUNT.ORDER as Route, newTab: false },
-      { title: "Shipping info", href: "/support/shipping" as Route, newTab: false },
-      { title: "Returns & exchanges", href: "/support/returns" as Route, newTab: false },
-      { title: "Size guide", href: PATH.SITE.SUPPORT.SIZE_GUIDE, newTab: false },
-      { title: "Contact support", href: PATH.SITE.CONTACT as Route, newTab: false },
-    ],
+    submenu: customerCareLinks,
   },
   {
     title: "Legal",
-    submenu: [
-      { title: "Privacy Policy", href: PATH.SITE.LEGAL.PRIVACY, newTab: false },
-      { title: "Terms of Service", href: PATH.SITE.LEGAL.TERMS, newTab: false },
-      { title: "Refund Policy", href: PATH.SITE.LEGAL.REFUND, newTab: false },
-      { title: "Cookies", href: PATH.SITE.LEGAL.COOKIES, newTab: false },
-    ],
+    submenu: legalFooterLinks,
   },
   {
     title: "Connect",

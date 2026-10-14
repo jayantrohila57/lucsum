@@ -59,7 +59,7 @@ export function CheckoutForm() {
     const result = await initiateCheckout(data.body);
     if (!result) return;
 
-    router.push(`${PATH.STORE.CHECKOUT.PAY}?orderId=${encodeURIComponent(result.order.id)}`);
+    router.push(`${PATH.CHECKOUT.PAY}?orderId=${encodeURIComponent(result.order.id)}`);
   };
 
   const isLoading = dataLoading || isPlacingOrder;

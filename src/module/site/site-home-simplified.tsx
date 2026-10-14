@@ -24,7 +24,7 @@ export function HomeFeaturedGrid({ items }: { items: ShopItem[] }) {
       title="Featured tees"
       description="Oversized cotton tees — five styles, five colours each."
       action="Shop all"
-      actionLink={PATH.STORE.ROOT as Route}
+      actionLink={PATH.SHOP.ROOT}
     >
       {featured.length === 0 ? (
         <p className="text-muted-foreground text-sm">Products will appear here once the catalog is live.</p>
@@ -72,13 +72,13 @@ export function HomeShopByStyle({ items }: { items: ShopItem[] }) {
       title="Shop by style"
       description="Filter the full grid by your favourite silhouette."
       action="All tees"
-      actionLink={PATH.STORE.ROOT as Route}
+      actionLink={PATH.SHOP.ROOT}
     >
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
         {styles.map(({ slug, title, sample }) => (
           <Link
             key={slug}
-            href={`/store?style=${slug}` as Route}
+            href={`/shop?style=${slug}` as Route}
             className="group overflow-hidden rounded-lg border bg-card transition-shadow hover:shadow-md"
           >
             <BlurImage

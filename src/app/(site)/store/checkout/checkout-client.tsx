@@ -27,7 +27,7 @@ export function CheckoutClient() {
       <Section title="Checkout" description="Your cart is empty">
         <p className="text-muted-foreground">Add items to your cart to checkout.</p>
         <Button asChild className="mt-4">
-          <Link href={PATH.STORE.ROOT}>Continue shopping</Link>
+          <Link href={PATH.SHOP.ROOT}>Continue shopping</Link>
         </Button>
       </Section>
     );

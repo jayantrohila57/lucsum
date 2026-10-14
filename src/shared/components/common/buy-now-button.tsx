@@ -23,7 +23,7 @@ export function BuyNowButton({ variantId, className, disabled, ...props }: BuyNo
     onSuccess: async (res) => {
       if (res.status === "success") {
         await Promise.all([utils.cart.get.invalidate(), utils.cart.getTotals.invalidate()]);
-        router.push(PATH.STORE.CHECKOUT.ROOT);
+        router.push(PATH.CHECKOUT.ROOT);
         return;
       }
       toast.error(res.message || "Failed to add to cart");

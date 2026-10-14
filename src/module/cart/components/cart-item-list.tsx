@@ -42,7 +42,7 @@ export function CartItemList() {
         <p className="text-muted-foreground mb-6 max-w-xs">
           Looks like you haven&apos;t added anything to your cart yet.
         </p>
-        <Link href={PATH.STORE.ROOT}>
+        <Link href={PATH.SHOP.ROOT}>
           <Button>Start Shopping</Button>
         </Link>
       </div>

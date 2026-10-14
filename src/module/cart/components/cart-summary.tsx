@@ -74,7 +74,7 @@ export function CartSummary() {
       <Tooltip>
         <TooltipTrigger asChild>
           <Button className="w-full mt-2" size="lg" asChild>
-            <Link href={PATH.STORE.CHECKOUT.ROOT}>Proceed to Checkout</Link>
+            <Link href={PATH.CHECKOUT.ROOT}>Proceed to Checkout</Link>
           </Button>
         </TooltipTrigger>
         <TooltipContent>

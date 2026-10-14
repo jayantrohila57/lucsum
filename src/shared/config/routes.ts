@@ -3,6 +3,21 @@ import type { Route } from "next";
 export const PATH = {
   ROOT: "/",
   CART: "/cart" as Route,
+  SHOP: {
+    ROOT: "/shop" as Route,
+  },
+  PRODUCTS: {
+    PDP: (slug: string) => `/products/${slug}` as Route,
+  },
+  CHECKOUT: {
+    ROOT: "/checkout" as Route,
+    PAY: "/checkout/pay" as Route,
+    CONFIRMATION: "/checkout/confirmation" as Route,
+  },
+  ORDERS: {
+    DETAIL: (id: string) => `/orders/${id}` as Route,
+  },
+  HELP: "/help" as Route,
   AUTH: {
     ROOT: "/auth",
     SIGN_IN: "/auth/sign-in",

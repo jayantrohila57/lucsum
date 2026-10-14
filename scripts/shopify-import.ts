@@ -269,7 +269,7 @@ export async function runShopifyImport(): Promise<ShopifyImportSummary> {
       baseImage = await uploadImage(baseImage, `products/${product.handle}/featured.png`);
     }
 
-    const storePath = `/store/${categorySlug}/${style}/${product.handle}`;
+    const storePath = `/products/${product.handle}`;
     pathMap[product.handle] = storePath;
     redirects.push({ source: `/products/${product.handle}`, destination: storePath, permanent: true });
 

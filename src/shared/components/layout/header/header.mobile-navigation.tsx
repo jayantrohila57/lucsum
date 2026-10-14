@@ -12,7 +12,7 @@ import { Button } from "@/shared/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/shared/components/ui/sheet";
 import { PATH } from "@/shared/config/routes";
 import { siteConfig } from "@/shared/config/site";
-import { LUCSUM_NAV_COLLECTIONS, LUCSUM_STYLE_LABELS, storefrontFeatures } from "@/shared/config/storefront";
+import { LUCSUM_STYLE_LABELS, storefrontFeatures } from "@/shared/config/storefront";
 import { getImageSrc } from "@/shared/utils/lib/image.utils";
 import { Separator } from "../../ui/separator";
 import { HeaderUtilityActions } from "./header.actions";
@@ -124,19 +124,13 @@ function MobileNavigationSheet() {
             <Link href={PATH.ROOT} onClick={() => setOpen(false)}>
               Home
             </Link>
-            <Link href={PATH.STORE.ROOT} onClick={() => setOpen(false)}>
+            <Link href={simplified ? PATH.SHOP.ROOT : PATH.STORE.ROOT} onClick={() => setOpen(false)}>
               {simplified ? "Shop" : "Store"}
             </Link>
             {simplified ? (
               <>
-                <Link href={PATH.SITE.ABOUT} onClick={() => setOpen(false)}>
-                  About
-                </Link>
-                <Link href={PATH.SITE.SUPPORT.FAQ} onClick={() => setOpen(false)}>
-                  FAQ
-                </Link>
-                <Link href={PATH.SITE.CONTACT} onClick={() => setOpen(false)}>
-                  Contact
+                <Link href={PATH.HELP} onClick={() => setOpen(false)}>
+                  Help
                 </Link>
                 <Link href={PATH.SITE.LEGAL.ROOT} onClick={() => setOpen(false)}>
                   Policies
@@ -166,24 +160,11 @@ function MobileNavigationSheet() {
                 {Object.entries(LUCSUM_STYLE_LABELS).map(([slug, title]) => (
                   <Link
                     key={slug}
-                    href={`/store?style=${slug}` as Route}
+                    href={`/shop?style=${slug}` as Route}
                     className="text-sm text-muted-foreground hover:text-foreground"
                     onClick={() => setOpen(false)}
                   >
                     {title}
-                  </Link>
-                ))}
-              </div>
-              <div className="text-sm font-semibold text-muted-foreground pt-2">Collections</div>
-              <div className="flex flex-col gap-2">
-                {LUCSUM_NAV_COLLECTIONS.map((c) => (
-                  <Link
-                    key={c.slug}
-                    href={`/store?collection=${c.slug}` as Route}
-                    className="text-sm text-muted-foreground hover:text-foreground"
-                    onClick={() => setOpen(false)}
-                  >
-                    {c.title}
                   </Link>
                 ))}
               </div>

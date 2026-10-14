@@ -183,7 +183,7 @@ export function CheckoutPayClient({ orderId, reason }: CheckoutPayClientProps) {
         </CardContent>
         <CardFooter className="flex flex-col gap-3 sm:flex-row sm:justify-between">
           <Button type="button" variant="outline" size="sm" asChild>
-            <Link href={PATH.STORE.CHECKOUT.ROOT}>Back to checkout</Link>
+            <Link href={PATH.CHECKOUT.ROOT}>Back to checkout</Link>
           </Button>
           <Button
             type="button"

@@ -2,14 +2,16 @@
 export const STOREFRONT_SIMPLIFIED = true;
 
 export const storefrontFeatures = {
-  /** Single /store grid; hide category tree UX */
+  /** Single shop grid; hide category tree UX */
   simplifiedShop: STOREFRONT_SIMPLIFIED,
+  /** Core public site: /, /shop, /products/[slug], essentials only */
+  minimalPublicSite: STOREFRONT_SIMPLIFIED,
   showWishlist: !STOREFRONT_SIMPLIFIED,
   showCompare: false,
   showMarketingBlocks: !STOREFRONT_SIMPLIFIED,
   showNewsletterPromo: !STOREFRONT_SIMPLIFIED,
-  /** Journal routes stay available when articles exist; omitted from primary nav */
-  blogEnabled: true,
+  /** Journal omitted from nav/sitemap unless articles exist in DB */
+  blogEnabled: false,
   studioSlimNav: STOREFRONT_SIMPLIFIED,
 } as const;
 
@@ -20,14 +22,6 @@ export const LUCSUM_STYLE_LABELS: Record<string, string> = {
   "shoulder-logo": "Shoulder Logo",
   "raglan-baseball": "Raglan Baseball",
 };
-
-/** Curated collection PLPs (Shopify backup handles under /store/collections/) */
-export const LUCSUM_NAV_COLLECTIONS = [
-  { slug: "new-arrivals", title: "New Arrivals" },
-  { slug: "graphic-tees", title: "Graphic Tees" },
-  { slug: "lucsum-essentials", title: "Essentials" },
-  { slug: "black-t-shirts", title: "Black Tees" },
-] as const;
 
 /** Verified facts for trust strip (from Shopify backup / site copy — no invented promos). */
 export const LUCSUM_TRUST_FACTS = [

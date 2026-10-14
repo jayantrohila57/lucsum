@@ -11,7 +11,7 @@ import { Button } from "@/shared/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/shared/components/ui/card";
 import { Label } from "@/shared/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/shared/components/ui/select";
-import { LUCSUM_NAV_COLLECTIONS, LUCSUM_STYLE_LABELS } from "@/shared/config/storefront";
+import { LUCSUM_STYLE_LABELS, storefrontFeatures } from "@/shared/config/storefront";
 import { getImageSrc } from "@/shared/utils/lib/image.utils";
 
 export type ShopCatalogItem = NonNullable<RouterOutputs["product"]["listShopCatalog"]["data"]>[number];
@@ -29,7 +29,7 @@ export function ShopCatalogGrid({ items }: { items: ShopCatalogItem[] }) {
   const style = searchParams.get("style") ?? "";
   const color = searchParams.get("color") ?? "";
   const size = searchParams.get("size") ?? "";
-  const collection = searchParams.get("collection") ?? "";
+  const collection = storefrontFeatures.minimalPublicSite ? "" : (searchParams.get("collection") ?? "");
 
   const colors = useMemo(() => [...new Set(items.map((i) => i.colorLabel))].sort(), [items]);
   const sizes = useMemo(() => {
@@ -111,22 +111,19 @@ export function ShopCatalogGrid({ items }: { items: ShopCatalogItem[] }) {
             </SelectContent>
           </Select>
         </div>
-        <div className="grid min-w-[160px] flex-1 gap-2">
-          <Label>Collection</Label>
-          <Select value={collection || "all"} onValueChange={(v) => setParam("collection", v)}>
-            <SelectTrigger>
-              <SelectValue placeholder="All products" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="all">All products</SelectItem>
-              {LUCSUM_NAV_COLLECTIONS.map((c) => (
-                <SelectItem key={c.slug} value={c.slug}>
-                  {c.title}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
+        {!storefrontFeatures.minimalPublicSite ? (
+          <div className="grid min-w-[160px] flex-1 gap-2">
+            <Label>Collection</Label>
+            <Select value={collection || "all"} onValueChange={(v) => setParam("collection", v)}>
+              <SelectTrigger>
+                <SelectValue placeholder="All products" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All products</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+        ) : null}
         {(style || color || size || collection) && (
           <Button type="button" variant="ghost" className="w-fit" onClick={clearFilters}>
             Clear filters

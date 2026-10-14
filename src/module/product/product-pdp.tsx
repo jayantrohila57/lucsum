@@ -78,7 +78,7 @@ export const PDPProduct = ({ data, slug, categorySlug, subcategorySlug }: PDPPro
             This product is unavailable or the link may be incorrect.
             <div className="mt-6">
               <Button asChild>
-                <Link href={PATH.STORE.ROOT}>Back to store</Link>
+                <Link href={storefrontFeatures.minimalPublicSite ? PATH.SHOP.ROOT : PATH.STORE.ROOT}>Back to shop</Link>
               </Button>
             </div>
           </CardContent>
@@ -103,7 +103,9 @@ export const PDPProduct = ({ data, slug, categorySlug, subcategorySlug }: PDPPro
           </CardHeader>
           <CardContent>
             <Button asChild variant="outline">
-              <Link href={PATH.STORE.ROOT}>Continue shopping</Link>
+              <Link href={storefrontFeatures.minimalPublicSite ? PATH.SHOP.ROOT : PATH.STORE.ROOT}>
+                Continue shopping
+              </Link>
             </Button>
           </CardContent>
         </Card>
@@ -137,30 +139,49 @@ export const PDPProduct = ({ data, slug, categorySlug, subcategorySlug }: PDPPro
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
         <nav aria-label="Breadcrumb" className="mb-6 min-w-0">
           <ol className="flex min-w-0 flex-wrap items-center gap-x-1 gap-y-1 text-sm text-muted-foreground">
-            <li className="inline-flex min-w-0 items-center gap-1">
-              <Link href={PATH.STORE.ROOT} className="shrink-0 hover:text-foreground">
-                Store
-              </Link>
-              <ChevronRight className="size-4 shrink-0 opacity-50" aria-hidden />
-            </li>
-            <li className="inline-flex min-w-0 items-center gap-1">
-              <Link href={PATH.STORE.CATEGORIES.CATEGORY(catSlug) as Route} className="truncate hover:text-foreground">
-                {categoryLabel}
-              </Link>
-              <ChevronRight className="size-4 shrink-0 opacity-50" aria-hidden />
-            </li>
-            <li className="inline-flex min-w-0 items-center gap-1">
-              <Link
-                href={PATH.STORE.SUB_CATEGORIES.SUBCATEGORY(subcatSlug, catSlug) as Route}
-                className="truncate hover:text-foreground"
-              >
-                {subcategoryLabel}
-              </Link>
-              <ChevronRight className="size-4 shrink-0 opacity-50" aria-hidden />
-            </li>
-            <li className="min-w-0 font-medium text-foreground">
-              <span className="line-clamp-2 sm:line-clamp-1">{product.title}</span>
-            </li>
+            {storefrontFeatures.minimalPublicSite ? (
+              <>
+                <li className="inline-flex min-w-0 items-center gap-1">
+                  <Link href={PATH.SHOP.ROOT} className="shrink-0 hover:text-foreground">
+                    Shop
+                  </Link>
+                  <ChevronRight className="size-4 shrink-0 opacity-50" aria-hidden />
+                </li>
+                <li className="min-w-0 font-medium text-foreground">
+                  <span className="line-clamp-2 sm:line-clamp-1">{product.title}</span>
+                </li>
+              </>
+            ) : (
+              <>
+                <li className="inline-flex min-w-0 items-center gap-1">
+                  <Link href={PATH.STORE.ROOT} className="shrink-0 hover:text-foreground">
+                    Store
+                  </Link>
+                  <ChevronRight className="size-4 shrink-0 opacity-50" aria-hidden />
+                </li>
+                <li className="inline-flex min-w-0 items-center gap-1">
+                  <Link
+                    href={PATH.STORE.CATEGORIES.CATEGORY(catSlug) as Route}
+                    className="truncate hover:text-foreground"
+                  >
+                    {categoryLabel}
+                  </Link>
+                  <ChevronRight className="size-4 shrink-0 opacity-50" aria-hidden />
+                </li>
+                <li className="inline-flex min-w-0 items-center gap-1">
+                  <Link
+                    href={PATH.STORE.SUB_CATEGORIES.SUBCATEGORY(subcatSlug, catSlug) as Route}
+                    className="truncate hover:text-foreground"
+                  >
+                    {subcategoryLabel}
+                  </Link>
+                  <ChevronRight className="size-4 shrink-0 opacity-50" aria-hidden />
+                </li>
+                <li className="min-w-0 font-medium text-foreground">
+                  <span className="line-clamp-2 sm:line-clamp-1">{product.title}</span>
+                </li>
+              </>
+            )}
           </ol>
         </nav>
 
