@@ -120,15 +120,35 @@ function ShopCatalogFilters({
   );
 }
 
-export function ShopCatalogGrid({ items }: { items: ShopCatalogItem[] }) {
+function paramValue(
+  client: ReturnType<typeof useSearchParams>,
+  server: Record<string, string | string[] | undefined> | undefined,
+  key: string,
+) {
+  const fromClient = client.get(key);
+  if (fromClient) return fromClient;
+  const fromServer = server?.[key];
+  if (Array.isArray(fromServer)) return fromServer[0] ?? "";
+  return fromServer ?? "";
+}
+
+export function ShopCatalogGrid({
+  items,
+  serverSearchParams,
+}: {
+  items: ShopCatalogItem[];
+  serverSearchParams?: Record<string, string | string[] | undefined>;
+}) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [filtersOpen, setFiltersOpen] = useState(false);
-  const style = searchParams.get("style") ?? "";
-  const color = searchParams.get("color") ?? "";
-  const size = searchParams.get("size") ?? "";
-  const collection = storefrontFeatures.minimalPublicSite ? "" : (searchParams.get("collection") ?? "");
+  const style = paramValue(searchParams, serverSearchParams, "style");
+  const color = paramValue(searchParams, serverSearchParams, "color");
+  const size = paramValue(searchParams, serverSearchParams, "size");
+  const collection = storefrontFeatures.minimalPublicSite
+    ? ""
+    : paramValue(searchParams, serverSearchParams, "collection");
 
   const colors = useMemo(() => [...new Set(items.map((i) => i.colorLabel))].sort(), [items]);
   const sizes = useMemo(() => {
@@ -218,16 +238,18 @@ export function ShopCatalogGrid({ items }: { items: ShopCatalogItem[] }) {
       {filtered.length === 0 ? (
         <p className="text-muted-foreground py-12 text-center text-sm">No tees match these filters.</p>
       ) : (
-        <BorderedGrid columns={4} className="min-w-0 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+        <BorderedGrid columns={2} className="min-w-0 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {filtered.map((item) => (
             <Link key={item.id} href={item.pdpPath as Route} className="group block min-w-0 overflow-hidden p-0">
-              <BlurImage
-                src={getImageSrc(item.image)}
-                alt={item.title}
-                width={600}
-                height={600}
-                className="aspect-square h-auto max-w-full w-full bg-muted object-cover transition-transform group-hover:scale-[1.02]"
-              />
+              <div className="relative aspect-square w-full max-w-full overflow-hidden bg-muted">
+                <BlurImage
+                  src={getImageSrc(item.image)}
+                  alt={item.title}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
+                  className="object-cover transition-transform group-hover:scale-[1.02]"
+                />
+              </div>
               <BorderedGridCell className="space-y-2 border-t">
                 <CardTitle className="line-clamp-2 text-sm font-medium leading-snug">{item.title}</CardTitle>
                 <p className="text-sm font-semibold text-primary">{formatInr(item.priceMinor)}</p>

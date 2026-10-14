@@ -9,11 +9,16 @@ export const metadata = buildPageMetadata({
   ogType: "website",
 });
 
-export default async function ShopPage() {
+type ShopPageProps = {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+};
+
+export default async function ShopPage({ searchParams }: ShopPageProps) {
+  const query = await searchParams;
   return (
     <Shell>
       <Shell.Section>
-        <ShopCatalogPage />
+        <ShopCatalogPage searchParams={query} />
       </Shell.Section>
     </Shell>
   );

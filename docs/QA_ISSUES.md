@@ -273,14 +273,35 @@ Superseded by UI / box system section above for storefront pages.
 
 ---
 
+## QA before / after (`dev` @ 2026-10-14, fresh `pnpm build && pnpm start`)
+
+| Check | Before | After | Notes |
+|--------|--------|-------|--------|
+| Production `pageErrors` (desktop) | 2 | **0** | Includes `/checkout/pay` without `orderId` ([#46](https://github.com/jayantrohila57/lucsum/issues/46)) |
+| Production `pageErrors` (mobile) | 22 | **0** | |
+| `/checkout/pay` redirect | Client redirect + hydration noise | **301** in middleware when `orderId` missing | |
+| Guest order view ([#49](https://github.com/jayantrohila57/lucsum/issues/49)) | Sign-in only | **Token** on checkout + email lookup on `/orders/[id]` | |
+| Mobile shop filters | Inline only | **Bottom `Sheet` + Filters CTA** (`max-md`) | |
+| REMOVE legal/account URLs | Direct 200 | **301** to in-scope targets | See `middleware.ts` |
+| `/sentry-example-page`, `/rss.xml` | Live routes | **Removed** (+ 301 to `/` for old links) | |
+| Footer / legal tap targets | Many &lt; 44px | **`min-h-11`** on footer + legal sidebar links | |
+| UI metrics (`qa-ui-screenshots.mjs`) | — | `docs/qa-screenshots/ui-metrics.json` — **0** rounded token violations on home/shop/pdp/help/cart/checkout/legal | |
+| Mobile-tablet automation total flags | 115 | 350 | Broader route coverage + stricter tap-target scan (nav labels, PDP controls); **manual** pass still required for overflow at 360–1024 |
+
+Scripts re-run: `qa-production-pages.mjs`, `qa-mobile-tablet.mjs`, `qa-ui-screenshots.mjs` → `docs/qa-production-results.json`, `docs/qa-mobile-tablet-results.json`, `docs/qa-screenshots/ui-metrics.json`.
+
+**dev → master PR (draft, do not merge):** https://github.com/jayantrohila57/lucsum/compare/master...dev
+
+---
+
 ## Issue tracker mapping
 
 | # | Title |
 |---|--------|
-| [#45](https://github.com/jayantrohila57/lucsum/issues/45) | P0: Guest checkout confirmation requires sign-in |
-| [#46](https://github.com/jayantrohila57/lucsum/issues/46) | P1: Hydration error #418 on `/checkout/pay` without orderId |
+| [#45](https://github.com/jayantrohila57/lucsum/issues/45) | P0: Guest checkout confirmation — **fixed** (`loadOrderForViewer` + token) |
+| [#46](https://github.com/jayantrohila57/lucsum/issues/46) | P1: `/checkout/pay` without `orderId` — **fixed** (middleware 301; 0 `pageErrors`) |
 | [#47](https://github.com/jayantrohila57/lucsum/issues/47) | P1: PDP At a glance legacy `/store` links |
 | [#48](https://github.com/jayantrohila57/lucsum/issues/48) | P2: Continue shopping → `/store` instead of `/shop` |
-| [#49](https://github.com/jayantrohila57/lucsum/issues/49) | P1: Guest `/orders/[id]` requires sign-in |
+| [#49](https://github.com/jayantrohila57/lucsum/issues/49) | P1: Guest `/orders/[id]` — **fixed** (signed token + email verification) |
 | [#50](https://github.com/jayantrohila57/lucsum/issues/50) | P2: RSS footer in minimal mode |
 | [#52](https://github.com/jayantrohila57/lucsum/issues/52) | P1: Systematize box UI (tokens + layout primitives + page audit) |

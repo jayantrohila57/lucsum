@@ -142,6 +142,8 @@ async function interactShop(page, width) {
   const notes = [];
   if (width >= 768) return { notes, openedDrawer: false };
 
+  await page.getByRole("button", { name: /Filters/i }).first().waitFor({ timeout: 8000 }).catch(() => {});
+
   try {
     const menuBtn = page.getByRole("button", { name: "Open menu" });
     await menuBtn.click({ timeout: 3000 });
@@ -154,17 +156,17 @@ async function interactShop(page, width) {
     notes.push("mobile-nav-open-failed");
   }
 
-  const filterWide = await page.evaluate(() => {
-    const label = [...document.querySelectorAll("label")].find((l) => l.textContent?.trim() === "Style");
-    const bar = label?.closest("[data-slot='box-card'], .box-card, form, div");
-    if (!bar) return null;
-    const r = bar.getBoundingClientRect();
-    return { w: r.width, vw: window.innerWidth };
+  const filterUi = await page.evaluate(() => {
+    const drawerBtn = [...document.querySelectorAll("button")].find((b) => b.textContent?.includes("Filters"));
+    const inlineStyleLabel = [...document.querySelectorAll("label")].find((l) => {
+      if (l.textContent?.trim() !== "Style") return false;
+      const r = l.getBoundingClientRect();
+      return r.width > 0 && r.height > 0;
+    });
+    return { hasDrawerBtn: Boolean(drawerBtn), hasVisibleInlineFilters: Boolean(inlineStyleLabel) };
   });
-  if (filterWide) {
-    if (filterWide.w > filterWide.vw + 1) notes.push("filters-wider-than-viewport");
-    notes.push("filters-inline-no-drawer");
-  }
+  if (filterUi.hasDrawerBtn) notes.push("filters-sheet-cta");
+  else if (filterUi.hasVisibleInlineFilters) notes.push("filters-inline-no-drawer");
   return { notes, openedDrawer: notes.includes("mobile-nav-sheet-opened") };
 }
 
@@ -220,7 +222,7 @@ for (const vp of VIEWPORTS) {
   for (const route of routes) {
     const url = `${base}${route.path}`;
     try {
-      await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 });
+      await page.goto(url, { waitUntil: "networkidle", timeout: 60000 });
       await page.waitForTimeout(500);
     } catch (e) {
       report.pages.push({ ...route, viewport: vp.width, group: vp.group, error: String(e) });
