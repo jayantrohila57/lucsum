@@ -1,0 +1,320 @@
+{
+  "menus": [
+    {
+      "handle": "main-menu",
+      "title": "Main menu",
+      "items": [
+        {
+          "title": "Shop",
+          "type": "COLLECTIONS",
+          "url": "/store",
+          "resourceId": null,
+          "items": [
+            {
+              "title": "All T-Shirts",
+              "type": "COLLECTION",
+              "url": "/store/t-shirts",
+              "resourceId": "gid://shopify/Collection/324672847972",
+              "items": []
+            },
+            {
+              "title": "New Arrivals",
+              "type": "COLLECTION",
+              "url": "/store/collections/new-arrivals",
+              "resourceId": "gid://shopify/Collection/324672880740",
+              "items": []
+            },
+            {
+              "title": "Essentials",
+              "type": "COLLECTION",
+              "url": "/store/collections/lucsum-essentials",
+              "resourceId": "gid://shopify/Collection/324672979044",
+              "items": []
+            },
+            {
+              "title": "Graphic Tees",
+              "type": "COLLECTION",
+              "url": "/store/collections/graphic-tees",
+              "resourceId": "gid://shopify/Collection/324672913508",
+              "items": []
+            },
+            {
+              "title": "Shop by Style",
+              "type": "COLLECTIONS",
+              "url": "/store",
+              "resourceId": null,
+              "items": [
+                {
+                  "title": "Branded Tape",
+                  "type": "COLLECTION",
+                  "url": "/store/t-shirts/branded-tape",
+                  "resourceId": "gid://shopify/Collection/510311137380",
+                  "items": []
+                },
+                {
+                  "title": "Contrast Panel",
+                  "type": "COLLECTION",
+                  "url": "/store/t-shirts/contrast-panel",
+                  "resourceId": "gid://shopify/Collection/510311170148",
+                  "items": []
+                },
+                {
+                  "title": "Celestial Graphic",
+                  "type": "COLLECTION",
+                  "url": "/store/t-shirts/celestial-graphic",
+                  "resourceId": "gid://shopify/Collection/510311202916",
+                  "items": []
+                },
+                {
+                  "title": "Shoulder Logo",
+                  "type": "COLLECTION",
+                  "url": "/store/t-shirts/shoulder-logo",
+                  "resourceId": "gid://shopify/Collection/510311235684",
+                  "items": []
+                },
+                {
+                  "title": "Raglan Baseball",
+                  "type": "COLLECTION",
+                  "url": "/store/t-shirts/raglan-baseball",
+                  "resourceId": "gid://shopify/Collection/510311268452",
+                  "items": []
+                }
+              ]
+            },
+            {
+              "title": "Shop by Colour",
+              "type": "COLLECTIONS",
+              "url": "/store",
+              "resourceId": null,
+              "items": [
+                {
+                  "title": "Red",
+                  "type": "COLLECTION",
+                  "url": "/store/collections/red-t-shirts",
+                  "resourceId": "gid://shopify/Collection/510311301220",
+                  "items": []
+                },
+                {
+                  "title": "Grey",
+                  "type": "COLLECTION",
+                  "url": "/store/collections/grey-t-shirts",
+                  "resourceId": "gid://shopify/Collection/510311333988",
+                  "items": []
+                },
+                {
+                  "title": "Black",
+                  "type": "COLLECTION",
+                  "url": "/store/collections/black-t-shirts",
+                  "resourceId": "gid://shopify/Collection/510311399524",
+                  "items": []
+                },
+                {
+                  "title": "White",
+                  "type": "COLLECTION",
+                  "url": "/store/collections/white-t-shirts",
+                  "resourceId": "gid://shopify/Collection/510311432292",
+                  "items": []
+                },
+                {
+                  "title": "Olive",
+                  "type": "COLLECTION",
+                  "url": "/store/collections/olive-t-shirts",
+                  "resourceId": "gid://shopify/Collection/510311465060",
+                  "items": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Journal",
+          "type": "BLOG",
+          "url": "/blogs/lucsum-journal",
+          "resourceId": "gid://shopify/Blog/103381631076",
+          "items": []
+        },
+        {
+          "title": "Support",
+          "type": "PAGE",
+          "url": "/support/contact",
+          "resourceId": "gid://shopify/Page/129190625380",
+          "items": [
+            {
+              "title": "Help Centre",
+              "type": "PAGE",
+              "url": "/support/faq",
+              "resourceId": "gid://shopify/Page/129325957220",
+              "items": []
+            },
+            {
+              "title": "Shipping",
+              "type": "HTTP",
+              "url": "/support/shipping",
+              "resourceId": null,
+              "items": []
+            },
+            {
+              "title": "Returns & Refunds",
+              "type": "HTTP",
+              "url": "/support/returns",
+              "resourceId": null,
+              "items": []
+            },
+            {
+              "title": "Track Order",
+              "type": "PAGE",
+              "url": "/account/order",
+              "resourceId": "gid://shopify/Page/129326284900",
+              "items": []
+            },
+            {
+              "title": "Size & Fit",
+              "type": "PAGE",
+              "url": "/support/size-guide",
+              "resourceId": "gid://shopify/Page/129325924452",
+              "items": []
+            },
+            {
+              "title": "Care Guide",
+              "type": "PAGE",
+              "url": "/support/help-center",
+              "resourceId": "gid://shopify/Page/129326317668",
+              "items": []
+            },
+            {
+              "title": "Contact",
+              "type": "PAGE",
+              "url": "/support/contact",
+              "resourceId": "gid://shopify/Page/129190625380",
+              "items": []
+            }
+          ]
+        },
+        {
+          "title": "Why LUCSUM",
+          "type": "PAGE",
+          "url": "/marketing/about",
+          "resourceId": "gid://shopify/Page/129326514276",
+          "items": []
+        }
+      ]
+    },
+    {
+      "handle": "footer",
+      "title": "Footer menu",
+      "items": [
+        {
+          "title": "Search",
+          "type": "SEARCH",
+          "url": "/search",
+          "resourceId": null,
+          "items": []
+        },
+        {
+          "title": "About",
+          "type": "PAGE",
+          "url": "/marketing/about",
+          "resourceId": "gid://shopify/Page/129230864484",
+          "items": []
+        },
+        {
+          "title": "Why Lucsum",
+          "type": "PAGE",
+          "url": "/marketing/about",
+          "resourceId": "gid://shopify/Page/129326514276",
+          "items": []
+        },
+        {
+          "title": "Help Centre",
+          "type": "PAGE",
+          "url": "/support/faq",
+          "resourceId": "gid://shopify/Page/129325957220",
+          "items": []
+        },
+        {
+          "title": "Size & Fit",
+          "type": "PAGE",
+          "url": "/support/size-guide",
+          "resourceId": "gid://shopify/Page/129325924452",
+          "items": []
+        },
+        {
+          "title": "Care Guide",
+          "type": "PAGE",
+          "url": "/support/help-center",
+          "resourceId": "gid://shopify/Page/129326317668",
+          "items": []
+        },
+        {
+          "title": "Shipping",
+          "type": "PAGE",
+          "url": "/support/shipping",
+          "resourceId": "gid://shopify/Page/129231061092",
+          "items": []
+        },
+        {
+          "title": "Track Order",
+          "type": "PAGE",
+          "url": "/account/order",
+          "resourceId": "gid://shopify/Page/129326284900",
+          "items": []
+        },
+        {
+          "title": "Returns & Refunds",
+          "type": "PAGE",
+          "url": "/support/returns",
+          "resourceId": "gid://shopify/Page/129326252132",
+          "items": []
+        },
+        {
+          "title": "Privacy",
+          "type": "SHOP_POLICY",
+          "url": "/policies/privacy-policy",
+          "resourceId": "gid://shopify/ShopPolicy/46472724580",
+          "items": []
+        },
+        {
+          "title": "Terms",
+          "type": "SHOP_POLICY",
+          "url": "/policies/terms-of-service",
+          "resourceId": "gid://shopify/ShopPolicy/46478426212",
+          "items": []
+        },
+        {
+          "title": "Contact",
+          "type": "PAGE",
+          "url": "/support/contact",
+          "resourceId": "gid://shopify/Page/129190625380",
+          "items": []
+        },
+        {
+          "title": "Sitemap",
+          "type": "HTTP",
+          "url": "/sitemap.xml",
+          "resourceId": null,
+          "items": []
+        }
+      ]
+    },
+    {
+      "handle": "customer-account-main-menu",
+      "title": "Customer account main menu",
+      "items": [
+        {
+          "title": "Orders",
+          "type": "CUSTOMER_ACCOUNT_PAGE",
+          "url": "https://shopify.com/80588472420/account/orders",
+          "resourceId": "gid://shopify/CustomerAccountPage/123637104740",
+          "items": []
+        },
+        {
+          "title": "Profile",
+          "type": "CUSTOMER_ACCOUNT_PAGE",
+          "url": "https://shopify.com/80588472420/account/profile",
+          "resourceId": "gid://shopify/CustomerAccountPage/123637137508",
+          "items": []
+        }
+      ]
+    }
+  ]
+}

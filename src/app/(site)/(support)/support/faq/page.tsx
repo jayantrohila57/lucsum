@@ -1,27 +1,27 @@
-import { FAQSection } from "@/module/site/site.faq";
-import { supportFaqItems } from "@/module/site/support-content";
+import { CmsHtml } from "@/module/site/cms-html";
+import { fetchSitePageBySlug, getShopifyCmsMetadata } from "@/module/site/shopify-page-loader";
 import Section from "@/shared/components/layout/section/section";
 import Shell from "@/shared/components/layout/shell";
 import { site } from "@/shared/config/site";
-import { buildPageMetadata } from "@/shared/seo/metadata-builders";
 
-const pageHeading = {
-  title: "Frequently asked questions",
-  description: `Common questions about shopping with ${site.name}, orders, and support.`,
+const fallback = {
+  title: "Help centre",
+  description: `Answers about orders, shipping, returns, and payments at ${site.name}.`,
+  canonicalPath: "/support/faq",
 };
 
-export const metadata = buildPageMetadata({
-  title: pageHeading.title,
-  description: pageHeading.description,
-  canonicalPath: "/support/faq",
-  ogType: "website",
-});
+export const generateMetadata = () => getShopifyCmsMetadata("faq", fallback);
 
-export default function Page() {
+export default async function Page() {
+  const page = await fetchSitePageBySlug("faq");
   return (
     <Shell.Section>
-      <Section title={pageHeading.title} description={pageHeading.description}>
-        <FAQSection data={supportFaqItems} />
+      <Section title={page?.title ?? fallback.title} description={page?.metaDescription ?? fallback.description}>
+        {page?.bodyHtml ? (
+          <CmsHtml html={page.bodyHtml} />
+        ) : (
+          <p className="text-muted-foreground">{fallback.description}</p>
+        )}
       </Section>
     </Shell.Section>
   );

@@ -23,7 +23,7 @@ interface UserProfileProps {
 export function ProfileCard({ user }: UserProfileProps) {
   const name = user?.name ?? "Anonymous User";
   const email = user?.email ?? "No email provided";
-  const avatar = user?.image ?? "https://api.dicebear.com/9.x/identicon/svg?seed=default";
+  const avatar = user?.image ?? "/fallback.png";
   const created = user?.createdAt ? new Date(user.createdAt).toLocaleDateString() : "Unknown date";
   const verified = user?.emailVerified;
   const role = user?.role ?? "customer";

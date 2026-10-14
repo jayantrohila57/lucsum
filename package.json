@@ -19,7 +19,7 @@
     "db:studio": "npx drizzle-kit studio --config ./src/core/db/drizzle.ts",
     "db:drop": "npx drizzle-kit drop --config ./src/core/db/drizzle.ts",
     "db:reset": "pnpm db:drop && pnpm db:push",
-    "db:seed": "tsx scripts/shopify-import.ts --seed-only",
+    "db:seed": "tsx scripts/seed-from-shopify.ts",
     "shopify:import": "tsx scripts/shopify-import.ts",
     "shopify:import:cleanup": "tsx scripts/shopify-import.ts --cleanup-demo",
     "purge-mock": "tsx scripts/purge-mock-data.ts",

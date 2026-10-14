@@ -109,4 +109,12 @@ async function appendCatalogUrls(add: (path: string, lastModified?: Date | null)
       }
     }
   }
+
+  const articles = await db.query.sitePage.findMany({
+    where: (sp, { eq }) => eq(sp.kind, "article"),
+    columns: { slug: true, updatedAt: true },
+  });
+  for (const article of articles) {
+    add(`/blog/${article.slug}`, article.updatedAt);
+  }
 }
