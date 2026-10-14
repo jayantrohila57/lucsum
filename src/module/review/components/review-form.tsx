@@ -1,7 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ImagePlus, Loader2, Star, X } from "lucide-react";
+import { Loader2, Star, X } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -82,13 +82,6 @@ export function ReviewForm({ productId, orderItemId, onSuccess, onCancel }: Revi
         images: data.images,
       },
     });
-  };
-
-  const handleImageAdd = () => {
-    // In a real implementation, this would open an image upload dialog
-    // For now, we'll simulate adding an image URL
-    const mockUrl = `https://picsum.photos/200/200?random=${Date.now()}`;
-    form.setValue("images", [...images, { url: mockUrl }]);
   };
 
   const handleImageRemove = (index: number) => {
@@ -208,19 +201,9 @@ export function ReviewForm({ productId, orderItemId, onSuccess, onCancel }: Revi
                             </button>
                           </div>
                         ))}
-                        {field.value && field.value.length < 5 && (
-                          <button
-                            type="button"
-                            onClick={handleImageAdd}
-                            className="size-20 rounded-md border-2 border-dashed border-muted-foreground/25 flex flex-col items-center justify-center gap-1 text-muted-foreground hover:border-muted-foreground/50 hover:text-muted-foreground/70 transition-colors"
-                          >
-                            <ImagePlus className="size-5" />
-                            <span className="text-xs">Add Photo</span>
-                          </button>
-                        )}
                       </div>
                       <p className="text-xs text-muted-foreground">
-                        Add up to 5 photos. In production, this would integrate with your image upload service.
+                        Photo uploads are not available yet. You can still submit a written review.
                       </p>
                     </div>
                   </FormControl>

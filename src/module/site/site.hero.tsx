@@ -1,6 +1,19 @@
 import Section from "@/shared/components/layout/section/section";
+import { LUCSUM_SHOPIFY_CDN } from "@/shared/config/lucsum-media";
+import { PATH } from "@/shared/config/routes";
+import { site } from "@/shared/config/site";
 import { getMarketingContentBlock } from "../marketing-content/marketing-content.fetch";
 import { MarketingCarousel } from "./site.carousel";
+
+const LUCSUM_HOME_HERO_FALLBACK = [
+  {
+    title: site.name,
+    bodyText: site.description,
+    image: LUCSUM_SHOPIFY_CDN.celestialLifestyle,
+    ctaLabel: "Shop t-shirts",
+    ctaLink: PATH.STORE.CATEGORIES.CATEGORY("t-shirts"),
+  },
+];
 
 export default async function SiteHero() {
   const content = await getMarketingContentBlock({
@@ -8,9 +21,10 @@ export default async function SiteHero() {
     section: "crousel",
     limit: 1,
   });
+  const items = content?.items?.length ? content.items : LUCSUM_HOME_HERO_FALLBACK;
   return (
     <Section>
-      <MarketingCarousel items={content?.items ?? []} />
+      <MarketingCarousel items={items} />
     </Section>
   );
 }

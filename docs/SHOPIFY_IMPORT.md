@@ -27,7 +27,10 @@ pnpm db:migrate
 ## Commands
 
 ```bash
-# Remove demo/faker seed products and seed categories only
+# Soft-deactivate demo/seed data (products, categories, marketing, reviews, etc.)
+pnpm purge-mock
+
+# Same cleanup, invoked from the import script
 pnpm shopify:import:cleanup
 
 # Full import (default export path, skip Blob when token missing)
@@ -73,4 +76,4 @@ The import does **not** import customers, orders, or DRAFT legacy products.
 
 ## Demo cleanup
 
-Removes products matching demo/faker patterns (`Awesome Silk`, `seed-%`, etc.) and categories with slug `seed-category%` / `demo-%`. Safe to run multiple times.
+`pnpm purge-mock` soft-deactivates demo data only: sets `deleted_at` / `is_active=false` / `status=archive` on non-catalogue products, soft-deletes non-`t-shirts`/`collections` categories and subcategories, deactivates `seed-marketing*` and picsum banners, unapproves seed reviews, deactivates seed discounts, cancels seed orders, and bans seed users. Safe to run multiple times.
