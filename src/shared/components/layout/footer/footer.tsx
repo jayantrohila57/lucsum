@@ -156,7 +156,7 @@ export default function Footer() {
                         return (
                           <li key={href + title}>
                             <Link
-                              className="block py-2 underline-offset-4 hover:underline md:py-1.5"
+                              className="inline-flex min-h-11 items-center py-2 underline-offset-4 hover:underline"
                               target={newTab ? "_blank" : "_self"}
                               href={href || PATH.ROOT}
                             >

@@ -1,16 +1,15 @@
-import type { Route } from "next";
-import { headers } from "next/headers";
 import { notFound, redirect } from "next/navigation";
-import { apiServer } from "@/core/api/api.server";
 import { getServerSession } from "@/core/auth/auth.server";
+import { GuestOrderAccessForm } from "@/module/order/guest-order-access-form";
 import { OrderDetailSection } from "@/module/order/order-detail.section";
+import { loadOrderForViewer } from "@/module/order/order-view.server";
 import { ShipmentTrackingSection } from "@/module/shipment/components/shipment-tracking-section";
 import Section from "@/shared/components/layout/section/section";
 import { PATH } from "@/shared/config/routes";
-import { safeAuthCallbackPath, signInUrlWithCallback } from "@/shared/utils/auth-callback";
 
 interface OrderDetailPageProps {
   params: Promise<{ id: string }>;
+  searchParams: Promise<{ token?: string; email?: string }>;
 }
 
 export const metadata = {
@@ -18,29 +17,31 @@ export const metadata = {
   description: "View details and tracking for your order",
 };
 
-export default async function OrderDetailPage({ params }: OrderDetailPageProps) {
+export default async function OrderDetailPage({ params, searchParams }: OrderDetailPageProps) {
   const { id } = await params;
+  const { token, email } = await searchParams;
 
   if (!id) {
     return redirect(PATH.SHOP.ROOT);
   }
 
-  const { session } = await getServerSession();
-  if (!session) {
-    const h = await headers();
-    const intended = safeAuthCallbackPath(h.get("x-intended-path") ?? undefined) ?? (PATH.ORDERS.DETAIL(id) as Route);
-    redirect(signInUrlWithCallback(intended) as Route);
-  }
-
-  const res = await apiServer.order.get({
-    params: { id },
+  const { user, session } = await getServerSession();
+  const order = await loadOrderForViewer(id, {
+    token,
+    email,
+    viewer: user ? { userId: user.id, role: user.role } : undefined,
   });
 
-  if (res.status !== "success" || !res.data) {
-    return notFound();
+  if (!order) {
+    if (session) {
+      notFound();
+    }
+    return (
+      <Section {...metadata}>
+        <GuestOrderAccessForm orderId={id} />
+      </Section>
+    );
   }
-
-  const order = res.data;
 
   return (
     <Section {...metadata}>

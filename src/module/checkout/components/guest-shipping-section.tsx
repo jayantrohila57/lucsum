@@ -8,6 +8,14 @@ export function GuestShippingSection() {
     <FormSection title="Shipping address" description="Where should we deliver your order?" required>
       <div className="grid gap-4 sm:grid-cols-2">
         <Form.Field
+          name="body.guestEmail"
+          label="Email"
+          type="text"
+          required
+          className="sm:col-span-2"
+          description="We'll send your receipt and order link here."
+        />
+        <Form.Field
           name="body.guestShipping.fullName"
           label="Full name"
           type="text"

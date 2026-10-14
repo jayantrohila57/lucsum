@@ -1,14 +1,15 @@
 import type { Route } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { apiServer } from "@/core/api/api.server";
+import { getServerSession } from "@/core/auth/auth.server";
 import { OrderDetailSection } from "@/module/order/order-detail.section";
+import { loadOrderForViewer } from "@/module/order/order-view.server";
 import Section from "@/shared/components/layout/section/section";
 import { Button } from "@/shared/components/ui/button";
 import { PATH } from "@/shared/config/routes";
 
 interface ConfirmationPageProps {
-  searchParams: Promise<{ orderId?: string }>;
+  searchParams: Promise<{ orderId?: string; token?: string; email?: string }>;
 }
 
 export const metadata = {
@@ -24,15 +25,24 @@ export default async function CheckoutConfirmationPage({ searchParams }: Confirm
     return redirect(PATH.SHOP.ROOT);
   }
 
-  const res = await apiServer.order.get({
-    params: { id: orderId },
+  const { user } = await getServerSession();
+  const order = await loadOrderForViewer(orderId, {
+    token: params.token,
+    email: params.email,
+    viewer: user ? { userId: user.id, role: user.role } : undefined,
   });
 
-  if (res.status !== "success" || !res.data) {
+  if (!order) {
     redirect(PATH.SHOP.ROOT);
   }
 
-  const order = res.data;
+  const orderDetailParams = new URLSearchParams();
+  if (params.token) orderDetailParams.set("token", params.token);
+
+  const orderDetailHref =
+    orderDetailParams.size > 0
+      ? (`${PATH.ORDERS.DETAIL(order.id)}?${orderDetailParams.toString()}` as Route)
+      : (PATH.ORDERS.DETAIL(order.id) as Route);
 
   return (
     <Section title={metadata.title} description={metadata.description}>
@@ -50,10 +60,10 @@ export default async function CheckoutConfirmationPage({ searchParams }: Confirm
           showTimeline={false}
           actions={
             <>
-              <Button asChild size="sm">
-                <Link href={PATH.ORDERS.DETAIL(order.id) as Route}>View order details</Link>
+              <Button asChild size="sm" className="min-h-11">
+                <Link href={orderDetailHref}>View order details</Link>
               </Button>
-              <Button asChild size="sm" variant="outline">
+              <Button asChild size="sm" variant="outline" className="min-h-11">
                 <Link href={PATH.SHOP.ROOT}>Continue shopping</Link>
               </Button>
             </>

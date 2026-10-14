@@ -22,7 +22,7 @@ export function AuthCard({
   footer?: ReactNode;
 }) {
   return (
-    <Card className="motion-all bg-transparent flex h-full w-full grid-cols-1 flex-row gap-0 border-b p-0 md:min-h-[520px] md:grid-cols-3">
+    <Card className="motion-all bg-transparent flex h-full w-full grid-cols-1 flex-row gap-0 border-b p-0 md:min-h-[520px] lg:grid-cols-3">
       <CardContent className="motion-all h-full w-full max-w-md border-r p-0 md:col-span-1">
         <CardHeader className="w-full p-4 border-b mb-2">
           <CardTitle className="w-full text-left text-3xl text-balance">{title}</CardTitle>
@@ -45,8 +45,8 @@ export function AuthCard({
           </Alert>
         </CardFooter>
       </CardContent>
-      <CardContent className="bg-secondary motion-all relative hidden w-full max-w-full overflow-hidden p-0 max-md:!hidden md:col-span-2 md:block">
-        <CardSwap width={1200} height={600} cardDistance={200} verticalDistance={200} delay={200} pauseOnHover={false}>
+      <CardContent className="bg-secondary motion-all relative hidden w-full min-w-0 max-w-full overflow-hidden p-0 lg:col-span-2 lg:block">
+        <CardSwap width="100%" height={600} cardDistance={120} verticalDistance={120} delay={200} pauseOnHover={false}>
           {LUCSUM_AUTH_GALLERY_IMAGES.map((item) => (
             <CardSwapCard key={item}>
               <Image

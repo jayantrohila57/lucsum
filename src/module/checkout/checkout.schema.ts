@@ -7,6 +7,7 @@ export const checkoutFormBodySchema = z
   .object({
     shippingAddressId: z.string().optional(),
     guestShipping: addressSnapshotSchema.optional(),
+    guestEmail: z.string().email("Enter a valid email for your receipt").optional(),
     billingAddressId: z.string().optional(),
     sameAsShipping: z.boolean().default(true),
     notes: z.string().max(500).optional(),
@@ -25,6 +26,13 @@ export const checkoutFormBodySchema = z
         path: ["guestShipping"],
       });
     }
+    if (!data.shippingAddressId && !data.guestEmail) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Email is required for guest checkout",
+        path: ["guestEmail"],
+      });
+    }
   });
 
 /** Full checkout form input (wraps body for Form component consistency) */
@@ -34,7 +42,7 @@ export const checkoutFormSchema = z.object({
 
 /** Result of initiating checkout (order + payment intent for Razorpay) */
 export const checkoutInitResultSchema = z.object({
-  order: orderSelectSchema,
+  order: orderSelectSchema.extend({ accessToken: z.string().optional() }),
   payment: paymentSelectSchema,
   razorpayOrderId: z.string().optional(),
 });

@@ -72,6 +72,7 @@ export function useCheckout() {
           shippingAddress: shippingSnapshot,
           billingAddress: billingSnapshot ?? shippingSnapshot,
           notes: body.notes ?? undefined,
+          guestEmail: !isSignedIn ? body.guestEmail : undefined,
           shippingProviderId: body.shippingProviderId,
           shippingMethodId: body.shippingMethodId,
           discountCode: body.discountCode || undefined,

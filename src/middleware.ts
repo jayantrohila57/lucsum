@@ -26,14 +26,43 @@ const EXACT_REDIRECTS: Record<string, string> = {
   "/support/size-guide": "/help#faq",
   "/account/wishlist": "/shop",
   "/blog": "/",
+  "/legal/refund-policy": "/legal/return-policy",
+  "/legal/cookies-policy": "/legal/privacy-policy",
+  "/legal/user-agreement": "/legal/terms-of-service",
+  "/legal/data-protection": "/legal/privacy-policy",
+  "/legal/licenses": "/legal",
+  "/account/setting": "/account",
+  "/account/setting/privacy": "/account",
+  "/account/cart": "/cart",
+  "/account/payment": "/account",
+  "/account/shipment": "/account/order",
+  "/account/review": "/account",
+  "/sentry-example-page": "/",
+  "/rss.xml": "/",
 };
 
 export function middleware(request: NextRequest) {
-  if (!STOREFRONT_SIMPLIFIED) {
-    return NextResponse.next();
+  const { pathname, search } = request.nextUrl;
+
+  if (pathname === "/checkout/pay" || pathname === "/store/checkout/pay") {
+    const orderId = request.nextUrl.searchParams.get("orderId");
+    if (!orderId?.trim()) {
+      const target = pathname.startsWith("/store/") ? "/checkout" : "/checkout";
+      return permanentRedirect(request, target, search);
+    }
   }
 
-  const { pathname, search } = request.nextUrl;
+  if (!STOREFRONT_SIMPLIFIED) {
+    if (EXACT_REDIRECTS[pathname]) {
+      const dest = EXACT_REDIRECTS[pathname];
+      const [path, hash] = dest.split("#");
+      const url = request.nextUrl.clone();
+      url.pathname = path;
+      url.hash = hash ? `#${hash}` : "";
+      return NextResponse.redirect(url, 301);
+    }
+    return NextResponse.next();
+  }
 
   if (EXACT_REDIRECTS[pathname]) {
     const dest = EXACT_REDIRECTS[pathname];
@@ -42,6 +71,16 @@ export function middleware(request: NextRequest) {
     url.pathname = path;
     url.hash = hash ? `#${hash}` : "";
     return NextResponse.redirect(url, 301);
+  }
+
+  const invoiceMatch = pathname.match(/^\/account\/order\/([^/]+)\/invoice$/);
+  if (invoiceMatch?.[1]) {
+    return permanentRedirect(request, `/account/order/${invoiceMatch[1]}`, search);
+  }
+
+  const shipmentMatch = pathname.match(/^\/account\/shipment\/([^/]+)$/);
+  if (shipmentMatch?.[1]) {
+    return permanentRedirect(request, `/account/order/${shipmentMatch[1]}`, search);
   }
 
   if (pathname === "/store/checkout" || pathname.startsWith("/store/checkout/")) {
@@ -91,6 +130,8 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
+    "/checkout/pay",
+    "/store/checkout/pay",
     "/store/:path*",
     "/store",
     "/marketing/:path*",
@@ -98,5 +139,14 @@ export const config = {
     "/blog/:path*",
     "/blog",
     "/account/wishlist",
+    "/account/order/:path*",
+    "/account/setting/:path*",
+    "/account/cart",
+    "/account/payment",
+    "/account/shipment/:path*",
+    "/account/review",
+    "/legal/:path*",
+    "/sentry-example-page",
+    "/rss.xml",
   ],
 };

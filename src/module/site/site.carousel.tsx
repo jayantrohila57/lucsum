@@ -56,7 +56,7 @@ export function MarketingCarousel({ items }: { items: CarouselItem[] | null | un
             const title = item.title ?? "Banner";
             const href = item.ctaLink ?? undefined;
             return (
-              <CarouselItem key={i}>
+              <CarouselItem key={i} className="min-w-0 basis-full">
                 <div className="group relative w-full overflow-hidden rounded-[var(--radius)] border border-border bg-muted text-balance">
                   <div className="relative aspect-[21/9] min-h-[220px] w-full sm:min-h-[280px]">
                     <BlurImage

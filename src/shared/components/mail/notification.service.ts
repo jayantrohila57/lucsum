@@ -3,6 +3,8 @@ import "server-only";
 import { eq, or } from "drizzle-orm";
 import { db } from "@/core/db/db";
 import { order, shipment, user as userTable } from "@/core/db/db.schema";
+import { createOrderAccessToken } from "@/module/order/order-access-token";
+import { guestEmailFromOrderNotes } from "@/module/order/order-notes";
 import { PATH } from "@/shared/config/routes";
 import { siteConfig } from "@/shared/config/site";
 import { debugError } from "@/shared/utils/lib/logger.utils";
@@ -21,7 +23,11 @@ export async function notifyOrderConfirmation(orderId: string): Promise<void> {
       where: eq(order.id, orderId),
       with: { items: true, user: true },
     });
-    if (!orderWithDetails?.userId || !orderWithDetails.user || !orderWithDetails.shippingAddress) return;
+    if (!orderWithDetails?.shippingAddress) return;
+
+    const guestEmail = guestEmailFromOrderNotes(orderWithDetails.notes);
+    const recipientEmail = orderWithDetails.user?.email ?? guestEmail;
+    if (!recipientEmail) return;
     const addr = orderWithDetails.shippingAddress as {
       line1: string;
       line2?: string;
@@ -31,8 +37,18 @@ export async function notifyOrderConfirmation(orderId: string): Promise<void> {
       country: string;
     };
     const baseUrl = siteConfig.urls?.base ?? "";
+    const token = createOrderAccessToken(orderWithDetails.id);
+    const orderPath = token
+      ? `${PATH.ORDERS.DETAIL(orderWithDetails.id)}?token=${encodeURIComponent(token)}`
+      : PATH.ORDERS.DETAIL(orderWithDetails.id);
     await sendOrderConfirmationEmail({
-      user: { name: orderWithDetails.user.name ?? "Customer", email: orderWithDetails.user.email },
+      user: {
+        name:
+          orderWithDetails.user?.name ??
+          (orderWithDetails.shippingAddress as { fullName?: string }).fullName ??
+          "Customer",
+        email: recipientEmail,
+      },
       orderNumber: orderWithDetails.id.slice(0, 8),
       items: (orderWithDetails.items ?? []).map((item) => ({
         name: item.productTitle,
@@ -49,7 +65,7 @@ export async function notifyOrderConfirmation(orderId: string): Promise<void> {
         postalCode: addr.postalCode,
         country: addr.country,
       },
-      orderUrl: baseUrl ? `${baseUrl}${PATH.ACCOUNT.ORDER}/${orderWithDetails.id}` : undefined,
+      orderUrl: baseUrl ? `${baseUrl}${orderPath}` : undefined,
     });
   } catch (err) {
     debugError("NOTIFICATION:ORDER_CONFIRMATION:ERROR", err);

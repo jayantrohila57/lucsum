@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { completeRazorpayPaymentAfterVerification } from "@/core/payment/razorpay.complete";
+import { createOrderAccessToken } from "@/module/order/order-access-token";
 import { PATH } from "@/shared/config/routes";
 import { getPublicBaseUrl } from "@/shared/utils/lib/public-base-url";
 
@@ -51,5 +52,7 @@ export async function POST(request: Request) {
 
   const confirm = new URL(`${base}${PATH.CHECKOUT.CONFIRMATION}`);
   confirm.searchParams.set("orderId", result.orderId);
+  const accessToken = createOrderAccessToken(result.orderId);
+  if (accessToken) confirm.searchParams.set("token", accessToken);
   return NextResponse.redirect(confirm.toString(), 303);
 }

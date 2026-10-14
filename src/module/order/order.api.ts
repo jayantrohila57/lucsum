@@ -16,12 +16,41 @@ import { API_RESPONSE } from "@/shared/config/api.utils";
 import { buildPagination, buildPaginationMeta } from "@/shared/schema";
 import { debugError } from "@/shared/utils/lib/logger.utils";
 import { type Order, type OrderStatus, orderContract } from "./order.schema";
+import { createOrderAccessToken } from "./order-access-token";
+import { serializeOrderNotes } from "./order-notes";
+import { loadOrderForViewer } from "./order-view.server";
 
 class CheckoutValidationError extends Error {
   override readonly name = "CheckoutValidationError";
 }
 
 export const orderRouter = createTRPCRouter({
+  /**
+   * Guest or token-based order view (no session required).
+   */
+  getGuest: publicProcedure
+    .input(orderContract.getGuest.input)
+    .output(orderContract.getGuest.output)
+    .query(async ({ input }) => {
+      try {
+        const { id } = input.params;
+        const { token, email } = input.query;
+        if (!token && !email) {
+          return API_RESPONSE(STATUS.FAILED, "Order access requires a token or email", null);
+        }
+
+        const data = await loadOrderForViewer(id, { token, email });
+        if (!data) {
+          return API_RESPONSE(STATUS.FAILED, MESSAGE.ORDER.GET.FAILED, null);
+        }
+
+        return API_RESPONSE(STATUS.SUCCESS, MESSAGE.ORDER.GET.SUCCESS, data);
+      } catch (err) {
+        debugError("ORDER:GET_GUEST:ERROR", err);
+        return API_RESPONSE(STATUS.ERROR, MESSAGE.ORDER.GET.ERROR, null, err as Error);
+      }
+    }),
+
   /**
    * Get order by ID
    */
@@ -302,8 +331,16 @@ export const orderRouter = createTRPCRouter({
     .mutation(async ({ input, ctx }) => {
       try {
         const userId = ctx.user?.id ?? null;
-        const { cartId, shippingAddress, billingAddress, notes, shippingProviderId, shippingMethodId, discountCode } =
-          input.body;
+        const {
+          cartId,
+          shippingAddress,
+          billingAddress,
+          notes,
+          guestEmail,
+          shippingProviderId,
+          shippingMethodId,
+          discountCode,
+        } = input.body;
 
         const cartLinesWithProduct = {
           with: {
@@ -416,7 +453,7 @@ export const orderRouter = createTRPCRouter({
               shippingZoneId,
               shippingAddress: shippingAddress,
               billingAddress: billingAddress || shippingAddress,
-              notes: notes || null,
+              notes: serializeOrderNotes({ customerNote: notes, guestEmail }),
               placedAt: new Date(),
               createdAt: new Date(),
               updatedAt: new Date(),
@@ -503,7 +540,11 @@ export const orderRouter = createTRPCRouter({
           }
         }
 
-        return API_RESPONSE(STATUS.SUCCESS, MESSAGE.ORDER.CREATE.SUCCESS, result);
+        const accessToken = createOrderAccessToken(result.id);
+        return API_RESPONSE(STATUS.SUCCESS, MESSAGE.ORDER.CREATE.SUCCESS, {
+          ...result,
+          accessToken: accessToken || undefined,
+        });
       } catch (err) {
         if (err instanceof CheckoutValidationError) {
           return API_RESPONSE(STATUS.FAILED, err.message, null);

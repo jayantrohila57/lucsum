@@ -79,6 +79,7 @@ export const orderCreateInputSchema = z.object({
   billingAddressId: z.string().optional(),
   billingAddress: addressSnapshotSchema.optional(),
   notes: z.string().optional(),
+  guestEmail: z.string().email().optional(),
   shippingProviderId: z.string().min(1),
   shippingMethodId: z.string().min(1),
   /**
@@ -93,6 +94,16 @@ export const orderUpdateStatusSchema = z.object({
 });
 
 export const orderContract = {
+  getGuest: {
+    input: z.object({
+      params: z.object({ id: z.string().min(1) }),
+      query: z.object({
+        token: z.string().min(1).optional(),
+        email: z.string().email().optional(),
+      }),
+    }),
+    output: detailedResponse(orderSelectSchema),
+  },
   get: {
     input: z.object({
       params: z.object({ id: z.string().min(1) }),
@@ -127,7 +138,11 @@ export const orderContract = {
     input: z.object({
       body: orderCreateInputSchema,
     }),
-    output: detailedResponse(orderSelectSchema),
+    output: detailedResponse(
+      orderSelectSchema.extend({
+        accessToken: z.string().optional(),
+      }),
+    ),
   },
   /** Server-authoritative totals for checkout UI; must match order.create + Razorpay amount. */
   previewCheckoutTotals: {
