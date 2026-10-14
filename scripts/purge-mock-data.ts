@@ -4,6 +4,8 @@
  * @see docs/SHOPIFY_IMPORT.md
  */
 import "dotenv/config";
+import { existsSync, readFileSync } from "node:fs";
+import path from "node:path";
 import { Pool } from "@neondatabase/serverless";
 import { and, eq, ilike, inArray, isNull, notInArray, or, sql } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/neon-serverless";
@@ -17,9 +19,20 @@ import {
 const args = new Set(process.argv.slice(2));
 const dryRun = args.has("--dry-run");
 
+function loadActiveShopifyProductHandles(): string[] {
+  const exportDir = process.env.SHOPIFY_EXPORT_DIR ?? path.join(process.cwd(), "data/shopify-export");
+  const file = path.join(exportDir, "products.json");
+  if (!existsSync(file)) return [];
+  const json = JSON.parse(readFileSync(file, "utf8")) as {
+    data?: { products?: { nodes?: { handle: string; status: string }[] } };
+  };
+  return (json.data?.products?.nodes ?? []).filter((p) => p.status === "ACTIVE").map((p) => p.handle);
+}
+
 export async function runPurgeMockData(db: ReturnType<typeof drizzle>, options?: { dryRun?: boolean }) {
   const isDryRun = options?.dryRun ?? false;
   const now = new Date();
+  const shopifyHandles = loadActiveShopifyProductHandles();
 
   const demoCategorySlugs = (
     await db
@@ -36,13 +49,18 @@ export async function runPurgeMockData(db: ReturnType<typeof drizzle>, options?:
       )
   ).map((c) => c.slug);
 
+  const notInBackup =
+    shopifyHandles.length > 0 ? notInArray(schema.product.slug, shopifyHandles) : ilike(schema.product.id, "seed-%");
+
   const demoProductWhere = and(
     isNull(schema.product.deletedAt),
     or(
+      notInBackup,
       notInArray(schema.product.categorySlug, [...LUCSUM_CATALOG_CATEGORY_SLUGS]),
       ...DEMO_PRODUCT_SLUG_PATTERNS.map((pattern) => ilike(schema.product.slug, pattern)),
       ilike(schema.product.title, "%Awesome Silk%"),
       demoCategorySlugs.length > 0 ? inArray(schema.product.categorySlug, demoCategorySlugs) : sql`false`,
+      ilike(schema.product.id, "seed-product%"),
     ),
   );
 
@@ -135,17 +153,8 @@ export async function runPurgeMockData(db: ReturnType<typeof drizzle>, options?:
       .where(notInArray(schema.subcategory.categorySlug, [...LUCSUM_CATALOG_CATEGORY_SLUGS]));
   }
 
-  if (counts.marketing) {
-    await db
-      .update(schema.marketingContent)
-      .set({ isActive: false, updatedAt: now })
-      .where(
-        or(
-          ilike(schema.marketingContent.id, "seed-marketing%"),
-          ilike(schema.marketingContent.image, "%picsum.photos%"),
-        ),
-      );
-  }
+  await db.update(schema.marketingContent).set({ isActive: false, updatedAt: now });
+  counts.marketing = seedMarketing.length;
 
   if (counts.reviews) {
     await db
