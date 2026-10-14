@@ -11,11 +11,13 @@ function loadShopifyRedirects(): ShopifyRedirect[] {
   if (!existsSync(file)) return [];
   try {
     const rows = JSON.parse(readFileSync(file, "utf8")) as ShopifyRedirect[];
-    return rows.map((row) => {
-      const fromSource = row.source.match(/^\/products\/([^/]+)$/);
-      const destination = fromSource ? `/products/${fromSource[1]}` : modernizeStorefrontDestination(row.destination);
-      return { ...row, destination };
-    });
+    return rows
+      .map((row) => {
+        const fromSource = row.source.match(/^\/products\/([^/]+)$/);
+        const destination = fromSource ? `/products/${fromSource[1]}` : modernizeStorefrontDestination(row.destination);
+        return { ...row, destination };
+      })
+      .filter((row) => row.source !== row.destination);
   } catch {
     return [];
   }
