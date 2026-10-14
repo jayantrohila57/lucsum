@@ -12,6 +12,7 @@ import { and, eq, ilike, inArray, isNull, notExists, or, sql } from "drizzle-orm
 import { drizzle } from "drizzle-orm/neon-serverless";
 import { v4 as uuidv4 } from "uuid";
 import * as schema from "../src/core/db/db.schema";
+import { runPurgeMockData } from "./purge-mock-data";
 import { paiseFromInr, productPrimaryImageUrl, STYLE_TAGS, shopifyId, styleFromTags } from "./shopify-import.lib";
 
 const STYLE_SUBCATEGORY_TITLES: Record<string, string> = {
@@ -65,80 +66,7 @@ async function uploadImage(url: string, pathname: string): Promise<string> {
 }
 
 async function cleanupDemo(db: ReturnType<typeof drizzle>) {
-  const demoCategorySlugs = (
-    await db
-      .select({ slug: schema.category.slug })
-      .from(schema.category)
-      .where(or(ilike(schema.category.slug, "seed-category%"), ilike(schema.category.slug, "demo-%")))
-  ).map((c) => c.slug);
-
-  const demoProducts = await db
-    .select({ id: schema.product.id })
-    .from(schema.product)
-    .where(
-      and(
-        or(
-          ilike(schema.product.slug, "seed-product-%"),
-          ilike(schema.product.slug, "seed-%"),
-          ilike(schema.product.title, "%Awesome Silk%"),
-          demoCategorySlugs.length > 0 ? inArray(schema.product.categorySlug, demoCategorySlugs) : sql`false`,
-        ),
-        notExists(
-          db
-            .select({ one: sql`1` })
-            .from(schema.orderItem)
-            .innerJoin(schema.productVariant, eq(schema.productVariant.id, schema.orderItem.variantId))
-            .where(eq(schema.productVariant.productId, schema.product.id)),
-        ),
-      ),
-    );
-
-  if (dryRun) {
-    console.log(
-      `[dry-run] Would remove ${demoProducts.length} demo products and ${demoCategorySlugs.length} demo categories`,
-    );
-    return;
-  }
-
-  if (demoProducts.length) {
-    const demoIds = demoProducts.map((p) => p.id);
-    const demoVariants = await db
-      .select({ id: schema.productVariant.id })
-      .from(schema.productVariant)
-      .where(inArray(schema.productVariant.productId, demoIds));
-    const variantIds = demoVariants.map((v) => v.id);
-    if (variantIds.length) {
-      await db.delete(schema.inventoryItem).where(inArray(schema.inventoryItem.variantId, variantIds));
-      await db.delete(schema.productVariant).where(inArray(schema.productVariant.id, variantIds));
-    }
-    await db.delete(schema.productCollection).where(inArray(schema.productCollection.productId, demoIds));
-    await db.delete(schema.product).where(inArray(schema.product.id, demoIds));
-  }
-  if (demoCategorySlugs.length) {
-    await db.delete(schema.subcategory).where(
-      and(
-        inArray(schema.subcategory.categorySlug, demoCategorySlugs),
-        notExists(
-          db
-            .select({ one: sql`1` })
-            .from(schema.product)
-            .where(and(eq(schema.product.subcategorySlug, schema.subcategory.slug), isNull(schema.product.deletedAt))),
-        ),
-      ),
-    );
-    await db.delete(schema.category).where(
-      and(
-        inArray(schema.category.slug, demoCategorySlugs),
-        notExists(
-          db
-            .select({ one: sql`1` })
-            .from(schema.product)
-            .where(and(eq(schema.product.categorySlug, schema.category.slug), isNull(schema.product.deletedAt))),
-        ),
-      ),
-    );
-  }
-  console.log(`Removed ${demoProducts.length} demo products and ${demoCategorySlugs.length} demo categories`);
+  await runPurgeMockData(db, { dryRun });
 }
 
 async function main() {
