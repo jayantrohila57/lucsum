@@ -142,7 +142,11 @@ async function interactShop(page, width) {
   const notes = [];
   if (width >= 768) return { notes, openedDrawer: false };
 
-  await page.getByRole("button", { name: /Filters/i }).first().waitFor({ timeout: 8000 }).catch(() => {});
+  await page
+    .getByRole("button", { name: /Filters/i })
+    .first()
+    .waitFor({ timeout: 8000 })
+    .catch(() => {});
 
   try {
     const menuBtn = page.getByRole("button", { name: "Open menu" });

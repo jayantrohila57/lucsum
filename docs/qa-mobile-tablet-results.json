@@ -1,13 +1,7 @@
 {
   "base": "http://localhost:3000",
   "at": "2026-10-14T05:46:58.166Z",
-  "viewports": [
-    360,
-    390,
-    430,
-    768,
-    1024
-  ],
+  "viewports": [360, 390, 430, 768, 1024],
   "issues": [
     {
       "severity": "P1",
@@ -6518,9 +6512,7 @@
       "viewport": 768,
       "group": "tablet",
       "detail": "scrollWidth excess 1160px",
-      "offenders": [
-        "img.motion-all right=1928 vw=768"
-      ],
+      "offenders": ["img.motion-all right=1928 vw=768"],
       "screenshot": "mobile-tablet/horizontal-overflow--home--768.png"
     },
     {
@@ -8215,9 +8207,7 @@
       "viewport": 1024,
       "group": "tablet",
       "detail": "scrollWidth excess 904px",
-      "offenders": [
-        "img.motion-all right=1928 vw=1024"
-      ],
+      "offenders": ["img.motion-all right=1928 vw=1024"],
       "screenshot": "mobile-tablet/horizontal-overflow--home--1024.png"
     },
     {
@@ -10004,10 +9994,7 @@
         "left": 8,
         "rightGap": 8
       },
-      "interactNotes": [
-        "mobile-nav-open-failed",
-        "filters-inline-no-drawer"
-      ],
+      "interactNotes": ["mobile-nav-open-failed", "filters-inline-no-drawer"],
       "issues": [
         {
           "code": "horizontal-overflow",
@@ -10092,10 +10079,7 @@
         "left": 8,
         "rightGap": 8
       },
-      "interactNotes": [
-        "mobile-nav-open-failed",
-        "filters-inline-no-drawer"
-      ],
+      "interactNotes": ["mobile-nav-open-failed", "filters-inline-no-drawer"],
       "issues": [
         {
           "code": "horizontal-overflow",
@@ -10179,10 +10163,7 @@
         "left": 8,
         "rightGap": 8
       },
-      "interactNotes": [
-        "gallery-single-image",
-        "size-chip-under-44px"
-      ],
+      "interactNotes": ["gallery-single-image", "size-chip-under-44px"],
       "issues": [
         {
           "code": "small-tap-target",
@@ -11941,9 +11922,7 @@
         "left": 8,
         "rightGap": 8
       },
-      "interactNotes": [
-        "form-fields-0"
-      ],
+      "interactNotes": ["form-fields-0"],
       "issues": [
         {
           "code": "small-tap-target",
@@ -12626,10 +12605,7 @@
         "left": 8,
         "rightGap": 8
       },
-      "interactNotes": [
-        "mobile-nav-open-failed",
-        "filters-inline-no-drawer"
-      ],
+      "interactNotes": ["mobile-nav-open-failed", "filters-inline-no-drawer"],
       "issues": [
         {
           "code": "horizontal-overflow",
@@ -12714,10 +12690,7 @@
         "left": 8,
         "rightGap": 8
       },
-      "interactNotes": [
-        "mobile-nav-open-failed",
-        "filters-inline-no-drawer"
-      ],
+      "interactNotes": ["mobile-nav-open-failed", "filters-inline-no-drawer"],
       "issues": [
         {
           "code": "horizontal-overflow",
@@ -12801,10 +12774,7 @@
         "left": 8,
         "rightGap": 8
       },
-      "interactNotes": [
-        "gallery-single-image",
-        "size-chip-under-44px"
-      ],
+      "interactNotes": ["gallery-single-image", "size-chip-under-44px"],
       "issues": [
         {
           "code": "small-tap-target",
@@ -14563,9 +14533,7 @@
         "left": 8,
         "rightGap": 8
       },
-      "interactNotes": [
-        "form-fields-0"
-      ],
+      "interactNotes": ["form-fields-0"],
       "issues": [
         {
           "code": "small-tap-target",
@@ -15248,10 +15216,7 @@
         "left": 8,
         "rightGap": 8
       },
-      "interactNotes": [
-        "mobile-nav-open-failed",
-        "filters-inline-no-drawer"
-      ],
+      "interactNotes": ["mobile-nav-open-failed", "filters-inline-no-drawer"],
       "issues": [
         {
           "code": "horizontal-overflow",
@@ -15336,10 +15301,7 @@
         "left": 8,
         "rightGap": 8
       },
-      "interactNotes": [
-        "mobile-nav-open-failed",
-        "filters-inline-no-drawer"
-      ],
+      "interactNotes": ["mobile-nav-open-failed", "filters-inline-no-drawer"],
       "issues": [
         {
           "code": "horizontal-overflow",
@@ -15423,10 +15385,7 @@
         "left": 8,
         "rightGap": 8
       },
-      "interactNotes": [
-        "gallery-single-image",
-        "size-chip-under-44px"
-      ],
+      "interactNotes": ["gallery-single-image", "size-chip-under-44px"],
       "issues": [
         {
           "code": "small-tap-target",
@@ -17185,9 +17144,7 @@
         "left": 8,
         "rightGap": 8
       },
-      "interactNotes": [
-        "form-fields-0"
-      ],
+      "interactNotes": ["form-fields-0"],
       "issues": [
         {
           "code": "small-tap-target",
@@ -17798,9 +17755,7 @@
         {
           "code": "horizontal-overflow",
           "detail": "scrollWidth excess 1160px",
-          "offenders": [
-            "img.motion-all right=1928 vw=768"
-          ]
+          "offenders": ["img.motion-all right=1928 vw=768"]
         },
         {
           "code": "small-tap-target",
@@ -17983,10 +17938,7 @@
         "left": 8,
         "rightGap": 8
       },
-      "interactNotes": [
-        "gallery-single-image",
-        "size-chip-under-44px"
-      ],
+      "interactNotes": ["gallery-single-image", "size-chip-under-44px"],
       "issues": [
         {
           "code": "small-tap-target",
@@ -19637,9 +19589,7 @@
         "left": 8,
         "rightGap": 8
       },
-      "interactNotes": [
-        "form-fields-0"
-      ],
+      "interactNotes": ["form-fields-0"],
       "issues": [
         {
           "code": "small-tap-target",
@@ -20214,9 +20164,7 @@
         {
           "code": "horizontal-overflow",
           "detail": "scrollWidth excess 904px",
-          "offenders": [
-            "img.motion-all right=1928 vw=1024"
-          ]
+          "offenders": ["img.motion-all right=1928 vw=1024"]
         },
         {
           "code": "small-tap-target",
@@ -20399,12 +20347,7 @@
         "left": 8,
         "rightGap": 8
       },
-      "interactNotes": [
-        "gallery-single-image",
-        "size-chip-under-44px",
-        "size-click-failed",
-        "gallery-full-bleed-ok"
-      ],
+      "interactNotes": ["gallery-single-image", "size-chip-under-44px", "size-click-failed", "gallery-full-bleed-ok"],
       "issues": [
         {
           "code": "small-tap-target",
@@ -22055,9 +21998,7 @@
         "left": 8,
         "rightGap": 8
       },
-      "interactNotes": [
-        "form-fields-0"
-      ],
+      "interactNotes": ["form-fields-0"],
       "issues": [
         {
           "code": "small-tap-target",
