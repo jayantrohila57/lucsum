@@ -38,6 +38,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# Optional Shopify Markdown mirror (not required for import)
+data/shopify-export/content-text/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

@@ -1,7 +1,24 @@
+import { existsSync, readFileSync } from "node:fs";
+import path from "node:path";
 import { withSentryConfig } from "@sentry/nextjs";
 import type { NextConfig } from "next";
 
+type ShopifyRedirect = { source: string; destination: string; permanent: boolean };
+
+function loadShopifyRedirects(): ShopifyRedirect[] {
+  const file = path.join(process.cwd(), "data", "shopify-redirects.json");
+  if (!existsSync(file)) return [];
+  try {
+    return JSON.parse(readFileSync(file, "utf8")) as ShopifyRedirect[];
+  } catch {
+    return [];
+  }
+}
+
 const nextConfig: NextConfig = {
+  async redirects() {
+    return loadShopifyRedirects();
+  },
   async headers() {
     return [
       {
@@ -59,6 +76,11 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "api.dicebear.com",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.shopify.com",
+        pathname: "/**",
       },
     ],
   },

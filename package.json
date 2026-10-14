@@ -1,5 +1,5 @@
 {
-  "name": "task",
+  "name": "lucsum",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -18,7 +18,9 @@
     "db:studio": "npx drizzle-kit studio --config ./src/core/db/drizzle.ts",
     "db:drop": "npx drizzle-kit drop --config ./src/core/db/drizzle.ts",
     "db:reset": "pnpm db:drop && pnpm db:push",
-    "db:seed": "tsx src/core/db/seed.ts",
+    "db:seed": "tsx scripts/shopify-import.ts --seed-only",
+    "shopify:import": "tsx scripts/shopify-import.ts",
+    "shopify:import:cleanup": "tsx scripts/shopify-import.ts --cleanup-demo",
     "typecheck": "next typegen && tsc --noEmit",
     "lint": "biome lint .",
     "lint:fix": "biome lint --write .",

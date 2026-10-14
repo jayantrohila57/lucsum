@@ -1,6 +1,8 @@
-# E-commerce (Next.js)
+# LUCSUM Store (Next.js)
 
-Production-oriented storefront with **Next.js App Router**, **tRPC**, **Drizzle + PostgreSQL (Neon)**, **Better Auth**, and **Razorpay**.
+Production storefront for **LUCSUM** — **Next.js App Router**, **tRPC**, **Drizzle + PostgreSQL (Neon)**, **Better Auth**, and **Razorpay**.
+
+Shopify catalogue import: see [docs/SHOPIFY_IMPORT.md](docs/SHOPIFY_IMPORT.md).
 
 ## Prerequisites
 
@@ -15,7 +17,7 @@ pnpm install
 cp .env.example .env.local
 # Fill required variables (see below)
 pnpm db:migrate
-pnpm db:seed   # optional
+pnpm shopify:import   # after migrate; see docs/SHOPIFY_IMPORT.md
 pnpm dev
 ```
 
