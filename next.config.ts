@@ -1,6 +1,6 @@
 import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
-import { withSentryConfig } from "@sentry/nextjs";
+import { withSentryConfig } from "@sentry/nextjs/config";
 import type { NextConfig } from "next";
 
 type ShopifyRedirect = { source: string; destination: string; permanent: boolean };
@@ -41,7 +41,6 @@ const nextConfig: NextConfig = {
   experimental: {
     authInterrupts: true,
     typedEnv: true,
-    viewTransition: true,
   },
   typescript: {
     tsconfigPath: "tsconfig.json",

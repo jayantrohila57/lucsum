@@ -22,4 +22,4 @@ const viewport = {
 
 const className = `${font.variable} font-common antialiased`;
 
-export { font, viewport, className };
+export { className, font, viewport };
