@@ -2,6 +2,7 @@
 
 import { toast } from "sonner";
 import { apiClient } from "@/core/api/api.client";
+import { useSession } from "@/core/auth/auth.client";
 import type { Address } from "@/module/address/address.schema";
 import { useAddress } from "@/module/address/use-address";
 import { useCart } from "@/module/cart/use-cart";
@@ -22,6 +23,8 @@ function addressToSnapshot(addr: Pick<Address, "line1" | "line2" | "city" | "sta
 }
 
 export function useCheckout() {
+  const { data: session } = useSession();
+  const isSignedIn = Boolean(session?.user?.id);
   const { cart, isLoading: cartLoading } = useCart();
   const { addresses, isLoading: addressLoading } = useAddress();
 
@@ -41,25 +44,35 @@ export function useCheckout() {
       return null;
     }
 
-    const shippingAddr = shippingAddresses.find((a) => a.id === body.shippingAddressId);
-    if (!shippingAddr) {
-      toast.error("Please select a valid shipping address");
+    let shippingSnapshot = body.guestShipping;
+    let billingSnapshot = body.guestShipping;
+
+    if (isSignedIn) {
+      const shippingAddr = shippingAddresses.find((a) => a.id === body.shippingAddressId);
+      if (!shippingAddr) {
+        toast.error("Please select a valid shipping address");
+        return null;
+      }
+      shippingSnapshot = addressToSnapshot(shippingAddr);
+      const billingAddr = body.sameAsShipping
+        ? shippingAddr
+        : body.billingAddressId
+          ? (billingAddresses.find((a) => a.id === body.billingAddressId) ?? shippingAddr)
+          : shippingAddr;
+      billingSnapshot = addressToSnapshot(billingAddr);
+    } else if (!shippingSnapshot) {
+      toast.error("Please enter your shipping address");
       return null;
     }
-
-    const billingAddr = body.sameAsShipping
-      ? shippingAddr
-      : body.billingAddressId
-        ? (billingAddresses.find((a) => a.id === body.billingAddressId) ?? shippingAddr)
-        : shippingAddr;
 
     try {
       const orderRes = await createOrder.mutateAsync({
         body: {
           cartId: cart.id,
-          shippingAddress: addressToSnapshot(shippingAddr),
-          billingAddress: addressToSnapshot(billingAddr),
+          shippingAddress: shippingSnapshot,
+          billingAddress: billingSnapshot ?? shippingSnapshot,
           notes: body.notes ?? undefined,
+          guestEmail: !isSignedIn ? body.guestEmail : undefined,
           shippingProviderId: body.shippingProviderId,
           shippingMethodId: body.shippingMethodId,
           discountCode: body.discountCode || undefined,
@@ -103,7 +116,8 @@ export function useCheckout() {
   return {
     cart,
     addresses: { shipping: shippingAddresses, billing: billingAddresses, all: addresses },
-    isLoading: cartLoading || addressLoading,
+    isSignedIn,
+    isLoading: cartLoading || (isSignedIn && addressLoading),
     isPlacingOrder: createOrder.isPending || createIntent.isPending,
     initiateCheckout,
   };

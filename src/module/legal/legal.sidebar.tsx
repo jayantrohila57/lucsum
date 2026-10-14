@@ -19,7 +19,7 @@ export function LegalSidebar({ activeSection }: LegalContentProps) {
                 <Link href={section.href}>
                   <Button
                     variant={isActive ? "outline" : "ghost"}
-                    className="flex w-full items-center justify-start rounded-sm text-left text-xs"
+                    className="flex min-h-11 w-full items-center justify-start rounded-sm text-left text-xs"
                   >
                     {section.icon}
                     <span className="font-medium">{section.title}</span>

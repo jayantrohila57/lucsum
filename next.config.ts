@@ -2,6 +2,7 @@ import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { withSentryConfig } from "@sentry/nextjs/config";
 import type { NextConfig } from "next";
+import { modernizeStorefrontDestination } from "./src/shared/config/storefront-redirects";
 
 type ShopifyRedirect = { source: string; destination: string; permanent: boolean };
 
@@ -9,7 +10,14 @@ function loadShopifyRedirects(): ShopifyRedirect[] {
   const file = path.join(process.cwd(), "data", "shopify-redirects.json");
   if (!existsSync(file)) return [];
   try {
-    return JSON.parse(readFileSync(file, "utf8")) as ShopifyRedirect[];
+    const rows = JSON.parse(readFileSync(file, "utf8")) as ShopifyRedirect[];
+    return rows
+      .map((row) => {
+        const fromSource = row.source.match(/^\/products\/([^/]+)$/);
+        const destination = fromSource ? `/products/${fromSource[1]}` : modernizeStorefrontDestination(row.destination);
+        return { ...row, destination };
+      })
+      .filter((row) => row.source !== row.destination);
   } catch {
     return [];
   }

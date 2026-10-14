@@ -1,0 +1,394 @@
+/**
+ * Mobile & tablet QA (Jayant priority widths).
+ * Run after `pnpm build && pnpm start`.
+ *
+ * Usage: node scripts/qa-mobile-tablet.mjs [--base http://localhost:3000]
+ */
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
+import { chromium } from "playwright";
+
+const base = process.argv.includes("--base")
+  ? process.argv[process.argv.indexOf("--base") + 1]
+  : "http://localhost:3000";
+
+const outDir = "docs/qa-screenshots/mobile-tablet";
+mkdirSync(outDir, { recursive: true });
+
+const VIEWPORTS = [
+  { group: "mobile", width: 360, height: 800 },
+  { group: "mobile", width: 390, height: 844 },
+  { group: "mobile", width: 430, height: 932 },
+  { group: "tablet", width: 768, height: 1024 },
+  { group: "tablet", width: 1024, height: 1366 },
+];
+
+const products = JSON.parse(readFileSync("data/shopify-export/products.json", "utf8"))
+  .data.products.nodes.filter((n) => n.status === "ACTIVE")
+  .map((n) => n.handle);
+
+const legalCore = ["terms-of-service", "privacy-policy", "shipping-policy", "return-policy"];
+
+const routes = [
+  { slug: "home", path: "/" },
+  { slug: "shop", path: "/shop", interact: "shop" },
+  { slug: "shop-filter", path: "/shop?style=celestial-graphic", interact: "shop" },
+  ...products.map((h) => ({
+    slug: `pdp-${h}`,
+    path: `/products/${h}`,
+    interact: h === products[0] ? "pdp" : undefined,
+  })),
+  { slug: "help", path: "/help" },
+  { slug: "cart", path: "/cart" },
+  { slug: "checkout", path: "/checkout", interact: "checkout" },
+  { slug: "checkout-pay", path: "/checkout/pay" },
+  { slug: "legal", path: "/legal" },
+  ...legalCore.map((s) => ({ slug: `legal-${s}`, path: `/legal/${s}` })),
+  { slug: "auth-sign-in", path: "/auth/sign-in" },
+  { slug: "auth-sign-up", path: "/auth/sign-up" },
+];
+
+function slugFile(parts) {
+  return parts
+    .filter(Boolean)
+    .join("--")
+    .replace(/[^a-z0-9-]+/gi, "-")
+    .slice(0, 120);
+}
+
+/** @see docs/qa-tap-target-scanner.md */
+async function auditPage(page) {
+  return page.evaluate(() => {
+    const MIN = 44;
+
+    const doc = document.documentElement;
+    const excess = doc.scrollWidth - doc.clientWidth;
+    let userScrollableX = false;
+    if (excess > 1) {
+      const before = window.scrollX;
+      window.scrollBy(80, 0);
+      userScrollableX = window.scrollX !== before;
+      window.scrollTo(0, window.scrollY);
+    }
+    const overflowX = userScrollableX ? excess : 0;
+    const issues = [];
+
+    if (overflowX > 1) {
+      const offenders = [];
+      for (const el of document.querySelectorAll("*")) {
+        const r = el.getBoundingClientRect();
+        if (r.width < 2 || r.height < 2) continue;
+        if (r.right > window.innerWidth + 1 || r.left < -1) {
+          const tag = el.tagName.toLowerCase();
+          const cls = (el.className && String(el.className).split(" ")[0]) || "";
+          offenders.push(`${tag}${cls ? `.${cls}` : ""} right=${Math.round(r.right)} vw=${window.innerWidth}`);
+          if (offenders.length >= 6) break;
+        }
+      }
+      issues.push({ code: "horizontal-overflow", detail: `scrollWidth excess ${overflowX}px`, offenders });
+    }
+
+    function isEffectivelyVisible(el) {
+      if (typeof el.checkVisibility === "function") {
+        return el.checkVisibility({ checkOpacity: true, checkVisibilityCSS: true });
+      }
+      const cs = getComputedStyle(el);
+      if (cs.display === "none" || cs.visibility === "hidden" || Number(cs.opacity) === 0) return false;
+      const r = el.getBoundingClientRect();
+      return r.width >= 1 && r.height >= 1;
+    }
+
+    function isBreadcrumbOrContentNavLink(el) {
+      if (el.tagName !== "A") return false;
+      const nav = el.closest("nav");
+      if (!nav) return false;
+      if (nav.closest("header, footer, [data-slot='shell-header']")) return false;
+      const label = nav.getAttribute("aria-label")?.toLowerCase() ?? "";
+      if (label.includes("breadcrumb")) return true;
+      return !nav.closest("[data-slot='navigation-menu'], [data-slot='sheet-content']");
+    }
+
+    function isProseLink(el) {
+      if (el.tagName !== "A") return false;
+      if (isBreadcrumbOrContentNavLink(el)) return true;
+      if (
+        el.closest(
+          "header, footer, [data-slot='shell-header'], [data-slot='sheet-content'], [data-slot='navigation-menu']",
+        )
+      ) {
+        return false;
+      }
+      if (el.closest("p, .prose, [data-slot='prose'], article .policy, [data-policy-body]")) return true;
+      return false;
+    }
+
+    function effectiveHitBox(el) {
+      let w = 0;
+      let h = 0;
+      let node = el;
+      let depth = 0;
+      while (node && depth < 4) {
+        const r = node.getBoundingClientRect();
+        const cs = getComputedStyle(node);
+        if (cs.display === "none" || cs.visibility === "hidden") return null;
+        const minH = parseFloat(cs.minHeight) || 0;
+        const minW = parseFloat(cs.minWidth) || 0;
+        w = Math.max(w, r.width, minW);
+        h = Math.max(h, r.height, minH);
+        if (w >= MIN && h >= MIN) return { w, h };
+        const slot = node.getAttribute?.("data-slot");
+        const isControlRoot =
+          node.tagName === "BUTTON" ||
+          node.getAttribute("role") === "button" ||
+          slot === "button" ||
+          slot === "select-trigger";
+        if (isControlRoot && w >= MIN && h >= MIN) break;
+        if (isControlRoot && depth >= 2) break;
+        node = node.parentElement;
+        depth += 1;
+      }
+      const r = el.getBoundingClientRect();
+      return { w: Math.max(w, r.width), h: Math.max(h, r.height) };
+    }
+
+    function isScannedControl(el) {
+      const tag = el.tagName;
+      if (tag === "BUTTON" || el.getAttribute("role") === "button") return true;
+      if (el.getAttribute("data-slot") === "button" || el.getAttribute("data-slot") === "select-trigger") return true;
+      if (tag === "INPUT" || tag === "SELECT" || tag === "TEXTAREA") return true;
+      if (tag === "A" && el.getAttribute("href")) {
+        if (isProseLink(el)) return false;
+        if (
+          el.closest(
+            "header, footer, [data-slot='shell-header'], [data-slot='sheet-content'], [data-slot='navigation-menu']",
+          )
+        ) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    const smallTargets = [];
+    const seen = new Set();
+    for (const el of document.querySelectorAll(
+      "button, a[href], [role='button'], input, select, textarea, [data-slot='select-trigger']",
+    )) {
+      if (!isScannedControl(el)) continue;
+      if (!isEffectivelyVisible(el)) continue;
+      const id =
+        el.getAttribute("aria-label") || el.getAttribute("name") || el.textContent?.trim().slice(0, 48) || el.tagName;
+      if (seen.has(id)) continue;
+
+      const box = effectiveHitBox(el);
+      if (!box) continue;
+      if (box.w < MIN || box.h < MIN) {
+        seen.add(id);
+        smallTargets.push({ label: id, w: Math.round(box.w), h: Math.round(box.h) });
+        if (smallTargets.length >= 8) break;
+      }
+    }
+    if (smallTargets.length) {
+      issues.push({
+        code: "small-tap-target",
+        detail: `${smallTargets.length} controls under ${MIN}px effective hit area`,
+        samples: smallTargets.slice(0, 6),
+      });
+    }
+
+    const header = document.querySelector("[data-slot='shell-header'], header");
+    let headerInfo = null;
+    if (header) {
+      const cs = getComputedStyle(header);
+      const r = header.getBoundingClientRect();
+      headerInfo = { position: cs.position, top: Math.round(r.top), height: Math.round(r.height) };
+    }
+
+    const main = document.querySelector("main");
+    const mainPad = main ? getComputedStyle(main).paddingTop : null;
+
+    const bordered = document.querySelector("[data-slot='box-card'], [data-slot='card'], .box-card, .BorderedGrid");
+    let edgeGap = null;
+    if (bordered) {
+      const r = bordered.getBoundingClientRect();
+      edgeGap = { left: Math.round(r.left), rightGap: Math.round(window.innerWidth - r.right) };
+    }
+
+    return { overflowX, issues, headerInfo, mainPad, edgeGap, innerWidth: window.innerWidth };
+  });
+}
+
+async function afterScrollHeader(page) {
+  await page.evaluate(() => window.scrollTo(0, 600));
+  await page.waitForTimeout(200);
+  return page.evaluate(() => {
+    const header = document.querySelector("[data-slot='shell-header'], header");
+    if (!header) return { ok: false, reason: "no header" };
+    const r = header.getBoundingClientRect();
+    const cs = getComputedStyle(header);
+    const stickyOk = (cs.position === "fixed" || cs.position === "sticky") && r.top <= 4;
+    return { stickyOk, position: cs.position, top: Math.round(r.top) };
+  });
+}
+
+async function interactShop(page, width) {
+  const notes = [];
+  if (width >= 768) return { notes, openedDrawer: false };
+
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.waitForTimeout(150);
+
+  const filterBtn = page.getByRole("button", { name: /Filters/i }).first();
+  if (await filterBtn.isVisible().catch(() => false)) notes.push("filters-sheet-cta");
+
+  try {
+    const menuBtn = page.getByRole("button", { name: "Open menu" });
+    await menuBtn.waitFor({ state: "visible", timeout: 15000 });
+    await menuBtn.click({ timeout: 5000 });
+    const sheet = page.locator('[data-slot="sheet-content"]').last();
+    await sheet.waitFor({ state: "visible", timeout: 5000 });
+    notes.push("mobile-nav-sheet-opened");
+    await page.keyboard.press("Escape");
+    await sheet.waitFor({ state: "hidden", timeout: 3000 }).catch(() => {});
+  } catch {
+    notes.push("mobile-nav-open-failed");
+  }
+
+  const filterUi = await page.evaluate(() => {
+    const inlineStyleLabel = [...document.querySelectorAll("label")].find((l) => {
+      if (l.textContent?.trim() !== "Style") return false;
+      const r = l.getBoundingClientRect();
+      return r.width > 0 && r.height > 0;
+    });
+    return { hasVisibleInlineFilters: Boolean(inlineStyleLabel) };
+  });
+  if (filterUi.hasVisibleInlineFilters) notes.push("filters-inline-no-drawer");
+  return { notes, openedDrawer: notes.includes("mobile-nav-sheet-opened") };
+}
+
+async function interactPdp(page) {
+  const notes = [];
+  const thumbs = page.locator('button[aria-label^="View image"]');
+  const count = await thumbs.count();
+  if (count > 1) {
+    await thumbs.nth(1).click({ timeout: 5000 });
+    await page.waitForTimeout(300);
+    notes.push("gallery-thumb-clicked");
+  } else {
+    notes.push("gallery-single-image");
+  }
+
+  const sizeBtn = page.getByRole("button", { name: /^S$|^M$|^L$|^XL$|^XXL$/i }).first();
+  if (await sizeBtn.isVisible().catch(() => false)) {
+    const box = await sizeBtn.boundingBox();
+    if (box && (box.width < 44 || box.height < 44)) notes.push("size-chip-under-44px");
+    await sizeBtn.click({ timeout: 3000 }).catch(() => notes.push("size-click-failed"));
+  } else {
+    notes.push("size-selector-not-found");
+  }
+
+  const galleryMain = page.locator(".aspect-square").first();
+  const galBox = await galleryMain.boundingBox().catch(() => null);
+  if (galBox && galBox.width > 430) notes.push("gallery-full-bleed-ok");
+  return notes;
+}
+
+async function interactCheckout(page) {
+  const notes = [];
+  const inputs = page.locator("input, select, textarea");
+  const n = await inputs.count();
+  notes.push(`form-fields-${n}`);
+  for (let i = 0; i < Math.min(n, 8); i++) {
+    const el = inputs.nth(i);
+    const box = await el.boundingBox();
+    if (box && box.width > 0 && box.height < 44) notes.push("input-height-under-44");
+  }
+  return notes;
+}
+
+const report = { base, at: new Date().toISOString(), viewports: VIEWPORTS.map((v) => v.width), issues: [], pages: [] };
+const issueKeys = new Set();
+
+const browser = await chromium.launch({ headless: true });
+
+for (const vp of VIEWPORTS) {
+  const context = await browser.newContext({ viewport: { width: vp.width, height: vp.height } });
+  const page = await context.newPage();
+
+  for (const route of routes) {
+    const url = `${base}${route.path}`;
+    try {
+      await page.goto(url, { waitUntil: "load", timeout: 60000 });
+      await page.waitForTimeout(600);
+    } catch (e) {
+      report.pages.push({ ...route, viewport: vp.width, group: vp.group, error: String(e) });
+      continue;
+    }
+
+    const audit = await auditPage(page);
+    let interactNotes = [];
+
+    if (route.interact === "shop") interactNotes = (await interactShop(page, vp.width)).notes;
+    if (route.interact === "pdp") interactNotes = await interactPdp(page);
+    if (route.interact === "checkout") interactNotes = await interactCheckout(page);
+
+    const scrollHeader = await afterScrollHeader(page);
+    await page.evaluate(() => window.scrollTo(0, 0));
+
+    const pageIssues = [...audit.issues];
+    if (scrollHeader.position && !scrollHeader.stickyOk) {
+      pageIssues.push({
+        code: "header-not-sticky",
+        detail: `position=${scrollHeader.position} top=${scrollHeader.top} after scroll`,
+      });
+    }
+    for (const n of interactNotes) {
+      if (n.includes("under-44") || n === "filters-inline-no-drawer") {
+        pageIssues.push({ code: "interaction", detail: n });
+      }
+    }
+
+    const entry = {
+      slug: route.slug,
+      path: route.path,
+      viewport: vp.width,
+      group: vp.group,
+      overflowX: audit.overflowX,
+      header: audit.headerInfo,
+      scrollHeader,
+      mainPad: audit.mainPad,
+      edgeGap: audit.edgeGap,
+      interactNotes,
+      issues: pageIssues,
+    };
+    report.pages.push(entry);
+
+    for (const iss of pageIssues) {
+      const key = `${iss.code}|${route.slug}|${vp.width}|${iss.detail?.slice?.(0, 40) ?? ""}`;
+      if (issueKeys.has(key)) continue;
+      issueKeys.add(key);
+      const shot = slugFile([iss.code, route.slug, vp.width]);
+      const shotPath = join(outDir, `${shot}.png`);
+      await page.screenshot({ path: shotPath, fullPage: true });
+      report.issues.push({
+        severity: iss.code === "horizontal-overflow" ? "P1" : iss.code === "small-tap-target" ? "P1" : "P2",
+        code: iss.code,
+        page: route.slug,
+        path: route.path,
+        viewport: vp.width,
+        group: vp.group,
+        detail: iss.detail,
+        offenders: iss.offenders,
+        samples: iss.samples,
+        screenshot: `mobile-tablet/${shot}.png`,
+      });
+    }
+  }
+  await context.close();
+}
+
+await browser.close();
+
+writeFileSync("docs/qa-mobile-tablet-results.json", JSON.stringify(report, null, 2));
+console.log(`Mobile/tablet QA: ${report.issues.length} unique issues, ${report.pages.length} page×viewport runs`);
+console.log(`Results: docs/qa-mobile-tablet-results.json`);

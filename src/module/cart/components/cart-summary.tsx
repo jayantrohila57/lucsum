@@ -19,7 +19,7 @@ export function CartSummary() {
   const total = subtotal + shipping + tax;
 
   return (
-    <div className="bg-muted/30 rounded-lg p-6 border border-border space-y-4">
+    <div className="box-surface space-y-4 p-6">
       <div className="flex items-center justify-between">
         <h2 className="text-lg font-semibold">Order Summary</h2>
         <Tooltip>
@@ -74,7 +74,7 @@ export function CartSummary() {
       <Tooltip>
         <TooltipTrigger asChild>
           <Button className="w-full mt-2" size="lg" asChild>
-            <Link href={PATH.STORE.CHECKOUT.ROOT}>Proceed to Checkout</Link>
+            <Link href={PATH.CHECKOUT.ROOT}>Proceed to Checkout</Link>
           </Button>
         </TooltipTrigger>
         <TooltipContent>

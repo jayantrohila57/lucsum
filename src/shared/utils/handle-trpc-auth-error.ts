@@ -8,10 +8,10 @@ export function authRedirectHint(callbackPath: string): string {
   if (path.startsWith("/account")) {
     return "Sign in to access your account, orders, and saved addresses.";
   }
-  if (path.includes("/store/checkout/pay")) {
+  if (path.includes("/checkout/pay") || path.includes("/store/checkout/pay")) {
     return "Sign in to complete payment for your order.";
   }
-  if (path.includes("/store/checkout/confirmation")) {
+  if (path.includes("/checkout/confirmation") || path.includes("/store/checkout/confirmation")) {
     return "Sign in to view your order confirmation and details.";
   }
   if (path.startsWith("/store/order/")) {

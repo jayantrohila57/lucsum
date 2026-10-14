@@ -36,7 +36,7 @@ const Header = React.forwardRef<HTMLElement, HeaderTypes & VariantProps<typeof H
   ({ className, variant, ...props }, ref) => {
     return (
       <>
-        <header ref={ref} {...props} className={cn(HeaderVariants({ className, variant }), className)} />
+        <header ref={ref} data-slot="shell-header" {...props} className={cn(HeaderVariants({ variant }), className)} />
       </>
     );
   },
@@ -84,7 +84,7 @@ Shell.Footer = Footer;
 const MainVariants = cva("", {
   variants: {
     variant: {
-      default: "min-h-screen min-w-0 overflow-x-hidden pt-16 border-r",
+      default: "min-h-screen min-w-0 overflow-x-clip pt-16 border-r",
       dashboard: "flex flex-1 h-screen overflow-hidden flex-col",
     },
   },

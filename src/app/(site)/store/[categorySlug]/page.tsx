@@ -1,15 +1,8 @@
 import { notFound } from "next/navigation";
 import { apiServer, HydrateClient } from "@/core/api/api.server";
 import { CategoryItem } from "@/module/category/category.component.all";
-import {
-  ContentAnnouncementBar,
-  ContentCTA,
-  ContentFeatureHighlights,
-  ContentOfferBanner,
-  ContentPromoBanner,
-  ContentSplitBanner,
-} from "@/module/site/content-sections";
 import Section from "@/shared/components/layout/section/section";
+import { StoreSubNav } from "@/shared/components/layout/section/store-sub-nav";
 import Shell from "@/shared/components/layout/shell";
 import { PATH } from "@/shared/config/routes";
 import {
@@ -47,7 +40,7 @@ export async function generateMetadata({ params }: PageProps<"/store/[categorySl
   });
 }
 
-export default async function CartPage({ params }: PageProps<"/store/[categorySlug]">) {
+export default async function CategoryPage({ params }: PageProps<"/store/[categorySlug]">) {
   const { categorySlug: slug } = await params;
   const { data } = await apiServer.category.getCategoryWithSubCategories({
     params: {
@@ -81,29 +74,12 @@ export default async function CartPage({ params }: PageProps<"/store/[categorySl
   return (
     <HydrateClient>
       <JsonLdScript id="jsonld-category" data={categoryLd} />
+      <StoreSubNav />
       <Shell>
         <Shell.Section>
-          <ContentAnnouncementBar page="store_category" />
-        </Shell.Section>
-        <Shell.Section>
-          <ContentPromoBanner page="store_category" />
-        </Shell.Section>
-        <Shell.Section>
-          <ContentSplitBanner page="store_category" />
-        </Shell.Section>
-        <Shell.Section>
-          <Section title={`Shop by ${data.title}`} description={data.description ?? ""}>
+          <Section title={`Shop ${data.title}`} description={data.description ?? ""}>
             <CategoryItem data={data} />
           </Section>
-        </Shell.Section>
-        <Shell.Section>
-          <ContentCTA page="store_category" />
-        </Shell.Section>
-        <Shell.Section>
-          <ContentOfferBanner page="store_category" />
-        </Shell.Section>
-        <Shell.Section>
-          <ContentFeatureHighlights page="store_category" />
         </Shell.Section>
       </Shell>
     </HydrateClient>

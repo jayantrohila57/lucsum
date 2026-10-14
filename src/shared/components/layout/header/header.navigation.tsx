@@ -1,10 +1,10 @@
 "use client";
 
 import type { Route } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import type * as React from "react";
 import { apiClient } from "@/core/api/api.client";
+import { SimplifiedNavigationMenu } from "@/shared/components/layout/header/header.simplified-navigation";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -15,11 +15,19 @@ import {
   navigationMenuTriggerStyle,
 } from "@/shared/components/ui/navigation-menu";
 import { PATH } from "@/shared/config/routes";
+import { storefrontFeatures } from "@/shared/config/storefront";
 import { getImageSrc } from "@/shared/utils/lib/image.utils";
 import { BlurImage } from "../../common/image";
 import { Separator } from "../../ui/separator";
 
 export function NavigationMenuComponent() {
+  if (storefrontFeatures.simplifiedShop) {
+    return <SimplifiedNavigationMenu />;
+  }
+  return <LegacyCategoryNavigationMenu />;
+}
+
+function LegacyCategoryNavigationMenu() {
   const { data, isLoading } = apiClient.category.getManyWithSubcategories.useQuery({
     query: {},
   });

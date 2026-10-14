@@ -1,0 +1,336 @@
+{
+  "base": "http://localhost:3000",
+  "at": "2026-10-14T05:02:42.669Z",
+  "pages": [
+    {
+      "route": "home",
+      "path": "/",
+      "viewport": "mobile",
+      "screenshot": "home--mobile.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": []
+      }
+    },
+    {
+      "route": "shop",
+      "path": "/shop",
+      "viewport": "mobile",
+      "screenshot": "shop--mobile.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": []
+      }
+    },
+    {
+      "route": "shop-filter",
+      "path": "/shop?style=celestial-graphic",
+      "viewport": "mobile",
+      "screenshot": "shop-filter--mobile.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": []
+      }
+    },
+    {
+      "route": "pdp",
+      "path": "/products/celestial-graphic-black",
+      "viewport": "mobile",
+      "screenshot": "pdp--mobile.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": []
+      }
+    },
+    {
+      "route": "help",
+      "path": "/help",
+      "viewport": "mobile",
+      "screenshot": "help--mobile.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": []
+      }
+    },
+    {
+      "route": "cart",
+      "path": "/cart",
+      "viewport": "mobile",
+      "screenshot": "cart--mobile.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": []
+      }
+    },
+    {
+      "route": "checkout",
+      "path": "/checkout",
+      "viewport": "mobile",
+      "screenshot": "checkout--mobile.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": []
+      }
+    },
+    {
+      "route": "legal",
+      "path": "/legal",
+      "viewport": "mobile",
+      "screenshot": "legal--mobile.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": []
+      }
+    },
+    {
+      "route": "legal-shipping",
+      "path": "/legal/shipping-policy",
+      "viewport": "mobile",
+      "screenshot": "legal-shipping--mobile.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": []
+      }
+    },
+    {
+      "route": "auth-sign-in",
+      "path": "/auth/sign-in",
+      "viewport": "mobile",
+      "screenshot": "auth-sign-in--mobile.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": []
+      }
+    },
+    {
+      "route": "home",
+      "path": "/",
+      "viewport": "tablet",
+      "screenshot": "home--tablet.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": []
+      }
+    },
+    {
+      "route": "shop",
+      "path": "/shop",
+      "viewport": "tablet",
+      "screenshot": "shop--tablet.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": []
+      }
+    },
+    {
+      "route": "shop-filter",
+      "path": "/shop?style=celestial-graphic",
+      "viewport": "tablet",
+      "screenshot": "shop-filter--tablet.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": []
+      }
+    },
+    {
+      "route": "pdp",
+      "path": "/products/celestial-graphic-black",
+      "viewport": "tablet",
+      "screenshot": "pdp--tablet.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": []
+      }
+    },
+    {
+      "route": "help",
+      "path": "/help",
+      "viewport": "tablet",
+      "screenshot": "help--tablet.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": []
+      }
+    },
+    {
+      "route": "cart",
+      "path": "/cart",
+      "viewport": "tablet",
+      "screenshot": "cart--tablet.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": []
+      }
+    },
+    {
+      "route": "checkout",
+      "path": "/checkout",
+      "viewport": "tablet",
+      "screenshot": "checkout--tablet.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": []
+      }
+    },
+    {
+      "route": "legal",
+      "path": "/legal",
+      "viewport": "tablet",
+      "screenshot": "legal--tablet.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": []
+      }
+    },
+    {
+      "route": "legal-shipping",
+      "path": "/legal/shipping-policy",
+      "viewport": "tablet",
+      "screenshot": "legal-shipping--tablet.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": []
+      }
+    },
+    {
+      "route": "auth-sign-in",
+      "path": "/auth/sign-in",
+      "viewport": "tablet",
+      "screenshot": "auth-sign-in--tablet.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": []
+      }
+    },
+    {
+      "route": "home",
+      "path": "/",
+      "viewport": "desktop",
+      "screenshot": "home--desktop.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": []
+      }
+    },
+    {
+      "route": "shop",
+      "path": "/shop",
+      "viewport": "desktop",
+      "screenshot": "shop--desktop.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": []
+      }
+    },
+    {
+      "route": "shop-filter",
+      "path": "/shop?style=celestial-graphic",
+      "viewport": "desktop",
+      "screenshot": "shop-filter--desktop.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": []
+      }
+    },
+    {
+      "route": "pdp",
+      "path": "/products/celestial-graphic-black",
+      "viewport": "desktop",
+      "screenshot": "pdp--desktop.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": []
+      }
+    },
+    {
+      "route": "help",
+      "path": "/help",
+      "viewport": "desktop",
+      "screenshot": "help--desktop.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": []
+      }
+    },
+    {
+      "route": "cart",
+      "path": "/cart",
+      "viewport": "desktop",
+      "screenshot": "cart--desktop.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": []
+      }
+    },
+    {
+      "route": "checkout",
+      "path": "/checkout",
+      "viewport": "desktop",
+      "screenshot": "checkout--desktop.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": []
+      }
+    },
+    {
+      "route": "legal",
+      "path": "/legal",
+      "viewport": "desktop",
+      "screenshot": "legal--desktop.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": []
+      }
+    },
+    {
+      "route": "legal-shipping",
+      "path": "/legal/shipping-policy",
+      "viewport": "desktop",
+      "screenshot": "legal-shipping--desktop.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": []
+      }
+    },
+    {
+      "route": "auth-sign-in",
+      "path": "/auth/sign-in",
+      "viewport": "desktop",
+      "screenshot": "auth-sign-in--desktop.png",
+      "metrics": {
+        "roundedElements": 0,
+        "radiusSamples": [],
+        "possibleDoubleBorders": []
+      }
+    }
+  ]
+}

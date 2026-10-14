@@ -21,7 +21,7 @@ export function ViewCartButton({ variantId, className }: ViewCartButtonProps) {
   if (!hasVariantInCart) return null;
 
   return (
-    <Link href={PATH.ACCOUNT.CART}>
+    <Link href={PATH.CART}>
       <Button variant="outline" className={cn("w-full", className)}>
         View cart
       </Button>

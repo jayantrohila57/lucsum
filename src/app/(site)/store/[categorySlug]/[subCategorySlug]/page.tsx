@@ -1,14 +1,7 @@
 import { notFound } from "next/navigation";
 import { apiServer, HydrateClient } from "@/core/api/api.server";
-import {
-  ContentAnnouncementBar,
-  ContentCTA,
-  ContentFeatureHighlights,
-  ContentOfferBanner,
-  ContentPromoBanner,
-  ContentSplitBanner,
-} from "@/module/site/content-sections";
 import { SubCategoryItem } from "@/module/subcategory/subcategory-listing";
+import { StoreSubNav } from "@/shared/components/layout/section/store-sub-nav";
 import Shell from "@/shared/components/layout/shell";
 import {
   breadcrumbGraphNode,
@@ -60,7 +53,6 @@ export default async function SubCategoryPage({ params }: PageProps<"/store/[cat
 
   const categoryTitle = await getStoreCategoryTitle(categorySlug);
 
-  // New flattened variant structure
   const variants = data.variants as unknown as {
     id: string;
     slug: string;
@@ -110,27 +102,10 @@ export default async function SubCategoryPage({ params }: PageProps<"/store/[cat
   return (
     <HydrateClient>
       <JsonLdScript id="jsonld-subcategory" data={subcategoryLd} />
+      <StoreSubNav />
       <Shell>
         <Shell.Section>
-          <ContentAnnouncementBar page="store_subcategory" />
-        </Shell.Section>
-        <Shell.Section>
-          <ContentPromoBanner page="store_subcategory" />
-        </Shell.Section>
-        <Shell.Section>
-          <ContentSplitBanner page="store_subcategory" />
-        </Shell.Section>
-        <Shell.Section>
           <SubCategoryItem data={data} variants={variants} />
-        </Shell.Section>
-        <Shell.Section>
-          <ContentCTA page="store_subcategory" />
-        </Shell.Section>
-        <Shell.Section>
-          <ContentOfferBanner page="store_subcategory" />
-        </Shell.Section>
-        <Shell.Section>
-          <ContentFeatureHighlights page="store_subcategory" />
         </Shell.Section>
       </Shell>
     </HydrateClient>

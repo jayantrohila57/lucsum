@@ -269,7 +269,7 @@ export async function runShopifyImport(): Promise<ShopifyImportSummary> {
       baseImage = await uploadImage(baseImage, `products/${product.handle}/featured.png`);
     }
 
-    const storePath = `/store/${categorySlug}/${style}/${product.handle}`;
+    const storePath = `/products/${product.handle}`;
     pathMap[product.handle] = storePath;
     redirects.push({ source: `/products/${product.handle}`, destination: storePath, permanent: true });
 
@@ -378,6 +378,26 @@ export async function runShopifyImport(): Promise<ShopifyImportSummary> {
             },
           });
       }
+    }
+  }
+
+  if (!dryRun) {
+    for (const styleSlug of Object.values(STYLE_TAGS)) {
+      const sample = await db.query.product.findFirst({
+        where: and(
+          eq(schema.product.categorySlug, categorySlug),
+          eq(schema.product.subcategorySlug, styleSlug),
+          eq(schema.product.isActive, true),
+          isNull(schema.product.deletedAt),
+        ),
+        columns: { baseImage: true },
+        orderBy: (p, { asc }) => [asc(p.title)],
+      });
+      if (!sample?.baseImage) continue;
+      await db
+        .update(schema.subcategory)
+        .set({ image: sample.baseImage, updatedAt: new Date() })
+        .where(and(eq(schema.subcategory.slug, styleSlug), eq(schema.subcategory.categorySlug, categorySlug)));
     }
   }
 

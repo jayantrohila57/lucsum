@@ -1,0 +1,2238 @@
+{
+  "base": "http://localhost:3000",
+  "at": "2026-10-14T06:51:14.295Z",
+  "desktop": {
+    "viewport": "desktop",
+    "results": [
+      {
+        "label": "Landing",
+        "url": "http://localhost:3000/",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-black-06-lifestyle.png%3Fv%3D1791802734&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fbranded-tape-grey-46391885660260.png%3Fv%3D1791803696&w=1080&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fbranded-tape-white-46391906926692.png%3Fv%3D1791803713&w=1080&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-front_294cc928-a833-4c28-9752-40e945701bdc.png%3Fv%3D1789242158&w=1080&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-grey-46391990386788.png%3Fv%3D1791803776&w=1080&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-olive-46392061853796.png%3Fv%3D1791803796&w=1080&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-front_294cc928-a833-4c28-9752-40e945701bdc.png%3Fv%3D1789242158&w=828&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fshoulder-logo-black-46392115429476.png%3Fv%3D1791803834&w=828&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fraglan-black-white-front_f260bffd-f133-431c-bc48-6a1fa5311a0f.png%3Fv%3D1789242199&w=828&q=75"
+        ],
+        "placeholders": []
+      },
+      {
+        "label": "Shop (all)",
+        "url": "http://localhost:3000/shop",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/shop",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fshoulder-logo-black-46392115429476.png%3Fv%3D1791803834&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fshoulder-logo-charcoal-front_887b2e3b-784f-4321-a7d5-768945dafdfb.png%3Fv%3D1789242186&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fshoulder-logo-olive-46392196825188.png%3Fv%3D1791803856&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fshoulder-logo-red-46392114872420.png%3Fv%3D1791803816&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fshoulder-logo-white-46392196268132.png%3Fv%3D1791803834&w=3840&q=75"
+        ],
+        "placeholders": []
+      },
+      {
+        "label": "Shop (style filter)",
+        "url": "http://localhost:3000/shop?style=celestial-graphic",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/shop?style=celestial-graphic",
+        "consoleErrors": [
+          "%c << query #1 %ccart.get%c %O \n    background-color: #3fb0d8;\n    color: white;\n    padding: 2px;\n   \n    background-color: #3fb0d8;\n    color: white;\n    padding: 2px;\n  ; font-weight: bold; \n    background-color: #3fb0d8;\n    color: white;\n    padding: 2px;\n  ; font-weight: normal; {input: Object, result: TRPCClientError: Failed to fetch\n    at e.from (http://localhost:3000/_next/static/chunks/2p2g9z9e7…, elapsedMs: 246, context: Object}"
+        ],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP celestial-graphic-black",
+        "url": "http://localhost:3000/products/celestial-graphic-black",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/celestial-graphic-black",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP shoulder-logo-charcoal",
+        "url": "http://localhost:3000/products/shoulder-logo-charcoal",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/shoulder-logo-charcoal",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP branded-tape-black",
+        "url": "http://localhost:3000/products/branded-tape-black",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/branded-tape-black",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP branded-tape-olive",
+        "url": "http://localhost:3000/products/branded-tape-olive",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/branded-tape-olive",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP contrast-panel-black",
+        "url": "http://localhost:3000/products/contrast-panel-black",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/contrast-panel-black",
+        "consoleErrors": [
+          "%c << query #2 %creview.getMany%c %O \n    background-color: #3fb0d8;\n    color: white;\n    padding: 2px;\n   \n    background-color: #3fb0d8;\n    color: white;\n    padding: 2px;\n  ; font-weight: bold; \n    background-color: #3fb0d8;\n    color: white;\n    padding: 2px;\n  ; font-weight: normal; {input: Object, result: TRPCClientError: network error\n    at e.from (http://localhost:3000/_next/static/chunks/2p2g9z9e7w7…, elapsedMs: 34, context: Object}"
+        ],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP contrast-panel-white",
+        "url": "http://localhost:3000/products/contrast-panel-white",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/contrast-panel-white",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP contrast-panel-red",
+        "url": "http://localhost:3000/products/contrast-panel-red",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/contrast-panel-red",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP raglan-baseball-black-white",
+        "url": "http://localhost:3000/products/raglan-baseball-black-white",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/raglan-baseball-black-white",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP raglan-baseball-maroon-white",
+        "url": "http://localhost:3000/products/raglan-baseball-maroon-white",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/raglan-baseball-maroon-white",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP branded-tape-red",
+        "url": "http://localhost:3000/products/branded-tape-red",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/branded-tape-red",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP branded-tape-grey",
+        "url": "http://localhost:3000/products/branded-tape-grey",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/branded-tape-grey",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP branded-tape-white",
+        "url": "http://localhost:3000/products/branded-tape-white",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/branded-tape-white",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP contrast-panel-grey",
+        "url": "http://localhost:3000/products/contrast-panel-grey",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/contrast-panel-grey",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP contrast-panel-olive",
+        "url": "http://localhost:3000/products/contrast-panel-olive",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/contrast-panel-olive",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP celestial-graphic-red",
+        "url": "http://localhost:3000/products/celestial-graphic-red",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/celestial-graphic-red",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP celestial-graphic-grey",
+        "url": "http://localhost:3000/products/celestial-graphic-grey",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/celestial-graphic-grey",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP celestial-graphic-white",
+        "url": "http://localhost:3000/products/celestial-graphic-white",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/celestial-graphic-white",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP celestial-graphic-olive",
+        "url": "http://localhost:3000/products/celestial-graphic-olive",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/celestial-graphic-olive",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP shoulder-logo-red",
+        "url": "http://localhost:3000/products/shoulder-logo-red",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/shoulder-logo-red",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP shoulder-logo-black",
+        "url": "http://localhost:3000/products/shoulder-logo-black",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/shoulder-logo-black",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP shoulder-logo-white",
+        "url": "http://localhost:3000/products/shoulder-logo-white",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/shoulder-logo-white",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP shoulder-logo-olive",
+        "url": "http://localhost:3000/products/shoulder-logo-olive",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/shoulder-logo-olive",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP raglan-baseball-grey-white",
+        "url": "http://localhost:3000/products/raglan-baseball-grey-white",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/raglan-baseball-grey-white",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP raglan-baseball-olive-white",
+        "url": "http://localhost:3000/products/raglan-baseball-olive-white",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/raglan-baseball-olive-white",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP raglan-baseball-white-white",
+        "url": "http://localhost:3000/products/raglan-baseball-white-white",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/raglan-baseball-white-white",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Help (about/faq/contact)",
+        "url": "http://localhost:3000/help",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/help",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Cart",
+        "url": "http://localhost:3000/cart",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/cart",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Checkout",
+        "url": "http://localhost:3000/checkout",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/checkout",
+        "consoleErrors": [],
+        "pageErrors": [
+          "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        ],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Checkout pay (no orderId)",
+        "url": "http://localhost:3000/checkout/pay",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/checkout",
+        "consoleErrors": [],
+        "pageErrors": [
+          "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        ],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Checkout confirmation (no orderId)",
+        "url": "http://localhost:3000/checkout/confirmation",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/shop",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Legal index",
+        "url": "http://localhost:3000/legal",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/legal",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Legal terms-of-service",
+        "url": "http://localhost:3000/legal/terms-of-service",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/legal/terms-of-service",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Legal privacy-policy",
+        "url": "http://localhost:3000/legal/privacy-policy",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/legal/privacy-policy",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Legal shipping-policy",
+        "url": "http://localhost:3000/legal/shipping-policy",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/legal/shipping-policy",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Legal return-policy",
+        "url": "http://localhost:3000/legal/return-policy",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/legal/return-policy",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Legal refund-policy",
+        "url": "http://localhost:3000/legal/refund-policy",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/legal/return-policy",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Legal cookies-policy",
+        "url": "http://localhost:3000/legal/cookies-policy",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/legal/privacy-policy",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Legal user-agreement",
+        "url": "http://localhost:3000/legal/user-agreement",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/legal/terms-of-service",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Legal data-protection",
+        "url": "http://localhost:3000/legal/data-protection",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/legal/privacy-policy",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Order detail (guest)",
+        "url": "http://localhost:3000/orders/00000000-0000-0000-0000-000000000099",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/orders/00000000-0000-0000-0000-000000000099",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "RSS feed",
+        "url": "http://localhost:3000/rss.xml",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Sitemap",
+        "url": "http://localhost:3000/sitemap.xml",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/sitemap.xml",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Robots",
+        "url": "http://localhost:3000/robots.txt",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/robots.txt",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Sign in",
+        "url": "http://localhost:3000/auth/sign-in",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/auth/sign-in",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Sign up",
+        "url": "http://localhost:3000/auth/sign-up",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/auth/sign-up",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Forgot password",
+        "url": "http://localhost:3000/auth/forgot-password",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/auth/forgot-password",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Account home",
+        "url": "http://localhost:3000/account",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/auth/sign-in?callbackUrl=%2Faccount",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Account orders",
+        "url": "http://localhost:3000/account/order",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/auth/sign-in?callbackUrl=%2Faccount",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Account addresses",
+        "url": "http://localhost:3000/account/address",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/auth/sign-in?callbackUrl=%2Faccount",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Wishlist (legacy URL)",
+        "url": "http://localhost:3000/account/wishlist",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/shop",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Studio home",
+        "url": "http://localhost:3000/studio",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Studio products",
+        "url": "http://localhost:3000/studio/catalog/products",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Studio inventory",
+        "url": "http://localhost:3000/studio/inventory",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Studio orders",
+        "url": "http://localhost:3000/studio/orders",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "REDIRECT /store",
+        "url": "http://localhost:3000/store",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/store",
+            "status": 301,
+            "location": "/shop"
+          },
+          {
+            "path": "/shop",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/shop",
+        "expectFinal": "/shop",
+        "redirectOk": true,
+        "scope": "REDIRECT"
+      },
+      {
+        "label": "REDIRECT /store/categories",
+        "url": "http://localhost:3000/store/categories",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/store/categories",
+            "status": 301,
+            "location": "/shop"
+          },
+          {
+            "path": "/shop",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/shop",
+        "expectFinal": "/shop",
+        "redirectOk": true,
+        "scope": "REDIRECT"
+      },
+      {
+        "label": "REDIRECT /store/t-shirts/celestial-graphic/celestial-graphic-black",
+        "url": "http://localhost:3000/store/t-shirts/celestial-graphic/celestial-graphic-black",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/store/t-shirts/celestial-graphic/celestial-graphic-black",
+            "status": 301,
+            "location": "/products/celestial-graphic-black"
+          },
+          {
+            "path": "/products/celestial-graphic-black",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/products/celestial-graphic-black",
+        "expectFinal": "/products/celestial-graphic-black",
+        "redirectOk": true,
+        "scope": "REDIRECT"
+      },
+      {
+        "label": "REDIRECT /store/t-shirts/celestial-graphic",
+        "url": "http://localhost:3000/store/t-shirts/celestial-graphic",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/store/t-shirts/celestial-graphic",
+            "status": 301,
+            "location": "/shop?style=celestial-graphic"
+          },
+          {
+            "path": "/shop?style=celestial-graphic",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/shop?style=celestial-graphic",
+        "expectFinal": "/shop",
+        "redirectOk": true,
+        "scope": "REDIRECT"
+      },
+      {
+        "label": "REDIRECT /marketing/about",
+        "url": "http://localhost:3000/marketing/about",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/marketing/about",
+            "status": 301,
+            "location": "/help#about"
+          },
+          {
+            "path": "/help#about",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/help#about",
+        "expectFinal": "/help",
+        "redirectOk": true,
+        "scope": "REDIRECT"
+      },
+      {
+        "label": "REDIRECT /support/faq",
+        "url": "http://localhost:3000/support/faq",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/support/faq",
+            "status": 301,
+            "location": "/help#faq"
+          },
+          {
+            "path": "/help#faq",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/help#faq",
+        "expectFinal": "/help",
+        "redirectOk": true,
+        "scope": "REDIRECT"
+      },
+      {
+        "label": "REDIRECT /blog/test-post",
+        "url": "http://localhost:3000/blog/test-post",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/blog/test-post",
+            "status": 301,
+            "location": "/"
+          },
+          {
+            "path": "/",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/",
+        "expectFinal": "/",
+        "redirectOk": true,
+        "scope": "REDIRECT"
+      },
+      {
+        "label": "REDIRECT /account/wishlist",
+        "url": "http://localhost:3000/account/wishlist",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/account/wishlist",
+            "status": 301,
+            "location": "/shop"
+          },
+          {
+            "path": "/shop",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/shop",
+        "expectFinal": "/shop",
+        "redirectOk": true,
+        "scope": "REDIRECT"
+      },
+      {
+        "label": "REDIRECT /collections/t-shirts",
+        "url": "http://localhost:3000/collections/t-shirts",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/collections/t-shirts",
+            "status": 308,
+            "location": "/shop"
+          },
+          {
+            "path": "/shop",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/shop",
+        "expectFinal": "/shop",
+        "redirectOk": true,
+        "scope": "SHOPIFY_REDIRECT"
+      },
+      {
+        "label": "REDIRECT /collections/new-arrivals",
+        "url": "http://localhost:3000/collections/new-arrivals",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/collections/new-arrivals",
+            "status": 308,
+            "location": "/shop"
+          },
+          {
+            "path": "/shop",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/shop",
+        "expectFinal": "/shop",
+        "redirectOk": true,
+        "scope": "SHOPIFY_REDIRECT"
+      },
+      {
+        "label": "REDIRECT /collections/graphic-tees",
+        "url": "http://localhost:3000/collections/graphic-tees",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/collections/graphic-tees",
+            "status": 308,
+            "location": "/shop"
+          },
+          {
+            "path": "/shop",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/shop",
+        "expectFinal": "/shop",
+        "redirectOk": true,
+        "scope": "SHOPIFY_REDIRECT"
+      },
+      {
+        "label": "REDIRECT /collections/lucsum-essentials",
+        "url": "http://localhost:3000/collections/lucsum-essentials",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/collections/lucsum-essentials",
+            "status": 308,
+            "location": "/shop"
+          },
+          {
+            "path": "/shop",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/shop",
+        "expectFinal": "/shop",
+        "redirectOk": true,
+        "scope": "SHOPIFY_REDIRECT"
+      },
+      {
+        "label": "REDIRECT /collections/branded-tape",
+        "url": "http://localhost:3000/collections/branded-tape",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/collections/branded-tape",
+            "status": 308,
+            "location": "/shop?style=branded-tape"
+          },
+          {
+            "path": "/shop?style=branded-tape",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/shop?style=branded-tape",
+        "expectFinal": "/shop?style=branded-tape",
+        "redirectOk": true,
+        "scope": "SHOPIFY_REDIRECT"
+      },
+      {
+        "label": "REDIRECT /collections/contrast-panel",
+        "url": "http://localhost:3000/collections/contrast-panel",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/collections/contrast-panel",
+            "status": 308,
+            "location": "/shop?style=contrast-panel"
+          },
+          {
+            "path": "/shop?style=contrast-panel",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/shop?style=contrast-panel",
+        "expectFinal": "/shop?style=contrast-panel",
+        "redirectOk": true,
+        "scope": "SHOPIFY_REDIRECT"
+      },
+      {
+        "label": "REDIRECT /collections/celestial-graphic",
+        "url": "http://localhost:3000/collections/celestial-graphic",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/collections/celestial-graphic",
+            "status": 308,
+            "location": "/shop?style=celestial-graphic"
+          },
+          {
+            "path": "/shop?style=celestial-graphic",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/shop?style=celestial-graphic",
+        "expectFinal": "/shop?style=celestial-graphic",
+        "redirectOk": true,
+        "scope": "SHOPIFY_REDIRECT"
+      },
+      {
+        "label": "REDIRECT /collections/shoulder-logo",
+        "url": "http://localhost:3000/collections/shoulder-logo",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/collections/shoulder-logo",
+            "status": 308,
+            "location": "/shop?style=shoulder-logo"
+          },
+          {
+            "path": "/shop?style=shoulder-logo",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/shop?style=shoulder-logo",
+        "expectFinal": "/shop?style=shoulder-logo",
+        "redirectOk": true,
+        "scope": "SHOPIFY_REDIRECT"
+      },
+      {
+        "label": "REDIRECT /collections/raglan-baseball",
+        "url": "http://localhost:3000/collections/raglan-baseball",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/collections/raglan-baseball",
+            "status": 308,
+            "location": "/shop?style=raglan-baseball"
+          },
+          {
+            "path": "/shop?style=raglan-baseball",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/shop?style=raglan-baseball",
+        "expectFinal": "/shop?style=raglan-baseball",
+        "redirectOk": true,
+        "scope": "SHOPIFY_REDIRECT"
+      },
+      {
+        "label": "REDIRECT /collections/red-t-shirts",
+        "url": "http://localhost:3000/collections/red-t-shirts",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/collections/red-t-shirts",
+            "status": 308,
+            "location": "/shop"
+          },
+          {
+            "path": "/shop",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/shop",
+        "expectFinal": "/shop",
+        "redirectOk": true,
+        "scope": "SHOPIFY_REDIRECT"
+      },
+      {
+        "label": "REDIRECT /collections/grey-t-shirts",
+        "url": "http://localhost:3000/collections/grey-t-shirts",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/collections/grey-t-shirts",
+            "status": 308,
+            "location": "/shop"
+          },
+          {
+            "path": "/shop",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/shop",
+        "expectFinal": "/shop",
+        "redirectOk": true,
+        "scope": "SHOPIFY_REDIRECT"
+      },
+      {
+        "label": "REDIRECT /collections/black-t-shirts",
+        "url": "http://localhost:3000/collections/black-t-shirts",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/collections/black-t-shirts",
+            "status": 308,
+            "location": "/shop"
+          },
+          {
+            "path": "/shop",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/shop",
+        "expectFinal": "/shop",
+        "redirectOk": true,
+        "scope": "SHOPIFY_REDIRECT"
+      }
+    ]
+  },
+  "mobile": {
+    "viewport": "mobile",
+    "results": [
+      {
+        "label": "Landing",
+        "url": "http://localhost:3000/",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-black-06-lifestyle.png%3Fv%3D1791802734&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fbranded-tape-grey-46391885660260.png%3Fv%3D1791803696&w=1080&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fbranded-tape-white-46391906926692.png%3Fv%3D1791803713&w=1080&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-grey-46391990386788.png%3Fv%3D1791803776&w=1080&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-olive-46392061853796.png%3Fv%3D1791803796&w=1080&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Flucsum-branded-tape-black-01-front.png%3Fv%3D1790921591&w=828&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-black-front_655318af-89b7-4f54-803a-087f407aaa6b.png%3Fv%3D1789242172&w=828&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-front_294cc928-a833-4c28-9752-40e945701bdc.png%3Fv%3D1789242158&w=828&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fshoulder-logo-black-46392115429476.png%3Fv%3D1791803834&w=828&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fraglan-black-white-front_f260bffd-f133-431c-bc48-6a1fa5311a0f.png%3Fv%3D1789242199&w=828&q=75"
+        ],
+        "placeholders": []
+      },
+      {
+        "label": "Shop (all)",
+        "url": "http://localhost:3000/shop",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/shop",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-olive-46392061853796.png%3Fv%3D1791803796&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-red-46391980097636.png%3Fv%3D1791803755&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-white-46392061624420.png%3Fv%3D1791803775&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-black-front_655318af-89b7-4f54-803a-087f407aaa6b.png%3Fv%3D1789242172&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-grey-46391931732068.png%3Fv%3D1791803719&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-olive-46391944970340.png%3Fv%3D1791803738&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-red-front_fc6357af-4f7b-459e-a410-00caec063ab8.png%3Fv%3D1789242172&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-white-front_877d38a2-ede6-4471-84a8-bef67171aa10.png%3Fv%3D1789242172&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fraglan-black-white-front_f260bffd-f133-431c-bc48-6a1fa5311a0f.png%3Fv%3D1789242199&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fraglan-baseball-grey-white-46392300044388.png%3Fv%3D1791803874&w=3840&q=75"
+        ],
+        "placeholders": []
+      },
+      {
+        "label": "Shop (style filter)",
+        "url": "http://localhost:3000/shop?style=celestial-graphic",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/shop?style=celestial-graphic",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-olive-46392061853796.png%3Fv%3D1791803796&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-red-46391980097636.png%3Fv%3D1791803755&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-white-46392061624420.png%3Fv%3D1791803775&w=3840&q=75"
+        ],
+        "placeholders": []
+      },
+      {
+        "label": "PDP celestial-graphic-black",
+        "url": "http://localhost:3000/products/celestial-graphic-black",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/celestial-graphic-black",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP shoulder-logo-charcoal",
+        "url": "http://localhost:3000/products/shoulder-logo-charcoal",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/shoulder-logo-charcoal",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP branded-tape-black",
+        "url": "http://localhost:3000/products/branded-tape-black",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/branded-tape-black",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP branded-tape-olive",
+        "url": "http://localhost:3000/products/branded-tape-olive",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/branded-tape-olive",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP contrast-panel-black",
+        "url": "http://localhost:3000/products/contrast-panel-black",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/contrast-panel-black",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP contrast-panel-white",
+        "url": "http://localhost:3000/products/contrast-panel-white",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/contrast-panel-white",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP contrast-panel-red",
+        "url": "http://localhost:3000/products/contrast-panel-red",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/contrast-panel-red",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP raglan-baseball-black-white",
+        "url": "http://localhost:3000/products/raglan-baseball-black-white",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/raglan-baseball-black-white",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP raglan-baseball-maroon-white",
+        "url": "http://localhost:3000/products/raglan-baseball-maroon-white",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/raglan-baseball-maroon-white",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP branded-tape-red",
+        "url": "http://localhost:3000/products/branded-tape-red",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/branded-tape-red",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP branded-tape-grey",
+        "url": "http://localhost:3000/products/branded-tape-grey",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/branded-tape-grey",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP branded-tape-white",
+        "url": "http://localhost:3000/products/branded-tape-white",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/branded-tape-white",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP contrast-panel-grey",
+        "url": "http://localhost:3000/products/contrast-panel-grey",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/contrast-panel-grey",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP contrast-panel-olive",
+        "url": "http://localhost:3000/products/contrast-panel-olive",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/contrast-panel-olive",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP celestial-graphic-red",
+        "url": "http://localhost:3000/products/celestial-graphic-red",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/celestial-graphic-red",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP celestial-graphic-grey",
+        "url": "http://localhost:3000/products/celestial-graphic-grey",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/celestial-graphic-grey",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP celestial-graphic-white",
+        "url": "http://localhost:3000/products/celestial-graphic-white",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/celestial-graphic-white",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP celestial-graphic-olive",
+        "url": "http://localhost:3000/products/celestial-graphic-olive",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/celestial-graphic-olive",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP shoulder-logo-red",
+        "url": "http://localhost:3000/products/shoulder-logo-red",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/shoulder-logo-red",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP shoulder-logo-black",
+        "url": "http://localhost:3000/products/shoulder-logo-black",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/shoulder-logo-black",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP shoulder-logo-white",
+        "url": "http://localhost:3000/products/shoulder-logo-white",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/shoulder-logo-white",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP shoulder-logo-olive",
+        "url": "http://localhost:3000/products/shoulder-logo-olive",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/shoulder-logo-olive",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP raglan-baseball-grey-white",
+        "url": "http://localhost:3000/products/raglan-baseball-grey-white",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/raglan-baseball-grey-white",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP raglan-baseball-olive-white",
+        "url": "http://localhost:3000/products/raglan-baseball-olive-white",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/raglan-baseball-olive-white",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "PDP raglan-baseball-white-white",
+        "url": "http://localhost:3000/products/raglan-baseball-white-white",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/products/raglan-baseball-white-white",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Help (about/faq/contact)",
+        "url": "http://localhost:3000/help",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/help",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Cart",
+        "url": "http://localhost:3000/cart",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/cart",
+        "consoleErrors": [],
+        "pageErrors": [
+          "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        ],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Checkout",
+        "url": "http://localhost:3000/checkout",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/checkout",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Checkout pay (no orderId)",
+        "url": "http://localhost:3000/checkout/pay",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/checkout",
+        "consoleErrors": [],
+        "pageErrors": [
+          "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        ],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Checkout confirmation (no orderId)",
+        "url": "http://localhost:3000/checkout/confirmation",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/shop",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-olive-46392061853796.png%3Fv%3D1791803796&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-red-46391980097636.png%3Fv%3D1791803755&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-white-46392061624420.png%3Fv%3D1791803775&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-black-front_655318af-89b7-4f54-803a-087f407aaa6b.png%3Fv%3D1789242172&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-grey-46391931732068.png%3Fv%3D1791803719&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-olive-46391944970340.png%3Fv%3D1791803738&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-red-front_fc6357af-4f7b-459e-a410-00caec063ab8.png%3Fv%3D1789242172&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-white-front_877d38a2-ede6-4471-84a8-bef67171aa10.png%3Fv%3D1789242172&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fraglan-black-white-front_f260bffd-f133-431c-bc48-6a1fa5311a0f.png%3Fv%3D1789242199&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fraglan-baseball-grey-white-46392300044388.png%3Fv%3D1791803874&w=3840&q=75"
+        ],
+        "placeholders": []
+      },
+      {
+        "label": "Legal index",
+        "url": "http://localhost:3000/legal",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/legal",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Legal terms-of-service",
+        "url": "http://localhost:3000/legal/terms-of-service",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/legal/terms-of-service",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Legal privacy-policy",
+        "url": "http://localhost:3000/legal/privacy-policy",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/legal/privacy-policy",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Legal shipping-policy",
+        "url": "http://localhost:3000/legal/shipping-policy",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/legal/shipping-policy",
+        "consoleErrors": ["Failed to load resource: the server responded with a status of 429 (Too Many Requests)"],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Legal return-policy",
+        "url": "http://localhost:3000/legal/return-policy",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/legal/return-policy",
+        "consoleErrors": ["Failed to load resource: the server responded with a status of 429 (Too Many Requests)"],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Legal refund-policy",
+        "url": "http://localhost:3000/legal/refund-policy",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/legal/return-policy",
+        "consoleErrors": ["Failed to load resource: the server responded with a status of 429 (Too Many Requests)"],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Legal cookies-policy",
+        "url": "http://localhost:3000/legal/cookies-policy",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/legal/privacy-policy",
+        "consoleErrors": ["Failed to load resource: the server responded with a status of 429 (Too Many Requests)"],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Legal user-agreement",
+        "url": "http://localhost:3000/legal/user-agreement",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/legal/terms-of-service",
+        "consoleErrors": ["Failed to load resource: the server responded with a status of 429 (Too Many Requests)"],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Legal data-protection",
+        "url": "http://localhost:3000/legal/data-protection",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/legal/privacy-policy",
+        "consoleErrors": ["Failed to load resource: the server responded with a status of 429 (Too Many Requests)"],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Order detail (guest)",
+        "url": "http://localhost:3000/orders/00000000-0000-0000-0000-000000000099",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/orders/00000000-0000-0000-0000-000000000099",
+        "consoleErrors": ["Failed to load resource: the server responded with a status of 429 (Too Many Requests)"],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "RSS feed",
+        "url": "http://localhost:3000/rss.xml",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/",
+        "consoleErrors": ["Failed to load resource: the server responded with a status of 429 (Too Many Requests)"],
+        "pageErrors": [],
+        "brokenImages": [
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fshoulder-logo-black-46392115429476.png%3Fv%3D1791803834&w=828&q=75"
+        ],
+        "placeholders": []
+      },
+      {
+        "label": "Sitemap",
+        "url": "http://localhost:3000/sitemap.xml",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/sitemap.xml",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Robots",
+        "url": "http://localhost:3000/robots.txt",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/robots.txt",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Sign in",
+        "url": "http://localhost:3000/auth/sign-in",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/auth/sign-in",
+        "consoleErrors": ["Failed to load resource: the server responded with a status of 429 (Too Many Requests)"],
+        "pageErrors": [],
+        "brokenImages": [
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-black-06-lifestyle.png%3Fv%3D1791802734&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-front_294cc928-a833-4c28-9752-40e945701bdc.png%3Fv%3D1789242158&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-black-front_655318af-89b7-4f54-803a-087f407aaa6b.png%3Fv%3D1789242172&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-black-collage_117447a1-8dd5-44c1-a6c8-a0b900ff070c.png%3Fv%3D1789242173&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-white-front_877d38a2-ede6-4471-84a8-bef67171aa10.png%3Fv%3D1789242172&w=3840&q=75"
+        ],
+        "placeholders": []
+      },
+      {
+        "label": "Sign up",
+        "url": "http://localhost:3000/auth/sign-up",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/auth/sign-up",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-black-06-lifestyle.png%3Fv%3D1791802734&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-front_294cc928-a833-4c28-9752-40e945701bdc.png%3Fv%3D1789242158&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-black-front_655318af-89b7-4f54-803a-087f407aaa6b.png%3Fv%3D1789242172&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-black-collage_117447a1-8dd5-44c1-a6c8-a0b900ff070c.png%3Fv%3D1789242173&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-white-front_877d38a2-ede6-4471-84a8-bef67171aa10.png%3Fv%3D1789242172&w=3840&q=75"
+        ],
+        "placeholders": []
+      },
+      {
+        "label": "Forgot password",
+        "url": "http://localhost:3000/auth/forgot-password",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/auth/forgot-password",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-black-06-lifestyle.png%3Fv%3D1791802734&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-front_294cc928-a833-4c28-9752-40e945701bdc.png%3Fv%3D1789242158&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-black-front_655318af-89b7-4f54-803a-087f407aaa6b.png%3Fv%3D1789242172&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-black-collage_117447a1-8dd5-44c1-a6c8-a0b900ff070c.png%3Fv%3D1789242173&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-white-front_877d38a2-ede6-4471-84a8-bef67171aa10.png%3Fv%3D1789242172&w=3840&q=75"
+        ],
+        "placeholders": []
+      },
+      {
+        "label": "Account home",
+        "url": "http://localhost:3000/account",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/auth/sign-in?callbackUrl=%2Faccount",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-black-06-lifestyle.png%3Fv%3D1791802734&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-front_294cc928-a833-4c28-9752-40e945701bdc.png%3Fv%3D1789242158&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-black-front_655318af-89b7-4f54-803a-087f407aaa6b.png%3Fv%3D1789242172&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-black-collage_117447a1-8dd5-44c1-a6c8-a0b900ff070c.png%3Fv%3D1789242173&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-white-front_877d38a2-ede6-4471-84a8-bef67171aa10.png%3Fv%3D1789242172&w=3840&q=75"
+        ],
+        "placeholders": []
+      },
+      {
+        "label": "Account orders",
+        "url": "http://localhost:3000/account/order",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/auth/sign-in?callbackUrl=%2Faccount",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-black-06-lifestyle.png%3Fv%3D1791802734&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-front_294cc928-a833-4c28-9752-40e945701bdc.png%3Fv%3D1789242158&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-black-front_655318af-89b7-4f54-803a-087f407aaa6b.png%3Fv%3D1789242172&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-black-collage_117447a1-8dd5-44c1-a6c8-a0b900ff070c.png%3Fv%3D1789242173&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-white-front_877d38a2-ede6-4471-84a8-bef67171aa10.png%3Fv%3D1789242172&w=3840&q=75"
+        ],
+        "placeholders": []
+      },
+      {
+        "label": "Account addresses",
+        "url": "http://localhost:3000/account/address",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/auth/sign-in?callbackUrl=%2Faccount",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-black-06-lifestyle.png%3Fv%3D1791802734&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-front_294cc928-a833-4c28-9752-40e945701bdc.png%3Fv%3D1789242158&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-black-front_655318af-89b7-4f54-803a-087f407aaa6b.png%3Fv%3D1789242172&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-black-collage_117447a1-8dd5-44c1-a6c8-a0b900ff070c.png%3Fv%3D1789242173&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-white-front_877d38a2-ede6-4471-84a8-bef67171aa10.png%3Fv%3D1789242172&w=3840&q=75"
+        ],
+        "placeholders": []
+      },
+      {
+        "label": "Wishlist (legacy URL)",
+        "url": "http://localhost:3000/account/wishlist",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/shop",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-olive-46392061853796.png%3Fv%3D1791803796&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-red-46391980097636.png%3Fv%3D1791803755&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcelestial-graphic-white-46392061624420.png%3Fv%3D1791803775&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-black-front_655318af-89b7-4f54-803a-087f407aaa6b.png%3Fv%3D1789242172&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-grey-46391931732068.png%3Fv%3D1791803719&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-olive-46391944970340.png%3Fv%3D1791803738&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-red-front_fc6357af-4f7b-459e-a410-00caec063ab8.png%3Fv%3D1789242172&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fcontrast-panel-white-front_877d38a2-ede6-4471-84a8-bef67171aa10.png%3Fv%3D1789242172&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fraglan-black-white-front_f260bffd-f133-431c-bc48-6a1fa5311a0f.png%3Fv%3D1789242199&w=3840&q=75",
+          "http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0805%2F8847%2F2420%2Ffiles%2Fraglan-baseball-grey-white-46392300044388.png%3Fv%3D1791803874&w=3840&q=75"
+        ],
+        "placeholders": []
+      },
+      {
+        "label": "Studio home",
+        "url": "http://localhost:3000/studio",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Studio products",
+        "url": "http://localhost:3000/studio/catalog/products",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Studio inventory",
+        "url": "http://localhost:3000/studio/inventory",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "Studio orders",
+        "url": "http://localhost:3000/studio/orders",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://localhost:3000/",
+        "consoleErrors": [],
+        "pageErrors": [],
+        "brokenImages": [],
+        "placeholders": []
+      },
+      {
+        "label": "REDIRECT /store",
+        "url": "http://localhost:3000/store",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/store",
+            "status": 301,
+            "location": "/shop"
+          },
+          {
+            "path": "/shop",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/shop",
+        "expectFinal": "/shop",
+        "redirectOk": true,
+        "scope": "REDIRECT"
+      },
+      {
+        "label": "REDIRECT /store/categories",
+        "url": "http://localhost:3000/store/categories",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/store/categories",
+            "status": 301,
+            "location": "/shop"
+          },
+          {
+            "path": "/shop",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/shop",
+        "expectFinal": "/shop",
+        "redirectOk": true,
+        "scope": "REDIRECT"
+      },
+      {
+        "label": "REDIRECT /store/t-shirts/celestial-graphic/celestial-graphic-black",
+        "url": "http://localhost:3000/store/t-shirts/celestial-graphic/celestial-graphic-black",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/store/t-shirts/celestial-graphic/celestial-graphic-black",
+            "status": 301,
+            "location": "/products/celestial-graphic-black"
+          },
+          {
+            "path": "/products/celestial-graphic-black",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/products/celestial-graphic-black",
+        "expectFinal": "/products/celestial-graphic-black",
+        "redirectOk": true,
+        "scope": "REDIRECT"
+      },
+      {
+        "label": "REDIRECT /store/t-shirts/celestial-graphic",
+        "url": "http://localhost:3000/store/t-shirts/celestial-graphic",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/store/t-shirts/celestial-graphic",
+            "status": 301,
+            "location": "/shop?style=celestial-graphic"
+          },
+          {
+            "path": "/shop?style=celestial-graphic",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/shop?style=celestial-graphic",
+        "expectFinal": "/shop",
+        "redirectOk": true,
+        "scope": "REDIRECT"
+      },
+      {
+        "label": "REDIRECT /marketing/about",
+        "url": "http://localhost:3000/marketing/about",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/marketing/about",
+            "status": 301,
+            "location": "/help#about"
+          },
+          {
+            "path": "/help#about",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/help#about",
+        "expectFinal": "/help",
+        "redirectOk": true,
+        "scope": "REDIRECT"
+      },
+      {
+        "label": "REDIRECT /support/faq",
+        "url": "http://localhost:3000/support/faq",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/support/faq",
+            "status": 301,
+            "location": "/help#faq"
+          },
+          {
+            "path": "/help#faq",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/help#faq",
+        "expectFinal": "/help",
+        "redirectOk": true,
+        "scope": "REDIRECT"
+      },
+      {
+        "label": "REDIRECT /blog/test-post",
+        "url": "http://localhost:3000/blog/test-post",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/blog/test-post",
+            "status": 301,
+            "location": "/"
+          },
+          {
+            "path": "/",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/",
+        "expectFinal": "/",
+        "redirectOk": true,
+        "scope": "REDIRECT"
+      },
+      {
+        "label": "REDIRECT /account/wishlist",
+        "url": "http://localhost:3000/account/wishlist",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/account/wishlist",
+            "status": 301,
+            "location": "/shop"
+          },
+          {
+            "path": "/shop",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/shop",
+        "expectFinal": "/shop",
+        "redirectOk": true,
+        "scope": "REDIRECT"
+      },
+      {
+        "label": "REDIRECT /collections/t-shirts",
+        "url": "http://localhost:3000/collections/t-shirts",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/collections/t-shirts",
+            "status": 308,
+            "location": "/shop"
+          },
+          {
+            "path": "/shop",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/shop",
+        "expectFinal": "/shop",
+        "redirectOk": true,
+        "scope": "SHOPIFY_REDIRECT"
+      },
+      {
+        "label": "REDIRECT /collections/new-arrivals",
+        "url": "http://localhost:3000/collections/new-arrivals",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/collections/new-arrivals",
+            "status": 308,
+            "location": "/shop"
+          },
+          {
+            "path": "/shop",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/shop",
+        "expectFinal": "/shop",
+        "redirectOk": true,
+        "scope": "SHOPIFY_REDIRECT"
+      },
+      {
+        "label": "REDIRECT /collections/graphic-tees",
+        "url": "http://localhost:3000/collections/graphic-tees",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/collections/graphic-tees",
+            "status": 308,
+            "location": "/shop"
+          },
+          {
+            "path": "/shop",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/shop",
+        "expectFinal": "/shop",
+        "redirectOk": true,
+        "scope": "SHOPIFY_REDIRECT"
+      },
+      {
+        "label": "REDIRECT /collections/lucsum-essentials",
+        "url": "http://localhost:3000/collections/lucsum-essentials",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/collections/lucsum-essentials",
+            "status": 308,
+            "location": "/shop"
+          },
+          {
+            "path": "/shop",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/shop",
+        "expectFinal": "/shop",
+        "redirectOk": true,
+        "scope": "SHOPIFY_REDIRECT"
+      },
+      {
+        "label": "REDIRECT /collections/branded-tape",
+        "url": "http://localhost:3000/collections/branded-tape",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/collections/branded-tape",
+            "status": 308,
+            "location": "/shop?style=branded-tape"
+          },
+          {
+            "path": "/shop?style=branded-tape",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/shop?style=branded-tape",
+        "expectFinal": "/shop?style=branded-tape",
+        "redirectOk": true,
+        "scope": "SHOPIFY_REDIRECT"
+      },
+      {
+        "label": "REDIRECT /collections/contrast-panel",
+        "url": "http://localhost:3000/collections/contrast-panel",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/collections/contrast-panel",
+            "status": 308,
+            "location": "/shop?style=contrast-panel"
+          },
+          {
+            "path": "/shop?style=contrast-panel",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/shop?style=contrast-panel",
+        "expectFinal": "/shop?style=contrast-panel",
+        "redirectOk": true,
+        "scope": "SHOPIFY_REDIRECT"
+      },
+      {
+        "label": "REDIRECT /collections/celestial-graphic",
+        "url": "http://localhost:3000/collections/celestial-graphic",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/collections/celestial-graphic",
+            "status": 308,
+            "location": "/shop?style=celestial-graphic"
+          },
+          {
+            "path": "/shop?style=celestial-graphic",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/shop?style=celestial-graphic",
+        "expectFinal": "/shop?style=celestial-graphic",
+        "redirectOk": true,
+        "scope": "SHOPIFY_REDIRECT"
+      },
+      {
+        "label": "REDIRECT /collections/shoulder-logo",
+        "url": "http://localhost:3000/collections/shoulder-logo",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/collections/shoulder-logo",
+            "status": 308,
+            "location": "/shop?style=shoulder-logo"
+          },
+          {
+            "path": "/shop?style=shoulder-logo",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/shop?style=shoulder-logo",
+        "expectFinal": "/shop?style=shoulder-logo",
+        "redirectOk": true,
+        "scope": "SHOPIFY_REDIRECT"
+      },
+      {
+        "label": "REDIRECT /collections/raglan-baseball",
+        "url": "http://localhost:3000/collections/raglan-baseball",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/collections/raglan-baseball",
+            "status": 308,
+            "location": "/shop?style=raglan-baseball"
+          },
+          {
+            "path": "/shop?style=raglan-baseball",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/shop?style=raglan-baseball",
+        "expectFinal": "/shop?style=raglan-baseball",
+        "redirectOk": true,
+        "scope": "SHOPIFY_REDIRECT"
+      },
+      {
+        "label": "REDIRECT /collections/red-t-shirts",
+        "url": "http://localhost:3000/collections/red-t-shirts",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/collections/red-t-shirts",
+            "status": 308,
+            "location": "/shop"
+          },
+          {
+            "path": "/shop",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/shop",
+        "expectFinal": "/shop",
+        "redirectOk": true,
+        "scope": "SHOPIFY_REDIRECT"
+      },
+      {
+        "label": "REDIRECT /collections/grey-t-shirts",
+        "url": "http://localhost:3000/collections/grey-t-shirts",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/collections/grey-t-shirts",
+            "status": 308,
+            "location": "/shop"
+          },
+          {
+            "path": "/shop",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/shop",
+        "expectFinal": "/shop",
+        "redirectOk": true,
+        "scope": "SHOPIFY_REDIRECT"
+      },
+      {
+        "label": "REDIRECT /collections/black-t-shirts",
+        "url": "http://localhost:3000/collections/black-t-shirts",
+        "ok": true,
+        "redirectChain": [
+          {
+            "path": "/collections/black-t-shirts",
+            "status": 308,
+            "location": "/shop"
+          },
+          {
+            "path": "/shop",
+            "status": 200,
+            "location": null
+          }
+        ],
+        "finalPath": "/shop",
+        "expectFinal": "/shop",
+        "redirectOk": true,
+        "scope": "SHOPIFY_REDIRECT"
+      }
+    ]
+  },
+  "api": [
+    {
+      "path": "/api/health",
+      "name": "Health",
+      "scope": "API",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "path": "/api/health/ready",
+      "name": "Health ready",
+      "scope": "API",
+      "status": 200,
+      "ok": true
+    }
+  ]
+}

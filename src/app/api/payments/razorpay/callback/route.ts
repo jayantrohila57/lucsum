@@ -1,12 +1,13 @@
 import { NextResponse } from "next/server";
 import { completeRazorpayPaymentAfterVerification } from "@/core/payment/razorpay.complete";
+import { createOrderAccessToken } from "@/module/order/order-access-token";
 import { PATH } from "@/shared/config/routes";
 import { getPublicBaseUrl } from "@/shared/utils/lib/public-base-url";
 
 function payPageUrl(base: string, orderId: string, extra?: string) {
   const q = new URLSearchParams({ orderId });
   if (extra) q.set("reason", extra);
-  return `${base}${PATH.STORE.CHECKOUT.PAY}?${q.toString()}`;
+  return `${base}${PATH.CHECKOUT.PAY}?${q.toString()}`;
 }
 
 export async function POST(request: Request) {
@@ -19,7 +20,7 @@ export async function POST(request: Request) {
     formData = await request.formData();
   } catch {
     return NextResponse.redirect(
-      orderIdParam ? payPageUrl(base, orderIdParam, "invalid") : `${base}${PATH.STORE.CHECKOUT.ROOT}?payment=error`,
+      orderIdParam ? payPageUrl(base, orderIdParam, "invalid") : `${base}${PATH.CHECKOUT.ROOT}?payment=error`,
       303,
     );
   }
@@ -30,9 +31,7 @@ export async function POST(request: Request) {
 
   if (!razorpay_payment_id || !razorpay_order_id || !razorpay_signature) {
     return NextResponse.redirect(
-      orderIdParam
-        ? payPageUrl(base, orderIdParam, "cancelled")
-        : `${base}${PATH.STORE.CHECKOUT.ROOT}?payment=cancelled`,
+      orderIdParam ? payPageUrl(base, orderIdParam, "cancelled") : `${base}${PATH.CHECKOUT.ROOT}?payment=cancelled`,
       303,
     );
   }
@@ -46,12 +45,14 @@ export async function POST(request: Request) {
 
   if (!result.ok) {
     return NextResponse.redirect(
-      orderIdParam ? payPageUrl(base, orderIdParam, "failed") : `${base}${PATH.STORE.CHECKOUT.ROOT}?payment=failed`,
+      orderIdParam ? payPageUrl(base, orderIdParam, "failed") : `${base}${PATH.CHECKOUT.ROOT}?payment=failed`,
       303,
     );
   }
 
-  const confirm = new URL(`${base}${PATH.STORE.CHECKOUT.CONFIRMATION}`);
+  const confirm = new URL(`${base}${PATH.CHECKOUT.CONFIRMATION}`);
   confirm.searchParams.set("orderId", result.orderId);
+  const accessToken = createOrderAccessToken(result.orderId);
+  if (accessToken) confirm.searchParams.set("token", accessToken);
   return NextResponse.redirect(confirm.toString(), 303);
 }

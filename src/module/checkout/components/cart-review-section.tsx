@@ -8,6 +8,7 @@ import { Button } from "@/shared/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/shared/components/ui/card";
 import { Skeleton } from "@/shared/components/ui/skeleton";
 import { PATH } from "@/shared/config/routes";
+import { storefrontFeatures } from "@/shared/config/storefront";
 import { getImageSrc } from "@/shared/utils/lib/image.utils";
 
 interface CartReviewSectionProps {
@@ -79,7 +80,9 @@ export function CartReviewSection({ items, isLoading }: CartReviewSectionProps) 
         </CardHeader>
         <CardContent>
           <Button asChild variant="outline" size="sm">
-            <Link href={PATH.STORE.ROOT as Route}>Continue shopping</Link>
+            <Link href={(storefrontFeatures.minimalPublicSite ? PATH.SHOP.ROOT : PATH.STORE.ROOT) as Route}>
+              Continue shopping
+            </Link>
           </Button>
         </CardContent>
       </Card>

@@ -34,7 +34,7 @@ export default async function NotFound() {
                   <Link href={PATH.ROOT as Route}>Home</Link>
                 </Button>
                 <Button asChild variant="outline">
-                  <Link href={PATH.STORE.ROOT as Route}>Shop</Link>
+                  <Link href={PATH.SHOP.ROOT}>Shop</Link>
                 </Button>
                 <Button asChild variant="outline">
                   <Link href={PATH.SITE.CONTACT as Route}>Contact support</Link>

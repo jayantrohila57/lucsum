@@ -23,8 +23,8 @@ import {
 } from "@/shared/components/ui/dropdown-menu";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/shared/components/ui/tooltip";
 import { PATH } from "@/shared/config/routes";
+import { formatBreadcrumbLabel } from "@/shared/utils/lib/breadcrumb-label";
 import { debugError } from "@/shared/utils/lib/logger.utils";
-import { slugToTitle } from "@/shared/utils/lib/url.utils";
 import { cn } from "@/shared/utils/lib/utils";
 import { Button } from "../../ui/button";
 
@@ -141,7 +141,7 @@ export function Breadcrumbs({ className }: { className?: string }) {
                     {hasHidden(node) &&
                       node.hidden.map((h, i) => (
                         <DropdownMenuItem key={i} asChild>
-                          <Link href={h.href as Route}>{slugToTitle(h.label)}</Link>
+                          <Link href={h.href as Route}>{formatBreadcrumbLabel(h.label)}</Link>
                         </DropdownMenuItem>
                       ))}
                   </DropdownMenuContent>
@@ -153,7 +153,7 @@ export function Breadcrumbs({ className }: { className?: string }) {
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <BreadcrumbPage className="capitalize">{slugToTitle(node.label)}</BreadcrumbPage>
+                      <BreadcrumbPage>{formatBreadcrumbLabel(node.label)}</BreadcrumbPage>
                     </TooltipTrigger>
                     <TooltipContent>Your current page</TooltipContent>
                   </Tooltip>
@@ -165,11 +165,11 @@ export function Breadcrumbs({ className }: { className?: string }) {
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <BreadcrumbLink asChild className="capitalize underline-offset-4 hover:underline">
-                        <Link href={node.href as Route}>{slugToTitle(node.label)}</Link>
+                      <BreadcrumbLink asChild className="underline-offset-4 hover:underline">
+                        <Link href={node.href as Route}>{formatBreadcrumbLabel(node.label)}</Link>
                       </BreadcrumbLink>
                     </TooltipTrigger>
-                    <TooltipContent>Go to {slugToTitle(node.label)}</TooltipContent>
+                    <TooltipContent>Go to {formatBreadcrumbLabel(node.label)}</TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
               )}

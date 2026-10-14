@@ -5,20 +5,10 @@ import { db } from "@/core/db/db";
 import { address, shippingMethod, type shippingProvider, shippingRateRule, shippingZone } from "@/core/db/db.schema";
 import type { ShippingOption } from "./shipping-config.schema";
 
-export async function getShippingOptionsForAddressId(
-  shippingAddressId: string,
+export async function getShippingOptionsForLocation(
+  country: string,
+  region?: string | null,
 ): Promise<{ options: ShippingOption[]; zoneId: string | null }> {
-  const addr = await db.query.address.findFirst({
-    where: eq(address.id, shippingAddressId),
-  });
-
-  if (!addr) {
-    return { options: [], zoneId: null };
-  }
-
-  const country = addr.country;
-  const region = addr.state;
-
   const zone = await resolveShippingZone(country, region);
   if (!zone) {
     return { options: [], zoneId: null };
@@ -50,6 +40,20 @@ export async function getShippingOptionsForAddressId(
   }
 
   return { options, zoneId: zone.id };
+}
+
+export async function getShippingOptionsForAddressId(
+  shippingAddressId: string,
+): Promise<{ options: ShippingOption[]; zoneId: string | null }> {
+  const addr = await db.query.address.findFirst({
+    where: eq(address.id, shippingAddressId),
+  });
+
+  if (!addr) {
+    return { options: [], zoneId: null };
+  }
+
+  return getShippingOptionsForLocation(addr.country, addr.state);
 }
 
 async function resolveShippingZone(countryCode: string, regionCode?: string | null) {

@@ -1,0 +1,4688 @@
+{
+  "base": "http://localhost:3000",
+  "at": "2026-10-14T06:53:00.865Z",
+  "viewports": [360, 390, 430, 768, 1024],
+  "issues": [],
+  "pages": [
+    {
+      "slug": "home",
+      "path": "/",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 0,
+        "rightGap": 1
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "shop",
+      "path": "/shop",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 0,
+        "rightGap": 1
+      },
+      "interactNotes": ["filters-sheet-cta", "mobile-nav-sheet-opened"],
+      "issues": []
+    },
+    {
+      "slug": "shop-filter",
+      "path": "/shop?style=celestial-graphic",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": ["filters-sheet-cta", "mobile-nav-sheet-opened"],
+      "issues": []
+    },
+    {
+      "slug": "pdp-celestial-graphic-black",
+      "path": "/products/celestial-graphic-black",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": ["gallery-single-image", "size-click-failed"],
+      "issues": []
+    },
+    {
+      "slug": "pdp-shoulder-logo-charcoal",
+      "path": "/products/shoulder-logo-charcoal",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 17
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-branded-tape-black",
+      "path": "/products/branded-tape-black",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-branded-tape-olive",
+      "path": "/products/branded-tape-olive",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-contrast-panel-black",
+      "path": "/products/contrast-panel-black",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-contrast-panel-white",
+      "path": "/products/contrast-panel-white",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-contrast-panel-red",
+      "path": "/products/contrast-panel-red",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-raglan-baseball-black-white",
+      "path": "/products/raglan-baseball-black-white",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 17
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-raglan-baseball-maroon-white",
+      "path": "/products/raglan-baseball-maroon-white",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 17
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-branded-tape-red",
+      "path": "/products/branded-tape-red",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-branded-tape-grey",
+      "path": "/products/branded-tape-grey",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-branded-tape-white",
+      "path": "/products/branded-tape-white",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-contrast-panel-grey",
+      "path": "/products/contrast-panel-grey",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-contrast-panel-olive",
+      "path": "/products/contrast-panel-olive",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 17
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-celestial-graphic-red",
+      "path": "/products/celestial-graphic-red",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 17
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-celestial-graphic-grey",
+      "path": "/products/celestial-graphic-grey",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-celestial-graphic-white",
+      "path": "/products/celestial-graphic-white",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-celestial-graphic-olive",
+      "path": "/products/celestial-graphic-olive",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-shoulder-logo-red",
+      "path": "/products/shoulder-logo-red",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 17
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-shoulder-logo-black",
+      "path": "/products/shoulder-logo-black",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-shoulder-logo-white",
+      "path": "/products/shoulder-logo-white",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 17
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-shoulder-logo-olive",
+      "path": "/products/shoulder-logo-olive",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-raglan-baseball-grey-white",
+      "path": "/products/raglan-baseball-grey-white",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 17
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-raglan-baseball-olive-white",
+      "path": "/products/raglan-baseball-olive-white",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 17
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-raglan-baseball-white-white",
+      "path": "/products/raglan-baseball-white-white",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 17
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "help",
+      "path": "/help",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "cart",
+      "path": "/cart",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "checkout",
+      "path": "/checkout",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": ["form-fields-0"],
+      "issues": []
+    },
+    {
+      "slug": "checkout-pay",
+      "path": "/checkout/pay",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "legal",
+      "path": "/legal",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "legal-terms-of-service",
+      "path": "/legal/terms-of-service",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "legal-privacy-policy",
+      "path": "/legal/privacy-policy",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 0,
+        "rightGap": 1
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "legal-shipping-policy",
+      "path": "/legal/shipping-policy",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 0,
+        "rightGap": 1
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "legal-return-policy",
+      "path": "/legal/return-policy",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "auth-sign-in",
+      "path": "/auth/sign-in",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 0,
+        "rightGap": 1
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "auth-sign-up",
+      "path": "/auth/sign-up",
+      "viewport": 360,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 0,
+        "rightGap": 1
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "home",
+      "path": "/",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "shop",
+      "path": "/shop",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": ["filters-sheet-cta", "mobile-nav-sheet-opened"],
+      "issues": []
+    },
+    {
+      "slug": "shop-filter",
+      "path": "/shop?style=celestial-graphic",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": ["filters-sheet-cta", "mobile-nav-sheet-opened"],
+      "issues": []
+    },
+    {
+      "slug": "pdp-celestial-graphic-black",
+      "path": "/products/celestial-graphic-black",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 17
+      },
+      "interactNotes": ["gallery-single-image", "size-click-failed"],
+      "issues": []
+    },
+    {
+      "slug": "pdp-shoulder-logo-charcoal",
+      "path": "/products/shoulder-logo-charcoal",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-branded-tape-black",
+      "path": "/products/branded-tape-black",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-branded-tape-olive",
+      "path": "/products/branded-tape-olive",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 17
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-contrast-panel-black",
+      "path": "/products/contrast-panel-black",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-contrast-panel-white",
+      "path": "/products/contrast-panel-white",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-contrast-panel-red",
+      "path": "/products/contrast-panel-red",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 17
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-raglan-baseball-black-white",
+      "path": "/products/raglan-baseball-black-white",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-raglan-baseball-maroon-white",
+      "path": "/products/raglan-baseball-maroon-white",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 17
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-branded-tape-red",
+      "path": "/products/branded-tape-red",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 17
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-branded-tape-grey",
+      "path": "/products/branded-tape-grey",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 17
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-branded-tape-white",
+      "path": "/products/branded-tape-white",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 0,
+        "rightGap": 390
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-contrast-panel-grey",
+      "path": "/products/contrast-panel-grey",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-contrast-panel-olive",
+      "path": "/products/contrast-panel-olive",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 17
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-celestial-graphic-red",
+      "path": "/products/celestial-graphic-red",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 17
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-celestial-graphic-grey",
+      "path": "/products/celestial-graphic-grey",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-celestial-graphic-white",
+      "path": "/products/celestial-graphic-white",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-celestial-graphic-olive",
+      "path": "/products/celestial-graphic-olive",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-shoulder-logo-red",
+      "path": "/products/shoulder-logo-red",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 0,
+        "rightGap": 390
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-shoulder-logo-black",
+      "path": "/products/shoulder-logo-black",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-shoulder-logo-white",
+      "path": "/products/shoulder-logo-white",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-shoulder-logo-olive",
+      "path": "/products/shoulder-logo-olive",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 17
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-raglan-baseball-grey-white",
+      "path": "/products/raglan-baseball-grey-white",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 17
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-raglan-baseball-olive-white",
+      "path": "/products/raglan-baseball-olive-white",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-raglan-baseball-white-white",
+      "path": "/products/raglan-baseball-white-white",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "help",
+      "path": "/help",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "cart",
+      "path": "/cart",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "checkout",
+      "path": "/checkout",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": ["form-fields-0"],
+      "issues": []
+    },
+    {
+      "slug": "checkout-pay",
+      "path": "/checkout/pay",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 0,
+        "rightGap": 1
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "legal",
+      "path": "/legal",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 0,
+        "rightGap": 1
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "legal-terms-of-service",
+      "path": "/legal/terms-of-service",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "legal-privacy-policy",
+      "path": "/legal/privacy-policy",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "legal-shipping-policy",
+      "path": "/legal/shipping-policy",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "legal-return-policy",
+      "path": "/legal/return-policy",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 0,
+        "rightGap": 1
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "auth-sign-in",
+      "path": "/auth/sign-in",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 0,
+        "rightGap": 1
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "auth-sign-up",
+      "path": "/auth/sign-up",
+      "viewport": 390,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 0,
+        "rightGap": 1
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "home",
+      "path": "/",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 0,
+        "rightGap": 1
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "shop",
+      "path": "/shop",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 0,
+        "rightGap": 1
+      },
+      "interactNotes": ["filters-sheet-cta", "mobile-nav-sheet-opened"],
+      "issues": []
+    },
+    {
+      "slug": "shop-filter",
+      "path": "/shop?style=celestial-graphic",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": ["filters-sheet-cta", "mobile-nav-sheet-opened"],
+      "issues": []
+    },
+    {
+      "slug": "pdp-celestial-graphic-black",
+      "path": "/products/celestial-graphic-black",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": ["gallery-single-image", "size-click-failed"],
+      "issues": []
+    },
+    {
+      "slug": "pdp-shoulder-logo-charcoal",
+      "path": "/products/shoulder-logo-charcoal",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-branded-tape-black",
+      "path": "/products/branded-tape-black",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 17
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-branded-tape-olive",
+      "path": "/products/branded-tape-olive",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-contrast-panel-black",
+      "path": "/products/contrast-panel-black",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-contrast-panel-white",
+      "path": "/products/contrast-panel-white",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 17
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-contrast-panel-red",
+      "path": "/products/contrast-panel-red",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-raglan-baseball-black-white",
+      "path": "/products/raglan-baseball-black-white",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 17
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-raglan-baseball-maroon-white",
+      "path": "/products/raglan-baseball-maroon-white",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-branded-tape-red",
+      "path": "/products/branded-tape-red",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 17
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-branded-tape-grey",
+      "path": "/products/branded-tape-grey",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-branded-tape-white",
+      "path": "/products/branded-tape-white",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-contrast-panel-grey",
+      "path": "/products/contrast-panel-grey",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 0,
+        "rightGap": 430
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-contrast-panel-olive",
+      "path": "/products/contrast-panel-olive",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 17
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-celestial-graphic-red",
+      "path": "/products/celestial-graphic-red",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-celestial-graphic-grey",
+      "path": "/products/celestial-graphic-grey",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-celestial-graphic-white",
+      "path": "/products/celestial-graphic-white",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 17
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-celestial-graphic-olive",
+      "path": "/products/celestial-graphic-olive",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-shoulder-logo-red",
+      "path": "/products/shoulder-logo-red",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 17
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-shoulder-logo-black",
+      "path": "/products/shoulder-logo-black",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-shoulder-logo-white",
+      "path": "/products/shoulder-logo-white",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 17
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-shoulder-logo-olive",
+      "path": "/products/shoulder-logo-olive",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-raglan-baseball-grey-white",
+      "path": "/products/raglan-baseball-grey-white",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 17
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-raglan-baseball-olive-white",
+      "path": "/products/raglan-baseball-olive-white",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 17
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-raglan-baseball-white-white",
+      "path": "/products/raglan-baseball-white-white",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 17
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "help",
+      "path": "/help",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "cart",
+      "path": "/cart",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "checkout",
+      "path": "/checkout",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 0,
+        "rightGap": 1
+      },
+      "interactNotes": ["form-fields-0"],
+      "issues": []
+    },
+    {
+      "slug": "checkout-pay",
+      "path": "/checkout/pay",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "legal",
+      "path": "/legal",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 0,
+        "rightGap": 1
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "legal-terms-of-service",
+      "path": "/legal/terms-of-service",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "legal-privacy-policy",
+      "path": "/legal/privacy-policy",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 0,
+        "rightGap": 1
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "legal-shipping-policy",
+      "path": "/legal/shipping-policy",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "legal-return-policy",
+      "path": "/legal/return-policy",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "auth-sign-in",
+      "path": "/auth/sign-in",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 0,
+        "rightGap": 1
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "auth-sign-up",
+      "path": "/auth/sign-up",
+      "viewport": 430,
+      "group": "mobile",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 0,
+        "rightGap": 1
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "home",
+      "path": "/",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 0,
+        "rightGap": 1
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "shop",
+      "path": "/shop",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "shop-filter",
+      "path": "/shop?style=celestial-graphic",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-celestial-graphic-black",
+      "path": "/products/celestial-graphic-black",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": ["gallery-single-image", "size-click-failed", "gallery-full-bleed-ok"],
+      "issues": []
+    },
+    {
+      "slug": "pdp-shoulder-logo-charcoal",
+      "path": "/products/shoulder-logo-charcoal",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-branded-tape-black",
+      "path": "/products/branded-tape-black",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 24,
+        "rightGap": 25
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-branded-tape-olive",
+      "path": "/products/branded-tape-olive",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 24,
+        "rightGap": 25
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-contrast-panel-black",
+      "path": "/products/contrast-panel-black",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 24,
+        "rightGap": 25
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-contrast-panel-white",
+      "path": "/products/contrast-panel-white",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 24,
+        "rightGap": 25
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-contrast-panel-red",
+      "path": "/products/contrast-panel-red",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 24,
+        "rightGap": 25
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-raglan-baseball-black-white",
+      "path": "/products/raglan-baseball-black-white",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 24,
+        "rightGap": 25
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-raglan-baseball-maroon-white",
+      "path": "/products/raglan-baseball-maroon-white",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 24,
+        "rightGap": 25
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-branded-tape-red",
+      "path": "/products/branded-tape-red",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 24,
+        "rightGap": 25
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-branded-tape-grey",
+      "path": "/products/branded-tape-grey",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-branded-tape-white",
+      "path": "/products/branded-tape-white",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 24,
+        "rightGap": 25
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-contrast-panel-grey",
+      "path": "/products/contrast-panel-grey",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 24,
+        "rightGap": 25
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-contrast-panel-olive",
+      "path": "/products/contrast-panel-olive",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-celestial-graphic-red",
+      "path": "/products/celestial-graphic-red",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-celestial-graphic-grey",
+      "path": "/products/celestial-graphic-grey",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 24,
+        "rightGap": 25
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-celestial-graphic-white",
+      "path": "/products/celestial-graphic-white",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 24,
+        "rightGap": 25
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-celestial-graphic-olive",
+      "path": "/products/celestial-graphic-olive",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 24,
+        "rightGap": 25
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-shoulder-logo-red",
+      "path": "/products/shoulder-logo-red",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-shoulder-logo-black",
+      "path": "/products/shoulder-logo-black",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-shoulder-logo-white",
+      "path": "/products/shoulder-logo-white",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 24,
+        "rightGap": 25
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-shoulder-logo-olive",
+      "path": "/products/shoulder-logo-olive",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-raglan-baseball-grey-white",
+      "path": "/products/raglan-baseball-grey-white",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 24,
+        "rightGap": 25
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-raglan-baseball-olive-white",
+      "path": "/products/raglan-baseball-olive-white",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 24,
+        "rightGap": 25
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-raglan-baseball-white-white",
+      "path": "/products/raglan-baseball-white-white",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "help",
+      "path": "/help",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "cart",
+      "path": "/cart",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "checkout",
+      "path": "/checkout",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 0,
+        "rightGap": 1
+      },
+      "interactNotes": ["form-fields-0"],
+      "issues": []
+    },
+    {
+      "slug": "checkout-pay",
+      "path": "/checkout/pay",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "legal",
+      "path": "/legal",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "legal-terms-of-service",
+      "path": "/legal/terms-of-service",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "legal-privacy-policy",
+      "path": "/legal/privacy-policy",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "legal-shipping-policy",
+      "path": "/legal/shipping-policy",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 0,
+        "rightGap": 1
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "legal-return-policy",
+      "path": "/legal/return-policy",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 16,
+        "rightGap": 16
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "auth-sign-in",
+      "path": "/auth/sign-in",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 0,
+        "rightGap": 1
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "auth-sign-up",
+      "path": "/auth/sign-up",
+      "viewport": 768,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 0,
+        "rightGap": 1
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "home",
+      "path": "/",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 0,
+        "rightGap": 1
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "shop",
+      "path": "/shop",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 0,
+        "rightGap": 1
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "shop-filter",
+      "path": "/shop?style=celestial-graphic",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 128,
+        "rightGap": 128
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-celestial-graphic-black",
+      "path": "/products/celestial-graphic-black",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 128,
+        "rightGap": 128
+      },
+      "interactNotes": ["gallery-single-image", "size-click-failed", "gallery-full-bleed-ok"],
+      "issues": []
+    },
+    {
+      "slug": "pdp-shoulder-logo-charcoal",
+      "path": "/products/shoulder-logo-charcoal",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 540,
+        "rightGap": 33
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-branded-tape-black",
+      "path": "/products/branded-tape-black",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 128,
+        "rightGap": 128
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-branded-tape-olive",
+      "path": "/products/branded-tape-olive",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 540,
+        "rightGap": 33
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-contrast-panel-black",
+      "path": "/products/contrast-panel-black",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 540,
+        "rightGap": 33
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-contrast-panel-white",
+      "path": "/products/contrast-panel-white",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 540,
+        "rightGap": 33
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-contrast-panel-red",
+      "path": "/products/contrast-panel-red",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 540,
+        "rightGap": 33
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-raglan-baseball-black-white",
+      "path": "/products/raglan-baseball-black-white",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 128,
+        "rightGap": 128
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-raglan-baseball-maroon-white",
+      "path": "/products/raglan-baseball-maroon-white",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 128,
+        "rightGap": 128
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-branded-tape-red",
+      "path": "/products/branded-tape-red",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 128,
+        "rightGap": 128
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-branded-tape-grey",
+      "path": "/products/branded-tape-grey",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 128,
+        "rightGap": 128
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-branded-tape-white",
+      "path": "/products/branded-tape-white",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 128,
+        "rightGap": 128
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-contrast-panel-grey",
+      "path": "/products/contrast-panel-grey",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 128,
+        "rightGap": 128
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-contrast-panel-olive",
+      "path": "/products/contrast-panel-olive",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 540,
+        "rightGap": 33
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-celestial-graphic-red",
+      "path": "/products/celestial-graphic-red",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 128,
+        "rightGap": 128
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-celestial-graphic-grey",
+      "path": "/products/celestial-graphic-grey",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 128,
+        "rightGap": 128
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-celestial-graphic-white",
+      "path": "/products/celestial-graphic-white",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 540,
+        "rightGap": 33
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-celestial-graphic-olive",
+      "path": "/products/celestial-graphic-olive",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 540,
+        "rightGap": 33
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-shoulder-logo-red",
+      "path": "/products/shoulder-logo-red",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 540,
+        "rightGap": 33
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-shoulder-logo-black",
+      "path": "/products/shoulder-logo-black",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 540,
+        "rightGap": 33
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-shoulder-logo-white",
+      "path": "/products/shoulder-logo-white",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 540,
+        "rightGap": 33
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-shoulder-logo-olive",
+      "path": "/products/shoulder-logo-olive",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 540,
+        "rightGap": 33
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-raglan-baseball-grey-white",
+      "path": "/products/raglan-baseball-grey-white",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 128,
+        "rightGap": 128
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-raglan-baseball-olive-white",
+      "path": "/products/raglan-baseball-olive-white",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 128,
+        "rightGap": 128
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "pdp-raglan-baseball-white-white",
+      "path": "/products/raglan-baseball-white-white",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 128,
+        "rightGap": 128
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "help",
+      "path": "/help",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 128,
+        "rightGap": 128
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "cart",
+      "path": "/cart",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 128,
+        "rightGap": 128
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "checkout",
+      "path": "/checkout",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 128,
+        "rightGap": 128
+      },
+      "interactNotes": ["form-fields-0"],
+      "issues": []
+    },
+    {
+      "slug": "checkout-pay",
+      "path": "/checkout/pay",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 128,
+        "rightGap": 128
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "legal",
+      "path": "/legal",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 128,
+        "rightGap": 128
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "legal-terms-of-service",
+      "path": "/legal/terms-of-service",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 128,
+        "rightGap": 128
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "legal-privacy-policy",
+      "path": "/legal/privacy-policy",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 128,
+        "rightGap": 128
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "legal-shipping-policy",
+      "path": "/legal/shipping-policy",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 128,
+        "rightGap": 128
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "legal-return-policy",
+      "path": "/legal/return-policy",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 128,
+        "rightGap": 128
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "auth-sign-in",
+      "path": "/auth/sign-in",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 0,
+        "rightGap": 1
+      },
+      "interactNotes": [],
+      "issues": []
+    },
+    {
+      "slug": "auth-sign-up",
+      "path": "/auth/sign-up",
+      "viewport": 1024,
+      "group": "tablet",
+      "overflowX": 0,
+      "header": {
+        "position": "fixed",
+        "top": 0,
+        "height": 64
+      },
+      "scrollHeader": {
+        "stickyOk": true,
+        "position": "fixed",
+        "top": 0
+      },
+      "mainPad": "64px",
+      "edgeGap": {
+        "left": 0,
+        "rightGap": 1
+      },
+      "interactNotes": [],
+      "issues": []
+    }
+  ]
+}

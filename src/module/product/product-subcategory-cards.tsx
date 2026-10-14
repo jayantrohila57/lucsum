@@ -64,7 +64,7 @@ export function ProductSubcategoryCards({ data, categorySlug, subcategorySlug }:
         const href = `/store/${categorySlug}/${subcategorySlug}/${variant.slug}` as Route;
 
         // Get display image - variant media first, then product base image
-        const displayImage = variant.media?.[0]?.url || variant.productBaseImage;
+        const displayImage = variant.productBaseImage || variant.media?.[0]?.url;
 
         // Display title: combine product title with variant title for clarity
         const displayTitle =

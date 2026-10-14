@@ -43,10 +43,17 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --spacing-section-y: var(--spacing-section-y);
+  --spacing-container-x: var(--spacing-container-x);
+  --box-border-width: var(--box-border-width);
 }
 
 :root {
   --radius: 0rem;
+  /* Storefront box system (Jayant) — one border, zero radius, shadcn spacing scale */
+  --box-border-width: 1px;
+  --spacing-section-y: 2rem;
+  --spacing-container-x: 1rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -79,6 +86,20 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --spacing-section-y: 2.5rem;
+    --spacing-container-x: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --spacing-section-y: 3rem;
+    --spacing-container-x: 2rem;
+  }
 }
 
 .dark {
@@ -139,7 +160,7 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-clip;
   }
 
   ::view-transition-old(root) {
@@ -163,5 +184,13 @@
   }
   .motion-custom {
     @apply transition-[all,transform,color,opacity] duration-500 ease-[cubic-bezier(0.33,1,0.68,1)];
+  }
+
+  .box-card {
+    border-width: var(--box-border-width);
+  }
+
+  .box-surface {
+    @apply border border-border rounded-[var(--radius)] bg-card;
   }
 }

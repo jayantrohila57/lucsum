@@ -9,7 +9,6 @@ import { Badge } from "@/shared/components/ui/badge";
 import { Button } from "@/shared/components/ui/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/shared/components/ui/tooltip";
 import { PATH } from "@/shared/config/routes";
-import { signInUrlWithCallback } from "@/shared/utils/auth-callback";
 
 export default function CartButton() {
   const router = useRouter();
@@ -19,11 +18,7 @@ export default function CartButton() {
   const isSignedIn = Boolean(session?.user?.id);
 
   const handleClick = () => {
-    if (!isSignedIn) {
-      router.push(signInUrlWithCallback(PATH.ACCOUNT.CART) as Route);
-      return;
-    }
-    router.push(PATH.ACCOUNT.CART);
+    router.push(PATH.CART);
   };
 
   return (
@@ -47,11 +42,11 @@ export default function CartButton() {
         </TooltipTrigger>
         <TooltipContent sideOffset={10}>
           <p id="cart-tooltip">
-            {!isSignedIn
-              ? "Sign in to open your saved cart"
-              : count > 0
-                ? `You have ${count} item${count === 1 ? "" : "s"} in your cart`
-                : "Your cart is empty"}
+            {count > 0
+              ? `You have ${count} item${count === 1 ? "" : "s"} in your cart`
+              : isSignedIn
+                ? "Your cart is empty"
+                : "View your cart (guest checkout available)"}
           </p>
         </TooltipContent>
       </Tooltip>

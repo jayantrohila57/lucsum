@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { useSession } from "@/core/auth/auth.client";
 import { Skeleton } from "@/shared/components/ui/skeleton";
 import { PATH } from "@/shared/config/routes";
+import { storefrontFeatures } from "@/shared/config/storefront";
 import { Button } from "../../ui/button";
 import { UserDropdown } from "../user/nav-user";
 
@@ -61,9 +62,11 @@ export function HeaderCommerceActions() {
       <div className="flex items-center border-l px-1.5 py-2 sm:px-4">
         <CartButton />
       </div>
-      <div className="flex items-center border-l px-1.5 py-2 sm:px-4">
-        <WishListButton />
-      </div>
+      {storefrontFeatures.showWishlist ? (
+        <div className="flex items-center border-l px-1.5 py-2 sm:px-4">
+          <WishListButton />
+        </div>
+      ) : null}
     </div>
   );
 }

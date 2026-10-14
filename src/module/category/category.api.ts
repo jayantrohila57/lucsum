@@ -2,10 +2,10 @@ import { and, eq, ilike, inArray, isNull, not, sql } from "drizzle-orm";
 import { v4 as uuidv4 } from "uuid";
 import { createTRPCRouter, publicProcedure, staffProcedure } from "@/core/api/api.methods";
 import { db } from "@/core/db/db";
-import { category } from "@/core/db/db.schema";
+import { category, product } from "@/core/db/db.schema";
 import { MESSAGE, STATUS } from "@/shared/config/api.config";
 import { API_RESPONSE } from "@/shared/config/api.utils";
-import { LUCSUM_CATALOG_CATEGORY_SLUGS } from "@/shared/config/catalog";
+import { isLucsumCatalogCategorySlug, LUCSUM_CATALOG_CATEGORY_SLUGS } from "@/shared/config/catalog";
 import { buildPagination, buildPaginationMeta } from "@/shared/schema";
 import { debugError } from "@/shared/utils/lib/logger.utils";
 import { categoryContract } from "./category.schema";
@@ -50,6 +50,10 @@ export const categoryRouter = createTRPCRouter({
           conditions.push(not(isNull(category.deletedAt)));
         } else {
           conditions.push(isNull(category.deletedAt));
+        }
+
+        if (input.query?.catalogOnly !== false) {
+          conditions.push(inArray(category.slug, [...LUCSUM_CATALOG_CATEGORY_SLUGS]));
         }
 
         const where = conditions.length ? and(...conditions) : undefined;
@@ -132,6 +136,9 @@ export const categoryRouter = createTRPCRouter({
         if (input.query?.visibility) conditions.push(eq(category.visibility, input.query.visibility));
         if (input.query?.isFeatured !== undefined) conditions.push(eq(category.isFeatured, input.query.isFeatured));
         conditions.push(isNull(category.deletedAt));
+        if (input.query?.catalogOnly !== false) {
+          conditions.push(inArray(category.slug, [...LUCSUM_CATALOG_CATEGORY_SLUGS]));
+        }
         const where = conditions.length ? and(...conditions) : undefined;
 
         const output = await db.query.category.findMany({
@@ -212,10 +219,16 @@ export const categoryRouter = createTRPCRouter({
     .output(categoryContract.getCategoryWithSubCategories.output)
     .query(async ({ input }) => {
       try {
+        const slug = input.params.slug;
+        if (!isLucsumCatalogCategorySlug(slug)) {
+          return API_RESPONSE(STATUS.FAILED, MESSAGE.CATEGORY.GET_BY_SLUG.FAILED, null);
+        }
+
         const responseData = await db.query.category.findFirst({
-          where: (c, { eq }) => eq(c.slug, input.params.slug),
+          where: (c, { eq, and, isNull }) => and(eq(c.slug, slug), isNull(c.deletedAt)),
           with: {
             subcategories: {
+              where: (s, { isNull: isNullSub }) => isNullSub(s.deletedAt),
               orderBy: (s, { asc }) => [asc(s.displayOrder)],
             },
           },
@@ -223,7 +236,30 @@ export const categoryRouter = createTRPCRouter({
 
         if (!responseData) return API_RESPONSE(STATUS.FAILED, MESSAGE.CATEGORY.GET_BY_SLUG.FAILED, null);
 
-        return API_RESPONSE(STATUS.SUCCESS, MESSAGE.CATEGORY.GET_BY_SLUG.SUCCESS, responseData);
+        const subs = responseData.subcategories ?? [];
+        const enrichedSubs = await Promise.all(
+          subs.map(async (sub) => {
+            if (sub.image) return sub;
+            const sample = await db.query.product.findFirst({
+              where: and(
+                eq(product.categorySlug, slug),
+                eq(product.subcategorySlug, sub.slug),
+                eq(product.isActive, true),
+                eq(product.status, "live"),
+                isNull(product.deletedAt),
+              ),
+              columns: { baseImage: true },
+              orderBy: (p, { asc }) => [asc(p.title)],
+            });
+            if (!sample?.baseImage) return sub;
+            return { ...sub, image: sample.baseImage };
+          }),
+        );
+
+        return API_RESPONSE(STATUS.SUCCESS, MESSAGE.CATEGORY.GET_BY_SLUG.SUCCESS, {
+          ...responseData,
+          subcategories: enrichedSubs,
+        });
       } catch (err) {
         debugError("CATEGORY:GET_BY_SLUG:ERROR", err);
         return API_RESPONSE(STATUS.ERROR, MESSAGE.CATEGORY.GET_BY_SLUG.ERROR, null, err as Error);

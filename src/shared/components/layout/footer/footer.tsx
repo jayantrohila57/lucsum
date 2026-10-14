@@ -7,6 +7,7 @@ import Social from "@/shared/components/common/social";
 import { ThemeToggle } from "@/shared/components/theme/theme-toggle";
 import { PATH } from "@/shared/config/routes";
 import { site, siteConfig } from "@/shared/config/site";
+import { LUCSUM_STYLE_LABELS, storefrontFeatures } from "@/shared/config/storefront";
 import { AppBrand } from "../section/auth.card-layout";
 
 type NavItem<T extends string = string> = {
@@ -20,32 +21,61 @@ interface NavType {
   submenu: NavItem<Route>[];
 }
 
-export const footer: NavType[] = [
-  {
-    title: "Shop",
-    submenu: [
-      { title: "All products", href: PATH.STORE.ROOT as Route, newTab: false },
-      { title: "Categories", href: PATH.STORE.CATEGORIES.ROOT as Route, newTab: false },
-    ],
-  },
-  {
-    title: "Customer Care",
-    submenu: [
+const shopFooterLinks: NavItem<Route>[] = storefrontFeatures.minimalPublicSite
+  ? [
+      { title: "All tees", href: PATH.SHOP.ROOT, newTab: false },
+      ...Object.entries(LUCSUM_STYLE_LABELS).map(([slug, title]) => ({
+        title,
+        href: `/shop?style=${slug}` as Route,
+        newTab: false,
+      })),
+    ]
+  : storefrontFeatures.simplifiedShop
+    ? [{ title: "All tees", href: PATH.STORE.ROOT as Route, newTab: false }]
+    : [
+        { title: "All products", href: PATH.STORE.ROOT as Route, newTab: false },
+        { title: "Categories", href: PATH.STORE.CATEGORIES.ROOT as Route, newTab: false },
+      ];
+
+const customerCareLinks: NavItem<Route>[] = storefrontFeatures.minimalPublicSite
+  ? [
+      { title: "Help & FAQ", href: PATH.HELP, newTab: false },
+      { title: "Track order", href: PATH.ACCOUNT.ORDER as Route, newTab: false },
+    ]
+  : [
       { title: "Track order", href: PATH.ACCOUNT.ORDER as Route, newTab: false },
       { title: "Shipping info", href: "/support/shipping" as Route, newTab: false },
       { title: "Returns & exchanges", href: "/support/returns" as Route, newTab: false },
       { title: "Size guide", href: PATH.SITE.SUPPORT.SIZE_GUIDE, newTab: false },
       { title: "Contact support", href: PATH.SITE.CONTACT as Route, newTab: false },
-    ],
-  },
-  {
-    title: "Legal",
-    submenu: [
+    ];
+
+const legalFooterLinks: NavItem<Route>[] = storefrontFeatures.minimalPublicSite
+  ? [
+      { title: "Privacy", href: PATH.SITE.LEGAL.PRIVACY, newTab: false },
+      { title: "Terms", href: PATH.SITE.LEGAL.TERMS, newTab: false },
+      { title: "Shipping", href: PATH.SITE.LEGAL.SHIPPING, newTab: false },
+      { title: "Returns", href: PATH.SITE.LEGAL.RETURN, newTab: false },
+    ]
+  : [
       { title: "Privacy Policy", href: PATH.SITE.LEGAL.PRIVACY, newTab: false },
       { title: "Terms of Service", href: PATH.SITE.LEGAL.TERMS, newTab: false },
       { title: "Refund Policy", href: PATH.SITE.LEGAL.REFUND, newTab: false },
       { title: "Cookies", href: PATH.SITE.LEGAL.COOKIES, newTab: false },
-    ],
+    ];
+
+export const footer: NavType[] = [
+  {
+    title: "Shop",
+    submenu: shopFooterLinks,
+  },
+  {
+    title: "Customer Care",
+    submenu: customerCareLinks,
+  },
+  {
+    title: "Legal",
+    submenu: legalFooterLinks,
   },
   {
     title: "Connect",
@@ -53,7 +83,9 @@ export const footer: NavType[] = [
       { title: "Instagram", href: siteConfig.socialLinks[1]!.url as Route, newTab: true },
       { title: "Twitter", href: siteConfig.socialLinks[2]!.url as Route, newTab: true },
       { title: "Facebook", href: siteConfig.socialLinks[0]!.url as Route, newTab: true },
-      { title: "Newsletter", href: PATH.SITE.NEWSLETTER, newTab: false },
+      ...(storefrontFeatures.showNewsletterPromo
+        ? [{ title: "Newsletter", href: PATH.SITE.NEWSLETTER, newTab: false }]
+        : []),
     ],
   },
 ];
@@ -84,9 +116,13 @@ export default function Footer() {
             </div>
             <div className="pb-8 md:pb-16">
               <h4 className="mb-2 text-lg font-semibold">{"Supported Payment"}</h4>
-              <div className="flex flex-wrap gap-2">
-                <Icons.paypal className="h-6 w-9" />
-                <Icons.visa className="h-10 w-auto" />
+              <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+                <span className="rounded-[var(--radius)] border border-border px-2 py-1 font-medium text-foreground">
+                  Razorpay
+                </span>
+                <span className="rounded-[var(--radius)] border border-border px-2 py-1">UPI</span>
+                <Icons.visa className="h-8 w-auto" aria-label="Cards" />
+                <span className="rounded-[var(--radius)] border border-border px-2 py-1">COD</span>
               </div>
             </div>
           </div>
@@ -98,15 +134,17 @@ export default function Footer() {
                   <Social />
                 </div>
               </div>
-              <div className="col-span-1 md:col-span-2">
-                <h4 className="mb-2 text-lg font-semibold">Sign up to our newsletter</h4>
-                <NewsletterSignupForm
-                  source="footer"
-                  className="max-w-md space-y-2"
-                  inputClassName="flex-1"
-                  submitLabel="Subscribe"
-                />
-              </div>
+              {storefrontFeatures.showNewsletterPromo ? (
+                <div className="col-span-1 md:col-span-2">
+                  <h4 className="mb-2 text-lg font-semibold">Sign up to our newsletter</h4>
+                  <NewsletterSignupForm
+                    source="footer"
+                    className="max-w-md space-y-2"
+                    inputClassName="flex-1"
+                    submitLabel="Subscribe"
+                  />
+                </div>
+              ) : null}
             </div>
             <div className="grid w-full grid-cols-2 gap-x-4 gap-y-8 p-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6">
               {footer?.map(({ title, submenu }) => {
@@ -118,7 +156,7 @@ export default function Footer() {
                         return (
                           <li key={href + title}>
                             <Link
-                              className="block py-2 underline-offset-4 hover:underline md:py-1.5"
+                              className="inline-flex min-h-11 items-center py-2 underline-offset-4 hover:underline"
                               target={newTab ? "_blank" : "_self"}
                               href={href || PATH.ROOT}
                             >
@@ -142,9 +180,11 @@ export default function Footer() {
             <div className="flex h-full w-14 items-center justify-center border-l p-3 sm:w-16 sm:p-4">
               <ThemeToggle />
             </div>
-            <div className="flex h-full w-14 items-center justify-center border-l p-3 sm:w-16 sm:p-4">
-              <RSS />
-            </div>
+            {!storefrontFeatures.minimalPublicSite ? (
+              <div className="flex h-full w-14 items-center justify-center border-l p-3 sm:w-16 sm:p-4">
+                <RSS />
+              </div>
+            ) : null}
           </div>
         </div>
       </div>

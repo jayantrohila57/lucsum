@@ -44,6 +44,8 @@ const searchSchema = z.object({
   displayType: displayTypeEnum.optional(),
   deleted: z.boolean().optional(),
   color: z.string().optional(),
+  /** When true (default), public listings only return LUCSUM catalogue roots. */
+  catalogOnly: z.boolean().optional(),
 });
 
 export const categoryContract = {

@@ -1,20 +1,23 @@
-import { ArrowLeft, ChevronRight, Package, ShieldCheck } from "lucide-react";
+import { ChevronRight, Package, ShieldCheck } from "lucide-react";
 import type { Route } from "next";
 import Link from "next/link";
 import { PDPImageGallery } from "@/module/product/product-pdp-gallery";
 import { PDPWishlistToggle } from "@/module/product/product-pdp-wishlist-toggle";
 import { ProductReviews } from "@/module/review/components/product-reviews";
+import { CmsHtml } from "@/module/site/cms-html";
 import { AddToCartButton } from "@/shared/components/common/add-to-cart-button";
 import { BuyNowButton } from "@/shared/components/common/buy-now-button";
 import { ViewCartButton } from "@/shared/components/common/view-cart-button";
+import { BoxCard, Container } from "@/shared/components/layout/box";
 import { Badge } from "@/shared/components/ui/badge";
 import { Button } from "@/shared/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/shared/components/ui/card";
 import { Separator } from "@/shared/components/ui/separator";
 import { PATH } from "@/shared/config/routes";
+import { storefrontFeatures } from "@/shared/config/storefront";
 import { computeVariantUnitPrice } from "@/shared/seo/pricing";
+import { compareSizeAttributeValues, formatBreadcrumbLabel } from "@/shared/utils/lib/breadcrumb-label";
 import { getImageSrc } from "@/shared/utils/lib/image.utils";
-import { slugToTitle } from "@/shared/utils/lib/url.utils";
 import type { PDPVariantFullPathPayload } from "./product.types";
 import { extractAttributeGroups, isOptionAvailable, resolveNextVariant } from "./product-utility";
 
@@ -76,7 +79,7 @@ export const PDPProduct = ({ data, slug, categorySlug, subcategorySlug }: PDPPro
             This product is unavailable or the link may be incorrect.
             <div className="mt-6">
               <Button asChild>
-                <Link href={PATH.STORE.ROOT}>Back to store</Link>
+                <Link href={storefrontFeatures.minimalPublicSite ? PATH.SHOP.ROOT : PATH.STORE.ROOT}>Back to shop</Link>
               </Button>
             </div>
           </CardContent>
@@ -101,7 +104,9 @@ export const PDPProduct = ({ data, slug, categorySlug, subcategorySlug }: PDPPro
           </CardHeader>
           <CardContent>
             <Button asChild variant="outline">
-              <Link href={PATH.STORE.ROOT}>Continue shopping</Link>
+              <Link href={storefrontFeatures.minimalPublicSite ? PATH.SHOP.ROOT : PATH.STORE.ROOT}>
+                Continue shopping
+              </Link>
             </Button>
           </CardContent>
         </Card>
@@ -124,47 +129,60 @@ export const PDPProduct = ({ data, slug, categorySlug, subcategorySlug }: PDPPro
   const stock = stockLabel(tracksInventory, inv);
   const aggregate = seo?.reviewAggregate;
 
-  const categoryLabel = slugToTitle(catSlug);
-  const subcategoryLabel = slugToTitle(subcatSlug);
+  const categoryLabel = formatBreadcrumbLabel(catSlug);
+  const subcategoryLabel = formatBreadcrumbLabel(subcatSlug);
+  const outOfStock = tracksInventory && inv != null && inv.availableQuantity <= 0;
   const displayVariantTitle =
     selectedVariant.title && selectedVariant.title.trim() !== product.title?.trim() ? selectedVariant.title : null;
 
   return (
     <div className="bg-background">
-      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
+      <Container className="py-8 lg:py-10">
         <nav aria-label="Breadcrumb" className="mb-6 min-w-0">
-          <Link
-            href={PATH.STORE.SUB_CATEGORIES.SUBCATEGORY(subcatSlug, catSlug) as Route}
-            className="mb-3 inline-flex max-w-full items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground sm:hidden"
-          >
-            <ArrowLeft className="size-4 shrink-0" aria-hidden />
-            <span className="truncate">Back to {subcategoryLabel}</span>
-          </Link>
-          <ol className="hidden min-w-0 flex-wrap items-center gap-x-1 gap-y-1 text-sm text-muted-foreground sm:flex">
-            <li className="inline-flex min-w-0 items-center gap-1">
-              <Link href={PATH.STORE.ROOT} className="shrink-0 hover:text-foreground">
-                Store
-              </Link>
-              <ChevronRight className="size-4 shrink-0 opacity-50" aria-hidden />
-            </li>
-            <li className="inline-flex min-w-0 items-center gap-1">
-              <Link href={PATH.STORE.CATEGORIES.CATEGORY(catSlug) as Route} className="truncate hover:text-foreground">
-                {categoryLabel}
-              </Link>
-              <ChevronRight className="size-4 shrink-0 opacity-50" aria-hidden />
-            </li>
-            <li className="inline-flex min-w-0 items-center gap-1">
-              <Link
-                href={PATH.STORE.SUB_CATEGORIES.SUBCATEGORY(subcatSlug, catSlug) as Route}
-                className="truncate hover:text-foreground"
-              >
-                {subcategoryLabel}
-              </Link>
-              <ChevronRight className="size-4 shrink-0 opacity-50" aria-hidden />
-            </li>
-            <li className="min-w-0 font-medium text-foreground">
-              <span className="line-clamp-2 sm:line-clamp-1">{product.title}</span>
-            </li>
+          <ol className="flex min-w-0 flex-wrap items-center gap-x-1 gap-y-1 text-sm text-muted-foreground">
+            {storefrontFeatures.minimalPublicSite ? (
+              <>
+                <li className="inline-flex min-w-0 items-center gap-1">
+                  <Link href={PATH.SHOP.ROOT} className="shrink-0 hover:text-foreground">
+                    Shop
+                  </Link>
+                  <ChevronRight className="size-4 shrink-0 opacity-50" aria-hidden />
+                </li>
+                <li className="min-w-0 font-medium text-foreground">
+                  <span className="line-clamp-2 sm:line-clamp-1">{product.title}</span>
+                </li>
+              </>
+            ) : (
+              <>
+                <li className="inline-flex min-w-0 items-center gap-1">
+                  <Link href={PATH.STORE.ROOT} className="shrink-0 hover:text-foreground">
+                    Store
+                  </Link>
+                  <ChevronRight className="size-4 shrink-0 opacity-50" aria-hidden />
+                </li>
+                <li className="inline-flex min-w-0 items-center gap-1">
+                  <Link
+                    href={PATH.STORE.CATEGORIES.CATEGORY(catSlug) as Route}
+                    className="truncate hover:text-foreground"
+                  >
+                    {categoryLabel}
+                  </Link>
+                  <ChevronRight className="size-4 shrink-0 opacity-50" aria-hidden />
+                </li>
+                <li className="inline-flex min-w-0 items-center gap-1">
+                  <Link
+                    href={PATH.STORE.SUB_CATEGORIES.SUBCATEGORY(subcatSlug, catSlug) as Route}
+                    className="truncate hover:text-foreground"
+                  >
+                    {subcategoryLabel}
+                  </Link>
+                  <ChevronRight className="size-4 shrink-0 opacity-50" aria-hidden />
+                </li>
+                <li className="min-w-0 font-medium text-foreground">
+                  <span className="line-clamp-2 sm:line-clamp-1">{product.title}</span>
+                </li>
+              </>
+            )}
           </ol>
         </nav>
 
@@ -174,7 +192,9 @@ export const PDPProduct = ({ data, slug, categorySlug, subcategorySlug }: PDPPro
             <PDPImageGallery
               images={galleryImages}
               alt={product?.title ?? "Product"}
-              overlay={<PDPWishlistToggle variantId={selectedVariant.id} />}
+              overlay={
+                storefrontFeatures.showWishlist ? <PDPWishlistToggle variantId={selectedVariant.id} /> : undefined
+              }
             />
           </div>
 
@@ -203,7 +223,7 @@ export const PDPProduct = ({ data, slug, categorySlug, subcategorySlug }: PDPPro
             </div>
 
             {product.description ? (
-              <p className="text-muted-foreground line-clamp-4 text-base leading-relaxed">{product.description}</p>
+              <CmsHtml html={product.description} className="line-clamp-4 text-base leading-relaxed" />
             ) : null}
 
             <div className="flex flex-wrap items-baseline gap-3 border-y border-border py-4">
@@ -231,7 +251,10 @@ export const PDPProduct = ({ data, slug, categorySlug, subcategorySlug }: PDPPro
                   <div key={title}>
                     <p className="text-muted-foreground mb-2 text-xs font-medium uppercase tracking-wide">{title}</p>
                     <div className="flex flex-wrap gap-2">
-                      {Array.from(values).map((value) => {
+                      {(title.toLowerCase() === "size"
+                        ? Array.from(values).sort(compareSizeAttributeValues)
+                        : Array.from(values).sort((a, b) => a.localeCompare(b))
+                      ).map((value) => {
                         const isSelected = selectedVariant?.attributes?.some(
                           (a) => a.title === title && a.value === value,
                         );
@@ -249,7 +272,7 @@ export const PDPProduct = ({ data, slug, categorySlug, subcategorySlug }: PDPPro
                               size="sm"
                               variant="outline"
                               disabled
-                              className="cursor-not-allowed capitalize opacity-40"
+                              className="min-h-11 min-w-11 cursor-not-allowed capitalize opacity-40"
                             >
                               {value}
                             </Button>
@@ -266,10 +289,18 @@ export const PDPProduct = ({ data, slug, categorySlug, subcategorySlug }: PDPPro
                         return (
                           <Link
                             key={value}
-                            href={`/store/${catSlug}/${subcatSlug}/${nextVariant.slug}` as Route}
+                            href={
+                              (storefrontFeatures.minimalPublicSite
+                                ? (`/products/${nextVariant.slug}` as Route)
+                                : (`/store/${catSlug}/${subcatSlug}/${nextVariant.slug}` as Route)) as Route
+                            }
                             prefetch={false}
                           >
-                            <Button size="sm" variant={isSelected ? "default" : "outline"} className="capitalize">
+                            <Button
+                              size="sm"
+                              variant={isSelected ? "default" : "outline"}
+                              className="min-h-11 min-w-11 capitalize"
+                            >
                               {value}
                             </Button>
                           </Link>
@@ -283,14 +314,14 @@ export const PDPProduct = ({ data, slug, categorySlug, subcategorySlug }: PDPPro
 
             <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-stretch">
               <div className="min-w-0 flex-1 sm:max-w-xs">
-                <AddToCartButton variantId={selectedVariant.id} />
+                <AddToCartButton variantId={selectedVariant.id} disabled={outOfStock} />
               </div>
               <ViewCartButton variantId={selectedVariant.id} className="min-w-0 flex-1 sm:max-w-[180px]" />
               <BuyNowButton variantId={selectedVariant.id} className="sm:shrink-0" />
             </div>
 
             {(inv?.sku || inv?.barcode) && (
-              <dl className="grid gap-3 rounded-lg border border-border bg-muted/30 p-4 text-sm sm:grid-cols-2">
+              <BoxCard padding="compact" className="grid gap-3 bg-muted/30 text-sm sm:grid-cols-2">
                 {inv.sku ? (
                   <div>
                     <dt className="text-muted-foreground">SKU</dt>
@@ -303,7 +334,7 @@ export const PDPProduct = ({ data, slug, categorySlug, subcategorySlug }: PDPPro
                     <dd className="mt-0.5 font-mono text-foreground">{inv.barcode}</dd>
                   </div>
                 ) : null}
-              </dl>
+              </BoxCard>
             )}
 
             <div className="text-muted-foreground flex flex-wrap items-start gap-2 text-xs">
@@ -329,9 +360,7 @@ export const PDPProduct = ({ data, slug, categorySlug, subcategorySlug }: PDPPro
                   About this product
                 </h2>
                 {product.description ? (
-                  <div className="text-muted-foreground mt-4 max-w-prose whitespace-pre-wrap text-base leading-relaxed">
-                    {product.description}
-                  </div>
+                  <CmsHtml html={product.description} className="mt-4 max-w-prose text-base leading-relaxed" />
                 ) : (
                   <p className="text-muted-foreground mt-4 text-sm">No detailed description has been added yet.</p>
                 )}
@@ -363,19 +392,27 @@ export const PDPProduct = ({ data, slug, categorySlug, subcategorySlug }: PDPPro
                   <div className="flex justify-between gap-4 border-b border-border pb-3">
                     <span className="text-muted-foreground">Category</span>
                     <Link
-                      href={PATH.STORE.CATEGORIES.CATEGORY(catSlug) as Route}
+                      href={
+                        (storefrontFeatures.minimalPublicSite
+                          ? (`/shop?style=${subcatSlug}` as Route)
+                          : PATH.STORE.CATEGORIES.CATEGORY(catSlug)) as Route
+                      }
                       className="text-right font-medium text-primary hover:underline"
                     >
-                      {categoryLabel}
+                      {storefrontFeatures.minimalPublicSite ? subcategoryLabel : categoryLabel}
                     </Link>
                   </div>
                   <div className="flex justify-between gap-4 border-b border-border pb-3">
                     <span className="text-muted-foreground">Collection</span>
                     <Link
-                      href={PATH.STORE.SUB_CATEGORIES.SUBCATEGORY(subcatSlug, catSlug) as Route}
+                      href={
+                        (storefrontFeatures.minimalPublicSite
+                          ? PATH.SHOP.ROOT
+                          : PATH.STORE.SUB_CATEGORIES.SUBCATEGORY(subcatSlug, catSlug)) as Route
+                      }
                       className="text-right font-medium text-primary hover:underline"
                     >
-                      {subcategoryLabel}
+                      {storefrontFeatures.minimalPublicSite ? "All tees" : subcategoryLabel}
                     </Link>
                   </div>
                   {inv?.sku ? (
@@ -389,12 +426,12 @@ export const PDPProduct = ({ data, slug, categorySlug, subcategorySlug }: PDPPro
             </aside>
           </div>
         </div>
-      </div>
+      </Container>
 
       <div className="border-t border-border bg-muted/20">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <Container className="py-12">
           <ProductReviews productId={product.id} canWriteReview />
-        </div>
+        </Container>
       </div>
     </div>
   );

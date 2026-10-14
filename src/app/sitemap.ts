@@ -1,8 +1,11 @@
 import type { MetadataRoute } from "next";
 import { db } from "@/core/db/db";
+import { STOREFRONT_SIMPLIFIED } from "@/shared/config/storefront";
 import { getSiteOrigin } from "@/shared/seo/site-origin";
 
-const LEGAL_SLUGS = [
+const LEGAL_SLUGS_MINIMAL = ["terms-of-service", "privacy-policy", "shipping-policy", "return-policy"] as const;
+
+const LEGAL_SLUGS_FULL = [
   "terms-of-service",
   "privacy-policy",
   "shipping-policy",
@@ -13,12 +16,13 @@ const LEGAL_SLUGS = [
   "cookies-policy",
 ] as const;
 
-const STATIC_PATHS = [
+const STATIC_PATHS_MINIMAL = ["/", "/shop", "/help", "/cart", "/checkout", "/checkout/confirmation", "/legal"] as const;
+
+const STATIC_PATHS_FULL = [
   "/",
   "/store",
-  "/store/categories",
+  "/cart",
   "/marketing/about",
-  "/marketing/newsletter",
   "/support",
   "/support/contact",
   "/support/shipping",
@@ -27,6 +31,9 @@ const STATIC_PATHS = [
   "/support/help-center",
   "/support/size-guide",
   "/legal",
+  "/store/checkout",
+  "/store/categories",
+  "/marketing/newsletter",
 ] as const;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -41,10 +48,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     if (!prev || d > prev) byUrl.set(url, d);
   };
 
-  for (const p of STATIC_PATHS) {
+  const staticPaths = STOREFRONT_SIMPLIFIED ? STATIC_PATHS_MINIMAL : STATIC_PATHS_FULL;
+  const legalSlugs = STOREFRONT_SIMPLIFIED ? LEGAL_SLUGS_MINIMAL : LEGAL_SLUGS_FULL;
+
+  for (const p of staticPaths) {
     add(p);
   }
-  for (const slug of LEGAL_SLUGS) {
+  for (const slug of legalSlugs) {
     add(`/legal/${slug}`);
   }
 
@@ -58,6 +68,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 }
 
 async function appendCatalogUrls(add: (path: string, lastModified?: Date | null) => void) {
+  if (STOREFRONT_SIMPLIFIED) {
+    const products = await db.query.product.findMany({
+      where: (p, { and, eq, isNull: isNullFn }) =>
+        and(isNullFn(p.deletedAt), eq(p.isActive, true), eq(p.status, "live"), eq(p.categorySlug, "t-shirts")),
+      columns: { slug: true, updatedAt: true },
+    });
+
+    for (const p of products) {
+      add(`/products/${p.slug}`, p.updatedAt);
+    }
+    return;
+  }
+
   const publicCategories = await db.query.category.findMany({
     where: (c, { and, eq, isNull: isNullFn }) => and(isNullFn(c.deletedAt), eq(c.visibility, "public")),
     columns: { slug: true, updatedAt: true },

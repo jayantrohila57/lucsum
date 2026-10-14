@@ -118,12 +118,11 @@ export const subcategoryRouter = createTRPCRouter({
 
         if (!subcategoryData) return API_RESPONSE(STATUS.FAILED, MESSAGE.SUBCATEGORY.GET_BY_SLUG.FAILED, null);
 
-        const liveProductFilter = and(
-          eq(product.categorySlug, categorySlug),
-          eq(product.isActive, true),
-          eq(product.status, "live"),
-          isNull(product.deletedAt),
-        );
+        const liveProductBase = and(eq(product.isActive, true), eq(product.status, "live"), isNull(product.deletedAt));
+
+        const liveProductFilter = subcategoryData.collectionSlug
+          ? liveProductBase
+          : and(eq(product.categorySlug, categorySlug), eq(product.subcategorySlug, slug), liveProductBase);
 
         type ProductWithVariants = typeof product.$inferSelect & {
           variants: (typeof productVariant.$inferSelect)[];

@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import type { z } from "zod/v3";
+import { useSession } from "@/core/auth/auth.client";
 import { checkoutFormSchema } from "@/module/checkout/checkout.schema";
 import { useCheckout } from "@/module/checkout/use-checkout";
 import Form from "@/shared/components/form/form";
@@ -13,18 +14,33 @@ import { PATH } from "@/shared/config/routes";
 import { AddressSelectionSection } from "./address-selection-section";
 import { CartReviewSection } from "./cart-review-section";
 import { CheckoutSummary, CheckoutSummaryFormFields } from "./checkout-summary";
+import { GuestShippingSection } from "./guest-shipping-section";
 import { PlaceOrderButton } from "./place-order-button";
 
 type CheckoutFormValues = z.infer<typeof checkoutFormSchema>;
 
 export function CheckoutForm() {
   const router = useRouter();
+  const { data: session } = useSession();
+  const isSignedIn = Boolean(session?.user?.id);
   const { cart, addresses, isLoading: dataLoading, isPlacingOrder, initiateCheckout } = useCheckout();
 
   const defaultShippingId = addresses.shipping[0]?.id ?? "";
   const defaultValues: CheckoutFormValues = {
     body: {
       shippingAddressId: defaultShippingId,
+      guestShipping: isSignedIn
+        ? undefined
+        : {
+            fullName: "",
+            line1: "",
+            line2: "",
+            city: "",
+            state: "",
+            postalCode: "",
+            country: "IN",
+            phone: "",
+          },
       shippingProviderId: "",
       shippingMethodId: "",
       sameAsShipping: true,
@@ -43,7 +59,10 @@ export function CheckoutForm() {
     const result = await initiateCheckout(data.body);
     if (!result) return;
 
-    router.push(`${PATH.STORE.CHECKOUT.PAY}?orderId=${encodeURIComponent(result.order.id)}`);
+    const params = new URLSearchParams({ orderId: result.order.id });
+    const accessToken = result.order.accessToken;
+    if (accessToken) params.set("token", accessToken);
+    router.push(`${PATH.CHECKOUT.PAY}?${params.toString()}`);
   };
 
   const isLoading = dataLoading || isPlacingOrder;
@@ -60,7 +79,11 @@ export function CheckoutForm() {
         <div className="space-y-6 lg:col-span-2">
           <CartReviewSection items={cart?.items ?? []} isLoading={dataLoading && !cart} />
           <Separator />
-          <AddressSelectionSection shippingAddresses={addresses.shipping} billingAddresses={addresses.billing} />
+          {isSignedIn ? (
+            <AddressSelectionSection shippingAddresses={addresses.shipping} billingAddresses={addresses.billing} />
+          ) : (
+            <GuestShippingSection />
+          )}
           <Separator />
           <CheckoutSummaryFormFields />
         </div>
@@ -71,7 +94,7 @@ export function CheckoutForm() {
           )}
           <Form.StatusBadge />
           <PlaceOrderButton
-            disabled={!cart?.items?.length || !addresses.shipping.length}
+            disabled={!cart?.items?.length || (isSignedIn && !addresses.shipping.length)}
             isLoading={isLoading}
             razorpayConfigured={!!clientEnv.NEXT_PUBLIC_RAZORPAY_KEY_ID}
           />

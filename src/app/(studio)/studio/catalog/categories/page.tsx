@@ -23,6 +23,7 @@ export default async function CategoriesPage({
 
   const result = await apiServer.category.getMany({
     query: {
+      catalogOnly: false,
       search: listQuery.search.q,
       visibility: listQuery.filters.visibility,
       displayType: listQuery.filters.displayType,

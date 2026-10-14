@@ -12,6 +12,7 @@ import { Button } from "@/shared/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/shared/components/ui/sheet";
 import { PATH } from "@/shared/config/routes";
 import { siteConfig } from "@/shared/config/site";
+import { LUCSUM_STYLE_LABELS, storefrontFeatures } from "@/shared/config/storefront";
 import { getImageSrc } from "@/shared/utils/lib/image.utils";
 import { Separator } from "../../ui/separator";
 import { HeaderUtilityActions } from "./header.actions";
@@ -44,20 +45,71 @@ export function MobileNavButton() {
   const { setOpen } = useMobileNav();
 
   return (
-    <Button variant="ghost" size="icon" onClick={() => setOpen(true)}>
+    <Button variant="ghost" size="icon" aria-label="Open menu" onClick={() => setOpen(true)}>
       <MenuIcon className="h-5 w-5" />
     </Button>
   );
 }
 
-function MobileNavigationSheet() {
-  const { open, setOpen } = useMobileNav();
-
+function LegacyMobileCategoryAccordion({ onNavigate }: { onNavigate: () => void }) {
   const { data, isLoading } = apiClient.category.getManyWithSubcategories.useQuery({
     query: {},
   });
-
   const categories = data?.data ?? [];
+
+  return (
+    <div className="flex flex-col gap-3 pb-20">
+      <div className="text-sm font-semibold text-muted-foreground px-2">Categories</div>
+      {isLoading && <div className="text-sm text-muted-foreground px-2">Loading categories...</div>}
+      {!isLoading && categories.length === 0 && (
+        <div className="text-sm text-muted-foreground px-2">No categories available</div>
+      )}
+      <Accordion type="single" collapsible className="w-full">
+        {categories.map((category) => (
+          <AccordionItem key={category.id} value={category.id} className="p-0">
+            <AccordionTrigger className="flex items-center gap-2 p-1">
+              <BlurImage
+                src={getImageSrc(category.image)}
+                alt={category.title ?? "Category"}
+                width={40}
+                height={40}
+                className="w-10 h-10 rounded object-cover"
+              />
+              <span>{category.title}</span>
+            </AccordionTrigger>
+
+            <AccordionContent>
+              <div className="flex flex-col gap-2 p-2">
+                <Link
+                  href={PATH.STORE.CATEGORIES.CATEGORY(category.slug ?? "") as Route}
+                  className="text-sm font-medium"
+                  onClick={onNavigate}
+                >
+                  View All
+                </Link>
+                {category.subcategories?.map((sub) => (
+                  <Link
+                    key={sub.id}
+                    href={PATH.STORE.SUB_CATEGORIES.SUBCATEGORY(sub.slug ?? "", category.slug ?? "") as Route}
+                    className="text-sm text-muted-foreground hover:text-foreground"
+                    onClick={onNavigate}
+                  >
+                    {sub.title}
+                  </Link>
+                ))}
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
+    </div>
+  );
+}
+
+function MobileNavigationSheet() {
+  const { open, setOpen } = useMobileNav();
+  const simplified = storefrontFeatures.simplifiedShop;
+  const close = () => setOpen(false);
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -68,75 +120,66 @@ function MobileNavigationSheet() {
         <Separator />
         <div className="mt-6 flex flex-col gap-2">
           {/* MAIN LINKS */}
-          <nav className="flex flex-col  p-4  gap-2 text-lg font-medium">
-            <Link href={PATH.STORE.ROOT} onClick={() => setOpen(false)}>
-              Store
+          <nav className="flex flex-col gap-1 p-4 text-lg font-medium">
+            <Link className="inline-flex min-h-11 items-center" href={PATH.ROOT} onClick={() => setOpen(false)}>
+              Home
             </Link>
-
-            <Link href={PATH.SITE.ABOUT} onClick={() => setOpen(false)}>
-              About
+            <Link
+              className="inline-flex min-h-11 items-center"
+              href={simplified ? PATH.SHOP.ROOT : PATH.STORE.ROOT}
+              onClick={() => setOpen(false)}
+            >
+              {simplified ? "Shop" : "Store"}
             </Link>
-
-            <Link href={PATH.SITE.CONTACT} onClick={() => setOpen(false)}>
-              Contact
-            </Link>
-
-            <Link href={PATH.SITE.SUPPORT.ROOT} onClick={() => setOpen(false)}>
-              Support
-            </Link>
+            {simplified ? (
+              <>
+                <Link className="inline-flex min-h-11 items-center" href={PATH.HELP} onClick={() => setOpen(false)}>
+                  Help
+                </Link>
+                <Link
+                  className="inline-flex min-h-11 items-center"
+                  href={PATH.SITE.LEGAL.ROOT}
+                  onClick={() => setOpen(false)}
+                >
+                  Policies
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link href={PATH.SITE.ABOUT} onClick={() => setOpen(false)}>
+                  About
+                </Link>
+                <Link href={PATH.SITE.CONTACT} onClick={() => setOpen(false)}>
+                  Contact
+                </Link>
+                <Link href={PATH.SITE.SUPPORT.ROOT} onClick={() => setOpen(false)}>
+                  Support
+                </Link>
+              </>
+            )}
           </nav>
           <Separator />
           <HeaderUtilityActions variant="sheet" />
           <Separator />
-          {/* CATEGORIES */}
-          <div className="flex flex-col gap-3 pb-20">
-            <div className="text-sm font-semibold text-muted-foreground px-2">Categories</div>
-            {isLoading && <div className="text-sm text-muted-foreground px-2">Loading categories...</div>}
-            {!isLoading && categories.length === 0 && (
-              <div className="text-sm text-muted-foreground px-2">No categories available</div>
-            )}
-            <Accordion type="single" collapsible className="w-full">
-              {categories.map((category) => (
-                <AccordionItem key={category.id} value={category.id} className="p-0">
-                  <AccordionTrigger className="flex items-center gap-2 p-1">
-                    <BlurImage
-                      src={getImageSrc(category.image)}
-                      alt={category.title ?? "Category"}
-                      width={40}
-                      height={40}
-                      className="w-10 h-10 rounded object-cover"
-                    />
-                    <span>{category.title}</span>
-                  </AccordionTrigger>
-
-                  <AccordionContent>
-                    <div className="flex flex-col gap-2 p-2">
-                      {/* CATEGORY PAGE */}
-                      <Link
-                        href={PATH.STORE.CATEGORIES.CATEGORY(category.slug ?? "") as Route}
-                        className="text-sm font-medium"
-                        onClick={() => setOpen(false)}
-                      >
-                        View All
-                      </Link>
-
-                      {/* SUBCATEGORIES */}
-                      {category.subcategories?.map((sub) => (
-                        <Link
-                          key={sub.id}
-                          href={PATH.STORE.SUB_CATEGORIES.SUBCATEGORY(sub.slug ?? "", category.slug ?? "") as Route}
-                          className="text-sm text-muted-foreground hover:text-foreground"
-                          onClick={() => setOpen(false)}
-                        >
-                          {sub.title}
-                        </Link>
-                      ))}
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
+          {simplified ? (
+            <div className="flex flex-col gap-3 px-4 pb-20">
+              <div className="text-sm font-semibold text-muted-foreground">Styles</div>
+              <div className="flex flex-col gap-2">
+                {Object.entries(LUCSUM_STYLE_LABELS).map(([slug, title]) => (
+                  <Link
+                    key={slug}
+                    href={`/shop?style=${slug}` as Route}
+                    className="inline-flex min-h-11 items-center text-sm text-muted-foreground hover:text-foreground"
+                    onClick={() => setOpen(false)}
+                  >
+                    {title}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <LegacyMobileCategoryAccordion onNavigate={close} />
+          )}
         </div>
       </SheetContent>
     </Sheet>

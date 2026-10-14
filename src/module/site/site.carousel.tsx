@@ -45,34 +45,36 @@ export function MarketingCarousel({ items }: { items: CarouselItem[] | null | un
 
   return (
     <Carousel
-      className="w-full"
+      className="w-full max-w-full overflow-hidden"
       opts={{ loop: true, align: "start", dragFree: false }}
       plugins={[autoplay.current]}
       setApi={setApi}
     >
       <div>
-        <CarouselContent className="">
+        <CarouselContent className="ml-0">
           {slides.map((item, i) => {
             const title = item.title ?? "Banner";
             const href = item.ctaLink ?? undefined;
             return (
-              <CarouselItem key={i}>
-                <div className="bg-transparent h-full w-full  group grid grid-cols-12 text-balance p-0">
-                  <div className="flex h-auto hover:cursor-grab active:cursor-grabbing p-0 col-span-12 sm:col-span-9 md:col-span-9 aspect-video w-full items-center justify-center overflow-hidden">
-                    <BlurImage
-                      src={getImageSrc(item.image)}
-                      alt={title}
-                      width={1920}
-                      height={1080}
-                      className="motion-all h-full w-full object-cover"
+              <CarouselItem key={i} className="min-w-0 basis-full pl-0">
+                <div className="group relative w-full max-w-full overflow-hidden rounded-[var(--radius)] border border-border bg-muted text-balance">
+                  <div className="relative aspect-[21/9] min-h-[220px] w-full max-w-full sm:min-h-[280px]">
+                    <BlurImage src={getImageSrc(item.image)} alt={title} fill sizes="100vw" className="object-cover" />
+                    <div
+                      className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-transparent"
+                      aria-hidden
                     />
-                  </div>
-                  <div className="p-8 col-span-12 sm:col-span-3 md:col-span-3 bg-secondary flex flex-col gap-8 justify-center items-start">
-                    <h2 className="text-6xl font-semibold">{title}</h2>
-                    <p className="text-base text-muted-foreground">{item.bodyText ?? ""}</p>
-                    <Button variant="default" size={"lg"} asChild>
-                      <Link href={href as Route}>{item.ctaLabel ?? "View more"}</Link>
-                    </Button>
+                    <div className="relative z-10 flex h-full max-w-xl flex-col justify-center gap-4 p-6 md:max-w-2xl md:gap-6 md:p-10">
+                      <h2 className="text-3xl font-semibold tracking-tight md:text-5xl">{title}</h2>
+                      {item.bodyText ? (
+                        <p className="text-sm text-muted-foreground md:text-base">{item.bodyText}</p>
+                      ) : null}
+                      {href ? (
+                        <Button variant="default" size="lg" className="w-fit" asChild>
+                          <Link href={href as Route}>{item.ctaLabel ?? "View more"}</Link>
+                        </Button>
+                      ) : null}
+                    </div>
                   </div>
                 </div>
               </CarouselItem>
@@ -86,7 +88,7 @@ export function MarketingCarousel({ items }: { items: CarouselItem[] | null | un
             <div
               key={i}
               onClick={() => api?.scrollTo(i)}
-              className="size-12 md:size-16 cursor-pointer hover:bg-secondary flex items-center justify-center border-r"
+              className="size-11 min-h-11 min-w-11 cursor-pointer hover:bg-secondary flex items-center justify-center border-r md:size-16"
             >
               <SquareIcon
                 className={cn(
@@ -98,11 +100,19 @@ export function MarketingCarousel({ items }: { items: CarouselItem[] | null | un
           ))}
         </div>
         <div className="flex relative h-full w-full items-center justify-end">
-          <div className="size-12 md:size-16 cursor-pointer hover:bg-secondary flex items-center justify-center border-l">
-            <CarouselPrevious variant={"ghost"} className="relative cursor-pointer rounded-none" />
+          <div className="size-11 min-h-11 min-w-11 cursor-pointer hover:bg-secondary flex items-center justify-center border-l md:size-16">
+            <CarouselPrevious
+              variant="ghost"
+              size="icon"
+              className="relative size-11 min-h-11 min-w-11 cursor-pointer rounded-none"
+            />
           </div>
-          <div className="size-12 md:size-16 cursor-pointer hover:bg-secondary flex items-center justify-center border-l">
-            <CarouselNext variant={"ghost"} className="relative cursor-pointer rounded-none" />
+          <div className="size-11 min-h-11 min-w-11 cursor-pointer hover:bg-secondary flex items-center justify-center border-l md:size-16">
+            <CarouselNext
+              variant="ghost"
+              size="icon"
+              className="relative size-11 min-h-11 min-w-11 cursor-pointer rounded-none"
+            />
           </div>
         </div>
       </div>
