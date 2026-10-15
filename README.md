@@ -70,3 +70,13 @@ pnpm db:studio
 - **Studio** (`/studio`) is restricted to `staff` / `admin` (see `proxy.ts`).
 - Checkout totals are **server-authoritative** (`order.previewCheckoutTotals`, `order.create`) so UI, DB order, and Razorpay amounts stay aligned.
 - See [docs/requirements.md](docs/requirements.md) for the production audit checklist.
+
+## Sponsor
+
+If you find this project useful, consider supporting its development:
+
+[![Sponsor](https://img.shields.io/badge/Sponsor-%E2%9D%A4-db61a2?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/jayantrohila57)
+
+## License
+
+Released under the [MIT License](LICENSE).
