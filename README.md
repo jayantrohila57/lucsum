@@ -1,6 +1,16 @@
 # LUCSUM Store (Next.js)
 
-Production storefront for **LUCSUM** — **Next.js App Router**, **tRPC**, **Drizzle + PostgreSQL (Neon)**, **Better Auth**, and **Razorpay**.
+Storefront for **LUCSUM**, my Indian streetwear brand from Saharanpur, Uttar Pradesh ("Be your own universe"). Built with **Next.js App Router**, **tRPC**, **Drizzle + PostgreSQL (Neon)**, **Better Auth**, and **Razorpay**.
+
+**Live:** [lucsum.vercel.app](https://lucsum.vercel.app)
+
+## What it is
+
+- Customer catalogue, cart, and checkout, with server-authoritative totals (the server recalculates the order before charging).
+- Razorpay payments with HMAC-verified webhooks (`/api/webhooks/razorpay`).
+- Better Auth sessions for customers and a staff-only Studio.
+- Catalogue, menus, and redirects imported from the brand's previous Shopify store (`pnpm shopify:import`).
+- Health endpoints for deploys: `/api/health` and `/api/health/ready`.
 
 Shopify catalogue import: see [docs/SHOPIFY_IMPORT.md](docs/SHOPIFY_IMPORT.md).
 
