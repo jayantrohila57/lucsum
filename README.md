@@ -1,4 +1,8 @@
+<p align="center"><img src=".github/brand/readme-banner.png" alt="LUCSUM: Be your own universe." width="100%" /></p>
+
 # LUCSUM Store (Next.js)
+
+**Be your own universe.**
 
 Storefront for **LUCSUM**, my Indian streetwear brand from Saharanpur, Uttar Pradesh ("Be your own universe"). Built with **Next.js App Router**, **tRPC**, **Drizzle + PostgreSQL (Neon)**, **Better Auth**, and **Razorpay**.
 
@@ -80,6 +84,24 @@ pnpm db:studio
 - **Studio** (`/studio`) is restricted to `staff` / `admin` (see `proxy.ts`).
 - Checkout totals are **server-authoritative** (`order.previewCheckoutTotals`, `order.create`) so UI, DB order, and Razorpay amounts stay aligned.
 - See [docs/requirements.md](docs/requirements.md) for the production audit checklist.
+
+## Brand
+
+<img src=".github/brand/logo-lockup-on-light.png#gh-light-mode-only" alt="LUCSUM logo" height="56" /><img src=".github/brand/logo-lockup-on-dark.png#gh-dark-mode-only" alt="LUCSUM logo" height="56" />
+
+**Be your own universe.**
+
+Brand assets live in [`.github/brand`](.github/brand): logo mark (SVG and PNG), wordmark (SVG), light and dark lockups, app icons (512, 192 and 32 px), an Open Graph image (1200×630), a GitHub social preview (1280×640), this README banner, an X/LinkedIn banner (1500×500) and a palette sheet.
+
+| Role | Hex | Source |
+| --- | --- | --- |
+| Primary (red) | `#ff1612` | `--primary` |
+| Primary foreground | `#fafafa` | `--primary-foreground` |
+| Background (light) | `#ffffff` | `--background` |
+| Background (dark) | `#0a0a0a` | `--background (dark)` |
+| Card (dark) | `#171717` | `--card (dark)` |
+
+Type: Onest (from `src/shared/utils/methods/font.ts`). Square corners (`--radius: 0rem`).
 
 ## Sponsor
 
